@@ -1,10 +1,12 @@
 import { FeatureCard, FeatureItem } from "@/components/FeatureCard";
 import LetsTalkSection from "@/components/LetsTalkSection";
-import { FeaturesServices, services, servicesPage } from "@/constants";
+import { FeaturesServices, servicesPage } from "@/constants";
 import { ArrowUpRight } from "lucide-react";
-import React from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Services = () => {
+  const router = useRouter();
   return (
     <div>
       <div className="max-w-[1440px] mx-auto">
@@ -22,6 +24,7 @@ const Services = () => {
                 return (
                   <div
                     key={i}
+                    onClick={() => router.push(item.link)}
                     className="flex flex-col items-start justify-between group relative rounded-3xl p-3 lg:p-6 bg-gradient-to-br from-white via-blue-50 to-blue-100 border border-blue-100 hover:border-blue-200 transition-all duration-300 space-y-2 lg:space-y-5 "
                   >
                     {/* ICON */}
@@ -42,12 +45,12 @@ const Services = () => {
                     </p>
 
                     {/* CTA */}
-                    <div className="flex items-center gap-3 text-gray-900 text-xs tracking-[0%] uppercase">
+                    <Link href={item.link} className="flex items-center gap-3 text-gray-900 text-xs tracking-[0%] uppercase">
                       <span className="subHeading">Learn More</span>
                       <span className="w-6 h-6 flex items-center justify-center rounded-full border border-gray-300 group-hover:border-blue-400 transition group-hover:rotate-45">
                         <ArrowUpRight className="w-4 h-4" />
                       </span>
-                    </div>
+                    </Link>
                   </div>
                 );
               })}

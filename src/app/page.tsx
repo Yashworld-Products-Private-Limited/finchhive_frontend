@@ -12,6 +12,7 @@ import { caseStudies, services, testimonials, videos } from "@/constants";
 import RadioIcon from "@/icons/Radio";
 import { ArrowUpRight, Play } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 
 const avatars = [
@@ -23,6 +24,7 @@ const avatars = [
 
 const Home = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
   return (
@@ -156,6 +158,7 @@ const Home = () => {
                   return (
                     <div
                       key={i}
+                      onClick={() => router.push(item.link)}
                       className="flex flex-col items-start justify-between group relative rounded-3xl p-8 bg-gradient-to-br from-white via-blue-50 to-blue-100 border border-blue-100 hover:border-blue-200 transition-all duration-300 space-y-16 "
                     >
                       {/* ICON */}

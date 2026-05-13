@@ -1,3 +1,4 @@
+import { link } from "fs";
 import {
   BadgeDollarSign,
   Building2,
@@ -22,21 +23,25 @@ export const services = [
     title: "Social Media Marketing",
     desc: "Strategic social media management and growth systems for Instagram, Facebook, LinkedIn, and YouTube.",
     icon: Megaphone,
+    link: "/services/social-media-marketing",
   },
   {
     title: "Reel Creation & Short-Form Content",
     desc: "High-impact cinematic reels, YouTube Shorts, and viral-ready content optimized for engagement and reach.",
     icon: Clapperboard,
+    link: "/services/social-media-marketing",
   },
   {
     title: "Brand Storytelling",
     desc: "Emotion-driven visual storytelling that helps brands connect deeply with their audience and build long-term trust.",
     icon: FileText,
+    link: "/services/social-media-marketing",
   },
   {
     title: "Influencer & Creator Collaborations",
     desc: "Strategic influencer partnerships and creator campaigns designed to amplify brand reach, build social proof, and drive authentic audience engagement across digital platforms.",
     icon: Users,
+    link: "/services/social-media-marketing",
   },
 ];
 
@@ -45,61 +50,73 @@ export const servicesPage = [
     title: "Social Media Marketing",
     desc: "Strategic social media management and growth systems for Instagram, Facebook, LinkedIn, and YouTube.",
     icon: Megaphone,
+    link: "/services/social-media-marketing",
   },
   {
     title: "Reel Creation & Short-Form Content",
     desc: "High-impact cinematic reels, YouTube Shorts, and viral-ready content optimized for engagement and reach.",
     icon: Clapperboard,
+    link: "/services/social-media-marketing",
   },
   {
     title: "Brand Storytelling",
     desc: "Emotion-driven visual storytelling that helps brands connect deeply with their audience and build long-term trust.",
     icon: FileText,
+    link: "/services/social-media-marketing",
   },
   {
     title: "Influencer & Creator Collaborations",
     desc: "Strategic influencer partnerships and creator campaigns designed to amplify brand reach, build social proof, and drive authentic audience engagement across digital platforms.",
     icon: Users,
+    link: "/services/social-media-marketing",
   },
   {
     title: "Interior & Architectural Shoots",
     desc: "Luxury visual content for interior designers, architects, cafés, hospitality brands, and real estate projects.",
     icon: Building2,
+    link: "/services/social-media-marketing",
   },
   {
     title: "Performance Marketing",
     desc: "Meta Ads, Google Ads, lead generation campaigns, and ROI-driven advertising strategies built to scale businesses.",
     icon: Globe,
+    link: "/services/social-media-marketing",
   },
   {
     title: "Website & Digital Platform Solutions",
     desc: "Modern websites, landing pages, e-commerce platforms, and conversion-focused digital systems tailored for scalable growth.",
     icon: Layout,
+    link: "/services/social-media-marketing",
   },
   {
     title: "Brand Strategy & Positioning",
     desc: "Build a strong brand identity, market positioning, and digital presence designed for long-term authority, recall, and recognition.",
     icon: Inspect,
+    link: "/services/social-media-marketing",
   },
   {
     title: "Event & Wedding Coverage",
     desc: "Cinematic event coverage, wedding films, brand activations, conferences, and social-media-first storytelling.",
     icon: Camera,
+    link: "/services/social-media-marketing",
   },
   {
     title: "Creative Design & Visual Identity",
     desc: "Premium graphic design, visual systems, ad creatives, brand aesthetics, and digital-first creative direction.",
     icon: Palette,
+    link: "/services/social-media-marketing",
   },
   {
     title: "Logo Designing & Brand Marks",
     desc: "Crafting timeless, memorable logo identities and brand marks that define your visual identity across all platforms.",
     icon: PenTool,
+    link: "/services/social-media-marketing",
   },
   {
     title: "Podcast Production",
     desc: "Professional multi-camera podcast shoots, long-form editing, and short-form content repurposing for creators and brands.",
     icon: Mic2,
+    link: "/services/social-media-marketing",
   },
 ];
 

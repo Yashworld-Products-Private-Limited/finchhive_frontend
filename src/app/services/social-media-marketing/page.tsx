@@ -1,5 +1,7 @@
 import PrimaryButton from "@/components/Button";
+import PricingSection from "@/components/PricingSection";
 import ResultsStatsSection from "@/components/ResultsStatsSection";
+import SEOAccordion from "@/components/SEOAccordion";
 import StickyCardsSection from "@/components/StickyCardsSection";
 import { Marquee } from "@/components/ui/marquee";
 import { logos, platforms, reels, stats } from "@/constants";
@@ -252,7 +254,8 @@ const page = () => {
                 Results That Speak For Themselves
               </h2>
               <p className="text-sm lg:text-xl subHeading leading-[24px] text-gray-400 text-center  max-w-xl">
-                Audience-focused social campaigns backed by real growth, engagement, and revenue.
+                Audience-focused social campaigns backed by real growth,
+                engagement, and revenue.
               </p>
             </div>
             <ResultsStatsSection />
@@ -266,10 +269,33 @@ const page = () => {
                 Services Built Around Your Audience
               </h2>
               <p className="text-sm lg:text-xl subHeading leading-[24px] text-gray-400 text-center  max-w-xl">
-                Everything you need to reach, engage, and convert on social platforms.
+                Everything you need to reach, engage, and convert on social
+                platforms.
               </p>
             </div>
             <StickyCardsSection />
+          </div>
+          <div className="mt-[100px] lg:mt-[160px] ">
+            <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
+              <h6 className="inline-flex items-center justify-center text-center bg-[#2E2C76] text-white subHeading text-xs lg:text-sm tracking-[1%] font-semibold px-4 py-1 rounded-full">
+                Pricing
+              </h6>
+              <h2 className="text-[32px] lg:text-[52px] heading font-bold text-center tracking-[1%] leading-[50px] uppercase text-[#2E2C76]">
+                Profitable Pricing Plans
+              </h2>
+            </div>
+            <PricingSection />
+          </div>
+          <div className="mt-[100px] lg:mt-[160px] ">
+            <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
+              <h6 className="inline-flex items-center justify-center text-center bg-[#2E2C76] text-white subHeading text-xs lg:text-sm tracking-[1%] font-semibold px-4 py-1 rounded-full">
+                Frequently Asked Questions
+              </h6>
+              <h2 className="text-[32px] lg:text-[52px] heading font-bold text-center tracking-[1%] leading-[50px] uppercase text-[#2E2C76]">
+                Got Questions? We&apos;ve Got Answers!
+              </h2>
+            </div>
+            <SEOAccordion />
           </div>
         </div>
       </div>
