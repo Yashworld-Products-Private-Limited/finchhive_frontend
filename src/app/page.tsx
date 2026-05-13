@@ -25,8 +25,6 @@ const Home = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
-
-
   return (
     <div>
       <section className="relative  flex items-center justify-center overflow-hidden">
@@ -38,16 +36,17 @@ const Home = () => {
                 Digital
               </span>
               <br />
-              Marketing
+              Platform
               <span className="relative  inline-flex items-center justify-center w-9 h-9 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full overflow-hidden flex-shrink-0 rotate-[340deg] bg-[#2E2C76] translate-y-3 p-2 translate-x-2.5">
                 <RadioIcon />
               </span>{" "}
-              Agency.
+              Solution.
             </h1>
 
             <p className=" text-black/70 subheading text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-              We believe in combining innovative design, sustainable practices,
-              and exceptional craftsmanship to bring your vision to life.
+              we believe in combining innovative digital solutions, strategic
+              thinking, and exceptional execution to turn your ideas into
+              powerful digital experiences.
             </p>
 
             <div className=" flex justify-center">
@@ -65,8 +64,8 @@ const Home = () => {
 
         <Marquee className="absolute inset-0 flex items-center overflow-hidden pointer-events-none z-0">
           <div className="flex whitespace-nowrap animate-marquee text-[90px] md:text-[160px]  text-white/20 heading select-none">
-            <span className="mx-10">
-              BEST MARKETING AGENCY BEST MARKETING AGENCY
+            <span className="mx-10 uppercase">
+              the best digital platform solution
             </span>
             {/* <span className="mx-10">
               BEST MARKETING AGENCY BEST MARKETING AGENCY
@@ -166,7 +165,7 @@ const Home = () => {
                         </div>
 
                         {/* TITLE */}
-                        <h3 className="text-gray-900 text-[22px] md:text-[24px] lg:text-[28px] font-[500] heading ">
+                        <h3 className="text-gray-900 text-[22px] md:text-[24px] lg:text-[28px] heading ">
                           {item.title}
                         </h3>
                       </div>

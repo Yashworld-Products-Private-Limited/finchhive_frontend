@@ -1,6 +1,6 @@
 import { FeatureCard, FeatureItem } from "@/components/FeatureCard";
 import LetsTalkSection from "@/components/LetsTalkSection";
-import { FeaturesServices, services } from "@/constants";
+import { FeaturesServices, services, servicesPage } from "@/constants";
 import { ArrowUpRight } from "lucide-react";
 import React from "react";
 
@@ -10,18 +10,19 @@ const Services = () => {
       <div className="max-w-[1440px] mx-auto">
         <div className="mt-[calc(15dvh-80px+120px)]">
           <div className="">
-            <h2 className="text-[32px] lg:text-[52px] heading font-bold text-center tracking-[1%] leading-[50px] uppercase text-[#2E2C76]">
-              Brands we have <br /> worked with
+            <h2 className="text-[32px] lg:text-[52px] heading text-center tracking-[1%] leading-[50px] uppercase text-[#2E2C76]">
+              Digital Platforms. Creative Power.
+              <br /> Scalable Growth.
             </h2>
           </div>
           <div className="mt-[100px] lg:mt-[180px]">
-            <div className="grid md:grid-cols-2 gap-6 mt-8">
-              {services.map((item, i) => {
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-6 lg:gap-6 mt-8">
+              {servicesPage.map((item, i) => {
                 const Icon = item.icon;
                 return (
                   <div
                     key={i}
-                    className="flex flex-col items-start justify-between group relative rounded-3xl p-8 bg-gradient-to-br from-white via-blue-50 to-blue-100 border border-blue-100 hover:border-blue-200 transition-all duration-300 space-y-16 "
+                    className="flex flex-col items-start justify-between group relative rounded-3xl p-3 lg:p-6 bg-gradient-to-br from-white via-blue-50 to-blue-100 border border-blue-100 hover:border-blue-200 transition-all duration-300 space-y-2 lg:space-y-5 "
                   >
                     {/* ICON */}
                     <div className="flex flex-col items-start gap-3">
@@ -30,13 +31,13 @@ const Services = () => {
                       </div>
 
                       {/* TITLE */}
-                      <h3 className="text-gray-900 text-[22px] md:text-[24px] lg:text-[28px] font-[500] heading ">
+                      <h3 className="text-gray-900 text-[22px] md:text-[24px] 2xl:text-[26px] heading ">
                         {item.title}
                       </h3>
                     </div>
 
                     {/* DESC */}
-                    <p className="text-gray-600 text-sm leading-relaxed  max-w-md">
+                    <p className="text-gray-600 text-sm lg:text-base subHeading leading-normal">
                       {item.desc}
                     </p>
 
@@ -57,11 +58,12 @@ const Services = () => {
               <h6 className="inline-flex items-center justify-center text-center bg-[#2E2C76] text-white subHeading text-xs lg:text-sm tracking-[1%] font-semibold px-4 py-1 rounded-full">
                 Why Choose Us
               </h6>
-              <h2 className="text-[32px] lg:text-[52px] heading font-bold text-center tracking-[1%] leading-[50px] uppercase text-[#2E2C76]">
-                Why we are your best <br /> choice
+              <h2 className="text-[32px] lg:text-[52px] heading  text-center tracking-[1%] leading-[50px] uppercase text-[#2E2C76]">
+                WHY FINCHHIVE IS YOUR <br />
+                DIGITAL GROWTH PARTNER
               </h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-between gap-4 mt-20">
+            <div className="grid grid-cols-1 md:grid-cols-3 items-stretch justify-between gap-4 mt-20">
               {FeaturesServices.map((item: FeatureItem, i: number) => (
                 <FeatureCard
                   key={i}

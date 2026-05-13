@@ -4,35 +4,29 @@ import { useState } from "react";
 const accordionData = [
   {
     id: 1,
-    title: "Our History",
+    title: "What is Finchhive",
     content: [
-      "Founded in 2010 by digital marketing expert Emily Johnson, Celestial Solutions began as a small consultancy serving local businesses in the bustling city of New York. With a team of just three passionate individuals, the agency quickly gained traction, thanks to its innovative approach and dedication to client success.",
+      "FINCHHIVE combines strategy, technology, creativity, and performance into one integrated business solution.",
 
-      "By 2015, Celestial Solutions had expanded its reach, serving clients across the United States and boasting a team of 15 talented professionals. The agency's client portfolio had grown to include a diverse range of industries, from e-commerce startups to established brick-and-mortar businesses. In 2020, Celestial Solutions celebrated its 10th anniversary with pride, having grown into a leading digital marketing agency with a global footprint. With offices in New York, London, and Sydney, the agency now serves clients around the world, supported by a team of over 50 experts specializing in SEO, social media marketing, content creation, website design, and more.",
+      "Inspired by the Finch — agile, adaptive, and intelligent — and the Hive — collaborative, structured, and scalable — FINCHHIVE functions as a modern digital growth ecosystem for ambitious brands.",
 
-      "As we look ahead to the next decade, Celestial Solutions remains committed to its founding principles of innovation, integrity, and excellence, continuing to empower businesses to thrive in the ever-evolving digital landscape.",
+      "Every solution is intentional.",
+      " Every platform is connected.",
+      " Every system is built to scale.",
     ],
   },
   {
     id: 2,
     title: "Our Mission",
     content: [
-      "Founded in 2010 by digital marketing expert Emily Johnson, Celestial Solutions began as a small consultancy serving local businesses in the bustling city of New York. With a team of just three passionate individuals, the agency quickly gained traction, thanks to its innovative approach and dedication to client success.",
-
-      "By 2015, Celestial Solutions had expanded its reach, serving clients across the United States and boasting a team of 15 talented professionals. The agency's client portfolio had grown to include a diverse range of industries, from e-commerce startups to established brick-and-mortar businesses. In 2020, Celestial Solutions celebrated its 10th anniversary with pride, having grown into a leading digital marketing agency with a global footprint. With offices in New York, London, and Sydney, the agency now serves clients around the world, supported by a team of over 50 experts specializing in SEO, social media marketing, content creation, website design, and more.",
-
-      "As we look ahead to the next decade, Celestial Solutions remains committed to its founding principles of innovation, integrity, and excellence, continuing to empower businesses to thrive in the ever-evolving digital landscape.",
+      "To help businesses transform digitally through intelligent systems, high-performance marketing, creative storytelling, and scalable digital infrastructure that drives long-term growth.",
     ],
   },
   {
     id: 3,
     title: "Our Vision",
     content: [
-      "Founded in 2010 by digital marketing expert Emily Johnson, Celestial Solutions began as a small consultancy serving local businesses in the bustling city of New York. With a team of just three passionate individuals, the agency quickly gained traction, thanks to its innovative approach and dedication to client success.",
-
-      "By 2015, Celestial Solutions had expanded its reach, serving clients across the United States and boasting a team of 15 talented professionals. The agency's client portfolio had grown to include a diverse range of industries, from e-commerce startups to established brick-and-mortar businesses. In 2020, Celestial Solutions celebrated its 10th anniversary with pride, having grown into a leading digital marketing agency with a global footprint. With offices in New York, London, and Sydney, the agency now serves clients around the world, supported by a team of over 50 experts specializing in SEO, social media marketing, content creation, website design, and more.",
-
-      "As we look ahead to the next decade, Celestial Solutions remains committed to its founding principles of innovation, integrity, and excellence, continuing to empower businesses to thrive in the ever-evolving digital landscape.",
+      "To become a globally recognized digital platform solutions company known for building scalable digital ecosystems, powerful brands, and future-ready businesses through innovation, strategy, creativity, and technology.",
     ],
   },
 ];
@@ -41,32 +35,41 @@ export default function AboutSection() {
   const [openItems, setOpenItems] = useState<number[]>([]);
 
   const toggleAccordion = (id: number) => {
-  setOpenItems((prev) =>
-    prev.includes(id)
-      ? prev.filter((item) => item !== id)
-      : [...prev, id]
-  );
-};
+    setOpenItems((prev) =>
+      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id],
+    );
+  };
 
   return (
     <section className=" text-black py-12 md:py-20 ">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         {/* LEFT CONTENT (STATIC / STICKY) */}
-        <div className="lg:sticky lg:top-20 h-fit">
+        <div className="lg:sticky lg:top-20 h-fit ">
           <p className="text-gray-700 text-lg md:text-xl lg:text-2xl subHeading leading-relaxed">
-            Let’s get acquainted! We’re not your average digital marketing
-            agency - we’re a team of passionate individuals who eat, sleep, and
-            breathe creativity, innovation, and all things digital. At{" "}
-            <span className="text-[#2E2C76] font-semibold">
-              Celestial Solutions
+            A Full-Service Digital Platform Solutions Company Built for Scale
+          </p>
+          <p className="text-gray-700 text-lg md:text-xl lg:text-2xl subHeading leading-relaxed">
+            FINCHHIVE is a premium digital platform solutions provider built for
+            brands and businesses that demand innovation, scalability,
+            performance, and long term digital growth. <br />
+            <span className="text-[#2E2C76] font-semibold text-center">
+              We don’t just offer services.
             </span>
-            , we’re on a mission to make your online{" "}
+            <br />
             <span className="text-[#2E2C76] font-semibold">
-              dreams come true
+              We build digital ecosystems.
             </span>
-            , one pixel at a time! We’re a bunch of tech-savvy wizards, design
-            enthusiasts, and social media mavens who believe that digital
-            marketing should be fun, exciting, and downright awesome.
+          </p>
+          <p className="text-gray-700 text-lg md:text-xl lg:text-2xl subHeading leading-relaxed">
+            In today’s fast-moving digital world, businesses need more than
+            marketing they need systems, technology, strategy, branding and
+            digital infrastructure that work together seamlessly. That’s where
+            FINCHHIVE operates.
+          </p>
+          <p className="text-gray-700 text-lg md:text-xl lg:text-2xl subHeading leading-relaxed">
+            From digital platforms and branding to marketing and scalable growth
+            systems, we help businesses create a powerful and future ready
+            digital presence.
           </p>
         </div>
 
@@ -92,7 +95,7 @@ export default function AboutSection() {
                           isOpen ? "text-[#2E2C76]" : "text-[#2E2C76]"
                         } font-medium`}
                       >
-                       {`0${index + 1}.`} {item.title}
+                        {`0${index + 1}.`} {item.title}
                       </span>
                     </span>
 

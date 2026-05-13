@@ -224,6 +224,7 @@ body {
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+  
   @keyframes marquee {
   from {
     transform: translateX(0);
@@ -232,6 +233,7 @@ body {
     transform: translateX(calc(-100% - var(--gap)));
     }
   }
+
   @keyframes marquee-vertical {
   from {
     transform: translateY(0);

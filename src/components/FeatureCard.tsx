@@ -2,12 +2,12 @@
 import { useEffect, useRef, useState } from "react";
 
 import {
+  Atom,
+  HeartHandshake,
+  MessageSquare,
   Rocket,
   Share2,
   Target,
-  MessageSquare,
-  HeartHandshake,
-  Atom,
 } from "lucide-react";
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -59,7 +59,7 @@ export function FeatureCard({
   return (
     <div
       ref={ref}
-      className="flex flex-col items-center text-center px-4 lg:px-4 py-4 lg:py-4 relative group cursor-pointer transition-all duration-700 border border-white/15 bg-blue-400/10 backdrop-blur-sm group-hover:bg-white/20 group-hover:border-white/40 transition-all duration-300 rounded-[32px]"
+      className="flex flex-col items-center justify-center text-center  px-4 lg:px-4 py-4 lg:py-4 relative group cursor-pointer transition-all duration-700 border border-white/15 bg-blue-400/10 backdrop-blur-sm group-hover:bg-white/20 group-hover:border-white/40 transition-all duration-300 rounded-[32px]"
       style={{
         opacity: inView ? 1 : 0,
         transform: inView ? "translateY(0)" : "translateY(40px)",
@@ -75,7 +75,7 @@ export function FeatureCard({
       <h3 className="text-[#2E2C76]  text-lg lg:text-xl mb-3  leading-snug heading">
         {title}
       </h3>
-      <p className="text-gray-600 text-sm lg:text-lg leading-5 max-w-sm  subHeading">
+      <p className="text-gray-600 text-sm lg:text-base leading-normal  subHeading">
         {description}
       </p>
     </div>

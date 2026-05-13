@@ -1,0 +1,280 @@
+import PrimaryButton from "@/components/Button";
+import ResultsStatsSection from "@/components/ResultsStatsSection";
+import StickyCardsSection from "@/components/StickyCardsSection";
+import { Marquee } from "@/components/ui/marquee";
+import { logos, platforms, reels, stats } from "@/constants";
+import { BadgeCheck, Star, Zap } from "lucide-react";
+import Image from "next/image";
+
+const users = [
+  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=400&auto=format&fit=crop",
+];
+
+const page = () => {
+  return (
+    <div>
+      <div className="max-w-[1440px] mx-auto">
+        <div className="mt-[calc(15dvh-80px+120px)]">
+          <div className="text-center space-y-4">
+            <h2 className="text-[32px] lg:text-[52px] heading text-center tracking-[1%] leading-[50px] uppercase text-[#2E2C76]">
+              We Help Brands
+              <br /> Win On Social
+            </h2>
+            <p className=" text-gray-400 subheading text-base md:text-lg max-w-2xl mx-auto leading-relaxed subHeading">
+              We help you reach the right audience with content, management, and
+              paid media on the social platforms that matter most.
+            </p>
+            <div className=" flex justify-center gap-6">
+              <PrimaryButton label="Let's Connect" />
+              <button className="group relative overflow-hidden text-sm lg:text-base border border-black px-5 py-2 rounded-full heading tracking-[2%] bg-white shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:text-white">
+                <span className="absolute inset-0 bg-black translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out rounded-full" />
+
+                <span className="relative z-10">See Pricing</span>
+              </button>
+            </div>
+            <div className="inline-flex items-center gap-4  mt-2">
+              {/* AVATARS */}
+              <div className="flex items-center">
+                {users.map((img, i) => (
+                  <div
+                    key={i}
+                    className={`relative ${
+                      i !== 0 ? "-ml-5" : ""
+                    } w-14 h-14 rounded-full border-[2px] border-white overflow-hidden shadow-md`}
+                  >
+                    <Image
+                      src={img}
+                      alt="creator"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
+
+                {/* PINK ICON */}
+                <div className="-ml-3 w-14 h-14 rounded-full bg-[#2E2C76] flex items-center -ml-6 justify-center border-[2px] border-white z-10">
+                  <Zap className="w-6 h-6 text-white fill-white" />
+                </div>
+              </div>
+
+              {/* CONTENT */}
+              <div className="flex flex-col">
+                <div className="flex items-center gap-2">
+                  <span className="text-lg font-semibold text-black">
+                    4.9/5
+                  </span>
+
+                  <div className="flex items-center gap-0.5">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="w-4 h-4 fill-[#2E2C76] text-[#2E2C76]"
+                      />
+                    ))}
+                  </div>
+                </div>
+
+                <p className="text-sm text-[#333] font-medium">
+                  Grown over 400 creators
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="mt-[60px] lg:mt-[80px]">
+        <Marquee className="relative flex items-center justify-center gap-6">
+          {reels.map((item, i) => (
+            <div
+              key={i}
+              className="group relative mx-3 h-[450px] w-[320px] overflow-hidden rounded-[24px] border-[6px] border-white shadow-xl"
+            >
+              {/* VIDEO */}
+              <video
+                src={item.video}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                disablePictureInPicture
+                controlsList="nodownload noplaybackrate"
+                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+
+              {/* OVERLAY */}
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+
+              {/* USER INFO */}
+              <div className="absolute bottom-5 left-5 flex items-center gap-3">
+                <img
+                  src={item.profile}
+                  alt={item.name}
+                  className="h-10 w-10 rounded-full border border-white object-cover"
+                />
+
+                <div className="flex items-center gap-1">
+                  <span className="text-lg font-medium text-white">
+                    {item.name}
+                  </span>
+
+                  <BadgeCheck className="h-4 w-4 fill-[#3B82F6] text-[#3B82F6]" />
+                </div>
+              </div>
+            </div>
+          ))}
+        </Marquee>
+      </div>
+      <div className="max-w-4xl mx-auto mt-[40px] lg:mt-[60px]">
+        <p className="text-center text-xl text-black subHeading mb-10">
+          We Are Trusted By:
+        </p>
+        <Marquee
+          reverse
+          className="relative flex items-center gap-8 overflow-hidden py-6"
+        >
+          {logos.map((logo, i) => (
+            <div
+              key={i}
+              className="mx-4 xl:mx-6 flex items-center justify-center transition-all duration-300 hover:scale-105 "
+            >
+              <img
+                src={logo}
+                alt={`logo-${i}`}
+                className="h-18 w-auto object-contain "
+              />
+            </div>
+          ))}
+        </Marquee>
+      </div>
+      <div className="custom-container">
+        <div className="max-w-[1440px] mx-auto">
+          <div className="mt-[100px] lg:mt-[180px]">
+            <section className="relative overflow-hidden ">
+              <div className="relative mx-auto ">
+                {platforms.map((item, index) => (
+                  <div
+                    key={index}
+                    className={`absolute z-10 flex items-center justify-center w-[72px] h-[72px] sm:w-[90px] sm:h-[90px] md:w-[105px] md:h-[105px] rounded-[22px] ${item.bg} ${item.className} backdrop-blur-md transition-all duration-500 hover:scale-110`}
+                  >
+                    <Image
+                      src={item.image}
+                      alt="platform"
+                      width={50}
+                      height={50}
+                      className=" w-[34px] h-[34px] sm:w-[42px] sm:h-[42px] md:w-[52px] md:h-[52px] object-contain"
+                    />
+                  </div>
+                ))}
+
+                {/* Main Text */}
+                <div className="relative z-20 flex min-h-[420px] sm:min-h-[520px] items-center justify-center text-center">
+                  <h2 className=" max-w-[950px] leading-[1.2] tracking-[1px] text-[#2c2929] heading text-[24px] sm:text-[36px] md:text-[42px] lg:text-[58px]">
+                    We Work Across All <br />
+                    <span className="text-[#2E2C76]">Major</span> Social
+                    Platforms.
+                  </h2>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div className="mt-[100px] lg:mt-[180px]">
+            <section className="relative overflow-hidden ">
+              {/* Floating Cards */}
+              {stats.map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <div
+                    key={index}
+                    className={` absolute z-10 flex items-center gap-2 rounded-full border border-[#d9d9d9] bg-white/90 px-4 py-3 shadow-[0_10px_30px_rgba(0,0,0,0.08)] backdrop-blur-md ${item.className}`}
+                  >
+                    {item.users ? (
+                      <div className="flex items-center -space-x-2">
+                        <Image
+                          src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200"
+                          alt="user"
+                          width={34}
+                          height={34}
+                          className="h-7 w-7 rounded-full border-2 border-white object-cover"
+                        />
+                        <Image
+                          src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200"
+                          alt="user"
+                          width={34}
+                          height={34}
+                          className="h-7 w-7 rounded-full border-2 border-white object-cover"
+                        />
+                        <Image
+                          src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200"
+                          alt="user"
+                          width={34}
+                          height={34}
+                          className="h-7 w-7 rounded-full border-2 border-white object-cover"
+                        />
+                      </div>
+                    ) : (
+                      <div key={index}>
+                        {item.users ? (
+                          <div>Users</div>
+                        ) : (
+                          <div className="text-[#777]">
+                            <Icon className="w-5 h-5" />
+                          </div>
+                        )}
+                      </div>
+                    )}
+
+                    <p className=" text-sm font-semibold text-[#666] sm:text-base">
+                      {item.text}
+                    </p>
+                  </div>
+                );
+              })}
+
+              <div className="relative z-20 flex min-h-[420px] sm:min-h-[520px] items-center justify-center text-center">
+                <h2 className=" max-w-[950px] leading-[1.2] tracking-[1px] text-[#2c2929] heading text-[24px] sm:text-[36px] md:text-[42px] lg:text-[48px]">
+                  And We Focus On{" "}
+                  <span className="text-[#2E2C76]">Results</span> Your Audience
+                  Actually Responds To.
+                </h2>
+              </div>
+            </section>
+          </div>
+          <div className="mt-[100px] lg:mt-[180px]">
+            <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
+              <h6 className="inline-flex items-center justify-center text-center bg-[#2E2C76] text-white subHeading text-xs lg:text-sm tracking-[1%] font-semibold px-4 py-1 rounded-full">
+                Results
+              </h6>
+              <h2 className="text-[32px] lg:text-[52px] heading text-center tracking-[1%] leading-[1.1] uppercase text-[#2E2C76] max-w-3xl">
+                Results That Speak For Themselves
+              </h2>
+              <p className="text-sm lg:text-xl subHeading leading-[24px] text-gray-400 text-center  max-w-xl">
+                Audience-focused social campaigns backed by real growth, engagement, and revenue.
+              </p>
+            </div>
+            <ResultsStatsSection />
+          </div>
+          <div className="mt-[100px] lg:mt-[180px]">
+            <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
+              <h6 className="inline-flex items-center justify-center text-center bg-[#2E2C76] text-white subHeading text-xs lg:text-sm tracking-[1%] font-semibold px-4 py-1 rounded-full">
+                services
+              </h6>
+              <h2 className="text-[32px] lg:text-[52px] heading text-center tracking-[1%] leading-[1.1] uppercase text-[#2E2C76] max-w-3xl">
+                Services Built Around Your Audience
+              </h2>
+              <p className="text-sm lg:text-xl subHeading leading-[24px] text-gray-400 text-center  max-w-xl">
+                Everything you need to reach, engage, and convert on social platforms.
+              </p>
+            </div>
+            <StickyCardsSection />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default page;

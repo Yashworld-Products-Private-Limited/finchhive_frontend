@@ -1,36 +1,105 @@
 import {
-  Atom,
+  BadgeDollarSign,
+  Building2,
+  Camera,
+  Clapperboard,
   FileText,
   Globe,
-  HeartHandshake,
+  Heart,
   Inspect,
   Layout,
-  MessageSquare,
-  Rocket,
-  Share2,
-  Target,
+  Link2,
+  Megaphone,
+  MessageCircleMore,
+  Mic2,
+  Palette,
+  PenTool,
+  Users,
 } from "lucide-react";
 
 export const services = [
   {
-    title: "SEO",
-    desc: "We optimize your site's structure, content, and keywords to rank higher on search engine results pages, increasing your chances of being discovered by potential customers.",
-    icon: Globe,
+    title: "Social Media Marketing",
+    desc: "Strategic social media management and growth systems for Instagram, Facebook, LinkedIn, and YouTube.",
+    icon: Megaphone,
   },
   {
-    title: "Content Marketing",
-    desc: "Our content marketing services include creating informative blog posts, engaging videos, and shareable infographics to captivate your audience and drive traffic to your website.",
+    title: "Reel Creation & Short-Form Content",
+    desc: "High-impact cinematic reels, YouTube Shorts, and viral-ready content optimized for engagement and reach.",
+    icon: Clapperboard,
+  },
+  {
+    title: "Brand Storytelling",
+    desc: "Emotion-driven visual storytelling that helps brands connect deeply with their audience and build long-term trust.",
     icon: FileText,
   },
   {
-    title: "Website Design",
-    desc: "Our design experts craft visually stunning and user-friendly websites optimized for performance and conversion, ensuring a seamless online experience for your visitors.",
+    title: "Influencer & Creator Collaborations",
+    desc: "Strategic influencer partnerships and creator campaigns designed to amplify brand reach, build social proof, and drive authentic audience engagement across digital platforms.",
+    icon: Users,
+  },
+];
+
+export const servicesPage = [
+  {
+    title: "Social Media Marketing",
+    desc: "Strategic social media management and growth systems for Instagram, Facebook, LinkedIn, and YouTube.",
+    icon: Megaphone,
+  },
+  {
+    title: "Reel Creation & Short-Form Content",
+    desc: "High-impact cinematic reels, YouTube Shorts, and viral-ready content optimized for engagement and reach.",
+    icon: Clapperboard,
+  },
+  {
+    title: "Brand Storytelling",
+    desc: "Emotion-driven visual storytelling that helps brands connect deeply with their audience and build long-term trust.",
+    icon: FileText,
+  },
+  {
+    title: "Influencer & Creator Collaborations",
+    desc: "Strategic influencer partnerships and creator campaigns designed to amplify brand reach, build social proof, and drive authentic audience engagement across digital platforms.",
+    icon: Users,
+  },
+  {
+    title: "Interior & Architectural Shoots",
+    desc: "Luxury visual content for interior designers, architects, cafés, hospitality brands, and real estate projects.",
+    icon: Building2,
+  },
+  {
+    title: "Performance Marketing",
+    desc: "Meta Ads, Google Ads, lead generation campaigns, and ROI-driven advertising strategies built to scale businesses.",
+    icon: Globe,
+  },
+  {
+    title: "Website & Digital Platform Solutions",
+    desc: "Modern websites, landing pages, e-commerce platforms, and conversion-focused digital systems tailored for scalable growth.",
     icon: Layout,
   },
   {
-    title: "Social Media Marketing",
-    desc: "Engage and expand your audience across social media platforms with our tailored marketing strategies. From content creation to ad campaigns, we help you connect with your target demographic.",
+    title: "Brand Strategy & Positioning",
+    desc: "Build a strong brand identity, market positioning, and digital presence designed for long-term authority, recall, and recognition.",
     icon: Inspect,
+  },
+  {
+    title: "Event & Wedding Coverage",
+    desc: "Cinematic event coverage, wedding films, brand activations, conferences, and social-media-first storytelling.",
+    icon: Camera,
+  },
+  {
+    title: "Creative Design & Visual Identity",
+    desc: "Premium graphic design, visual systems, ad creatives, brand aesthetics, and digital-first creative direction.",
+    icon: Palette,
+  },
+  {
+    title: "Logo Designing & Brand Marks",
+    desc: "Crafting timeless, memorable logo identities and brand marks that define your visual identity across all platforms.",
+    icon: PenTool,
+  },
+  {
+    title: "Podcast Production",
+    desc: "Professional multi-camera podcast shoots, long-form editing, and short-form content repurposing for creators and brands.",
+    icon: Mic2,
   },
 ];
 
@@ -145,39 +214,198 @@ export const videos = [
 
 export const FeaturesServices = [
   {
-    title: "Proven Track Record",
+    title: "Strategy-First Approach",
     description:
-      "We have built a reputation as a trusted and reliable partner in achieving business success.",
+      "We build every project around research, audience understanding and scalable digital planning not random execution.",
     icon: "rocket",
   },
   {
-    title: "Tailored Solutions",
+    title: "Complete Digital Solutions",
     description:
-      "We offer personalized solutions tailored to your specific goals, audience, and industry.",
+      "From branding and content to websites, marketing, and growth systems everything works together under one ecosystem.",
     icon: "network",
   },
   {
-    title: "Client-Centric Focus",
+    title: "Platform-Specific Execution",
     description:
-      "Your success is our priority. We prioritize understanding your business goals.",
+      "Every platform has different audience behavior. We create customized strategies for Instagram, YouTube, LinkedIn, Facebook, and more.",
     icon: "focus",
   },
   {
-    title: "Transparent Communication",
+    title: "Cinematic Content Creation",
     description:
-      "We believe in open and honest communication every step of the way.",
+      "We create premium-quality reels, brand films, podcasts, and visual storytelling designed to make your brand unforgettable.",
     icon: "chat",
   },
   {
-    title: "Dedicated Support",
+    title: "Performance Driven Growth",
     description:
-      "Your success is our priority, and we're here to support you every step of the way.",
+      "Every campaign, design, and strategy is optimized for engagement, conversions, visibility, and measurable business growth.",
     icon: "support",
   },
   {
-    title: "Expertise Across Industries",
+    title: "Built for Modern Brands",
     description:
-      "Our team has extensive experience working across various industries.",
+      "FINCHHIVE is designed for startups, creators, premium brands, and businesses that want long-term digital authority and scalability.",
     icon: "atom",
+  },
+];
+
+export const reels = [
+  {
+    name: "Social Growth",
+    profile:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+    video: "/imgs/reels1.mp4",
+  },
+  {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video: "/imgs/reels2.mp4",
+  },
+  {
+    name: "Creative Ads",
+    profile:
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
+    video: "/imgs/reels3.mp4",
+  },
+  {
+    name: "Luxury Branding",
+    profile:
+      "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=400&auto=format&fit=crop",
+    video: "/imgs/reels4.mp4",
+  },
+  {
+    name: "Creative Ads",
+    profile:
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
+    video: "/imgs/reels5.mp4",
+  },
+  {
+    name: "Luxury Branding",
+    profile:
+      "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=400&auto=format&fit=crop",
+    video: "/imgs/reels6.mp4",
+  },
+];
+
+export const logos = [
+  "/imgs/logo1.png",
+  "/imgs/logo2.png",
+  "/imgs/logo3.png",
+  "/imgs/logo4.png",
+  "/imgs/logo5.png",
+  "/imgs/logo6.png",
+  "/imgs/logo7.png",
+  "/imgs/logo8.png",
+];
+
+export const platforms = [
+  {
+    image: "https://cdn-icons-png.flaticon.com/512/5968/5968830.png",
+    className:
+      "top-[10%] left-[8%] rotate-[-12deg] shadow-[0_20px_40px_rgba(0,0,0,0.25)]",
+    bg: "bg-white",
+  },
+  {
+    image: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png",
+    className:
+      "top-[0%] left-1/2 -translate-x-1/2 shadow-[0_20px_40px_rgba(255,0,0,0.25)]",
+    bg: "bg-red-600",
+  },
+  {
+    image: "https://cdn-icons-png.flaticon.com/512/733/733614.png",
+    className:
+      "top-[12%] right-[8%] rotate-[10deg] shadow-[0_20px_40px_rgba(255,255,0,0.25)]",
+    bg: "bg-yellow-300",
+  },
+  {
+    image: "https://cdn-icons-png.flaticon.com/512/3046/3046121.png",
+    className:
+      "bottom-[4%] left-[20%] rotate-[-14deg] shadow-[0_20px_40px_rgba(0,0,0,0.25)]",
+    bg: "bg-black",
+  },
+  {
+    image: "https://cdn-icons-png.flaticon.com/512/2111/2111463.png",
+    className:
+      "bottom-[4%] right-[18%] rotate-[14deg] shadow-[0_20px_40px_rgba(255,0,120,0.25)]",
+    bg: "bg-gradient-to-br from-yellow-400 via-pink-500 to-purple-600",
+  },
+];
+
+export const stats = [
+  {
+    text: "$80K Sales",
+    icon: BadgeDollarSign,
+    className:
+      "top-[13%] left-[8%] rotate-[-14deg]",
+  },
+  {
+    text: "100k+ Followers",
+    users: true,
+    className:
+      "top-[0%] left-1/2 -translate-x-1/2",
+  },
+  {
+    text: "500k+ Likes",
+    icon: Heart,
+    className:
+      "top-[13%] right-[8%] rotate-[14deg]",
+  },
+  {
+    text: "10k Replies",
+    icon: MessageCircleMore ,
+    className:
+      "bottom-[13%] left-[20%] rotate-[10deg]",
+  },
+  {
+    text: "70k Clicks",
+    icon: Link2 ,
+    className:
+      "bottom-[13%] right-[20%] rotate-[-10deg]",
+  },
+];
+
+export const cards = [
+  {
+    title: "Card 1",
+    desc: "Experience the ultimate in luxury living.",
+  },
+  {
+    title: "Card 2",
+    desc: "Modern design meets timeless elegance.",
+  },
+  {
+    title: "Card 3",
+    desc: "Indulge in a home that redefines luxury.",
+  },
+  {
+    title: "Card 4",
+    desc: "Experience the ultimate in luxury living.",
+  },
+  {
+    title: "Card 5",
+    desc: "Modern design meets timeless elegance.",
+  },
+  {
+    title: "Card 6",
+    desc: "Indulge in a home that redefines luxury.",
+  },
+  {
+    title: "Card 7",
+    desc: "Experience the ultimate in luxury living.",
+  },
+  {
+    title: "Card 8",
+    desc: "Modern design meets timeless elegance.",
+  },
+  {
+    title: "Card 9",
+    desc: "Indulge in a home that redefines luxury.",
+  },
+  {
+    title: "Card 10",
+    desc: "Experience the ultimate in luxury living.",
   },
 ];
