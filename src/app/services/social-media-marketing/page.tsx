@@ -227,15 +227,11 @@ const page = () => {
                         />
                       </div>
                     ) : (
-                      <div key={index}>
-                        {item.users ? (
-                          <div>Users</div>
-                        ) : (
-                          <div className="text-[#777]">
-                            <Icon className="w-5 h-5" />
-                          </div>
-                        )}
-                      </div>
+                      Icon ? (
+                        <div className="text-[#777]">
+                          <Icon className="w-5 h-5" />
+                        </div>
+                      ) : null
                     )}
 
                     <p className=" text-sm font-semibold text-[#666] sm:text-base">
