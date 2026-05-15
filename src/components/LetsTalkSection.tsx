@@ -23,7 +23,6 @@ export default function LetsTalkSection() {
   return (
     <section className="relative w- flex items-center overflow-hidden py-8">
       <div className="relative z-10 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        {/* Left: Heading */}
         <div>
           <h2 className="text-[140px] sm:text-[160px] md:text-[180px] lg:text-[190px] leading-[90px] md:leading-[120px] lg:leading-[130px] font-medium tracking-wider heading text-center lg:text-start">
             <span className="text-[#2E2C76] block">Let&apos;s</span>
@@ -31,9 +30,7 @@ export default function LetsTalkSection() {
           </h2>
         </div>
 
-        {/* Right: Form */}
           <div className="rounded-[32px] lg:rounded-[32px] p-8 space-y-5 bg-white border shadow-xl">
-            {/* Name */}
             <div className="space-y-1.5">
               <label
                 htmlFor="name"
@@ -57,7 +54,6 @@ export default function LetsTalkSection() {
               />
             </div>
 
-            {/* Email */}
             <div className="space-y-1.5">
               <label
                 htmlFor="email"
@@ -81,7 +77,6 @@ export default function LetsTalkSection() {
               />
             </div>
 
-            {/* Message */}
             <div className="space-y-1.5">
               <label
                 htmlFor="message"
@@ -105,7 +100,6 @@ export default function LetsTalkSection() {
               />
             </div>
 
-            {/* Submit */}
             <button
               onClick={handleSubmit}
               className="text-[16px] lg:text-[24px] w-full py-4 rounded-xl bg-[#2E2C76] text-white text-base tracking-wide transition-all duration-200 hover:opacity-90 active:scale-[0.98] heading"

@@ -28,24 +28,20 @@ const Services = () => {
                     onClick={() => router.push(item.link)}
                     className="flex flex-col items-start justify-between group relative rounded-3xl p-3 lg:p-6 bg-gradient-to-br from-white via-blue-50 to-blue-100 border border-blue-100 hover:border-blue-200 transition-all duration-300 space-y-2 lg:space-y-5 "
                   >
-                    {/* ICON */}
                     <div className="flex flex-col items-start gap-3">
                       <div className=" flex items-center justify-center rounded-xl bg-[#2E2C76] p-4">
                         <Icon className="text-[#FFFFFF]" size={24} />
                       </div>
 
-                      {/* TITLE */}
                       <h3 className="text-gray-900 text-[22px] md:text-[24px] 2xl:text-[26px] heading ">
                         {item.title}
                       </h3>
                     </div>
 
-                    {/* DESC */}
                     <p className="text-gray-600 text-sm lg:text-base subHeading leading-normal">
                       {item.desc}
                     </p>
 
-                    {/* CTA */}
                     <Link href={item.link} className="flex items-center gap-3 text-gray-900 text-xs tracking-[0%] uppercase">
                       <span className="subHeading">Learn More</span>
                       <span className="w-6 h-6 flex items-center justify-center rounded-full border border-gray-300 group-hover:border-blue-400 transition group-hover:rotate-45">

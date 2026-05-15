@@ -7,6 +7,8 @@ import { CircleCheck } from "lucide-react";
 import PrimaryButton from "./Button";
 import { AnimationCard } from "./AnimationCard";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const cards = [
   {
     title: "Content Creation",

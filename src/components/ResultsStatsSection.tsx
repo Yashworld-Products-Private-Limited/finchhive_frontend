@@ -94,7 +94,6 @@ export default function ResultsStatsSection() {
                 ${index !== stats.length - 1 ? "border-b border-[#cfcfcf]" : ""}
               `}
             >
-              {/* Left */}
               <div className="max-w-[500px]">
                 <h3 className=" text-[30px] heading leading-[1.1] tracking-[0.4px] text-[#2E2C76] sm:text-[36px] lg:text-[42px]">
                   {item.title}
@@ -105,7 +104,6 @@ export default function ResultsStatsSection() {
                 </p>
               </div>
 
-              {/* Right */}
               <div className="flex items-center justify-start md:justify-end">
                 <h2 className=" flex items-start font-black leading-none tracking-[-3px] text-[#1b1b1b text-[70px] sm:text-[90px] md:text-[110px] lg:text-[140px]">
                   <Counter
@@ -123,7 +121,6 @@ export default function ResultsStatsSection() {
           ))}
         </div>
 
-        {/* Button */}
         <div className="mt-14 flex justify-center">
           <PrimaryButton label="Let's Connect" />
         </div>

@@ -1,6 +1,6 @@
 "use client";
+import Matter from "matter-js";
 import { useEffect, useRef } from "react";
-import * as Matter from "matter-js";
 
 const tags = [
   "Customer Support",
@@ -183,7 +183,6 @@ export default function PhysicsPills() {
 
   return (
     <div className="relative w-full lg:w-[45%] p-6 flex items-center justify-center">
-      {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center rounded-3xl"
         style={{
@@ -192,16 +191,13 @@ export default function PhysicsPills() {
           backgroundPosition: "center",
         }}
       />
-      {/* Overlay */}
       <div className="absolute inset-0 bg-[#2E2C76]/70 rounded-3xl" />
 
-      {/* Physics arena */}
       <div
         ref={arenaRef}
         className="relative w-[380px] h-[380px] rounded-full border border-white/30"
         style={{ backdropFilter: "blur(0.4px)", overflow: "hidden" }}
       >
-        {/* Invisible canvas handles mouse drag hit-testing */}
         <canvas
           ref={canvasRef}
           style={{

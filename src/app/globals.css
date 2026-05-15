@@ -78,7 +78,7 @@ body {
   font-style: normal;
 }
 
-/* ── Font setup ── */
+
 :root {
   --font-display: "Bebas Neue", sans-serif;
   --font-body: "DM Sans", sans-serif;
@@ -90,7 +90,7 @@ body {
   font-weight: 500;
 }
 
-/* Bold */
+
 @font-face {
   font-family: "AkzidenzGroteskBE";
   src: url("/font/AkzidenzGroteskBE-Regular.otf") format("truetype");
@@ -105,7 +105,7 @@ body {
   font-family: "AkzidenzGroteskBE", sans-serif;
 }
 
-/* ── Glassmorphism card ── */
+
 .glass-card {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(12px);
@@ -114,14 +114,14 @@ body {
   box-shadow: 0 8px 32px rgba(46, 44, 118, 0.08);
 }
 
-/* ── Nav scroll effect ── */
+
 .nav-scrolled {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
   box-shadow: 0 2px 24px rgba(0, 0, 0, 0.06);
 }
 
-/* ── Process line ── */
+
 .process-line::after {
   content: "";
   position: absolute;
@@ -133,7 +133,7 @@ body {
   z-index: 0;
 }
 
-/* ── Checkerboard accent ── */
+
 .checker-accent {
   background-image: repeating-conic-gradient(
     #2e2c76 0% 25%,
@@ -143,7 +143,7 @@ body {
   opacity: 0.12;
 }
 
-/* ── Scrollbar ── */
+
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -155,7 +155,7 @@ body {
   border-radius: 4px;
 }
 
-/* marquee text */
+
 @keyframes marquee {
   0% {
     transform: translateX(0%);
@@ -165,7 +165,7 @@ body {
   }
 }
 
-/* magnat button */
+
 @keyframes spinSlow {
   from {
     transform: rotate(0deg);

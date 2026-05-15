@@ -243,10 +243,8 @@ export default function StatsFeatureSection() {
                 key={i}
                 className="flex items-center gap-2 px-5 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md text-white/90 text-sm font-medium shadow-[0_4px_20px_rgba(0,0,0,0.2)] hover:bg-white/10 transition-all duration-300"
               >
-                {/* ICON */}
                 <span className="text-[#2E2C76] text-xl">✦</span>
 
-                {/* TEXT */}
                 <span className="whitespace-nowrap">{text}</span>
               </div>
             ))}

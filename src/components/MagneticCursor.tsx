@@ -43,7 +43,6 @@ export default function MagneticCursor({
       className={`fixed top-0 left-0 z-[999] pointer-events-none -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ${visible ? "opacity-100 scale-100" : "opacity-0 scale-75"}`}
     >
       <div className="relative w-36 h-36 flex items-center justify-center">
-        {/* 🔵 ROTATING TEXT */}
         <div className="absolute inset-0 animate-spin-slow text-[12px] text-white/80 tracking-[2px]">
           <svg viewBox="0 0 100 100" className="w-full h-full">
             <defs>
@@ -60,9 +59,7 @@ export default function MagneticCursor({
           </svg>
         </div>
 
-        {/* ⚪ GLASS CIRCLE */}
         <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center shadow-[0_0_30px_rgba(255,255,255,0.1)]">
-          {/* ▶ PLAY ICON */}
           <div className="w-0 h-0 border-l-[14px] border-l-white border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent ml-[3px]" />
         </div>
       </div>

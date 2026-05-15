@@ -49,10 +49,8 @@ export default function PricingSection() {
 
   return (
     <section className="py-20 px-6 text-[#2E2C76]">
-      {/* Toggle */}
       <div className="flex flex-col items-center mb-12">
         <div className="relative flex rounded-full p-1 border border-[#2E2C76]/30 w-fit mx-auto">
-          {/* 🔥 Sliding Background */}
           <motion.div
             layout
             transition={{ type: "spring", stiffness: 300, damping: 25 }}
@@ -86,7 +84,6 @@ export default function PricingSection() {
         </p>
       </div>
 
-      {/* Cards */}
       <motion.div
         className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
         initial="hidden"
@@ -122,13 +119,11 @@ export default function PricingSection() {
                 </span>
               )}
 
-              {/* Title + Price */}
               <div>
                 <h3 className="text-lg mb-4">{item.title}</h3>
 
-                {/* 🔥 Animated Price */}
                 <motion.div
-                  key={price} // IMPORTANT for re-animation
+                  key={price} 
                   initial={{ scale: 0.8, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 0.3 }}
@@ -141,7 +136,6 @@ export default function PricingSection() {
                 </motion.div>
               </div>
 
-              {/* Features */}
               <ul className="space-y-3 mb-8 text-sm text-white/80">
                 {item.features.map((f, idx) => (
                   <li key={idx} className="flex items-center gap-2">
@@ -151,7 +145,6 @@ export default function PricingSection() {
                 ))}
               </ul>
 
-              {/* CTA */}
               <button
                 className={`w-full py-3 rounded-full font-medium transition ${
                   item.best

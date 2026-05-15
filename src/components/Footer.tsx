@@ -52,7 +52,6 @@ export default function BaggyFooter() {
         ))}
 
         <div className="relative z-10 flex flex-col items-center text-center md:flex-row md:items-start md:justify-between md:text-left px-6 py-10 sm:px-8 md:px-14 md:pt-10">
-          {/* LEFT */}
           <div className="flex flex-col items-center md:items-start">
             <h2
               className={` text-white heading leading-[60px] tracking-tight transition-all duration-700 ease-out text-[52px] sm:text-[60px] md:text-4xl lg:text-5xl ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"} `}
@@ -70,11 +69,8 @@ export default function BaggyFooter() {
             </a>
           </div>
 
-          {/* RIGHT */}
           <div className=" flex flex-col items-center md:items-end mt-14 md:mt-0 gap-6 md:gap-3">
-            {/* SOCIALS */}
 
-            {/* COPYRIGHT */}
             <span
               className={` text-[#6b6963] transition-all duration-700 ease-out text-xs lg:text-sm ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"} `}
               style={{ transitionDelay: "120ms" }}

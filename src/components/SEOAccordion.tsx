@@ -66,7 +66,6 @@ export default function SEOAccordion() {
               key={faq.id}
               className="rounded-2xl overflow-hidden transition-all duration-300 bg-[#2E2C76]"
             >
-              {/* Header */}
               <button
                 onClick={() => toggle(faq.id)}
                 className="w-full flex items-center justify-between px-6 py-5 text-left group"
@@ -78,13 +77,11 @@ export default function SEOAccordion() {
                   {faq.question}
                 </span>
 
-                {/* Icon Button */}
                 <span
                   className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-200"
                   style={{ backgroundColor: "#FFFFFF" }}
                 >
                   {isOpen ? (
-                    // Up chevron
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="18"
@@ -99,7 +96,6 @@ export default function SEOAccordion() {
                       <polyline points="18 15 12 9 6 15" />
                     </svg>
                   ) : (
-                    // Down chevron
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="18"
@@ -117,7 +113,6 @@ export default function SEOAccordion() {
                 </span>
               </button>
 
-              {/* Answer Panel */}
               <div
                 className={`transition-all duration-300 ease-in-out overflow-hidden ${
                   isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"

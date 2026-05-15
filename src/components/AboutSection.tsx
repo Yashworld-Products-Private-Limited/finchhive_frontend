@@ -43,7 +43,6 @@ export default function AboutSection() {
   return (
     <section className=" text-black py-12 md:py-20 ">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-        {/* LEFT CONTENT (STATIC / STICKY) */}
         <div className="lg:sticky lg:top-20 h-fit ">
           <p className="text-gray-700 text-lg md:text-xl lg:text-2xl subHeading leading-relaxed">
             A Full-Service Digital Platform Solutions Company Built for Scale
@@ -73,7 +72,6 @@ export default function AboutSection() {
           </p>
         </div>
 
-        {/* RIGHT CONTENT (SCROLLABLE) */}
         <div className=" overflow-y-auto pr-2 no-scrollbar">
           <div className="flex flex-col gap-4">
             {accordionData.map((item, index) => {
@@ -84,7 +82,6 @@ export default function AboutSection() {
                   key={item.id}
                   className="rounded-2xl border  bg-white/5 backdrop-blur-md transition-all"
                 >
-                  {/* HEADER */}
                   <button
                     onClick={() => toggleAccordion(item.id)}
                     className="w-full flex items-center justify-between px-5 py-4 text-left  rounded-xl"
@@ -110,7 +107,6 @@ export default function AboutSection() {
                     </span>
                   </button>
 
-                  {/* CONTENT */}
                   {isOpen && (
                     <div className="px-5 pb-5 text-sm md:text-base lg:text-lg subHeading text-gray-700 leading-relaxed space-y-3">
                       {item.content.map((para, i) => (

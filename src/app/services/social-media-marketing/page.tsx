@@ -43,7 +43,6 @@ const page = () => {
               </button>
             </div>
             <div className="inline-flex items-center gap-4  mt-2">
-              {/* AVATARS */}
               <div className="flex items-center">
                 {users.map((img, i) => (
                   <div
@@ -55,19 +54,18 @@ const page = () => {
                     <Image
                       src={img}
                       alt="creator"
+                      loading="lazy"
                       fill
                       className="object-cover"
                     />
                   </div>
                 ))}
 
-                {/* PINK ICON */}
                 <div className="-ml-3 w-14 h-14 rounded-full bg-[#2E2C76] flex items-center -ml-6 justify-center border-[2px] border-white z-10">
                   <Zap className="w-6 h-6 text-white fill-white" />
                 </div>
               </div>
 
-              {/* CONTENT */}
               <div className="flex flex-col">
                 <div className="flex items-center gap-2">
                   <span className="text-lg font-semibold text-black">
@@ -99,27 +97,26 @@ const page = () => {
               key={i}
               className="group relative mx-3 h-[450px] w-[320px] overflow-hidden rounded-[24px] border-[6px] border-white shadow-xl"
             >
-              {/* VIDEO */}
               <video
                 src={item.video}
                 autoPlay
                 muted
                 loop
                 playsInline
-                preload="auto"
+                preload="none"
+                poster="/poster.webp"
                 disablePictureInPicture
                 controlsList="nodownload noplaybackrate"
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
 
-              {/* OVERLAY */}
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
 
-              {/* USER INFO */}
               <div className="absolute bottom-5 left-5 flex items-center gap-3">
                 <img
                   src={item.profile}
                   alt={item.name}
+                  loading="lazy"
                   className="h-10 w-10 rounded-full border border-white object-cover"
                 />
 
@@ -154,6 +151,7 @@ const page = () => {
                 <img
                   src={logo}
                   alt={`logo-${i}`}
+                  loading="lazy"
                   className="h-18 w-auto object-contain "
                 />
               </div>
@@ -176,12 +174,12 @@ const page = () => {
                       alt="platform"
                       width={50}
                       height={50}
+                      loading="lazy"
                       className=" w-[34px] h-[34px] sm:w-[42px] sm:h-[42px] md:w-[52px] md:h-[52px] object-contain"
                     />
                   </div>
                 ))}
 
-                {/* Main Text */}
                 <div className="relative z-20 flex min-h-[420px] sm:min-h-[520px] items-center justify-center text-center">
                   <h2 className=" max-w-[950px] leading-[1.2] tracking-[1px] text-[#2c2929] heading text-[24px] sm:text-[36px] md:text-[42px] lg:text-[58px]">
                     We Work Across All <br />
@@ -194,7 +192,6 @@ const page = () => {
           </div>
           <div className="mt-[100px] lg:mt-[180px]">
             <section className="relative overflow-hidden ">
-              {/* Floating Cards */}
               {stats.map((item, index) => {
                 const Icon = item.icon;
                 return (
@@ -209,6 +206,7 @@ const page = () => {
                           alt="user"
                           width={34}
                           height={34}
+                          loading="lazy"
                           className="h-7 w-7 rounded-full border-2 border-white object-cover"
                         />
                         <Image
@@ -216,6 +214,7 @@ const page = () => {
                           alt="user"
                           width={34}
                           height={34}
+                          loading="lazy"
                           className="h-7 w-7 rounded-full border-2 border-white object-cover"
                         />
                         <Image
@@ -223,6 +222,7 @@ const page = () => {
                           alt="user"
                           width={34}
                           height={34}
+                          loading="lazy"
                           className="h-7 w-7 rounded-full border-2 border-white object-cover"
                         />
                       </div>

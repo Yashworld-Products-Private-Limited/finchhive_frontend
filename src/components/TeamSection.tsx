@@ -49,7 +49,6 @@ function TeamCard({ member }: { member: TeamMember }) {
 
   return (
     <div className="relative  w-full max-w-[500px] h-[620px] mx-auto">
-      {/* GLASS CARD */}
       <div className="absolute top-3 left-3">
         <h2 className=" text-[28px] md:text-[36px] xl:text-[48px] heading text-[#2E2C76] z-0 pointer-events-none">
           {member.tag}
@@ -65,6 +64,7 @@ function TeamCard({ member }: { member: TeamMember }) {
               src={member.image}
               alt={member.name}
               fill
+              loading="lazy"
               className={`object-contain transition-all duration-500 ${
                 isActive ? "grayscale-0 scale-105" : "grayscale"
               }`}
@@ -73,7 +73,6 @@ function TeamCard({ member }: { member: TeamMember }) {
 
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent z-20" />
 
-          {/* PLUS BUTTON */}
           <div
             className={`absolute top-25 rotate-180 w-[160%] h-[160%] rounded-full transition-all duration-500
               bg-[radial-gradient(circle_at_center,_#2E2C76_0%,_#3f3ca0_40%,_transparent_70%)]

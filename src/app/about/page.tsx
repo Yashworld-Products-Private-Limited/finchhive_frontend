@@ -17,10 +17,8 @@ const AboutPage = () => {
           className=" relative w-full h-[400px] md:h-[500px] lg:h-[700px] overflow-hidden rounded-2xl mt-[calc(10dvh-10px)] bg-[url('/imgs/abt.jpg')] bg-cover bg-center bg-fixed
   "
         >
-          {/* Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/30 to-black/10" />
 
-          {/* Content */}
           <div className="relative z-10 flex items-end justify-center h-full p-6 md:p-10">
             <h1 className=" text-center text-white heading max-w-4xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.1]">
               Hey There! Welcome to{" "}
@@ -87,8 +85,8 @@ const AboutPage = () => {
                     alt="leader"
                     width={400}
                     height={500}
+                    loading="lazy"
                     className="w-[300px] sm:w-[330px] md:w-[380px] lg:w-[400px] xl:w-[440px] h-auto object-contain grayscale"
-                    priority
                   />
                 </div>
 

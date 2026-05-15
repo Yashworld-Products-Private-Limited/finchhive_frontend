@@ -72,7 +72,6 @@ export default function ProcessSection() {
   return (
     <div ref={ref} className="max-w-4xl mx-auto  lg:px-6">
       <div className="relative">
-        {/* MAIN LINE */}
         <div className="absolute left-[22px] top-0 w-[2px] h-full bg-blue-100">
           <motion.div
             style={{ height: lineHeight }}
@@ -90,14 +89,12 @@ export default function ProcessSection() {
               viewport={{ once: true }}
               className="relative flex items-start gap-"
             >
-              {/* NUMBER + LINE */}
               <div className="relative z-10 flex flex-col items-center">
                 <div className=" rounded-full bg-white  flex items-center justify-center text-[#2E2C76] text-4xl md:text-6xl font-bold leading-none p-2 -translate-x-1/4">
                   {String(i + 1).padStart(2, "0")}
                 </div>
               </div>
 
-              {/* CONTENT CARD */}
               <div className="flex-1 rounded-2xl bg-white border border-blue-100 p-4 md:p-6 shadow-md space-y-2 lg:space-y-4">
                 <h6 className="inline-flex items-center justify-center text-center bg-[#2E2C76] text-white subHeading text-xs px-3 py-1 rounded-full">
                   STEP {String(i + 1).padStart(2, "0")}
@@ -111,7 +108,6 @@ export default function ProcessSection() {
                   {step.desc}
                 </p>
 
-                {/* POINTS */}
                 {step.points && (
                   <div className="grid gap-1 lg:gap-2 pt-1 lg:pt-2">
                     {step.points.map((point, idx) => (

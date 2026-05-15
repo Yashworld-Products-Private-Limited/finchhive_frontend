@@ -30,7 +30,6 @@ function Card({
 }) {
   return (
     <div className="relative rounded-2xl p-6 border border-black/10 bg-blue-400/10 backdrop-blur-[0.8] shadow-xl">
-      {/* subtle pattern */}
       <div className="absolute inset-0 opacity-[0.05] bg-[radial-gradient(circle,_white_1px,_transparent_1px)] bg-[size:30px_30px]" />
 
       <p className="text-black/70 heading mb-3">{title}</p>
@@ -88,7 +87,6 @@ const Contactus = () => {
       shadow-[0_20px_100px_rgba(0,0,0,0.08)]
     "
           >
-            {/* LEFT SIDE */}
             <div
               className="
         relative
@@ -101,7 +99,6 @@ const Contactus = () => {
         text-white
       "
             >
-              {/* Glow */}
               <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-white/10 blur-3xl" />
 
               <div className="relative z-10">
@@ -122,7 +119,6 @@ const Contactus = () => {
                   directly from our availability calendar.
                 </p>
 
-                {/* FEATURES */}
                 <div className="mt-10 grid gap-4 sm:grid-cols-3">
                   {["30 Min Call", "Google Meet", "Instant Booking"].map(
                     (item) => (
@@ -146,10 +142,8 @@ const Contactus = () => {
               </div>
             </div>
 
-            {/* RIGHT SIDE FORM */}
             <div className="p-6 lg:p-14">
               <div className="space-y-6">
-                {/* Name */}
                 <div className="space-y-2">
                   <label className="text-sm text-black/60 heading">
                     Full Name
@@ -179,7 +173,6 @@ const Contactus = () => {
                   />
                 </div>
 
-                {/* Email */}
                 <div className="space-y-2">
                   <label className="text-sm text-black/60 heading">
                     Email Address
@@ -209,7 +202,6 @@ const Contactus = () => {
                   />
                 </div>
 
-                {/* Message */}
                 <div className="space-y-2">
                   <label className="text-sm text-black/60 heading">
                     Project Brief
@@ -240,7 +232,6 @@ const Contactus = () => {
                   />
                 </div>
 
-                {/* CTA */}
                 <button
                   onClick={handleSubmit}
                   className="
@@ -262,7 +253,6 @@ const Contactus = () => {
             </div>
           </div>
 
-          {/* CALENDLY MODAL */}
           {open && (
             <PopupModal
               url="https://calendly.com/jeel-ywppl/finchhive-meeting"
@@ -279,16 +269,13 @@ const Contactus = () => {
         <div className="mt-[100px] lg:mt-[180px]">
           <section className="max-w-[1280px] mx-auto">
             <div className="space-y-6">
-              {/* TOP GRID */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {/* Hotline */}
                 <Card title="Hotline:">
                   <p className="text-[#2E2C76] subHeading text-lg">
                     (555) 123-4567
                   </p>
                 </Card>
 
-                {/* Address */}
                 <Card title="Address:">
                   <p className="text-[#2E2C76] subHeading text-lg leading-relaxed">
                     123 MAIN STREET, CITYVILLE, <br />
@@ -296,7 +283,6 @@ const Contactus = () => {
                   </p>
                 </Card>
 
-                {/* Email */}
                 <Card title="Email:">
                   <p className="text-[#2E2C76] subHeading text-lg uppercase">
                     AGENCEE@EMAIL.COM
@@ -304,9 +290,7 @@ const Contactus = () => {
                 </Card>
               </div>
 
-              {/* SECOND ROW */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {/* Opening Hours */}
                 <div className="md:col-span-2">
                   <Card title="Opening Hours:">
                     <div className="space-y-2 text-[#2E2C76] subHeading text-lg">
@@ -317,7 +301,6 @@ const Contactus = () => {
                   </Card>
                 </div>
 
-                {/* Social */}
                 <Card title="Follow Us:">
                   <div className="flex gap-4 mt-2">
                     {[FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram].map(
@@ -334,7 +317,6 @@ const Contactus = () => {
                 </Card>
               </div>
 
-              {/* MAP */}
               <div className="rounded-3xl overflow-hidden border border-gray-400 shadow-xl group">
                 <iframe
                   src="https://www.google.com/maps?q=amsterdam&output=embed"

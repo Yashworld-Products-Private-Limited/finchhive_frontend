@@ -5,26 +5,28 @@ import LetsTalkSection from "@/components/LetsTalkSection";
 import LogoMarquee from "@/components/LogoMarquee";
 import PhysicsPills from "@/components/PhysicsPills";
 import ProcessSection from "@/components/ProcessSection";
+import SectionBadge from "@/components/SectionBadge";
+import SectionTitle from "@/components/SectionTitle";
 import SEOAccordion from "@/components/SEOAccordion";
 import StatsFeatureSection from "@/components/StatsFeatureSection";
 import { Marquee } from "@/components/ui/marquee";
 import {
   caseStudies,
   FeaturesServices,
-  services,
   servicesPage,
   testimonials,
-  videos,
+  videos
 } from "@/constants";
+
 import RadioIcon from "@/icons/Radio";
+import { motion } from "framer-motion";
 import { ArrowUpRight, Play } from "lucide-react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { motion } from "framer-motion";
-import SectionBadge from "@/components/SectionBadge";
-import SectionTitle from "@/components/SectionTitle";
+
 
 const avatars = [
   "https://i.pravatar.cc/150?img=47",
@@ -207,19 +209,15 @@ const Home = () => {
       </section>
       <section className="custom-container">
         <div className="max-w-[1440px] mx-auto ">
-          {/* Glass Card */}
           <div className="hidden lg:flex relative">
             <div className="absolute -top-[106px] z-10 backdrop-blur-[0.8px] border-[1px] border-white  rounded-[48px] px-8 py-7 shadow-[0_4px_20px_rgba(0,0,0,0.4)] before:absolute before:inset-0 before:rounded-[48px] before:bg-linear-to-br before:from-white/10 before:to-transparent before:pointer-events-none">
-              {/* Title */}
               <h1 className="font-light text-[#FFFFFF] lg:text-[22px] 2xl:text-3xl uppercase leading-tight tracking-wide mb-5 drop-shadow-md subHeading">
                 <span className="text-[#FFFFFD]">#1</span> Digital Marketing
                 <br />
                 Agency in Asia
               </h1>
 
-              {/* Social Proof Row */}
               <div className="flex items-center gap-4">
-                {/* Avatars */}
                 <div className="flex items-center">
                   {avatars.map((src, i) => (
                     <div
@@ -231,13 +229,13 @@ const Home = () => {
                       <img
                         src={src}
                         alt={`reviewer ${i + 1}`}
+                        loading="lazy"
                         className="w-full h-full object-cover"
                       />
                     </div>
                   ))}
                 </div>
 
-                {/* Stars + Review Text */}
                 <div className="flex flex-col gap-1">
                   <div className="flex items-center gap-1">
                     {[...Array(5)].map((_, i) => (
@@ -292,24 +290,20 @@ const Home = () => {
                       onClick={() => router.push(item.link)}
                       className="flex flex-col items-start justify-between group relative rounded-3xl p-3 lg:p-6 bg-gradient-to-br from-white via-blue-50 to-blue-100 border border-blue-100 hover:border-blue-200 transition-all duration-300 space-y-2 lg:space-y-5 "
                     >
-                      {/* ICON */}
                       <div className="flex flex-col items-start gap-3">
                         <div className=" flex items-center justify-center rounded-xl bg-[#2E2C76] p-4">
                           <Icon className="text-[#FFFFFF]" size={24} />
                         </div>
 
-                        {/* TITLE */}
                         <h3 className="text-gray-900 text-[22px] md:text-[24px] 2xl:text-[26px] heading ">
                           {item.title}
                         </h3>
                       </div>
 
-                      {/* DESC */}
                       <p className="text-gray-600 text-sm lg:text-base subHeading leading-normal">
                         {item.desc}
                       </p>
 
-                      {/* CTA */}
                       <Link
                         href={item.link}
                         className="flex items-center gap-3 text-gray-900 text-xs tracking-[0%] uppercase"
@@ -395,6 +389,7 @@ const Home = () => {
                         src={item.image}
                         alt="case study"
                         fill
+                        loading="lazy"
                         sizes="(max-width: 768px) 100vw, 50vw"
                         className="object-cover"
                       />
@@ -436,7 +431,6 @@ const Home = () => {
           </div>
           <div id="testimonials" className="mt-[80px] lg:mt-[100px] ">
             <div className="relative w-full flex items-start justify-center overflow-hidden  mx-auto ">
-              {/* BACK TEXT */}
               <h1 className="absolute -top-10 text-[80px] md:text-[140px] xl:text-[150px] leading-normal font-bold text-black/10 select-none heading">
                 TESTIMONIAL
               </h1>
@@ -465,6 +459,7 @@ const Home = () => {
                       <div className="flex items-center gap-3 border-t border-black/10 pt-4">
                         <img
                           src={item.img}
+                          loading="lazy"
                           className="w-10 h-10 rounded-full object-cover"
                         />
                         <div>
@@ -491,15 +486,14 @@ const Home = () => {
                     className="relative rounded-[28px] overflow-hidden bg-gradient-to-b from-[#1a1a1a] to-[#0d0d0d] border border-white/10 group cursor-pointer"
                     onClick={() => setActiveVideo(item.videoId)}
                   >
-                    {/* THUMBNAIL */}
                     <div className="relative w-full h-[250px] sm:h-[300px] md:h-[320px] lg:h-[420px]">
                       <img
                         src={thumbnail}
                         alt={item.name}
+                        loading="lazy"
                         className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500"
                       />
 
-                      {/* PLAY BUTTON */}
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="w-14 h-14 flex items-center justify-center rounded-full bg-black/50 backdrop-blur-md border border-white/20">
                           <Play className="text-white w-6 h-6 ml-1" />
@@ -507,7 +501,6 @@ const Home = () => {
                       </div>
                     </div>
 
-                    {/* BOTTOM OVERLAY */}
                     <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black via-black/70 to-transparent p-5 md:p-6">
                       <h3 className="text-white text-lg md:text-xl font-semibold">
                         {item.name}
@@ -521,11 +514,9 @@ const Home = () => {
               })}
             </div>
 
-            {/* 🎬 VIDEO MODAL */}
             {activeVideo && (
               <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
                 <div className="relative w-full max-w-3xl aspect-video">
-                  {/* CLOSE */}
                   <button
                     onClick={() => setActiveVideo(null)}
                     className="absolute -top-10 right-0 text-white text-xl"
@@ -533,7 +524,6 @@ const Home = () => {
                     ✕
                   </button>
 
-                  {/* IFRAME */}
                   <iframe
                     src={`https://www.youtube.com/embed/${activeVideo}?autoplay=1`}
                     className="w-full h-full rounded-xl"
@@ -574,7 +564,6 @@ const Home = () => {
                     }}
                   />
 
-                  {/* Overlay */}
                   <div className="absolute inset-0 bg-[#0a0a0a]/40 rounded-3xl" />
                   <div className="relative flex flex-col items-start justify-end mr-0">
                     <h1 className="text-[#FFFFFF] text-5xl md:text-7xl heading tracking-widest ">

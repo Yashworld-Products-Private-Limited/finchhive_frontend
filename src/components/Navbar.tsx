@@ -79,7 +79,6 @@ export default function Navbar() {
       >
         <div className="custom-container flex items-center">
           <div className="w-full flex items-center justify-between gap-2 xl:gap-4">
-            {/* Logo */}
             <Link href="/" onClick={() => setMenuOpen(false)}>
               <div className="w-[140px] h-[50px] xl:w-[180px] xl:h-[65px] 2xl:w-[220px] 2xl:h-[75px] relative">
                 <Image
@@ -93,7 +92,6 @@ export default function Navbar() {
               </div>
             </Link>
 
-            {/* Desktop Nav Pill */}
             <div className="hidden lg:flex items-center justify-center flex-1">
               <div className="flex items-center gap-1 bg-[#332c77] border border-white/10 rounded-full px-2 py-2">
                 {navLinks.map((link) => {
