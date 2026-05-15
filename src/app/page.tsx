@@ -1,19 +1,30 @@
 "use client";
 import PrimaryButton from "@/components/Button";
+import { FeatureCard, FeatureItem } from "@/components/FeatureCard";
 import LetsTalkSection from "@/components/LetsTalkSection";
 import LogoMarquee from "@/components/LogoMarquee";
-import MagneticCursor from "@/components/MagneticCursor";
 import PhysicsPills from "@/components/PhysicsPills";
-import PricingSection from "@/components/PricingSection";
+import ProcessSection from "@/components/ProcessSection";
 import SEOAccordion from "@/components/SEOAccordion";
 import StatsFeatureSection from "@/components/StatsFeatureSection";
 import { Marquee } from "@/components/ui/marquee";
-import { caseStudies, services, testimonials, videos } from "@/constants";
+import {
+  caseStudies,
+  FeaturesServices,
+  services,
+  servicesPage,
+  testimonials,
+  videos,
+} from "@/constants";
 import RadioIcon from "@/icons/Radio";
 import { ArrowUpRight, Play } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useRef, useState } from "react";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import SectionBadge from "@/components/SectionBadge";
+import SectionTitle from "@/components/SectionTitle";
 
 const avatars = [
   "https://i.pravatar.cc/150?img=47",
@@ -23,7 +34,7 @@ const avatars = [
 ];
 
 const Home = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
+  // const sectionRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
@@ -31,37 +42,130 @@ const Home = () => {
     <div>
       <section className="relative  flex items-center justify-center overflow-hidden">
         <div className="custom-container">
-          <div className="relative z-10  space-y-7  text-center max-w-5xl mt-[130px] mb-[40px] mx">
-            <h1 className=" text-5xl sm:text-6xl md:text-7xl xl:text-[82px] tracking-[0%] heading leading-[42px] md:leading-[52px] xl:leading-[82px]">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ staggerChildren: 0.18 }}
+            className="relative z-10  space-y-7  text-center max-w-5xl mt-[130px] "
+          >
+            <motion.h1
+              variants={{
+                hidden: {
+                  opacity: 0,
+                  y: -80,
+                },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                },
+              }}
+              transition={{
+                duration: 1,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className=" text-5xl sm:text-6xl md:text-7xl xl:text-[82px] tracking-[0%] heading leading-[42px] md:leading-[52px] xl:leading-[82px]"
+            >
               The Best
-              <span className="relative inline-block px-1.5 lg:px-3 py-1 bg-[#2E2C76] text-white rotate-[-3deg] mx-2">
+              <motion.span
+                initial={{
+                  opacity: 0,
+                  rotate: -12,
+                  scale: 0.7,
+                  y: -30,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  rotate: -3,
+                  scale: 1,
+                  y: 0,
+                }}
+                transition={{
+                  delay: 0.3,
+                  duration: 0.8,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                viewport={{ once: true }}
+                className="relative inline-block px-1.5 lg:px-3 py-1 bg-[#2E2C76] text-white rotate-[-3deg] mx-2"
+              >
                 Digital
-              </span>
+              </motion.span>
               <br />
               Platform
-              <span className="relative  inline-flex items-center justify-center w-9 h-9 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full overflow-hidden flex-shrink-0 rotate-[340deg] bg-[#2E2C76] translate-y-3 p-2 translate-x-2.5">
+              <motion.span
+                initial={{
+                  opacity: 0,
+                  scale: 0,
+                  rotate: -180,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  scale: 1,
+                  rotate: 340,
+                }}
+                transition={{
+                  delay: 0.6,
+                  duration: 0.9,
+                  type: "spring",
+                }}
+                viewport={{ once: true }}
+                className="relative  inline-flex items-center justify-center w-9 h-9 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full overflow-hidden flex-shrink-0 rotate-[340deg] bg-[#2E2C76] translate-y-3 p-2 translate-x-2.5"
+              >
                 <RadioIcon />
-              </span>{" "}
+              </motion.span>{" "}
               Solution.
-            </h1>
+            </motion.h1>
 
-            <p className=" text-black/70 subheading text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-              we believe in combining innovative digital solutions, strategic
+            <motion.p
+              variants={{
+                hidden: {
+                  opacity: 0,
+                  y: 40,
+                },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                },
+              }}
+              transition={{
+                duration: 0.8,
+                delay: 0.3,
+              }}
+              className=" text-black/70 subheading text-base md:text-lg max-w-2xl mx-auto leading-relaxed"
+            >
+              We believe in combining innovative digital solutions, strategic
               thinking, and exceptional execution to turn your ideas into
               powerful digital experiences.
-            </p>
+            </motion.p>
 
-            <div className=" flex justify-center">
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 30,
+                scale: 0.9,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                scale: 1,
+              }}
+              transition={{
+                delay: 0.5,
+                duration: 0.7,
+              }}
+              viewport={{ once: true }}
+              className="flex justify-center"
+            >
               <PrimaryButton label="Let's Connect" />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
       <section
-        ref={sectionRef}
+        // ref={sectionRef}
         className="relative w-full overflow-hidden flex items-center justify-center cursor-none"
       >
-        <MagneticCursor containerRef={sectionRef} />
+        {/* <MagneticCursor containerRef={sectionRef} /> */}
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0%,rgba(46,44,118,0.3)_30%,rgba(46,44,118,0.7)_50%,#2E2C76_100%)]" />
 
         <Marquee className="absolute inset-0 flex items-center overflow-hidden pointer-events-none z-0">
@@ -69,13 +173,28 @@ const Home = () => {
             <span className="mx-10 uppercase">
               the best digital platform solution
             </span>
-            {/* <span className="mx-10">
-              BEST MARKETING AGENCY BEST MARKETING AGENCY
-            </span> */}
           </div>
         </Marquee>
 
-        <div className="relative z-10 mt-14 w-[65%] mx-auto">
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 120,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.2,
+          }}
+          transition={{
+            duration: 1.2,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="relative z-10 w-[65%] mx-auto"
+        >
           <Image
             src="/imgs/home_second.png"
             alt="Team"
@@ -84,7 +203,7 @@ const Home = () => {
             className="w-full h-auto object-contain"
             priority
           />
-        </div>
+        </motion.div>
       </section>
       <section className="custom-container">
         <div className="max-w-[1440px] mx-auto ">
@@ -139,27 +258,39 @@ const Home = () => {
               </div>
             </div>
           </div>
+
           <div className="mt-[100px] lg:mt-[180px] ">
+            <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
+              <SectionBadge label="How We Work" />
+
+              <h2 className="text-[32px] lg:text-[52px] heading font-bold text-center tracking-[1%] leading-[50px] uppercase text-[#2E2C76]"></h2>
+              <SectionTitle
+                className="max-w-3xl mx-auto"
+                title=" Our 4 Stage Process"
+              />
+            </div>
+            <div className="mt-16">
+              <ProcessSection />
+            </div>
+          </div>
+          <div id="services" className="mt-[100px] lg:mt-[180px] ">
             <div className="flex flex-col lg:flex-row  items-center gap-6 md:gap-8 xl:gap-12">
-              <h6 className="inline-flex items-center justify-center text-center bg-[#2E2C76] text-white subHeading text-xs lg:text-sm tracking-[0%] font-semibold px-4 py-1 rounded-full">
-                SERVICES
-              </h6>
-              <h2 className="text-[32px] lg:text-[52px] heading font-bold text-center tracking-[1%] leading-[50px] uppercase text-[#2E2C76]">
-                What we are offering
-              </h2>
+              <SectionBadge label="SERVICES" />
+
+              <SectionTitle
+                className="max-w-3xl mx-auto"
+                title=" What we are offering"
+              />
             </div>
             <div className="w-full mt-12">
-              <div className="flex justify-end">
-                <PrimaryButton href="services" label="Services" />
-              </div>
-              <div className="grid md:grid-cols-2 gap-6 mt-8">
-                {services.map((item, i) => {
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-6 lg:gap-6 mt-8">
+                {servicesPage.map((item, i) => {
                   const Icon = item.icon;
                   return (
                     <div
                       key={i}
                       onClick={() => router.push(item.link)}
-                      className="flex flex-col items-start justify-between group relative rounded-3xl p-8 bg-gradient-to-br from-white via-blue-50 to-blue-100 border border-blue-100 hover:border-blue-200 transition-all duration-300 space-y-16 "
+                      className="flex flex-col items-start justify-between group relative rounded-3xl p-3 lg:p-6 bg-gradient-to-br from-white via-blue-50 to-blue-100 border border-blue-100 hover:border-blue-200 transition-all duration-300 space-y-2 lg:space-y-5 "
                     >
                       {/* ICON */}
                       <div className="flex flex-col items-start gap-3">
@@ -168,37 +299,65 @@ const Home = () => {
                         </div>
 
                         {/* TITLE */}
-                        <h3 className="text-gray-900 text-[22px] md:text-[24px] lg:text-[28px] heading ">
+                        <h3 className="text-gray-900 text-[22px] md:text-[24px] 2xl:text-[26px] heading ">
                           {item.title}
                         </h3>
                       </div>
 
                       {/* DESC */}
-                      <p className="text-gray-600 text-sm leading-relaxed  max-w-md">
+                      <p className="text-gray-600 text-sm lg:text-base subHeading leading-normal">
                         {item.desc}
                       </p>
 
                       {/* CTA */}
-                      <div className="flex items-center gap-3 text-gray-900 text-xs tracking-[0%] uppercase">
+                      <Link
+                        href={item.link}
+                        className="flex items-center gap-3 text-gray-900 text-xs tracking-[0%] uppercase"
+                      >
                         <span className="subHeading">Learn More</span>
                         <span className="w-6 h-6 flex items-center justify-center rounded-full border border-gray-300 group-hover:border-blue-400 transition group-hover:rotate-45">
                           <ArrowUpRight className="w-4 h-4" />
                         </span>
-                      </div>
+                      </Link>
                     </div>
                   );
                 })}
               </div>
             </div>
           </div>
+          <div className="mt-[100px] lg:mt-[180px]">
+            <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
+              <SectionBadge label="Why Choose Us" />
+              <SectionTitle
+                title={
+                  <>
+                    WHY FINCHHIVE IS YOUR <br />
+                    DIGITAL GROWTH PARTNER
+                  </>
+                }
+              />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 items-stretch justify-between gap-4 mt-20">
+              {FeaturesServices.map((item: FeatureItem, i: number) => (
+                <FeatureCard
+                  key={i}
+                  title={item?.title}
+                  description={item.description}
+                  icon={item?.icon}
+                  delay={i * 100}
+                  isMiddle={false}
+                />
+              ))}
+            </div>
+          </div>
           <div className="mt-[100px] lg:mt-[180px] ">
             <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
-              <h6 className="inline-flex items-center justify-center text-center bg-[#2E2C76] text-white subHeading text-xs lg:text-sm tracking-[1%] font-semibold px-4 py-1 rounded-full">
-                Brands Collaborations
-              </h6>
-              <h2 className="text-[32px] lg:text-[52px] heading font-bold text-center tracking-[1%] leading-[50px] uppercase text-[#2E2C76]">
-                Brands that trust us
-              </h2>
+              <SectionBadge label="Brands Collaborations" />
+
+              <SectionTitle
+                className="max-w-3xl mx-auto"
+                title="Brands that trust us"
+              />
             </div>
             <div className="mt-10">
               <LogoMarquee />
@@ -211,14 +370,17 @@ const Home = () => {
       </div>
       <div className="max-w-[1440px] mx-auto">
         <div className="custom-container">
-          <div className="mt-[80px] lg:mt-[140px] space-y-12 lg:space-y-20">
+          <div
+            id="case-studies"
+            className="mt-[80px] lg:mt-[140px] space-y-12 lg:space-y-20"
+          >
             <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
-              <h6 className="inline-flex items-center justify-center text-center bg-[#2E2C76] text-white subHeading text-xs lg:text-sm tracking-[1%] font-semibold px-4 py-1 rounded-full">
-                Works
-              </h6>
-              <h2 className="text-[32px] lg:text-[52px] heading font-bold text-center tracking-[1%] leading-[50px] uppercase text-[#2E2C76]">
-                Case Studies
-              </h2>
+              <SectionBadge label="Works" />
+
+              <SectionTitle
+                className="max-w-3xl mx-auto"
+                title="Case Studies"
+              />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-[120px]">
               {caseStudies.map((item, i) => (
@@ -272,7 +434,7 @@ const Home = () => {
               <PrimaryButton label="VIEW ALL PROJECTS" />
             </div>
           </div>
-          <div className="mt-[80px] lg:mt-[100px] ">
+          <div id="testimonials" className="mt-[80px] lg:mt-[100px] ">
             <div className="relative w-full flex items-start justify-center overflow-hidden  mx-auto ">
               {/* BACK TEXT */}
               <h1 className="absolute -top-10 text-[80px] md:text-[140px] xl:text-[150px] leading-normal font-bold text-black/10 select-none heading">
@@ -385,25 +547,12 @@ const Home = () => {
               <PrimaryButton label="VIEW ALL REVIEWS" />
             </div>
           </div>
-          <div className="mt-[100px] lg:mt-[160px] ">
-            <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
-              <h6 className="inline-flex items-center justify-center text-center bg-[#2E2C76] text-white subHeading text-xs lg:text-sm tracking-[1%] font-semibold px-4 py-1 rounded-full">
-                Pricing
-              </h6>
-              <h2 className="text-[32px] lg:text-[52px] heading font-bold text-center tracking-[1%] leading-[50px] uppercase text-[#2E2C76]">
-                Profitable Pricing Plans
-              </h2>
-            </div>
-            <PricingSection />
-          </div>
+
           <div className="mt-[100px] lg:mt-[160px] ">
             <div className="flex flex-col lg:flex-row  items-center gap-6 md:gap-8 xl:gap-12">
-              <h6 className="inline-flex items-center justify-center text-center bg-[#2E2C76] text-white subHeading text-xs lg:text-sm tracking-[0%] font-semibold px-4 py-1 rounded-full">
-                Why Us
-              </h6>
-              <h2 className="text-[32px] lg:text-[52px] heading font-bold text-center tracking-[1%] leading-[50px] uppercase text-[#2E2C76]">
-                Our Specialities
-              </h2>
+              <SectionBadge label="Why us" />
+
+              <SectionTitle className="" title=" Our Specialities" />
             </div>
             <div className="flex items-center justify-center lg:items-end lg:justify-end  mt-6 lg:mt-10">
               <p className="text-sm lg:text-xl subHeading leading-[24px] text-gray-400 text-center lg:text-left max-w-2xl lg:ml-auto">
@@ -485,12 +634,11 @@ const Home = () => {
           </div>
           <div className="mt-[100px] lg:mt-[160px] ">
             <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
-              <h6 className="inline-flex items-center justify-center text-center bg-[#2E2C76] text-white subHeading text-xs lg:text-sm tracking-[1%] font-semibold px-4 py-1 rounded-full">
-                Frequently Asked Questions
-              </h6>
-              <h2 className="text-[32px] lg:text-[52px] heading font-bold text-center tracking-[1%] leading-[50px] uppercase text-[#2E2C76]">
-                Got Questions? We&apos;ve Got Answers!
-              </h2>
+              <SectionBadge label="Frequently Asked Questions" />
+              <SectionTitle
+                className="max-w-3xl mx-auto"
+                title={<>Got Questions? We&apos;ve Got Answers!</>}
+              />
             </div>
             <SEOAccordion />
           </div>

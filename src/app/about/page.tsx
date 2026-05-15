@@ -2,7 +2,8 @@ import AboutSection from "@/components/AboutSection";
 import ExpandingGallery from "@/components/ExpandingGallery";
 import LetsTalkSection from "@/components/LetsTalkSection";
 import LogoMarquee from "@/components/LogoMarquee";
-import ProcessSection from "@/components/ProcessSection";
+import SectionBadge from "@/components/SectionBadge";
+import SectionTitle from "@/components/SectionTitle";
 import SEOAccordion from "@/components/SEOAccordion";
 import ValuesSection from "@/components/SnowflakeIcon";
 import { TeamSection } from "@/components/TeamSection";
@@ -12,21 +13,16 @@ const AboutPage = () => {
   return (
     <div>
       <div className="custom-container">
-        <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden rounded-2xl mt-[calc(10dvh-10px)]">
-          <Image
-            src="/imgs/aboutus.jpg"
-            alt="team working"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-          />
+        <div
+          className=" relative w-full h-[400px] md:h-[500px] lg:h-[700px] overflow-hidden rounded-2xl mt-[calc(10dvh-10px)] bg-[url('/imgs/abt.jpg')] bg-cover bg-center bg-fixed
+  "
+        >
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/30 to-black/10" />
 
-          {/* Optional overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
-
-          <div className="relative z-10 flex items-end h-full">
-            <h1 className="text-white heading leading-[36px] md:leading-[56px] lg:leading-[66px] text-2xl sm:text-3xl md:text-5xl lg:text-6xl max-w-3xl text-center mx-auto">
+          {/* Content */}
+          <div className="relative z-10 flex items-end justify-center h-full p-6 md:p-10">
+            <h1 className=" text-center text-white heading max-w-4xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.1]">
               Hey There! Welcome to{" "}
               <span className="text-[#2E2C76]">Celestial Solutions!</span>
             </h1>
@@ -35,23 +31,27 @@ const AboutPage = () => {
         <div className="max-w-[1440px] mx-auto">
           <div className="mt-[100px] lg:mt-[180px] ">
             <div className="flex flex-col lg:flex-row  items-center gap-6 md:gap-8 xl:gap-12">
-              <h6 className="inline-flex items-center justify-center text-center bg-[#2E2C76] text-white subHeading text-xs lg:text-sm tracking-[0%] font-semibold px-4 py-1 rounded-full">
-                Who we are
-              </h6>
-              <h2 className="text-[32px] lg:text-[52px] heading font-bold text-center tracking-[1%] leading-[50px] uppercase text-[#2E2C76]">
-                About our Company
-              </h2>
+              <SectionBadge label="Who we are" />
+              <SectionTitle
+                className="max-w-3xl mx-auto"
+                title={<>About our Company</>}
+              />
+              <h2 className="text-[32px] lg:text-[52px] heading font-bold text-center tracking-[1%] leading-[50px] uppercase text-[#2E2C76]"></h2>
             </div>
             <AboutSection />
           </div>
           <div className="mt-[100px] lg:mt-[180px] ">
             <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
-              <h6 className="inline-flex items-center justify-center text-center bg-[#2E2C76] text-white subHeading text-xs lg:text-sm tracking-[1%] font-semibold px-4 py-1 rounded-full">
-                Brands
-              </h6>
-              <h2 className="text-[32px] lg:text-[52px] heading font-bold text-center tracking-[1%] leading-[50px] uppercase text-[#2E2C76]">
-                Brands we have <br /> worked with
-              </h2>
+              <SectionBadge label="Brands" />
+
+              <SectionTitle
+                className="max-w-3xl mx-auto"
+                title={
+                  <>
+                    Brands we have <br /> worked with
+                  </>
+                }
+              />
             </div>
             <div className="mt-10">
               <LogoMarquee />
@@ -59,12 +59,12 @@ const AboutPage = () => {
           </div>
           <div className="mt-[100px] lg:mt-[180px] ">
             <div className="flex flex-col lg:flex-row  items-center gap-6 md:gap-8 xl:gap-12">
-              <h6 className="inline-flex items-center justify-center text-center bg-[#2E2C76] text-white subHeading text-xs lg:text-sm tracking-[0%] font-semibold px-4 py-1 rounded-full">
-                About Founder
-              </h6>
-              <h2 className="text-[32px] lg:text-[52px] heading font-bold text-center tracking-[1%] leading-[50px] uppercase text-[#2E2C76]">
-                Meet The Founder
-              </h2>
+              <SectionBadge label="About Founder" />
+              <h2 className="text-[32px] lg:text-[52px] heading font-bold text-center tracking-[1%] leading-[50px] uppercase text-[#2E2C76]"></h2>
+              <SectionTitle
+                className="max-w-3xl "
+                title={<> Meet The Founder</>}
+              />
             </div>
             <p className="text-lg md:text-2xl xl:text-3xl subHeading leading-[20px] md:leading-[26px] xl:leading-[32px] text-gray-600 mt-6 lg:mt-10">
               With over 15 years of experience in the teaching industry, Niraj
@@ -167,7 +167,7 @@ const AboutPage = () => {
               </div>
             </div>
           </div>
-          <div className="mt-[100px] lg:mt-[180px] ">
+          {/* <div className="mt-[100px] lg:mt-[180px] ">
             <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
               <h6 className="inline-flex items-center justify-center text-center bg-[#2E2C76] text-white subHeading text-xs lg:text-sm tracking-[1%] font-semibold px-4 py-1 rounded-full">
                 How We Work
@@ -179,21 +179,26 @@ const AboutPage = () => {
             <div className="mt-16">
               <ProcessSection />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="mt-[100px] lg:mt-[180px] ">
         <ValuesSection />
       </div>
       <div className="max-w-[1440px] mx-auto">
-        <div className="mt-[100px] lg:mt-[180px] ">
-          <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8 w-full lg:w-[80%] mx-auto text-center">
-            <h6 className="inline-flex items-center justify-center text-center bg-[#2E2C76] text-white subHeading text-xs lg:text-sm tracking-[1%] font-semibold px-4 py-1 rounded-full">
-              Team Members
-            </h6>
-            <h2 className="text-[32px] lg:text-[52px] heading font-bold text-center tracking-[1%] leading-[50px] uppercase text-[#2E2C76]">
-              Say Hello to <br /> Our Squad
-            </h2>
+        <div id="our-team" className="mt-[100px] lg:mt-[180px] ">
+          <div className="flex flex-col  items-center justify-center gap-2 md:gap-3 xl:gap-4 w-full lg:w-[80%] mx-auto text-center">
+            <SectionBadge label="Team Members" />
+
+            <SectionTitle
+              className="max-w-3xl mx-auto"
+              title={
+                <>
+                  {" "}
+                  Say Hello to <br /> Our Squad
+                </>
+              }
+            />
             <p className="text-lg md:text-2xl xl:text-3xl subHeading leading-[20px] md:leading-[26px] xl:leading-[32px] text-gray-600 mt-6 lg:mt-10">
               Get ready to meet the faces behind the magic, the dreamers, the
               doers, and the unstoppable force driving our success.
@@ -205,12 +210,11 @@ const AboutPage = () => {
         </div>
         <div className="mt-[100px] lg:mt-[180px] ">
           <div className="flex flex-col lg:flex-row  items-center gap-6 md:gap-8 xl:gap-12">
-            <h6 className="inline-flex items-center justify-center text-center bg-[#2E2C76] text-white subHeading text-xs lg:text-sm tracking-[0%] font-semibold px-4 py-1 rounded-full">
-              Gallery
-            </h6>
-            <h2 className="text-[32px] lg:text-[52px] heading font-bold text-center tracking-[1%] leading-[50px] uppercase text-[#2E2C76]">
-              Our Agency Snaps
-            </h2>
+            <SectionBadge label="Gallery" />
+            <SectionTitle
+              className="max-w-3xl "
+              title={<> Our Agency Snaps</>}
+            />
           </div>
           <div className="flex items-center justify-center lg:items-end lg:justify-end  mt-6 lg:mt-10">
             <p className="text-sm lg:text-xl subHeading leading-[24px] text-gray-400 text-center lg:text-left max-w-2xl lg:ml-auto">
@@ -225,12 +229,12 @@ const AboutPage = () => {
         </div>
         <div className="mt-[100px] lg:mt-[160px] ">
           <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
-            <h6 className="inline-flex items-center justify-center text-center bg-[#2E2C76] text-white subHeading text-xs lg:text-sm tracking-[1%] font-semibold px-4 py-1 rounded-full">
-              Frequently Asked Questions
-            </h6>
-            <h2 className="text-[32px] lg:text-[52px] heading font-bold text-center tracking-[1%] leading-[50px] uppercase text-[#2E2C76]">
-              Got Questions? <br /> We&apos;ve Got Answers!
-            </h2>
+            <SectionBadge label="Frequently Asked Questions" />
+            
+            <SectionTitle
+              className="max-w-3xl mx-auto"
+              title={<>Got Questions? <br /> We&apos;ve Got Answers!</>}
+            />
           </div>
           <SEOAccordion />
         </div>

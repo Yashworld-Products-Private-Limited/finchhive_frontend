@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -23,8 +24,11 @@ export default function RootLayout({
       className={cn("h-full antialiased", "font-sans", geist.variable)}
     >
       <body className="min-h-full grid-bg ">
+          <SmoothScroll />
         <Navbar />
-        <main className="">{children}</main>
+        <main className="">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

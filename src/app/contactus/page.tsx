@@ -1,10 +1,25 @@
-import LetsTalkSection from "@/components/LetsTalkSection";
+"use client";
 import {
   FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
   FaTwitter,
 } from "react-icons/fa";
+import dynamic from "next/dynamic";
+import { useState } from "react";
+const PopupModal = dynamic(
+  () => import("react-calendly").then((mod) => mod.PopupModal),
+  {
+    ssr: false,
+  },
+);
+
+const InlineWidget = dynamic(
+  () => import("react-calendly").then((mod) => mod.InlineWidget),
+  {
+    ssr: false,
+  },
+);
 
 function Card({
   title,
@@ -25,7 +40,31 @@ function Card({
   );
 }
 
-const page = () => {
+const Contactus = () => {
+  const [open, setOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+
+    if (!formData.name || !formData.email || !formData.message) {
+      alert("Please fill all required fields");
+      return;
+    }
+
+    setOpen(true);
+  };
+
   return (
     <div>
       <div className="max-w-[1440px] mx-auto">
@@ -35,6 +74,207 @@ const page = () => {
               Let&apos;s Work Together
             </h2>
           </div>
+        </div>
+        <div className="mt-[100px] lg:mt-[180px] px-4">
+          <div
+            className="
+      grid
+      lg:grid-cols-[1fr_1.1fr]
+      overflow-hidden
+      rounded-[36px]
+      border
+      border-black/10
+      bg-white
+      shadow-[0_20px_100px_rgba(0,0,0,0.08)]
+    "
+          >
+            {/* LEFT SIDE */}
+            <div
+              className="
+        relative
+        overflow-hidden
+        bg-gradient-to-br
+        from-[#2E2C76]
+        to-[#17153d]
+        p-8
+        lg:p-14
+        text-white
+      "
+            >
+              {/* Glow */}
+              <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-white/10 blur-3xl" />
+
+              <div className="relative z-10">
+                <p className="text-sm uppercase tracking-[0.25em] text-white/60">
+                  Schedule Meeting
+                </p>
+
+                <h3 className="mt-5 heading text-[38px] leading-none lg:text-[72px]">
+                  Let’s Build
+                  <br />
+                  Something
+                  <br />
+                  Amazing
+                </h3>
+
+                <p className="mt-6 max-w-lg text-white/70 leading-relaxed">
+                  Fill in your information and book a live strategy session
+                  directly from our availability calendar.
+                </p>
+
+                {/* FEATURES */}
+                <div className="mt-10 grid gap-4 sm:grid-cols-3">
+                  {["30 Min Call", "Google Meet", "Instant Booking"].map(
+                    (item) => (
+                      <div
+                        key={item}
+                        className="
+                rounded-2xl
+                border
+                border-white/10
+                bg-white/5
+                px-4
+                py-5
+                backdrop-blur-xl
+              "
+                      >
+                        <p className="text-sm text-white/80">{item}</p>
+                      </div>
+                    ),
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* RIGHT SIDE FORM */}
+            <div className="p-6 lg:p-14">
+              <div className="space-y-6">
+                {/* Name */}
+                <div className="space-y-2">
+                  <label className="text-sm text-black/60 heading">
+                    Full Name
+                  </label>
+
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    placeholder="John Doe"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="
+              w-full
+              rounded-2xl
+              border
+              border-black/10
+              bg-[#f8f8fc]
+              px-5
+              py-4
+              outline-none
+              transition-all
+              focus:border-[#2E2C76]
+              focus:ring-4
+              focus:ring-[#2E2C76]/10
+            "
+                  />
+                </div>
+
+                {/* Email */}
+                <div className="space-y-2">
+                  <label className="text-sm text-black/60 heading">
+                    Email Address
+                  </label>
+
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="john@example.com"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="
+              w-full
+              rounded-2xl
+              border
+              border-black/10
+              bg-[#f8f8fc]
+              px-5
+              py-4
+              outline-none
+              transition-all
+              focus:border-[#2E2C76]
+              focus:ring-4
+              focus:ring-[#2E2C76]/10
+            "
+                  />
+                </div>
+
+                {/* Message */}
+                <div className="space-y-2">
+                  <label className="text-sm text-black/60 heading">
+                    Project Brief
+                  </label>
+
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={6}
+                    placeholder="Tell us about your project..."
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="
+              w-full
+              resize-none
+              rounded-2xl
+              border
+              border-black/10
+              bg-[#f8f8fc]
+              px-5
+              py-4
+              outline-none
+              transition-all
+              focus:border-[#2E2C76]
+              focus:ring-4
+              focus:ring-[#2E2C76]/10
+            "
+                  />
+                </div>
+
+                {/* CTA */}
+                <button
+                  onClick={handleSubmit}
+                  className="
+            w-full
+            rounded-2xl
+            bg-[#2E2C76]
+            py-4
+            text-lg
+            text-white
+            transition-all
+            duration-300
+            hover:scale-[0.99]
+            hover:opacity-90
+          "
+                >
+                  Schedule Meeting
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* CALENDLY MODAL */}
+          {open && (
+            <PopupModal
+              url="https://calendly.com/jeel-ywppl/finchhive-meeting"
+              open={open}
+              onModalClose={() => setOpen(false)}
+              rootElement={document.body}
+              prefill={{
+                name: formData.name,
+                email: formData.email,
+              }}
+            />
+          )}
         </div>
         <div className="mt-[100px] lg:mt-[180px]">
           <section className="max-w-[1280px] mx-auto">
@@ -105,12 +345,9 @@ const page = () => {
             </div>
           </section>
         </div>
-        <div className="mt-[100px] lg:mt-[160px] mb-[60px]">
-          <LetsTalkSection />
-        </div>
       </div>
     </div>
   );
 };
 
-export default page;
+export default Contactus;

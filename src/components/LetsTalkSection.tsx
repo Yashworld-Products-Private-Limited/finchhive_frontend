@@ -25,7 +25,7 @@ export default function LetsTalkSection() {
       <div className="relative z-10 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left: Heading */}
         <div>
-          <h2 className="text-[140px] sm:text-[160px] md:text-[180px] lg:text-[190px] leading-[90px] md:leading-[120px] lg:leading-[130px] font-medium tracking-wider subHeading text-center lg:text-start">
+          <h2 className="text-[140px] sm:text-[160px] md:text-[180px] lg:text-[190px] leading-[90px] md:leading-[120px] lg:leading-[130px] font-medium tracking-wider heading text-center lg:text-start">
             <span className="text-[#2E2C76] block">Let&apos;s</span>
             <span className="block text-[#000000]">Talk!</span>
           </h2>

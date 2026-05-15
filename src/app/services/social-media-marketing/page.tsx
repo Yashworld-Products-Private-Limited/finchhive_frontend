@@ -1,7 +1,7 @@
 import PrimaryButton from "@/components/Button";
-import PricingSection from "@/components/PricingSection";
 import ResultsStatsSection from "@/components/ResultsStatsSection";
-import SEOAccordion from "@/components/SEOAccordion";
+import SectionBadge from "@/components/SectionBadge";
+import SectionTitle from "@/components/SectionTitle";
 import StickyCardsSection from "@/components/StickyCardsSection";
 import { Marquee } from "@/components/ui/marquee";
 import { logos, platforms, reels, stats } from "@/constants";
@@ -21,10 +21,15 @@ const page = () => {
       <div className="max-w-[1440px] mx-auto">
         <div className="mt-[calc(15dvh-80px+120px)]">
           <div className="text-center space-y-4">
-            <h2 className="text-[32px] lg:text-[52px] heading text-center tracking-[1%] leading-[50px] uppercase text-[#2E2C76]">
-              We Help Brands
-              <br /> Win On Social
-            </h2>
+            <SectionTitle
+              title={
+                <>
+                  We Help Brands
+                  <br />
+                  Win On Social
+                </>
+              }
+            />
             <p className=" text-gray-400 subheading text-base md:text-lg max-w-2xl mx-auto leading-relaxed subHeading">
               We help you reach the right audience with content, management, and
               paid media on the social platforms that matter most.
@@ -131,26 +136,30 @@ const page = () => {
         </Marquee>
       </div>
       <div className="max-w-4xl mx-auto mt-[40px] lg:mt-[60px]">
-        <p className="text-center text-xl text-black subHeading mb-10">
+        <p className="text-center text-sm lg:text-lg text-black subHeading mb-10">
           We Are Trusted By:
         </p>
-        <Marquee
-          reverse
-          className="relative flex items-center gap-8 overflow-hidden py-6"
-        >
-          {logos.map((logo, i) => (
-            <div
-              key={i}
-              className="mx-4 xl:mx-6 flex items-center justify-center transition-all duration-300 hover:scale-105 "
-            >
-              <img
-                src={logo}
-                alt={`logo-${i}`}
-                className="h-18 w-auto object-contain "
-              />
-            </div>
-          ))}
-        </Marquee>
+        <div className="relative">
+          <div className="absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+          <Marquee
+            reverse
+            className="relative flex items-center gap-8 overflow-hidden py-6"
+          >
+            {logos.map((logo, i) => (
+              <div
+                key={i}
+                className="relative mx-4 xl:mx-6 flex items-center justify-center transition-all duration-300 hover:scale-105 "
+              >
+                <img
+                  src={logo}
+                  alt={`logo-${i}`}
+                  className="h-18 w-auto object-contain "
+                />
+              </div>
+            ))}
+          </Marquee>
+        </div>
       </div>
       <div className="custom-container">
         <div className="max-w-[1440px] mx-auto">
@@ -242,17 +251,15 @@ const page = () => {
                   <span className="text-[#2E2C76]">Results</span> Your Audience
                   Actually Responds To.
                 </h2>
+                
               </div>
             </section>
           </div>
           <div className="mt-[100px] lg:mt-[180px]">
             <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
-              <h6 className="inline-flex items-center justify-center text-center bg-[#2E2C76] text-white subHeading text-xs lg:text-sm tracking-[1%] font-semibold px-4 py-1 rounded-full">
-                Results
-              </h6>
-              <h2 className="text-[32px] lg:text-[52px] heading text-center tracking-[1%] leading-[1.1] uppercase text-[#2E2C76] max-w-3xl">
-                Results That Speak For Themselves
-              </h2>
+              <SectionBadge label="Results" />
+
+              <SectionTitle className="max-w-3xl mx-auto" title="Results That Speak For Themselves" />
               <p className="text-sm lg:text-xl subHeading leading-[24px] text-gray-400 text-center  max-w-xl">
                 Audience-focused social campaigns backed by real growth,
                 engagement, and revenue.
@@ -260,11 +267,10 @@ const page = () => {
             </div>
             <ResultsStatsSection />
           </div>
-          <div className="mt-[100px] lg:mt-[180px]">
+          {/* <div className="mt-[100px] lg:mt-[180px]">
             <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
-              <h6 className="inline-flex items-center justify-center text-center bg-[#2E2C76] text-white subHeading text-xs lg:text-sm tracking-[1%] font-semibold px-4 py-1 rounded-full">
-                services
-              </h6>
+              <SectionBadge label="services" />
+              
               <h2 className="text-[32px] lg:text-[52px] heading text-center tracking-[1%] leading-[1.1] uppercase text-[#2E2C76] max-w-3xl">
                 Services Built Around Your Audience
               </h2>
@@ -274,19 +280,9 @@ const page = () => {
               </p>
             </div>
             <StickyCardsSection />
-          </div>
-          <div className="mt-[100px] lg:mt-[160px] ">
-            <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
-              <h6 className="inline-flex items-center justify-center text-center bg-[#2E2C76] text-white subHeading text-xs lg:text-sm tracking-[1%] font-semibold px-4 py-1 rounded-full">
-                Pricing
-              </h6>
-              <h2 className="text-[32px] lg:text-[52px] heading font-bold text-center tracking-[1%] leading-[50px] uppercase text-[#2E2C76]">
-                Profitable Pricing Plans
-              </h2>
-            </div>
-            <PricingSection />
-          </div>
-          <div className="mt-[100px] lg:mt-[160px] ">
+          </div> */}
+
+          {/* <div className="mt-[100px] lg:mt-[160px] mb-[120px]">
             <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
               <h6 className="inline-flex items-center justify-center text-center bg-[#2E2C76] text-white subHeading text-xs lg:text-sm tracking-[1%] font-semibold px-4 py-1 rounded-full">
                 Frequently Asked Questions
@@ -296,7 +292,7 @@ const page = () => {
               </h2>
             </div>
             <SEOAccordion />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

@@ -1,159 +1,140 @@
-export default function Footer() {
-  const quickLinks = ["About Us", "Services", "Our Work", "Blog", "Contact"];
-  const services = [
-    "Brand Strategy",
-    "Performance Marketing",
-    "Content Creation",
-    "Social Media Growth",
-    "Web Design",
-    "Analytics & Scaling",
-  ];
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
+const socialLinks = [
+  { label: "Instagram", href: "#" },
+  { label: "Dribbble", href: "#" },
+  { label: "Behance", href: "#" },
+  { label: "LinkedIn", href: "#" },
+];
+
+function useInView(threshold = 0.1) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setInView(true);
+      },
+      { threshold },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [threshold]);
+
+  return { ref, inView };
+}
+
+export default function BaggyFooter() {
+  const { ref, inView } = useInView(0.2);
 
   return (
-    <footer className="bg-black text-white py-16 lg:py-20">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
-          {/* Brand */}
-          <div className="col-span-2 lg:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-7 h-7 border-2 border-white/30 rounded flex items-center justify-center">
-                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-                  <path
-                    d="M2 14L8 2L14 14"
-                    stroke="white"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M4.5 9.5H11.5"
-                    stroke="white"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </div>
-              <span className="font-display text-lg tracking-widest">
-                FINCHHIVE
-              </span>
-            </div>
-            <p className="text-xs text-white/40 leading-relaxed mb-6">
-              Digital Strategy. Creative Power.
-              <br />
-              Scalable Growth.
-            </p>
-            <div className="flex gap-4">
-              {["IG", "FB", "LI", "YT"].map((s) => (
+    <footer className="w-full flex items-center justify-center py-10 px-4 subHeading">
+      <div
+        ref={ref}
+        className="relative w-full bg-[#101010] rounded-2xl overflow-hidden lg:h-[580px] xl:h-[550px]"
+        style={{ minHeight: 420 }}
+      >
+        {[
+          "top-4 left-4",
+          "top-4 right-4",
+          "bottom-4 left-4",
+          "bottom-4 right-4",
+        ].map((pos, i) => (
+          <span
+            key={i}
+            className={`absolute ${pos} w-5 h-5 rounded-full border-2 border-[#3a3835] bg-[#FFFFFF] shadow-inner block z-10`}
+          />
+        ))}
+
+        <div className="relative z-10 flex flex-col items-center text-center md:flex-row md:items-start md:justify-between md:text-left px-6 py-10 sm:px-8 md:px-14 md:pt-10">
+          {/* LEFT */}
+          <div className="flex flex-col items-center md:items-start">
+            <h2
+              className={` text-white heading leading-[60px] tracking-tight transition-all duration-700 ease-out text-[52px] sm:text-[60px] md:text-4xl lg:text-5xl ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"} `}
+              style={{ transitionDelay: "80ms" }}
+            >
+              Contacts
+            </h2>
+
+            <a
+              href="mailto:client@teststudio.com"
+              className={`inline-flex items-center gap-1 text-[#bcbae9] underline underline-offset-2 hover:opacity-80 transition-all duration-700 ease-out md:ml-3 text-base `}
+            >
+              client@teststudio.com
+              <ArrowIcon />
+            </a>
+          </div>
+
+          {/* RIGHT */}
+          <div className=" flex flex-col items-center md:items-end mt-14 md:mt-0 gap-6 md:gap-3">
+            {/* SOCIALS */}
+
+            {/* COPYRIGHT */}
+            <span
+              className={` text-[#6b6963] transition-all duration-700 ease-out text-xs lg:text-sm ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"} `}
+              style={{ transitionDelay: "120ms" }}
+            >
+              © 2026 Finchhive all rights reserved
+            </span>
+            <nav className="flex flex-wrap items-center justify-center md:justify-end gap-x-5 gap-y-3">
+              {socialLinks.map(({ label, href }, idx) => (
                 <a
-                  key={s}
-                  href="#"
-                  className="w-7 h-7 rounded-full border border-white/20 flex items-center justify-center text-xs text-white/50 hover:border-white hover:text-white transition-colors"
+                  key={label}
+                  href={href}
+                  className={` inline-flex items-center gap-0.5 text-white hover:text-[#2E2C76] transition-all duration-700 ease-out :text-base ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"} `}
+                  style={{ transitionDelay: `${180 + idx * 60}ms` }}
                 >
-                  {s[0]}
+                  {label}
+                  <ArrowIcon />
                 </a>
               ))}
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <p className="text-xs tracking-widest text-white/40 mb-4 font-semibold">
-              QUICK LINKS
-            </p>
-            <ul className="flex flex-col gap-2">
-              {quickLinks.map((l) => (
-                <li key={l}>
-                  <a
-                    href="#"
-                    className="text-sm text-white/60 hover:text-white transition-colors"
-                  >
-                    {l}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <p className="text-xs tracking-widest text-white/40 mb-4 font-semibold">
-              SERVICES
-            </p>
-            <ul className="flex flex-col gap-2">
-              {services.map((l) => (
-                <li key={l}>
-                  <a
-                    href="#"
-                    className="text-sm text-white/60 hover:text-white transition-colors"
-                  >
-                    {l}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <p className="text-xs tracking-widest text-white/40 mb-4 font-semibold">
-              CONTACT
-            </p>
-            <ul className="flex flex-col gap-3">
-              <li className="text-sm text-white/60">hello@finchhive.com</li>
-              <li className="text-sm text-white/60">+91 12345-67890</li>
-              <li className="text-sm text-white/60">@finchhive</li>
-            </ul>
-          </div>
-
-          {/* Newsletter */}
-          <div>
-            <p className="text-xs tracking-widest text-white/40 mb-4 font-semibold">
-              NEWSLETTER
-            </p>
-            <p className="text-xs text-white/40 mb-3 leading-relaxed">
-              Get growth insights delivered to your inbox.
-            </p>
-            <div className="flex">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="bg-white/10 border border-white/20 text-white text-xs px-3 py-2.5 flex-1 outline-none placeholder:text-white/30 min-w-0"
-              />
-              <button className="bg-brand px-3 py-2.5 flex-shrink-0 hover:bg-white/10 transition-colors">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                  <path
-                    d="M1 7h12M8 2l5 5-5 5"
-                    stroke="white"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
-            </div>
+            </nav>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-3">
-          <p className="text-xs text-white/30">
-            © 2024 FINCHHIVE. All rights reserved.
-          </p>
-          <div className="flex gap-6">
-            <a
-              href="#"
-              className="text-xs text-white/30 hover:text-white/60 transition-colors"
-            >
-              Privacy Policy
-            </a>
-            <a
-              href="#"
-              className="text-xs text-white/30 hover:text-white/60 transition-colors"
-            >
-              Terms & Conditions
-            </a>
-          </div>
+        <div
+          className="absolute bottom-5 left-1/2 -translate-x-1/2 w-full overflow-hidden pointer-events-none select-none flex justify-center"
+          aria-hidden
+        >
+          <WatermarkText inView={inView} />
         </div>
       </div>
     </footer>
+  );
+}
+
+function ArrowIcon() {
+  return (
+    <svg
+      width="11"
+      height="11"
+      viewBox="0 0 11 11"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="inline-block"
+    >
+      <path
+        d="M2 9L9 2M9 2H3.5M9 2V7.5"
+        stroke="currentColor"
+        strokeWidth="1.3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function WatermarkText({ inView }: { inView: boolean }) {
+  return (
+    <h1
+      className={` w-full text-center text-[#2e2c2a]  uppercase transition-all duration-1000 ease-out heading leading-none tracking-[1%] whitespace-nowrap text-[clamp(40px,14vw,140pc)] ${inView ? "opacity-100 -translate-y-1" : "opacity-0 translate-y-14"}`}
+    >
+      Finchhive
+    </h1>
   );
 }

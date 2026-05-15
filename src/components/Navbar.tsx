@@ -7,10 +7,10 @@ import Image from "next/image";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Testimonials", href: "/projects" },
-  { label: "Case Studies", href: "/reviews" },
-  { label: "Our Team", href: "/blog" },
+  { label: "Services", href: "/#services" },
+  { label: "Testimonials", href: "/#testimonials" },
+  { label: "Case Studies", href: "/#case-studies" },
+  { label: "Our Team", href: "/about#our-team" },
 ];
 
 export default function Navbar() {
@@ -19,13 +19,36 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
   const [navHeight, setNavHeight] = useState(68);
+  const [showNavbar, setShowNavbar] = useState(true);
 
   useEffect(() => {
+    let lastScrollY = window.scrollY;
+
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+
+      setScrolled(currentScrollY > 50);
+
+      // always show near top
+      if (currentScrollY < 10) {
+        setShowNavbar(true);
+      }
+      // scrolling DOWN -> hide navbar
+      else if (currentScrollY > lastScrollY) {
+        setShowNavbar(false);
+      }
+      // scrolling UP -> show navbar
+      else {
+        setShowNavbar(true);
+      }
+
+      lastScrollY = currentScrollY;
     };
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -55,11 +78,7 @@ export default function Navbar() {
     <>
       <nav
         ref={navRef}
-        className={`fixed top-0 left-0 right-0 z-[999] py-1 transition-all duration-500 ${
-          scrolled || menuOpen
-            ? "bg-white/30 backdrop-blur-[6px] "
-            : "bg-transparent"
-        }`}
+        className={` fixed top-0 left-0 right-0 z-[999] py-1 transition-all duration-500 ${showNavbar ? "translate-y-0" : "-translate-y-full"} ${scrolled || menuOpen ? "bg-white/30 backdrop-blur-[6px]" : "bg-transparent"}`}
       >
         <div className="custom-container flex items-center">
           <div className="w-full flex items-center justify-between gap-2 xl:gap-4">
@@ -79,7 +98,7 @@ export default function Navbar() {
 
             {/* Desktop Nav Pill */}
             <div className="hidden lg:flex items-center justify-center flex-1">
-              <div className="flex items-center gap-1 bg-[#c7d9ee] border border-white/10 rounded-full px-2 py-2">
+              <div className="flex items-center gap-1 bg-[#332c77] border border-white/10 rounded-full px-2 py-2">
                 {navLinks.map((link) => {
                   const isActive = pathname === link.href;
 
@@ -90,7 +109,7 @@ export default function Navbar() {
                       className={`text-sm 2xl:text-lg leading-6 uppercase px-2.5 2xl:px-3.5 py-2 rounded-full transition-all duration-200 subHeading
                                 ${
                                   isActive
-                                    ? "text-[#2E2C76] bg-[#a7a5d0]/50"
+                                    ? "text-[#FFFFFF] bg-[#a7a5d0]/50"
                                     : "text-white hover:text-[#2E2C76] hover:bg-white/10"
                                 }`}
                     >

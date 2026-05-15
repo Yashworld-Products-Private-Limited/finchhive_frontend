@@ -1,3 +1,4 @@
+"use client";
 import { FeatureCard, FeatureItem } from "@/components/FeatureCard";
 import LetsTalkSection from "@/components/LetsTalkSection";
 import { FeaturesServices, servicesPage } from "@/constants";
