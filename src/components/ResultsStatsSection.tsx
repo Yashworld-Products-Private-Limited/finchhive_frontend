@@ -16,13 +16,7 @@ const stats = [
     value: 2.5,
     suffix: "M",
   },
-  {
-    title: "Revenue Generated",
-    desc: "Social campaigns that turned audience attention into real sales and conversions.",
-    value: 5.0,
-    prefix: "$",
-    suffix: "M",
-  },
+  
 ];
 
 function Counter({
@@ -108,7 +102,6 @@ export default function ResultsStatsSection() {
                 <h2 className=" flex items-start font-black leading-none tracking-[-3px] text-[#1b1b1b text-[70px] sm:text-[90px] md:text-[110px] lg:text-[140px]">
                   <Counter
                     end={item.value}
-                    prefix={item.prefix}
                     suffix={item.suffix}
                   />
 

@@ -10,7 +10,7 @@ const navLinks = [
   { label: "Services", href: "/#services" },
   { label: "Testimonials", href: "/#testimonials" },
   { label: "Case Studies", href: "/#case-studies" },
-  { label: "Our Team Members", href: "/about#our-team" },
+  { label: "Our Team", href: "/about#our-team" },
 ];
 
 export default function Navbar() {
@@ -101,11 +101,11 @@ export default function Navbar() {
                     <Link
                       key={link.label}
                       href={link.href}
-                      className={`text-sm 2xl:text-lg leading-6 uppercase px-2.5 2xl:px-3.5 py-2 rounded-full transition-all duration-200 subHeading
+                      className={`text-sm 2xl:text-lg leading-6  px-2.5 2xl:px-3.5 py-2 rounded-full transition-all duration-200 
                                 ${
                                   isActive
-                                    ? "text-[#FFFFFF] bg-[#a7a5d0]/50"
-                                    : "text-white hover:text-[#2E2C76] hover:bg-white/10"
+                                    ? "text-[#FFFFFF] font-medium bg-[#a7a5d0]/50"
+                                    : "text-white hover:text-[#FFFFFF] hover:bg-white/10"
                                 }`}
                     >
                       {link.label}

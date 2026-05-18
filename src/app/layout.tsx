@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
 import SmoothScroll from "@/components/SmoothScroll";
+import ScrollToTop from "@/components/ScrollToTop.tsx";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -27,6 +28,7 @@ export default function RootLayout({
           <SmoothScroll />
         <Navbar />
         <main className="">
+          <ScrollToTop />
           {children}
         </main>
         <Footer />

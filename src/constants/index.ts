@@ -1,3 +1,4 @@
+import { BentoItem } from "@/components/BentoGrid";
 import { link } from "fs";
 import {
   BadgeDollarSign,
@@ -50,74 +51,74 @@ export const servicesPage = [
     title: "Social Media Marketing",
     desc: "Strategic social media management and growth systems for Instagram, Facebook, LinkedIn, and YouTube.",
     icon: Megaphone,
-    link: "/services/social-media-marketing",
+    link: "/services/social-media-marketing#social-media-marketing",
   },
   {
     title: "Reel Creation & Short-Form Content",
     desc: "High-impact cinematic reels, YouTube Shorts, and viral-ready content optimized for engagement and reach.",
     icon: Clapperboard,
-    link: "/services/social-media-marketing",
+    link: "/services/social-media-marketing#reel-creation",
   },
   {
     title: "Brand Storytelling",
     desc: "Emotion-driven visual storytelling that helps brands connect deeply with their audience and build long-term trust.",
     icon: FileText,
-    link: "/services/social-media-marketing",
+    link: "/services/social-media-marketing#brand-storytelling",
   },
   {
     title: "Influencer & Creator Collaborations",
     desc: "Strategic influencer partnerships and creator campaigns designed to amplify brand reach, build social proof, and drive authentic audience engagement across digital platforms.",
     icon: Users,
-    link: "/services/social-media-marketing",
+    link: "/services/social-media-marketing#influencer-collaborations",
   },
   {
     title: "Interior & Architectural Shoots",
     desc: "Luxury visual content for interior designers, architects, cafés, hospitality brands, and real estate projects.",
     icon: Building2,
-    link: "/services/social-media-marketing",
+    link: "/services/social-media-marketing#interior-architectural-shoots",
   },
-  {
-    title: "Performance Marketing",
-    desc: "Meta Ads, Google Ads, lead generation campaigns, and ROI-driven advertising strategies built to scale businesses.",
-    icon: Globe,
-    link: "/services/social-media-marketing",
-  },
-  {
-    title: "Website & Digital Platform Solutions",
-    desc: "Modern websites, landing pages, e-commerce platforms, and conversion-focused digital systems tailored for scalable growth.",
-    icon: Layout,
-    link: "/services/social-media-marketing",
-  },
-  {
-    title: "Brand Strategy & Positioning",
-    desc: "Build a strong brand identity, market positioning, and digital presence designed for long-term authority, recall, and recognition.",
-    icon: Inspect,
-    link: "/services/social-media-marketing",
-  },
-  {
-    title: "Event & Wedding Coverage",
-    desc: "Cinematic event coverage, wedding films, brand activations, conferences, and social-media-first storytelling.",
-    icon: Camera,
-    link: "/services/social-media-marketing",
-  },
+  // {
+  //   title: "Performance Marketing",
+  //   desc: "Meta Ads, Google Ads, lead generation campaigns, and ROI-driven advertising strategies built to scale businesses.",
+  //   icon: Globe,
+  //   link: "/services/social-media-marketing",
+  // },
+  // {
+  //   title: "Website & Digital Platform Solutions",
+  //   desc: "Modern websites, landing pages, e-commerce platforms, and conversion-focused digital systems tailored for scalable growth.",
+  //   icon: Layout,
+  //   link: "/services/social-media-marketing",
+  // },
+  // {
+  //   title: "Brand Strategy & Positioning",
+  //   desc: "Build a strong brand identity, market positioning, and digital presence designed for long-term authority, recall, and recognition.",
+  //   icon: Inspect,
+  //   link: "/services/social-media-marketing",
+  // },
+  // {
+  //   title: "Event & Wedding Coverage",
+  //   desc: "Cinematic event coverage, wedding films, brand activations, conferences, and social-media-first storytelling.",
+  //   icon: Camera,
+  //   link: "/services/social-media-marketing",
+  // },
   {
     title: "Creative Design & Visual Identity",
     desc: "Premium graphic design, visual systems, ad creatives, brand aesthetics, and digital-first creative direction.",
     icon: Palette,
-    link: "/services/social-media-marketing",
+    link: "/services/social-media-marketing#creative-design",
   },
   {
     title: "Logo Designing & Brand Marks",
     desc: "Crafting timeless, memorable logo identities and brand marks that define your visual identity across all platforms.",
     icon: PenTool,
-    link: "/services/social-media-marketing",
+    link: "/services/social-media-marketing#logo-design",
   },
-  {
-    title: "Podcast Production",
-    desc: "Professional multi-camera podcast shoots, long-form editing, and short-form content repurposing for creators and brands.",
-    icon: Mic2,
-    link: "/services/social-media-marketing",
-  },
+  // {
+  //   title: "Podcast Production",
+  //   desc: "Professional multi-camera podcast shoots, long-form editing, and short-form content repurposing for creators and brands.",
+  //   icon: Mic2,
+  //   link: "/services/social-media-marketing",
+  // },
 ];
 
 export const caseStudies = [
@@ -332,10 +333,10 @@ export const platforms = [
     bg: "bg-red-600",
   },
   {
-    image: "https://cdn-icons-png.flaticon.com/512/733/733614.png",
+    image: "https://upload.wikimedia.org/wikipedia/en/c/c4/Snapchat_logo.svg",
     className:
       "top-[12%] right-[8%] rotate-[10deg] shadow-[0_20px_40px_rgba(255,255,0,0.25)]",
-    bg: "bg-yellow-300",
+    bg: "bg-[#fffc00]",
   },
   {
     image: "https://cdn-icons-png.flaticon.com/512/3046/3046121.png",
@@ -355,32 +356,27 @@ export const stats = [
   {
     text: "$80K Sales",
     icon: BadgeDollarSign,
-    className:
-      "top-[13%] left-[8%] rotate-[-14deg]",
+    className: "top-[13%] left-[8%] rotate-[-14deg]",
   },
   {
     text: "100k+ Followers",
     users: true,
-    className:
-      "top-[0%] left-1/2 -translate-x-1/2",
+    className: "top-[0%] left-1/2 -translate-x-1/2",
   },
   {
     text: "500k+ Likes",
     icon: Heart,
-    className:
-      "top-[13%] right-[8%] rotate-[14deg]",
+    className: "top-[13%] right-[8%] rotate-[14deg]",
   },
   {
     text: "10k Replies",
-    icon: MessageCircleMore ,
-    className:
-      "bottom-[13%] left-[20%] rotate-[10deg]",
+    icon: MessageCircleMore,
+    className: "bottom-[13%] left-[20%] rotate-[10deg]",
   },
   {
     text: "70k Clicks",
-    icon: Link2 ,
-    className:
-      "bottom-[13%] right-[20%] rotate-[-10deg]",
+    icon: Link2,
+    className: "bottom-[13%] right-[20%] rotate-[-10deg]",
   },
 ];
 
@@ -424,5 +420,72 @@ export const cards = [
   {
     title: "Card 10",
     desc: "Experience the ultimate in luxury living.",
+  },
+];
+
+export const SocialImages: BentoItem[] = [
+  {
+    id: 1,
+    title: "Creative Studio",
+    desc: "Modern digital branding",
+    image:
+      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop",
+    className: "col-span-2 row-span-1 md:col-span-2 md:row-span-2",
+  },
+  {
+    id: 2,
+    title: "Workspace",
+    desc: "Minimal setup",
+    image:
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop",
+    className: "md:col-span-2 md:row-span-1",
+  },
+  {
+    id: 3,
+    title: "Architecture",
+    desc: "Luxury spaces",
+    image:
+      "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?q=80&w=1200&auto=format&fit=crop",
+    className: "col-span-1 row-span-2 md:col-span-1 md:row-span-2",
+  },
+  {
+    id: 4,
+    title: "Innovation",
+    desc: "Future technology",
+    image:
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
+    className: "md:col-span-1 md:row-span-2",
+  },
+  {
+    id: 5,
+    title: "Fashion",
+    desc: "Bold visual identity",
+    image:
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop",
+    className: "col-span-1 row-span-2 md:col-span-1 md:row-span-1",
+  },
+  {
+    id: 6,
+    title: "Urban Design",
+    desc: "Creative architecture",
+    image:
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop",
+    className: "md:col-span-1 md:row-span-1",
+  },
+  {
+    id: 7,
+    title: "Digital Agency",
+    desc: "Modern production",
+    image:
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop",
+    className: "md:col-span-2 md:row-span-1",
+  },
+  {
+    id: 8,
+    title: "Interior Vision",
+    desc: "Elegant lifestyle",
+    image:
+      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop",
+    className: "col-span-2 row-span-1 md:col-span-2 md:row-span-1 ",
   },
 ];

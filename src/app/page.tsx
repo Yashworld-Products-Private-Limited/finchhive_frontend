@@ -15,7 +15,7 @@ import {
   FeaturesServices,
   servicesPage,
   testimonials,
-  videos
+  videos,
 } from "@/constants";
 
 import RadioIcon from "@/icons/Radio";
@@ -27,7 +27,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-
 const avatars = [
   "https://i.pravatar.cc/150?img=47",
   "https://i.pravatar.cc/150?img=32",
@@ -38,7 +37,6 @@ const avatars = [
 const Home = () => {
   // const sectionRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
-  const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
   return (
     <div>
@@ -165,7 +163,7 @@ const Home = () => {
       </section>
       <section
         // ref={sectionRef}
-        className="relative w-full overflow-hidden flex items-center justify-center cursor-none"
+        className="relative w-full overflow-hidden flex items-center justify-center "
       >
         {/* <MagneticCursor containerRef={sectionRef} /> */}
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0%,rgba(46,44,118,0.3)_30%,rgba(46,44,118,0.7)_50%,#2E2C76_100%)]" />
@@ -209,7 +207,7 @@ const Home = () => {
       </section>
       <section className="custom-container">
         <div className="max-w-[1440px] mx-auto ">
-          <div className="hidden lg:flex relative">
+          <div className="hidden lg:flex relative cursor-pointer">
             <div className="absolute -top-[106px] z-10 backdrop-blur-[0.8px] border-[1px] border-white  rounded-[48px] px-8 py-7 shadow-[0_4px_20px_rgba(0,0,0,0.4)] before:absolute before:inset-0 before:rounded-[48px] before:bg-linear-to-br before:from-white/10 before:to-transparent before:pointer-events-none">
               <h1 className="font-light text-[#FFFFFF] lg:text-[22px] 2xl:text-3xl uppercase leading-tight tracking-wide mb-5 drop-shadow-md subHeading">
                 <span className="text-[#FFFFFD]">#1</span> Digital Marketing
@@ -257,7 +255,21 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="mt-[100px] lg:mt-[180px] ">
+          <div className="mt-[100px] lg:mt-[180px] cursor-pointer">
+            <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
+              <SectionBadge label="Brands Collaborations" />
+
+              <SectionTitle
+                className="max-w-3xl mx-auto"
+                title="Brands that trust us"
+              />
+            </div>
+            <div className="mt-10">
+              <LogoMarquee />
+            </div>
+          </div>
+
+          <div className="mt-[100px] lg:mt-[180px] cursor-pointer">
             <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
               <SectionBadge label="How We Work" />
 
@@ -280,7 +292,7 @@ const Home = () => {
                 title=" What we are offering"
               />
             </div>
-            <div className="w-full mt-12">
+            <div className="w-full mt-12 cursor-pointer">
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-6 lg:gap-6 mt-8">
                 {servicesPage.map((item, i) => {
                   const Icon = item.icon;
@@ -288,7 +300,7 @@ const Home = () => {
                     <div
                       key={i}
                       onClick={() => router.push(item.link)}
-                      className="flex flex-col items-start justify-between group relative rounded-3xl p-3 lg:p-6 bg-gradient-to-br from-white via-blue-50 to-blue-100 border border-blue-100 hover:border-blue-200 transition-all duration-300 space-y-2 lg:space-y-5 "
+                      className="flex flex-col items-start justify-between group relative rounded-3xl p-3 lg:p-6 bg-gradient-to-br from-white via-blue-50 to-blue-100 border border-blue-100 hover:border-blue-200 hover:shadow-xl transition-all duration-300 space-y-2 lg:space-y-5 "
                     >
                       <div className="flex flex-col items-start gap-3">
                         <div className=" flex items-center justify-center rounded-xl bg-[#2E2C76] p-4">
@@ -342,19 +354,6 @@ const Home = () => {
                   isMiddle={false}
                 />
               ))}
-            </div>
-          </div>
-          <div className="mt-[100px] lg:mt-[180px] ">
-            <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
-              <SectionBadge label="Brands Collaborations" />
-
-              <SectionTitle
-                className="max-w-3xl mx-auto"
-                title="Brands that trust us"
-              />
-            </div>
-            <div className="mt-10">
-              <LogoMarquee />
             </div>
           </div>
         </div>
@@ -440,7 +439,7 @@ const Home = () => {
               <div className=" grid grid-cols-1   items-center justify-center gap-6 w-full max-w-lg h-[600px] ">
                 <Marquee
                   vertical
-                  pauseOnHover
+                  // pauseOnHover
                   className="relative flex flex-col items-center justify-center gap-6 "
                 >
                   {testimonials.map((item, i) => (
@@ -475,7 +474,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="mt-[80px] lg:mt-[100px] ">
+          {/* <div className="mt-[80px] lg:mt-[100px] ">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
               {videos.map((item, i) => {
                 const thumbnail = `https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg`;
@@ -536,9 +535,9 @@ const Home = () => {
             <div className="flex items-center justify-center mt-8 lg:mt-12">
               <PrimaryButton label="VIEW ALL REVIEWS" />
             </div>
-          </div>
+          </div> */}
 
-          <div className="mt-[100px] lg:mt-[160px] ">
+          {/* <div className="mt-[100px] lg:mt-[160px] ">
             <div className="flex flex-col lg:flex-row  items-center gap-6 md:gap-8 xl:gap-12">
               <SectionBadge label="Why us" />
 
@@ -620,7 +619,7 @@ const Home = () => {
                 </div>
               </div>
             </section>
-          </div>
+          </div> */}
           <div className="mt-[100px] lg:mt-[160px] ">
             <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
               <SectionBadge label="Frequently Asked Questions" />

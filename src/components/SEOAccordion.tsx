@@ -5,45 +5,63 @@ import { useState } from "react";
 const faqs = [
   {
     id: 1,
-    question: "What is SEO and why is it important?",
+    question: "What is Finchhive?",
     answer:
-      "SEO, or Search Engine Optimization, is the process of optimizing a website to improve its visibility and ranking on search engine results pages (SERPs). It's important because it helps businesses attract organic traffic, increase their online visibility, and ultimately drive more leads and conversions.",
+      "Finchhive is a creative growth agency focused on branding, content creation, social media marketing, performance marketing, websites, and digital growth solutions for modern businesses.",
   },
   {
     id: 2,
-    question: "How long does it take to see results from SEO?",
+    question: "What services does Finchhive provide?",
     answer:
-      "SEO is a long-term strategy. Most websites begin to see noticeable improvements in 3 to 6 months, but significant results often take 6 to 12 months depending on competition, domain authority, and the quality of work done.",
+      "Brand Strategy & Positioning, Social Media Management, Content Creation, Meta & Google Ads, Website Development, Photography & Videography, Creative Campaigns, Marketing Consultation",
   },
   {
     id: 3,
-    question: "What are the key factors that influence SEO rankings?",
+    question: "Do you work with startups and small businesses?",
     answer:
-      "Key ranking factors include content quality and relevance, backlinks from authoritative sites, page speed and Core Web Vitals, mobile-friendliness, on-page optimization (title tags, meta descriptions, headings), and technical SEO elements like site structure and crawlability.",
+      "Yes. We work with startups, local brands, creators, cafés, fashion labels, real estate businesses, and growing companies looking to build a strong digital presence.",
   },
   {
     id: 4,
-    question: "Do I need to hire an SEO agency, or can I do SEO myself?",
+    question: "Can Finchhive handle both content creation and marketing?",
     answer:
-      "You can absolutely do SEO yourself, especially for smaller sites with the right resources and learning investment. However, an SEO agency brings expertise, tools, and bandwidth that can accelerate results. The decision depends on your budget, time, and complexity of your goals.",
+      "Absolutely. From shooting content to running ads and managing social media, we provide end-to-end creative and marketing solutions.",
   },
   {
     id: 5,
-    question: "How much does SEO cost?",
+    question: "How long does it take to see results?",
     answer:
-      "SEO costs vary widely. Freelancers may charge $500–$2,000/month, while agencies range from $1,500–$10,000+/month depending on the scope. One-time audits and project-based work can range from $500 to $5,000. The investment should align with your business goals and competition level.",
+      "Results depend on the project and goals, but most brands start noticing better engagement, reach, and visibility within the first few weeks of consistent strategy and execution.",
   },
   {
     id: 6,
-    question: "What is SEO and why is it important?",
+    question: "Do you provide customized marketing plans?",
     answer:
-      "SEO, or Search Engine Optimization, is the process of optimizing a website to improve its visibility and ranking on search engine results pages (SERPs). It's important because it helps businesses attract organic traffic, increase their online visibility, and ultimately drive more leads and conversions.",
+      "Yes. Every business is different, so we create customized strategies based on your brand goals, audience, and industry.",
   },
   {
     id: 7,
-    question: "How long does it take to see results from SEO?",
+    question: "Can Finchhive manage my social media accounts completely?",
     answer:
-      "SEO is a long-term strategy. Most websites begin to see noticeable improvements in 3 to 6 months, but significant results often take 6 to 12 months depending on competition, domain authority, and the quality of work done.",
+      "Yes. We can handle planning, designing, posting, content shoots, reels, captions, ad campaigns, and audience engagement.",
+  },
+  {
+    id: 8,
+    question: "Do you offer website design and development?",
+    answer:
+      "Yes. We create modern, responsive, and conversion-focused websites tailored to your brand identity and business needs.",
+  },
+  {
+    id: 9,
+    question: "How can I start working with Finchhive?",
+    answer:
+      "Simply contact us through Instagram, WhatsApp, or email, and our team will guide you through the process.",
+  },
+  {
+    id: 10,
+    question: "Why choose Finchhive?",
+    answer:
+      "Because we combine creativity, strategy, and execution to help brands grow with impactful visuals, strong branding, and performance-driven marketing.",
   },
 ];
 

@@ -2,8 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 
-
-
 const stats = [
   { value: 15, suffix: "+", label: "Years of Experience" },
   { value: 250, suffix: "+", label: "Successful Projects" },
@@ -204,20 +202,20 @@ export default function StatsFeatureSection() {
       className="relative w-full min-h-screen  flex flex-col overflow-hidden px-[16px]"
     >
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-bottom bg-no-repeat bg-fixed"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1600&q=80')",
+            "url('/imgs/ourwork.jpg')",
         }}
       />
 
-      <div
+      {/* <div
         className="absolute inset-0"
         style={{
           background:
             "radial-gradient(circle at center, rgba(46, 44, 118, 0.83) 0%, rgba(46, 44, 118, 0.6) 35%, rgba(0, 0, 0.5, 1) 100%)",
         }}
-      />
+      /> */}
 
       <div className="relative z-10 flex flex-col items-center justify-between py-6 w-full gap-40 md:h-[100dvh] ">
         <div className="grid grid-cols-2 md:flex md:flex-wrap items-center justify-center -gap-4 ">
