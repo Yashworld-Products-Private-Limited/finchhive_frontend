@@ -10,6 +10,7 @@ import { TeamSection } from "@/components/TeamSection";
 import Image from "next/image";
 
 const AboutPage = () => {
+  console.log("testing hello")
   return (
     <div>
       <div className="custom-container">
