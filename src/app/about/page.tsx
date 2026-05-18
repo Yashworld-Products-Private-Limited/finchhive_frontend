@@ -10,7 +10,6 @@ import { TeamSection } from "@/components/TeamSection";
 import Image from "next/image";
 
 const AboutPage = () => {
-  console.log("testing hello ")
   return (
     <div>
       <div className="custom-container">
@@ -22,7 +21,7 @@ const AboutPage = () => {
 
           <div className="relative z-10 flex items-end justify-center h-full p-6 md:p-10">
             <h1 className=" text-center text-white heading max-w-4xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.1]">
-              Hey There! Welcome to{" "}
+              Hey There! Welcome{" "}
               <span className="text-[#2E2C76]">Celestial Solutions!</span>
             </h1>
           </div>
