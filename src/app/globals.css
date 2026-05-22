@@ -8,8 +8,6 @@
 :root {
   --brand: #2e2c76;
   --brand-dark: #1e1c5e;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -40,143 +38,8 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  overflow-x: hidden;
-}
-.grid-bg {
-  background-color: #ffffff;
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.06) 1px, transparent 1px);
-  background-size: 40px 40px;
-}
-
-.grid-bg-dark {
-  background-color: #2e2c76;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-  background-size: 40px 40px;
-}
-
-.custom-container {
-  max-width: screen;
-  margin: 0 auto;
-  padding: 0 1rem;
-  height: calc();
-}
-
-.libre-caslon-text-regular {
-  font-family: "Libre Caslon Text", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-
-:root {
-  --font-display: "Bebas Neue", sans-serif;
-  --font-body: "DM Sans", sans-serif;
-}
-
-@font-face {
-  font-family: "AlfaSlabOne";
-  src: url("/font/AlfaSlabOne-Regular.ttf") format("truetype");
-  font-weight: 500;
-}
-
-
-@font-face {
-  font-family: "AkzidenzGroteskBE";
-  src: url("/font/AkzidenzGroteskBE-Regular.otf") format("truetype");
-  font-weight: 400;
-}
-
-.heading {
-  font-family: "AlfaSlabOne", sans-serif;
-}
-
-.subHeading {
-  font-family: "AkzidenzGroteskBE", sans-serif;
-}
-
-
-.glass-card {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow: 0 8px 32px rgba(46, 44, 118, 0.08);
-}
-
-
-.nav-scrolled {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.06);
-}
-
-
-.process-line::after {
-  content: "";
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  width: calc(100% - 40px);
-  height: 2px;
-  background: rgba(46, 44, 118, 0.25);
-  z-index: 0;
-}
-
-
-.checker-accent {
-  background-image: repeating-conic-gradient(
-    #2e2c76 0% 25%,
-    transparent 0% 50%
-  );
-  background-size: 10px 10px;
-  opacity: 0.12;
-}
-
-
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #fff;
-}
-::-webkit-scrollbar-thumb {
-  background: #2e2c76;
-  border-radius: 4px;
-}
-
-
-@keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-
-@keyframes spinSlow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-spin-slow {
-  animation: spinSlow 10s linear infinite;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
 }
 
 @theme inline {
@@ -276,6 +139,134 @@ body {
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+.grid-bg {
+  background-color: #ffffff;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.grid-bg-dark {
+  background-color: #2e2c76;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.custom-container {
+  max-width: screen;
+  margin: 0 auto;
+  padding: 0 1rem;
+  height: calc();
+}
+
+.libre-caslon-text-regular {
+  font-family: "Libre Caslon Text", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --font-display: "Bebas Neue", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+}
+
+@font-face {
+  font-family: "AlfaSlabOne";
+  src: url("/font/AlfaSlabOne-Regular.ttf") format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "AkzidenzGroteskBE";
+  src: url("/font/AkzidenzGroteskBE-Regular.otf") format("truetype");
+  font-weight: 400;
+}
+
+.heading {
+  font-family: "AlfaSlabOne", sans-serif;
+}
+
+.subHeading {
+  font-family: "AkzidenzGroteskBE", sans-serif;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px rgba(46, 44, 118, 0.08);
+}
+
+.nav-scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.06);
+}
+
+.process-line::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  width: calc(100% - 40px);
+  height: 2px;
+  background: rgba(46, 44, 118, 0.25);
+  z-index: 0;
+}
+
+.checker-accent {
+  background-image: repeating-conic-gradient(
+    #2e2c76 0% 25%,
+    transparent 0% 50%
+  );
+  background-size: 10px 10px;
+  opacity: 0.12;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+::-webkit-scrollbar-thumb {
+  background: #2e2c76;
+  border-radius: 4px;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 10s linear infinite;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -303,4 +294,28 @@ html.lenis body {
 
 .lenis.lenis-smooth iframe {
   pointer-events: none;
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(22, 163, 74, 0.06);
+  }
+}
+.pulse-dot {
+  animation: pulse-dot 2s infinite;
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

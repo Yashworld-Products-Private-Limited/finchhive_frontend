@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import SmoothScroll from "@/components/SmoothScroll";
 import ScrollToTop from "@/components/ScrollToTop.tsx";
 
-const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
   title: "Finchhive",
@@ -24,8 +24,8 @@ export default function RootLayout({
       lang="en"
       className={cn("h-full antialiased", "font-sans", geist.variable)}
     >
-      <body className="min-h-full grid-bg ">
-          <SmoothScroll />
+      <body suppressHydrationWarning={true} className="min-h-full grid-bg ">
+        <SmoothScroll />
         <Navbar />
         <main className="">
           <ScrollToTop />

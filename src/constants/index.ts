@@ -123,9 +123,13 @@ export const servicesPage = [
 
 export const caseStudies = [
   {
-    image: "/imgs/serv1.avif",
+    image: "/imgs/sadashiv.png",
     title: "Transforming Barber Buzz",
     desc: "How Razor Sharp Barbershop Grew its Clientele with Digital Marketing",
+    bgGlow: "from-[#c8b08a]/40 via-[#8b5e3c]/20 to-[#3b2416]/30",
+    cardBg: "#d8c3a5",
+    shadow: "shadow-[0_40px_120px_rgba(92,58,33,0.45)]",
+    link: "/case-studies/sadashiv",
     stats: [
       { value: "30%", label: "New client bookings" },
       { value: "50%", label: "Local search" },
@@ -139,6 +143,7 @@ export const caseStudies = [
       { value: "45%", label: "Membership growth" },
       { value: "60%", label: "Engagement rate" },
     ],
+    link: "/case-studies/kalras-kitchen",
   },
   {
     image: "/imgs/serv3.avif",
@@ -148,15 +153,7 @@ export const caseStudies = [
       { value: "70%", label: "Revenue growth" },
       { value: "35%", label: "Conversion rate" },
     ],
-  },
-  {
-    image: "/imgs/serv4.avif",
-    title: "Real Estate Leads",
-    desc: "Generating high-quality leads via digital funnels",
-    stats: [
-      { value: "55%", label: "Lead increase" },
-      { value: "40%", label: "Closing rate" },
-    ],
+    link: "/case-studies/veidor",
   },
 ];
 
@@ -265,6 +262,45 @@ export const FeaturesServices = [
     title: "Built for Modern Brands",
     description:
       "FINCHHIVE is designed for startups, creators, premium brands, and businesses that want long-term digital authority and scalability.",
+    icon: "atom",
+  },
+];
+
+export const KalraServices = [
+  {
+    title: "Audience-First Always",
+    description:
+      "We study your audience's psychology before we pick up a camera. Every decision dish, hook, format, music is backed by data on what your specific audience responds to.",
+    icon: "rocket",
+  },
+  {
+    title: "Zero Trend Dependency",
+    description:
+      "We don't build your brand on borrowed momentum. Trends fade. Audience understanding compounds. FINCHHIVE builds content that works because it's relevant, not because it's riding a wave.",
+    icon: "network",
+  },
+  {
+    title: "Cinematic Production Quality",
+    description:
+      "Premium visual quality is not optional. The way your food looks on screen is your brand. We shoot with cinematic standards so your content commands attention and respect.",
+    icon: "focus",
+  },
+  {
+    title: "Business Results, Not Vanity Metrics",
+    description:
+      "Views are nice. Footfall is better. We measure success by whether content drives real business outcomes new customers, increased orders, higher brand recall in your local market.",
+    icon: "chat",
+  },
+  {
+    title: "Platform Psychology Expertise",
+    description:
+      "Instagram, Facebook, YouTube each platform has distinct algorithms and audience behaviors. We engineer content specifically for how each platform distributes and rewards content.",
+    icon: "support",
+  },
+  {
+    title: "Strategy That Compounds",
+    description:
+      "We don't produce isolated pieces. We build content systems where each reel informs the next creating compounding brand equity and consistently improving performance over time.",
     icon: "atom",
   },
 ];

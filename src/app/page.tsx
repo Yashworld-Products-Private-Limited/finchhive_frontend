@@ -1,9 +1,9 @@
 "use client";
 import PrimaryButton from "@/components/Button";
+import CaseStudies from "@/components/CaseStudies";
 import { FeatureCard, FeatureItem } from "@/components/FeatureCard";
 import LetsTalkSection from "@/components/LetsTalkSection";
 import LogoMarquee from "@/components/LogoMarquee";
-import PhysicsPills from "@/components/PhysicsPills";
 import ProcessSection from "@/components/ProcessSection";
 import SectionBadge from "@/components/SectionBadge";
 import SectionTitle from "@/components/SectionTitle";
@@ -15,17 +15,14 @@ import {
   FeaturesServices,
   servicesPage,
   testimonials,
-  videos,
 } from "@/constants";
 
 import RadioIcon from "@/icons/Radio";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Play } from "lucide-react";
-import dynamic from "next/dynamic";
+import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
 
 const avatars = [
   "https://i.pravatar.cc/150?img=47",
@@ -375,58 +372,8 @@ const Home = () => {
                 title="Case Studies"
               />
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-[120px]">
-              {caseStudies.map((item, i) => (
-                <div
-                  key={i}
-                  className={`space-y-5 ${i === 0 || i === 2 ? "md:mt-[-80px]" : "-md:mt-[80px]"}`}
-                >
-                  <div className="relative w-full">
-                    <div className="absolute inset-0 bg-gradient-to-br from-orange-500/30 via-transparent to-transparent blur-3xl opacity-40" />
-                    <div className="relative rounded-2xl overflow-hidden h-[380px] sm:h-[420px] md:h-[460px] lg:h-[550px] shadow-[0_10px_40px_rgba(0,0,0,0.6)]">
-                      <Image
-                        src={item.image}
-                        alt="case study"
-                        fill
-                        loading="lazy"
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        className="object-cover"
-                      />
-                      <div className="absolute inset-0 bg-black/20" />
-                    </div>
-                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-[85%] h-[18px] bg-white/5 rounded-xl blur-md" />
-                    <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-[75%] h-[14px] bg-white/10 rounded-xl blur-sm" />
-                  </div>
-                  <div className="relative rounded-[20px] p-5 sm:p-6 md:p-8 overflow-hidden bg-gradient-to-br from-white via-[#f8fbff] to-[#eef5ff] border border-black/5 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] group transition-all duration-500 hover:scale-[1.02]">
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#2E2C76]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-500" />
-                    <span className="inline-block text-[10px] sm:text-xs tracking-wide px-3 py-1 rounded-full bg-[#2E2C76]/50 text-[#FFFFFF] mb-3 sm:mb-4">
-                      CASE STUDY
-                    </span>
-                    <h3 className="text-[#2E2C76] text-lg sm:text-xl md:text-2xl tracking-wide mb-2 heading">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-500 text-xs sm:text-sm md:text-base mb-5 sm:mb-6 subHeading">
-                      {item.desc}
-                    </p>
-                    <div className="flex items-center justify-between">
-                      {item.stats.map((stat, j) => (
-                        <div key={j}>
-                          <h2 className="text-[#2E2C76] text-2xl sm:text-3xl md:text-4xl font-bold Heading">
-                            {stat.value}
-                          </h2>
-                          <p className="text-gray-500 text-xs sm:text-sm mt-1">
-                            {stat.label}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className=" flex justify-center">
-              <PrimaryButton label="VIEW ALL PROJECTS" />
-            </div>
+            <CaseStudies />
+           
           </div>
           <div id="testimonials" className="mt-[80px] lg:mt-[100px] ">
             <div className="relative w-full flex items-start justify-center overflow-hidden  mx-auto ">
