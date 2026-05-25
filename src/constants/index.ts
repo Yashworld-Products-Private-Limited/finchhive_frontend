@@ -124,7 +124,7 @@ export const servicesPage = [
 export const caseStudies = [
   {
     image: "/imgs/sadashiv.png",
-    title: "Transforming Barber Buzz",
+    title: "Sada Shive Music Festival",
     desc: "How Razor Sharp Barbershop Grew its Clientele with Digital Marketing",
     bgGlow: "from-[#c8b08a]/40 via-[#8b5e3c]/20 to-[#3b2416]/30",
     cardBg: "#d8c3a5",
@@ -137,7 +137,7 @@ export const caseStudies = [
   },
   {
     image: "/imgs/serv2.jpg",
-    title: "Scaling Fitness Brand",
+    title: "Kalras Kitchen",
     desc: "Boosting memberships through targeted campaigns",
     stats: [
       { value: "45%", label: "Membership growth" },
@@ -147,13 +147,23 @@ export const caseStudies = [
   },
   {
     image: "/imgs/serv3.avif",
-    title: "Ecommerce Explosion",
+    title: "Veidor Social Media Brand",
     desc: "Driving conversions with performance marketing",
     stats: [
       { value: "70%", label: "Revenue growth" },
       { value: "35%", label: "Conversion rate" },
     ],
     link: "/case-studies/veidor",
+  },
+  {
+    image: "/imgs/serv3.avif",
+    title: "Studio 9 India",
+    desc: "Driving conversions with performance marketing",
+    stats: [
+      { value: "70%", label: "Revenue growth" },
+      { value: "35%", label: "Conversion rate" },
+    ],
+    link: "/case-studies/studio-nine",
   },
 ];
 

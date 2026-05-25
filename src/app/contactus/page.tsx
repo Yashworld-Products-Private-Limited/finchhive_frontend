@@ -14,12 +14,7 @@ const PopupModal = dynamic(
   },
 );
 
-const InlineWidget = dynamic(
-  () => import("react-calendly").then((mod) => mod.InlineWidget),
-  {
-    ssr: false,
-  },
-);
+
 
 function Card({
   title,
@@ -74,31 +69,9 @@ const Contactus = () => {
             </h2>
           </div>
         </div>
-        <div className="mt-[100px] lg:mt-[180px] px-4">
-          <div
-            className="
-      grid
-      lg:grid-cols-[1fr_1.1fr]
-      overflow-hidden
-      rounded-[36px]
-      border
-      border-black/10
-      bg-white
-      shadow-[0_20px_100px_rgba(0,0,0,0.08)]
-    "
-          >
-            <div
-              className="
-        relative
-        overflow-hidden
-        bg-gradient-to-br
-        from-[#2E2C76]
-        to-[#17153d]
-        p-8
-        lg:p-14
-        text-white
-      "
-            >
+        <div className="mt-[30px] lg:mt-[40px] px-4">
+          <div className=" grid lg:grid-cols-[1fr_1.1fr] overflow-hidden rounded-[36px] border border-black/10 bg-white shadow-[0_20px_100px_rgba(0,0,0,0.08)]">
+            <div className=" relative overflow-hidden bg-gradient-to-br from-[#2E2C76] to-[#17153d] p-8 lg:p-14 text-white">
               <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-white/10 blur-3xl" />
 
               <div className="relative z-10">
@@ -124,15 +97,7 @@ const Contactus = () => {
                     (item) => (
                       <div
                         key={item}
-                        className="
-                rounded-2xl
-                border
-                border-white/10
-                bg-white/5
-                px-4
-                py-5
-                backdrop-blur-xl
-              "
+                        className=" rounded-2xl border border-white/10 bg-white/5 px-4 py-5 backdrop-blur-xl"
                       >
                         <p className="text-sm text-white/80">{item}</p>
                       </div>
@@ -156,20 +121,7 @@ const Contactus = () => {
                     placeholder="John Doe"
                     value={formData.name}
                     onChange={handleChange}
-                    className="
-              w-full
-              rounded-2xl
-              border
-              border-black/10
-              bg-[#f8f8fc]
-              px-5
-              py-4
-              outline-none
-              transition-all
-              focus:border-[#2E2C76]
-              focus:ring-4
-              focus:ring-[#2E2C76]/10
-            "
+                    className=" w-full rounded-2xl border border-black/10 bg-[#f8f8fc] px-5 py-4 outline-none transition-all focus:border-[#2E2C76] focus:ring-4 focus:ring-[#2E2C76]/10"
                   />
                 </div>
 
@@ -185,20 +137,7 @@ const Contactus = () => {
                     placeholder="john@example.com"
                     value={formData.email}
                     onChange={handleChange}
-                    className="
-              w-full
-              rounded-2xl
-              border
-              border-black/10
-              bg-[#f8f8fc]
-              px-5
-              py-4
-              outline-none
-              transition-all
-              focus:border-[#2E2C76]
-              focus:ring-4
-              focus:ring-[#2E2C76]/10
-            "
+                    className=" w-full rounded-2xl border border-black/10 bg-[#f8f8fc] px-5 py-4 outline-none transition-all focus:border-[#2E2C76] focus:ring-4 focus:ring-[#2E2C76]/10"
                   />
                 </div>
 
@@ -214,38 +153,13 @@ const Contactus = () => {
                     placeholder="Tell us about your project..."
                     value={formData.message}
                     onChange={handleChange}
-                    className="
-              w-full
-              resize-none
-              rounded-2xl
-              border
-              border-black/10
-              bg-[#f8f8fc]
-              px-5
-              py-4
-              outline-none
-              transition-all
-              focus:border-[#2E2C76]
-              focus:ring-4
-              focus:ring-[#2E2C76]/10
-            "
+                    className=" w-full resize-none rounded-2xl border border-black/10 bg-[#f8f8fc] px-5 py-4 outline-none transition-all focus:border-[#2E2C76] focus:ring-4 focus:ring-[#2E2C76]/10"
                   />
                 </div>
 
                 <button
                   onClick={handleSubmit}
-                  className="
-            w-full
-            rounded-2xl
-            bg-[#2E2C76]
-            py-4
-            text-lg
-            text-white
-            transition-all
-            duration-300
-            hover:scale-[0.99]
-            hover:opacity-90
-          "
+                  className=" w-full rounded-2xl bg-[#2E2C76] py-4 text-lg text-white transition-all duration-300 hover:scale-[0.99] hover:opacity-90"
                 >
                   Schedule Meeting
                 </button>
@@ -266,7 +180,7 @@ const Contactus = () => {
             />
           )}
         </div>
-        <div className="mt-[100px] lg:mt-[180px]">
+        <div className="mt-[60px] lg:mt-[110px]">
           <section className="max-w-[1280px] mx-auto">
             <div className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

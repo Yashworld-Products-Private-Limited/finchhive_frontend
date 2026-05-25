@@ -1,3 +1,4 @@
+"use client";
 import AboutSection from "@/components/AboutSection";
 import ExpandingGallery from "@/components/ExpandingGallery";
 import LetsTalkSection from "@/components/LetsTalkSection";
@@ -8,22 +9,99 @@ import SEOAccordion from "@/components/SEOAccordion";
 import ValuesSection from "@/components/SnowflakeIcon";
 import { TeamSection } from "@/components/TeamSection";
 import Image from "next/image";
+import { motion, Variants } from "framer-motion";
 
 const AboutPage = () => {
+  const containerVariants: Variants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.18,
+      },
+    },
+  };
+
+  const fadeUp: Variants = {
+    hidden: {
+      opacity: 0,
+      y: 80,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: [0.25, 0.1, 0.25, 1],
+      },
+    },
+  };
+
+  const fadeLeft: Variants = {
+    hidden: {
+      opacity: 0,
+      x: -80,
+      scale: 0.95,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+      transition: {
+        duration: 1,
+        ease: [0.25, 0.1, 0.25, 1],
+      },
+    },
+  };
+
+  const fadeRight: Variants = {
+    hidden: {
+      opacity: 0,
+      x: 80,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 1,
+        ease: [0.25, 0.1, 0.25, 1],
+      },
+    },
+  };
+
+  const scaleFade: Variants = {
+    hidden: {
+      opacity: 0,
+      scale: 0.9,
+      y: 40,
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: [0.25, 0.1, 0.25, 1],
+      },
+    },
+  };
+
   return (
     <div>
       <div className="custom-container">
-        <div
-          className=" relative w-full h-[400px] md:h-[500px] lg:h-[700px] overflow-hidden rounded-2xl mt-[calc(10dvh-10px)] bg-[url('/imgs/abt.jpg')] bg-cover bg-center bg-fixed
-  "
-        >
+        <div className=" relative w-full h-[400px] md:h-[500px] lg:h-[700px] overflow-hidden rounded-2xl mt-[calc(10dvh-10px)] bg-[url('/imgs/abt.jpg')] bg-cover bg-center bg-fixed">
           <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/30 to-black/10" />
 
           <div className="relative z-10 flex items-end justify-center h-full p-6 md:p-10">
-            <h1 className=" text-center text-white heading max-w-4xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.1]">
-              Hey There! Welcome to{" "}
-              <span className="text-[#2E2C76]">Celestial Solutions!</span>
-            </h1>
+            <SectionTitle
+              className=""
+              title={
+                <>
+                  <span className="text-[#FFFFFF]">Hey There! Welcome to </span>{" "}
+                  <br />
+                  <span className="text-[#2E2C76]">Celestial Solutions!</span>
+                </>
+              }
+            />
           </div>
         </div>
         <div className="max-w-[1440px] mx-auto">
@@ -55,16 +133,28 @@ const AboutPage = () => {
               <LogoMarquee />
             </div>
           </div>
-          <div className="mt-[100px] lg:mt-[180px] ">
-            <div className="flex flex-col lg:flex-row  items-center gap-6 md:gap-8 xl:gap-12">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            variants={containerVariants}
+            className="mt-[100px] lg:mt-[180px] "
+          >
+            <motion.div
+              variants={fadeUp}
+              className="flex flex-col lg:flex-row  items-center gap-6 md:gap-8 xl:gap-12"
+            >
               <SectionBadge label="About Founder" />
               <h2 className="text-[32px] lg:text-[52px] heading font-bold text-center tracking-[1%] leading-[50px] uppercase text-[#2E2C76]"></h2>
               <SectionTitle
                 className="max-w-3xl "
                 title={<> Meet The Founder</>}
               />
-            </div>
-            <p className="text-lg md:text-2xl xl:text-3xl subHeading leading-[20px] md:leading-[26px] xl:leading-[32px] text-gray-600 mt-6 lg:mt-10">
+            </motion.div>
+            <motion.p
+              variants={fadeUp}
+              className="text-sm md:text-xl xl:text-2xl subHeading leading-[20px] md:leading-[26px] xl:leading-[32px] text-gray-600 mt-6 lg:mt-10"
+            >
               With over 15 years of experience in the teaching industry, Niraj
               Prasad brings a unique human-centered perspective to the digital
               world. <br />
@@ -74,12 +164,25 @@ const AboutPage = () => {
               educator helped him develop deep insights into audience
               psychology, communication patterns, attention behavior, and
               emotional connection.
-            </p>
+            </motion.p>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start mt-16">
-              <div className="lg:sticky lg:top-20 h-fit relative flex justify-center lg:justify-center w-full">
+              <motion.div
+                variants={fadeLeft}
+                className="lg:sticky lg:top-20 h-fit relative flex justify-center lg:justify-center w-full"
+              >
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[340px] h-[340px] sm:w-[380px] sm:h-[380px] md:w-[440px] md:h-[440px]  lg:w-[460px] lg:h-[460px] xl:w-[490px] xl:h-[490px] bg-[#908eed] rounded-t-[100%] z-0" />
 
-                <div className="relative z-10 flex justify-center">
+                <motion.div
+                  animate={{
+                    y: [0, -12, 0],
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="relative z-10 flex justify-center"
+                >
                   <Image
                     src="/imgs/jems.png"
                     alt="leader"
@@ -88,19 +191,24 @@ const AboutPage = () => {
                     loading="lazy"
                     className="w-[300px] sm:w-[330px] md:w-[380px] lg:w-[400px] xl:w-[440px] h-auto object-contain grayscale"
                   />
-                </div>
+                </motion.div>
 
-                <div className="absolute bottom-0 left-1/3 sm:left-1/3 md:left-1/3 xl:left-1/4 z-20">
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6, duration: 0.8 }}
+                  className="absolute bottom-0 left-1/3 sm:left-1/3 md:left-1/3 xl:left-1/4 z-20"
+                >
                   <div className="absolute inset-0 bg-white/10 backdrop-blur-md rounded-lg -z-10 px-4 py-2" />
 
                   <h2 className="flex items-center gap-2 text-3xl sm:text-4xl md:text-5xl heading leading-none">
                     <span className="text-[#2E2C76] block">Niraj</span>
                     <span className="text-white block">Prasad</span>
                   </h2>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
 
-              <div className="space-y-6">
+              <motion.div variants={fadeRight} className="space-y-6">
                 <p className="text-gray-600 text-sm md:text-base lg:text-xl  leading-relaxed subHeading">
                   That experience became the foundation of FINCHHIVE. While many
                   agencies focus only on trends and algorithms, Niraj built
@@ -116,12 +224,17 @@ const AboutPage = () => {
                     "Storytelling strategy",
                     "Digital growth vision",
                   ].map((tag) => (
-                    <span
+                    <motion.span
+                      whileHover={{
+                        scale: 1.08,
+                        y: -4,
+                      }}
+                      transition={{ type: "spring", stiffness: 300 }}
                       key={tag}
                       className="px-4 py-2 rounded-full bg-black/10 text-black text-sm border border-black/20 backdrop-blur-md subHeading"
                     >
                       {tag}
-                    </span>
+                    </motion.span>
                   ))}
                 </div>
                 <p className="text-gray-600 text-sm md:text-base lg:text-xl  leading-relaxed subHeading">
@@ -152,19 +265,27 @@ const AboutPage = () => {
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                     {["Logo", "Logo", "Logo", "Logo", "Logo", "Logo"].map(
                       (_, i) => (
-                        <div
+                        <motion.div
+                          whileHover={{
+                            scale: 1.05,
+                            y: -5,
+                          }}
+                          transition={{
+                            type: "spring",
+                            stiffness: 250,
+                          }}
                           key={i}
                           className="h-[60px] flex items-center justify-center rounded-xl bg-black/20 border border-black/10 backdrop-blur-md"
                         >
                           <span className="text-gray-400 text-sm">LOGO</span>
-                        </div>
+                        </motion.div>
                       ),
                     )}
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
           {/* <div className="mt-[100px] lg:mt-[180px] ">
             <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
               <h6 className="inline-flex items-center justify-center text-center bg-[#2E2C76] text-white subHeading text-xs lg:text-sm tracking-[1%] font-semibold px-4 py-1 rounded-full">
@@ -184,42 +305,101 @@ const AboutPage = () => {
         <ValuesSection />
       </div>
       <div className="max-w-[1440px] mx-auto">
-        <div id="our-team" className="mt-[100px] lg:mt-[180px] ">
-          <div className="flex flex-col  items-center justify-center gap-2 md:gap-3 xl:gap-4 w-full lg:w-[80%] mx-auto text-center">
-            <SectionBadge label="Team Members" />
+        <div id="our-team" className="mt-[100px] lg:mt-[180px] overflow-hidden">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="flex flex-col items-center justify-center gap-2 xl:gap-2 w-full lg:w-[80%] mx-auto text-center"
+          >
+            {/* Badge */}
+            <motion.div
+              variants={fadeUp}
+              whileHover={{
+                scale: 1.05,
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+              }}
+            >
+              <SectionBadge label="Team Members" />
+            </motion.div>
 
-            <SectionTitle
-              className="max-w-3xl mx-auto"
-              title={
-                <>
-                  {" "}
-                  Say Hello to <br /> Our Squad
-                </>
-              }
-            />
-            <p className="text-lg md:text-2xl xl:text-3xl subHeading leading-[20px] md:leading-[26px] xl:leading-[32px] text-gray-600 mt-6 lg:mt-10">
+            {/* Title */}
+            <motion.div variants={scaleFade}>
+              <SectionTitle
+                className="max-w-3xl mx-auto"
+                title={
+                  <>
+                    Say Hello to <br /> Our Squad
+                  </>
+                }
+              />
+            </motion.div>
+
+            {/* Description */}
+            <motion.p
+              variants={fadeUp}
+              className="text-sm md:text-xl xl:text-2xl subHeading leading-[20px] md:leading-[26px] xl:leading-[32px] text-gray-600"
+            >
               Get ready to meet the faces behind the magic, the dreamers, the
               doers, and the unstoppable force driving our success.
-            </p>
-          </div>
-          <div className="mt-16">
+            </motion.p>
+          </motion.div>
+
+          {/* Team Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 80 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{
+              duration: 1,
+              delay: 0.3,
+              ease: [0.25, 0.1, 0.25, 1],
+            }}
+            className="my-16"
+          >
             <TeamSection />
-          </div>
+          </motion.div>
         </div>
         <div className="mt-[100px] lg:mt-[180px] ">
-          <div className="flex flex-col lg:flex-row  items-center gap-6 md:gap-8 xl:gap-12">
-            <SectionBadge label="Gallery" />
-            <SectionTitle
-              className="max-w-3xl "
-              title={<> Our Agency Snaps</>}
-            />
-          </div>
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="flex flex-col lg:flex-row  items-center gap-6 md:gap-8 xl:gap-12"
+          >
+            <motion.div
+              variants={fadeUp}
+              whileHover={{
+                scale: 1.05,
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+              }}
+            >
+              <SectionBadge label="Gallery" />
+            </motion.div>
+            <motion.div variants={scaleFade}>
+              <SectionTitle
+                className="max-w-3xl "
+                title={<> Our Agency Snaps</>}
+              />
+            </motion.div>
+          </motion.div>
           <div className="flex items-center justify-center lg:items-end lg:justify-end  mt-6 lg:mt-10">
-            <p className="text-sm lg:text-xl subHeading leading-[24px] text-gray-400 text-center lg:text-left max-w-2xl lg:ml-auto">
+            <motion.p
+              variants={fadeUp}
+              className="text-sm lg:text-xl subHeading leading-[24px] text-gray-400 text-center lg:text-left max-w-2xl lg:ml-auto"
+            >
               From team outings and office shenanigans to special events and
               celebrations, these photos capture the essence of our vibrant
               culture and the bonds that unite us.
-            </p>
+            </motion.p>
           </div>
           <div className="mt-16">
             <ExpandingGallery />
@@ -228,10 +408,14 @@ const AboutPage = () => {
         <div className="mt-[100px] lg:mt-[160px] ">
           <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
             <SectionBadge label="Frequently Asked Questions" />
-            
+
             <SectionTitle
               className="max-w-3xl mx-auto"
-              title={<>Got Questions? <br /> We&apos;ve Got Answers!</>}
+              title={
+                <>
+                  Got Questions? <br /> We&apos;ve Got Answers!
+                </>
+              }
             />
           </div>
           <SEOAccordion />

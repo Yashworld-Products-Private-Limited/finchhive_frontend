@@ -1,3 +1,4 @@
+"use client";
 import BentoGrid from "@/components/BentoGrid";
 import PrimaryButton from "@/components/Button";
 import ResultsStatsSection from "@/components/ResultsStatsSection";
@@ -7,6 +8,7 @@ import { Marquee } from "@/components/ui/marquee";
 import { logos, platforms, reels, SocialImages } from "@/constants";
 import { BadgeCheck, Star, Zap } from "lucide-react";
 import Image from "next/image";
+import { motion, Variants } from "framer-motion";
 
 const users = [
   "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop",
@@ -16,6 +18,71 @@ const users = [
 ];
 
 const page = () => {
+  const containerVariants: Variants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.18,
+      },
+    },
+  };
+
+  const fadeUp: Variants = {
+    hidden: {
+      opacity: 0,
+      y: 60,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.9,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const textVariants: Variants = {
+    hidden: {
+      opacity: 0,
+      y: 60,
+      filter: "blur(12px)",
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      transition: {
+        duration: 1.2,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const iconVariants: Variants = {
+    hidden: {
+      opacity: 0,
+      scale: 0,
+      x: 0,
+      y: 0,
+      rotate: -180,
+      filter: "blur(10px)",
+    },
+    visible: (index: number) => ({
+      opacity: 1,
+      scale: 1,
+      x: 0,
+      y: 0,
+      rotate: 0,
+      filter: "blur(0px)",
+      transition: {
+        duration: 1,
+        delay: index * 0.12,
+        ease: "easeOut",
+      },
+    }),
+  };
+
   return (
     <div>
       <div className="max-w-[1440px] mx-auto">
@@ -155,19 +222,40 @@ const page = () => {
       </div>
       <div id="social-media-marketing" className="custom-container">
         <div className="max-w-[1440px] mx-auto">
-          <div className="mt-[100px] lg:mt-[180px] sapce-y-10">
-            <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
-              {/* <SectionBadge label="Results" /> */}
+          <div className="mt-[100px] lg:mt-[180px] space-y-10 overflow-hidden">
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              className="flex flex-col items-center justify-center gap-4 md:gap-6 xl:gap-8"
+            >
+              {/* Title */}
+              <motion.div
+                variants={fadeUp}
+                whileHover={{
+                  scale: 1.02,
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 250,
+                }}
+              >
+                <SectionTitle
+                  className="max-w-3xl mx-auto"
+                  title="Social Media Marketing"
+                />
+              </motion.div>
 
-              <SectionTitle
-                className="max-w-3xl mx-auto"
-                title="Social Media Marketing"
-              />
-              <p className="text-sm lg:text-xl subHeading leading-[24px] text-gray-400 text-center  max-w-xl">
+              {/* Description */}
+              <motion.p
+                variants={fadeUp}
+                className="text-sm lg:text-xl subHeading leading-[24px] text-gray-400 text-center max-w-xl"
+              >
                 Strategic social media management and growth systems for
                 Instagram, Facebook, LinkedIn, and YouTube.
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
           </div>
         </div>
         <div className="mt-[60px] lg:mt-[100px]">
@@ -215,11 +303,27 @@ const page = () => {
         <div className="max-w-[1440px] mx-auto sapce-y-10 ">
           <BentoGrid items={SocialImages} />
           <div className="relative overflow-hidden mt-10">
-            <div className="relative mx-auto ">
+            <div className="relative mx-auto">
+              {/* PLATFORM ICONS */}
               {platforms.map((item, index) => (
-                <div
+                <motion.div
                   key={index}
-                  className={`absolute z-10 flex items-center justify-center w-[72px] h-[72px] sm:w-[90px] sm:h-[90px] md:w-[105px] md:h-[105px] rounded-[22px] ${item.bg} ${item.className} backdrop-blur-md transition-all duration-500 hover:scale-110`}
+                  custom={index}
+                  variants={iconVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.2 }}
+                  animate={{
+                    y: [0, -8, 0],
+                  }}
+                  transition={{
+                    y: {
+                      duration: 4 + index,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    },
+                  }}
+                  className={`absolute z-10 flex items-center justify-center w-[72px] h-[72px] sm:w-[90px] sm:h-[90px] md:w-[105px] md:h-[105px] rounded-[22px] ${item.bg} ${item.className} backdrop-blur-md hover:scale-110`}
                 >
                   <Image
                     src={item.image}
@@ -227,18 +331,45 @@ const page = () => {
                     width={50}
                     height={50}
                     loading="lazy"
-                    className=" w-[34px] h-[34px] sm:w-[42px] sm:h-[42px] md:w-[52px] md:h-[52px] object-contain"
+                    className="w-[34px] h-[34px] sm:w-[42px] sm:h-[42px] md:w-[52px] md:h-[52px] object-contain"
                   />
-                </div>
+                </motion.div>
               ))}
 
+              {/* CENTER TEXT */}
               <div className="relative z-20 flex min-h-[420px] sm:min-h-[520px] items-center justify-center text-center">
-                <h2 className=" max-w-[950px] leading-[1.2] tracking-[1px] text-[#2c2929] heading text-[24px] sm:text-[36px] md:text-[42px] lg:text-[58px]">
+                <motion.h2
+                  variants={textVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.2 }}
+                  className="max-w-[950px] leading-[1.2] tracking-[1px] text-[#2c2929] heading text-[24px] sm:text-[36px] md:text-[42px] lg:text-[58px]"
+                >
                   We Work Across All <br />
-                  <span className="text-[#2E2C76]">Major</span> Social
-                  Platforms.
-                </h2>
+                  <motion.span
+                    initial={{
+                      opacity: 0,
+                      filter: "blur(10px)",
+                    }}
+                    whileInView={{
+                      opacity: 1,
+                      filter: "blur(0px)",
+                    }}
+                    transition={{
+                      delay: 0.6,
+                      duration: 1,
+                    }}
+                    viewport={{ once: true }}
+                    className="text-[#2E2C76]"
+                  >
+                    Major
+                  </motion.span>{" "}
+                  Social Platforms.
+                </motion.h2>
               </div>
+
+              {/* GLOW EFFECT */}
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(46,44,118,0.08),transparent_65%)] pointer-events-none" />
             </div>
           </div>
         </div>

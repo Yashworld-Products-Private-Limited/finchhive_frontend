@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion, Variants } from "framer-motion";
 
 const faqs = [
   {
@@ -72,16 +73,46 @@ export default function SEOAccordion() {
     setOpenId((prev) => (prev === id ? null : id));
   };
 
+  const containerVariants: Variants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.12,
+      },
+    },
+  };
+
+  const accordionVariants: Variants = {
+    hidden: {
+      opacity: 0,
+      x: -80,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.7,
+        ease: [0.25, 0.1, 0.25, 1],
+      },
+    },
+  };
+
   return (
-    <div
-      className="w-full flex items-center justify-center mt-16"
-    >
-      <div className="w-full max-w-6xl space-y-3">
+    <div className="w-full flex items-center justify-center mt-16">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        className="w-full max-w-6xl space-y-3"
+      >
         {faqs.map((faq) => {
           const isOpen = openId === faq.id;
+
           return (
-            <div
+            <motion.div
               key={faq.id}
+              variants={accordionVariants}
               className="rounded-2xl overflow-hidden transition-all duration-300 bg-[#2E2C76]"
             >
               <button
@@ -148,10 +179,10 @@ export default function SEOAccordion() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           );
         })}
-      </div>
+      </motion.div>
     </div>
   );
 }

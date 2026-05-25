@@ -1,14 +1,21 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 interface SectionBadgeProps {
   label: string;
   className?: string;
 }
 
-const SectionBadge = ({
-  label,
-  className = "",
-}: SectionBadgeProps) => {
+const SectionBadge = ({ label, className = "" }: SectionBadgeProps) => {
   return (
-    <h6
+    <motion.h6
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{
+        duration: 0.35,
+      }}
       className={`
         inline-flex
         items-center
@@ -24,11 +31,12 @@ const SectionBadge = ({
         text-white
         subHeading
         lg:text-sm
+        will-change-transform
         ${className}
       `}
     >
       {label}
-    </h6>
+    </motion.h6>
   );
 };
 

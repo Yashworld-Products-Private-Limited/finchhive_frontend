@@ -5,24 +5,18 @@ import { FeatureCard, FeatureItem } from "@/components/FeatureCard";
 import LetsTalkSection from "@/components/LetsTalkSection";
 import LogoMarquee from "@/components/LogoMarquee";
 import ProcessSection from "@/components/ProcessSection";
+import ScrollVelocity from "@/components/ScrollVelocity";
 import SectionBadge from "@/components/SectionBadge";
 import SectionTitle from "@/components/SectionTitle";
 import SEOAccordion from "@/components/SEOAccordion";
+import ServicesSection from "@/components/ServicesSection";
 import StatsFeatureSection from "@/components/StatsFeatureSection";
 import { Marquee } from "@/components/ui/marquee";
-import {
-  caseStudies,
-  FeaturesServices,
-  servicesPage,
-  testimonials,
-} from "@/constants";
+import { FeaturesServices, testimonials } from "@/constants";
 
 import RadioIcon from "@/icons/Radio";
-import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { motion, Variants } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
 
 const avatars = [
   "https://i.pravatar.cc/150?img=47",
@@ -33,7 +27,32 @@ const avatars = [
 
 const Home = () => {
   // const sectionRef = useRef<HTMLDivElement>(null);
-  const router = useRouter();
+
+  const containerVariants: Variants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const cardVariants: Variants = {
+    hidden: {
+      opacity: 0,
+      y: 50,
+      scale: 0.96,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.7,
+        ease: [0.25, 0.1, 0.25, 1],
+      },
+    },
+  };
 
   return (
     <div>
@@ -164,14 +183,16 @@ const Home = () => {
       >
         {/* <MagneticCursor containerRef={sectionRef} /> */}
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0%,rgba(46,44,118,0.3)_30%,rgba(46,44,118,0.7)_50%,#2E2C76_100%)]" />
-
-        <Marquee className="absolute inset-0 flex items-center overflow-hidden pointer-events-none z-0">
-          <div className="flex whitespace-nowrap animate-marquee text-[90px] md:text-[160px]  text-white/20 heading select-none">
-            <span className="mx-10 uppercase">
-              the best digital platform solution
-            </span>
-          </div>
-        </Marquee>
+        <div className="absolute inset-0 flex items-center overflow-hidden pointer-events-none z-0">
+          <ScrollVelocity
+            texts={["the best digital platform solution"]}
+            velocity={100}
+            className="custom-scroll-text text-[90px] md:text-[160px] py-8 tracking-wide  text-white/20 heading select-none uppercase"
+            numCopies={9}
+            damping={80}
+            stiffness={400}
+          />
+        </div>
 
         <motion.div
           initial={{
@@ -204,7 +225,15 @@ const Home = () => {
       </section>
       <section className="custom-container">
         <div className="max-w-[1440px] mx-auto ">
-          <div className="hidden lg:flex relative cursor-pointer">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{
+              duration: 0.45,
+            }}
+            className="hidden lg:flex relative cursor-pointer"
+          >
             <div className="absolute -top-[106px] z-10 backdrop-blur-[0.8px] border-[1px] border-white  rounded-[48px] px-8 py-7 shadow-[0_4px_20px_rgba(0,0,0,0.4)] before:absolute before:inset-0 before:rounded-[48px] before:bg-linear-to-br before:from-white/10 before:to-transparent before:pointer-events-none">
               <h1 className="font-light text-[#FFFFFF] lg:text-[22px] 2xl:text-3xl uppercase leading-tight tracking-wide mb-5 drop-shadow-md subHeading">
                 <span className="text-[#FFFFFD]">#1</span> Digital Marketing
@@ -250,7 +279,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           <div className="mt-[100px] lg:mt-[180px] cursor-pointer">
             <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
@@ -290,42 +319,7 @@ const Home = () => {
               />
             </div>
             <div className="w-full mt-12 cursor-pointer">
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-6 lg:gap-6 mt-8">
-                {servicesPage.map((item, i) => {
-                  const Icon = item.icon;
-                  return (
-                    <div
-                      key={i}
-                      onClick={() => router.push(item.link)}
-                      className="flex flex-col items-start justify-between group relative rounded-3xl p-3 lg:p-6 bg-gradient-to-br from-white via-blue-50 to-blue-100 border border-blue-100 hover:border-blue-200 hover:shadow-xl transition-all duration-300 space-y-2 lg:space-y-5 "
-                    >
-                      <div className="flex flex-col items-start gap-3">
-                        <div className=" flex items-center justify-center rounded-xl bg-[#2E2C76] p-4">
-                          <Icon className="text-[#FFFFFF]" size={24} />
-                        </div>
-
-                        <h3 className="text-gray-900 text-[22px] md:text-[24px] 2xl:text-[26px] heading ">
-                          {item.title}
-                        </h3>
-                      </div>
-
-                      <p className="text-gray-600 text-sm lg:text-base subHeading leading-normal">
-                        {item.desc}
-                      </p>
-
-                      <Link
-                        href={item.link}
-                        className="flex items-center gap-3 text-gray-900 text-xs tracking-[0%] uppercase"
-                      >
-                        <span className="subHeading">Learn More</span>
-                        <span className="w-6 h-6 flex items-center justify-center rounded-full border border-gray-300 group-hover:border-blue-400 transition group-hover:rotate-45">
-                          <ArrowUpRight className="w-4 h-4" />
-                        </span>
-                      </Link>
-                    </div>
-                  );
-                })}
-              </div>
+              <ServicesSection />
             </div>
           </div>
           <div className="mt-[100px] lg:mt-[180px]">
@@ -340,18 +334,25 @@ const Home = () => {
                 }
               />
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 items-stretch justify-between gap-4 mt-20">
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              className="grid grid-cols-1 md:grid-cols-3 items-stretch justify-between gap-4 mt-20"
+            >
               {FeaturesServices.map((item: FeatureItem, i: number) => (
-                <FeatureCard
-                  key={i}
-                  title={item?.title}
-                  description={item.description}
-                  icon={item?.icon}
-                  delay={i * 100}
-                  isMiddle={false}
-                />
+                <motion.div key={i} variants={cardVariants}>
+                  <FeatureCard
+                    title={item?.title}
+                    description={item.description}
+                    icon={item?.icon}
+                    delay={i * 100}
+                    isMiddle={false}
+                  />
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -373,7 +374,6 @@ const Home = () => {
               />
             </div>
             <CaseStudies />
-           
           </div>
           <div id="testimonials" className="mt-[80px] lg:mt-[100px] ">
             <div className="relative w-full flex items-start justify-center overflow-hidden  mx-auto ">

@@ -2,6 +2,7 @@
 
 import Matter from "matter-js";
 import { useEffect, useRef } from "react";
+import ScrollFloat from "./ScrollFloat";
 
 const tags = [
   "Customer Support",
@@ -194,11 +195,16 @@ export default function ValuesSection() {
   return (
     <section className="relative w-full min-h-[500px] flex flex-col md:flex-row items-center justify-center overflow-hidden">
       <div className="text-center">
-        <div className="text-center ">
-          <h1 className="text-[#2E2C76]  uppercase heading leading-none tracking-[1%] whitespace-nowrap text-[clamp(80px,22vw,100pc)]">
-            VALUES
-          </h1>
-        </div>
+        <ScrollFloat
+          animationDuration={0.8}
+          ease="back.inOut(2)"
+          scrollStart="center bottom+=50%"
+          scrollEnd="bottom bottom-=40%"
+          stagger={0.06}
+          textClassName="text-center text-[#2E2C76]  uppercase heading leading-none tracking-[1%] whitespace-nowrap text-[clamp(80px,22vw,100pc)]"
+        >
+          VALUES
+        </ScrollFloat>
       </div>
 
       <div className="relative mt-10 md:mt-0 md:absolute md:left-[50%] md:top-[45%] md:-translate-x-1/2 md:-translate-y-1/2">
@@ -209,7 +215,6 @@ export default function ValuesSection() {
             position: "relative",
             overflow: "hidden",
             backdropFilter: "blur(1px)",
-
           }}
         >
           <canvas

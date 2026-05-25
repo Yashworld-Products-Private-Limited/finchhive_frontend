@@ -8,8 +8,8 @@ export default function SmoothScroll() {
     const lenis = new Lenis({
       smoothWheel: true,
       syncTouch: true,
-      touchMultiplier: 1.5,
-      lerp: 0.08,
+      touchMultiplier: 1.0,
+      lerp: 0.05,
     });
 
     let rafId: number;
