@@ -3,6 +3,7 @@ import SectionBadge from "@/components/SectionBadge";
 import SectionTitle from "@/components/SectionTitle";
 import { FeaturesServices } from "@/constants";
 import { TrendingDown, TrendingUp } from "lucide-react";
+import Image from "next/image";
 
 const reelData = [
   {
@@ -131,6 +132,51 @@ const approach = [
     title: "Performance Tracking & Optimization",
     desc: "After each reel, we tracked performance data deeply not just views, but watch time, skip rates, save patterns, and follower conversion. Every data point informed the next piece of content. This is how FINCHHIVE builds compounding growth each reel smarter than the last.",
     tags: ["Deep Analytics", "Watch Time", "Optimization"],
+  },
+];
+
+const reels = [
+  {
+    id: 1,
+    image: "/imgs/responseImages2.jpeg",
+    views: "2.4M",
+    reach: "1.8M",
+    link: "https://www.instagram.com/reel/abc123/",
+  },
+  {
+    id: 2,
+    image: "/imgs/responseImages6.jpeg",
+    views: "980K",
+    reach: "740K",
+    link: "https://www.instagram.com/reel/xyz456/",
+  },
+  {
+    id: 3,
+    image: "/imgs/responseImages3.jpeg",
+    views: "3.1M",
+    reach: "2.2M",
+    link: "https://www.instagram.com/reel/demo789/",
+  },
+  {
+    id: 4,
+    image: "/imgs/responseImages4.jpeg",
+    views: "2.4M",
+    reach: "1.8M",
+    link: "https://www.instagram.com/reel/abc123/",
+  },
+  {
+    id: 5,
+    image: "/imgs/responseImages5.jpeg",
+    views: "980K",
+    reach: "740K",
+    link: "https://www.instagram.com/reel/xyz456/",
+  },
+  {
+    id: 6,
+    image: "/imgs/responseImages1.jpeg",
+    views: "3.1M",
+    reach: "2.2M",
+    link: "https://www.instagram.com/reel/demo789/",
   },
 ];
 
@@ -586,6 +632,29 @@ export default function CaseStudyPage() {
             </tbody>
           </table>
         </div>
+        <div className="max-w-[850px] mx-auto">
+            <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {reels.map((reel) => (
+                <a
+                  key={reel.id}
+                  href={reel.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group overflow-hidden rounded-[28px] border border-zinc-200 bg-white shadow-lg transition-all duration-500 hover:-translate-y-2"
+                >
+                  <div className="relative w-full bg-zinc-100">
+                    <Image
+                      src={reel.image}
+                      alt="Instagram Reel Screenshot"
+                      width={500}
+                      height={700}
+                      className="h-auto w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
       </section>
 
       <section className="px-6 md:px-14 py-28">
@@ -618,20 +687,21 @@ export default function CaseStudyPage() {
             the flat grey &quot;typical reel&quot; benchmark. This happened
             consistently not once, not by luck, but by design.
           </p>
+          
         </div>
       </section>
-      <section className="mt-[100px] lg:mt-[180px] bg-white py-10">
+      <section className="mt-[50px] ">
         <div className="max-w-[1440px] mx-auto">
           <div className="flex flex-col  items-center justify-center space-y-3">
             <SectionBadge label="Key Insights" />
             <SectionTitle className="" title="What the data taught us." />
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mt-16">
+          <div className="grid md:grid-cols-2 gap-8 mt-16 ">
             {insights.map((item) => (
               <div
                 key={item.no}
-                className="rounded-3xl border border-black/10 bg-white/[0.03] p-8"
+                className="rounded-3xl border border-black/10 bg-white p-8 "
               >
                 <span className="text-[#2E2C76] text-5xl font-bold">
                   {item.no}

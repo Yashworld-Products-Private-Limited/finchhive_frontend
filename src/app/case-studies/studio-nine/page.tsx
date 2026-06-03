@@ -48,7 +48,7 @@ export default function CaseStudyPage() {
                 ["34.6K+", "Total Views"],
                 ["164", "Total Shares"],
                 ["346", "Total Saves"],
-                ["100%", "Organic — Zero Ads"],
+                ["100%", "Organic Zero Ads"],
               ].map((item, i) => (
                 <div
                   key={i}
@@ -91,7 +91,7 @@ export default function CaseStudyPage() {
               Studio 9 India is a high-quality interior design practice known
               for thoughtful spatial design, considered material choices, and
               spaces that feel genuinely lived-in rather than staged. Their work
-              speaks for itself — when it&apos;s shown the right way.
+              speaks for itself when it&apos;s shown the right way.
             </p>
             <p className="subHeading text-zinc-400 text-lg leading-8 max-w-3xl ">
               The challenge wasn&apos;t the quality of work. The challenge was
@@ -105,10 +105,9 @@ export default function CaseStudyPage() {
               <h3 className="text-[#2E2C76] font-semibold text-lg">
                 Brand Identity
               </h3>
-
               <p className="subHeading mt-3">
                 Premium interior design with a philosophy rooted in real spaces,
-                real craftsmanship, and honest process — not curated fantasy.
+                real craftsmanship, and honest process not curated fantasy.
                 The work earns attention by being genuinely good.
               </p>
             </div>
@@ -119,7 +118,7 @@ export default function CaseStudyPage() {
               </h3>
 
               <p className="subHeading mt-3">
-                Instagram — the primary discovery platform for interior design
+                Instagram the primary discovery platform for interior design
                 in India. Where clients research, save references, and decide
                 who to trust with their space.
               </p>
@@ -130,7 +129,7 @@ export default function CaseStudyPage() {
 
               <p className="subHeading mt-3">
                 Build an Instagram presence that earns genuine engagement, brand
-                credibility, and real enquiries — without compromising the
+                credibility, and real enquiries without compromising the
                 studio&apos;s identity with cheap trends.
               </p>
             </div>
@@ -157,7 +156,7 @@ export default function CaseStudyPage() {
                   scrolled past because it offers nothing real.
                 </p>
                 <span className="mt-2">
-                  The standard interior design playbook — and why it fails
+                  The standard interior design playbook and why it fails
                 </span>
               </div>
               <p className="subHeading text-zinc-400 text-lg leading-8 max-w-3xl">
@@ -181,7 +180,7 @@ export default function CaseStudyPage() {
                 },
                 {
                   title: "The Opportunity",
-                  des: "In a feed full of fake, a brand that shows the real process — the site visits, the decisions, the work in progress — stands out immediately. Authenticity is a competitive advantage nobody else was using.",
+                  des: "In a feed full of fake, a brand that shows the real process the site visits, the decisions, the work in progress stands out immediately. Authenticity is a competitive advantage nobody else was using.",
                 },
               ].map((item, index) => (
                 <div
@@ -228,17 +227,17 @@ export default function CaseStudyPage() {
               {
                 no: "01",
                 title: "Real Site Visit Documentation",
-                desc: "Instead of staged final photography, we film the actual work-in-progress — the site visits, the raw spaces mid-execution, the decisions being made in real time. This gives viewers something no other account offers: access to the real process.",
+                desc: "Instead of staged final photography, we film the actual work-in-progress the site visits, the raw spaces mid-execution, the decisions being made in real time. This gives viewers something no other account offers: access to the real process.",
               },
               {
                 no: "02",
                 title: "Authentic Visual Language",
-                desc: "No artificial lighting setups on location. No heavy filter grading to make spaces look like they're from a different dimension. Natural light, real textures, honest angles. The spaces look like spaces — because they are.",
+                desc: "No artificial lighting setups on location. No heavy filter grading to make spaces look like they're from a different dimension. Natural light, real textures, honest angles. The spaces look like spaces because they are.",
               },
               {
                 no: "03",
                 title: "Zero Trend Dependency",
-                desc: "No trending audio. No meme formats. No hopping on whatever is viral this week. The content is built to have a shelf life — content that people save, revisit, and share weeks after it's posted because the value doesn't expire.",
+                desc: "No trending audio. No meme formats. No hopping on whatever is viral this week. The content is built to have a shelf life content that people save, revisit, and share weeks after it's posted because the value doesn't expire.",
               },
               {
                 no: "04",
@@ -246,16 +245,16 @@ export default function CaseStudyPage() {
                 desc: "Before-during-after documentation gives audiences context, builds credibility, and makes the final transformation genuinely impactful. You can't fake a construction site.",
               },
               {
-                no: "03",
+                no: "05",
                 title: "Audience over algorithm",
-                desc: "We create content that the right person — a homeowner planning a renovation — would want to save, share with their spouse, and come back to. That behavior signals quality to the algorithm anyway.",
+                desc: "We create content that the right person a homeowner planning a renovation would want to save, share with their spouse, and come back to. That behavior signals quality to the algorithm anyway.",
               },
               {
-                no: "04",
+                no: "06",
                 title: "Trust is the product",
-                desc: "For a premium interior design studio, every piece of content is a trust signal. Consistent, honest, high-quality content doesn't just grow followers — it grows a pipeline of qualified enquiries.",
+                desc: "For a premium interior design studio, every piece of content is a trust signal. Consistent, honest, high-quality content doesn't just grow followers it grows a pipeline of qualified enquiries.",
               },
-            ].map((item, i) => (
+            ].map((item) => (
               <div
                 key={item.no}
                 className="rounded-3xl border border-black/10 bg-white/[0.6] p-8"
@@ -279,7 +278,7 @@ export default function CaseStudyPage() {
           {/* Top Content */}
           <div className="max-w-3xl">
             <span className="text-sm uppercase tracking-[0.25em] text-[#2E2C76] font-semibold flex items-center gap-3">
-              04 — WHAT MAKES IT DIFFERENT
+              04 WHAT MAKES IT DIFFERENT
             </span>
 
             <h2 className="heading text-4xl md:text-6xl leading-[1.1] mt-6">
@@ -364,7 +363,7 @@ export default function CaseStudyPage() {
           {/* Heading */}
           <div className="max-w-4xl">
             <span className="text-sm uppercase tracking-[0.25em] text-[#2E2C76] font-semibold flex items-center gap-3">
-              05 — THE RESULTS
+              05 THE RESULTS
             </span>
 
             <h2 className="heading text-4xl md:text-6xl leading-[1.1] mt-6 text-[#2E2C76]">
@@ -415,7 +414,7 @@ export default function CaseStudyPage() {
                 </p>
 
                 <div className="mt-8 text-[#2E2C76] text-xs tracking-[0.2em] uppercase font-semibold">
-                  FINCHHIVE — Studio 9 India Content Results
+                  FINCHHIVE Studio 9 India Content Results
                 </div>
               </div>
             </div>
@@ -426,7 +425,7 @@ export default function CaseStudyPage() {
                 <div className="w-2 h-2 rounded-full bg-[#2E2C76]" />
 
                 <span className="text-[11px] uppercase tracking-[0.18em] font-semibold text-[#2E2C76]">
-                  Top Reel — Apr 10
+                  Top Reel Apr 10
                 </span>
               </div>
 
@@ -492,7 +491,7 @@ export default function CaseStudyPage() {
             {/* Table Header */}
             <div className="flex flex-col md:flex-row md:items-center md:justify-between px-8 py-6 bg-[#FAFAFF] border-b border-[#E8E8F2]">
               <h3 className="text-xl font-semibold text-[#2E2C76]">
-                All Content — Performance Overview
+                All Content Performance Overview
               </h3>
 
               <p className="text-sm text-black/50 mt-2 md:mt-0">
@@ -528,7 +527,7 @@ export default function CaseStudyPage() {
                 <tbody>
                   {[
                     {
-                      content: "Reel — Apr 10",
+                      content: "Reel Apr 10",
                       desc: `"Design isn't just what you see..."`,
                       views: "11,712",
                       reached: "—",
@@ -539,7 +538,7 @@ export default function CaseStudyPage() {
                       follows: "—",
                     },
                     {
-                      content: "Post — Apr 5",
+                      content: "Post Apr 5",
                       desc: "Feed",
                       views: "9,388",
                       reached: "5,144",
@@ -550,7 +549,7 @@ export default function CaseStudyPage() {
                       follows: "51",
                     },
                     {
-                      content: "Post — May 9",
+                      content: "Post May 9",
                       desc: "91.1% Feed",
                       views: "6,945",
                       reached: "3,493",
@@ -561,7 +560,7 @@ export default function CaseStudyPage() {
                       follows: "12",
                     },
                     {
-                      content: "Post — Recent",
+                      content: "Post Recent",
                       desc: "69.7% Non-followers",
                       views: "6,510",
                       reached: "—",
@@ -702,7 +701,7 @@ export default function CaseStudyPage() {
           {/* Heading */}
           <div className="max-w-4xl">
             <span className="text-sm uppercase tracking-[0.25em] text-[#2E2C76] font-semibold flex items-center gap-3">
-              06 — THE REAL-WORLD IMPACT
+              06 THE REAL-WORLD IMPACT
             </span>
 
             <h2 className="heading text-4xl md:text-6xl leading-[1.1] mt-6 text-[#2E2C76]">
@@ -813,7 +812,7 @@ export default function CaseStudyPage() {
             {/* Left Content */}
             <div>
               <span className="text-sm uppercase tracking-[0.25em] text-[#2E2C76] font-semibold flex items-center gap-3">
-                07 — THE FINCHHIVE PHILOSOPHY
+                07 THE FINCHHIVE PHILOSOPHY
               </span>
 
               <h2 className="heading text-4xl md:text-6xl leading-[1.08] mt-6">
