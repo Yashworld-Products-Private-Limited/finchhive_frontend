@@ -114,7 +114,7 @@ export default function CaseStudyPage() {
 
             <div className="border border-[#ECECF5] rounded-3xl p-7 bg-[#FAFAFF]">
               <h3 className="text-[#2E2C76] font-semibold text-lg">
-                The Platform
+                The Platform 
               </h3>
 
               <p className="subHeading mt-3">
