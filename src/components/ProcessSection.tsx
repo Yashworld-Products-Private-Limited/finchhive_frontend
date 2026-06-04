@@ -1,7 +1,12 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import {
+  AnimatePresence,
+  motion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
+import { useRef, useState } from "react";
 
 const steps = [
   {
@@ -61,6 +66,7 @@ const steps = [
 
 export default function ProcessSection() {
   const ref = useRef(null);
+  const [openSteps, setOpenSteps] = useState<number[]>([]);
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -109,18 +115,43 @@ export default function ProcessSection() {
                 </p>
 
                 {step.points && (
-                  <div className="grid gap-1 lg:gap-2 pt-1 lg:pt-2">
-                    {step.points.map((point, idx) => (
-                      <div
-                        key={idx}
-                        className="flex items-start gap-3 text-sm md:text-base text-[#4B5563]"
-                      >
-                        <div className="min-w-2 h-2 rounded-full bg-[#2E2C76] mt-2" />
+                  <>
+                    <AnimatePresence>
+                      {openSteps.includes(i) && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="overflow-hidden"
+                        >
+                          <div className="grid gap-1 lg:gap-2 pt-1 lg:pt-2">
+                            {step.points.map((point, idx) => (
+                              <div key={idx} className="flex items-start gap-3">
+                                <div className="min-w-2 h-2 rounded-full bg-[#2E2C76] mt-2" />
+                                <p className="text-xs md:text-sm lg:text-base subHeading leading-relaxed">
+                                  {point}
+                                </p>
+                              </div>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
 
-                        <p className="text-xs md:text-sm lg:text-base subHeading leading-relaxed">{point}</p>
-                      </div>
-                    ))}
-                  </div>
+                    <button
+                      onClick={() =>
+                        setOpenSteps((prev) =>
+                          prev.includes(i)
+                            ? prev.filter((item) => item !== i)
+                            : [...prev, i],
+                        )
+                      }
+                      className="mt-3 text-[#2E2C76] font-semibold text-sm hover:underline"
+                    >
+                      {openSteps.includes(i) ? "See Less" : "See More"}
+                    </button>
+                  </>
                 )}
               </div>
             </motion.div>

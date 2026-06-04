@@ -17,6 +17,7 @@ import { FeaturesServices, testimonials } from "@/constants";
 import RadioIcon from "@/icons/Radio";
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
+import { useEffect } from "react";
 
 const avatars = [
   "https://i.pravatar.cc/150?img=47",
@@ -27,6 +28,24 @@ const avatars = [
 
 const Home = () => {
   // const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const scrollToHash = () => {
+      const hash = window.location.hash;
+
+      if (!hash) return;
+
+      setTimeout(() => {
+        const el = document.querySelector(hash);
+        el?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 200);
+    };
+
+    scrollToHash();
+  }, []);
 
   const containerVariants: Variants = {
     hidden: {},
@@ -309,7 +328,7 @@ const Home = () => {
               <ProcessSection />
             </div>
           </div>
-          <div id="services" className="mt-[100px] lg:mt-[180px] ">
+          <div id="services" className="scroll-mt-24 mt-[100px] lg:mt-[180px] ">
             <div className="flex flex-col lg:flex-row  items-center gap-6 md:gap-8 xl:gap-12">
               <SectionBadge label="SERVICES" />
 
@@ -375,12 +394,14 @@ const Home = () => {
             </div>
             <CaseStudies />
           </div>
-          <div id="testimonials" className="mt-[80px] lg:mt-[100px] ">
+          <div
+            id="testimonials"
+            className="scroll-mt-25 mt-[80px] lg:mt-[100px]"
+          >
             <div className="relative w-full flex items-start justify-center overflow-hidden  mx-auto ">
               <h1 className="absolute -top-10 text-[80px] md:text-[140px] xl:text-[150px] leading-normal font-bold text-black/10 select-none heading">
                 TESTIMONIAL
               </h1>
-              {/* <div className="absolute inset-0 bg-gradient-to-r from-[#2E2C76]/20 via-transparent to-transparent blur-2xl opacity-60" /> */}
               <div className="absolute top-2 left-1/2 -translate-x-1/2 w-full max-w-xl h-[400px] bg-[radial-gradient(circle_at_top,_rgba(46,64,150,1.80),_transparent_40%)] blur-2xl opacity-70 pointer-events-none" />
 
               <div className=" grid grid-cols-1   items-center justify-center gap-6 w-full max-w-lg h-[600px] ">

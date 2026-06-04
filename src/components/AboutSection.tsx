@@ -33,15 +33,15 @@ const accordionData = [
 ];
 
 export default function AboutSection() {
-  const [openItems, setOpenItems] = useState<number[]>([]);
+  const [openItems, setOpenItems] = useState<number[]>(
+    accordionData.length ? [accordionData[0].id] : [],
+  );
 
   const toggleAccordion = (id: number) => {
     setOpenItems((prev) =>
       prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id],
     );
   };
-
-  
 
   const containerVariants: Variants = {
     hidden: {},
@@ -171,13 +171,13 @@ export default function AboutSection() {
 
                     <motion.span
                       animate={{
-                        rotate: isOpen ? 45 : 0,
+                        rotate: isOpen ? 180 : 0,
                       }}
                       transition={{ duration: 0.3 }}
                       className={`w-8 h-8 flex items-center justify-center rounded-md transition ${
                         isOpen
                           ? "bg-[#2E2C76] text-white"
-                          : "bg-white/10 text-white"
+                          : "bg-[#2E2C76] text-white"
                       }`}
                     >
                       {isOpen ? "×" : "+"}

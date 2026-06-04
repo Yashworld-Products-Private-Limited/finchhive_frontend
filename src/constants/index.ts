@@ -387,13 +387,13 @@ export const platforms = [
   {
     image: "https://cdn-icons-png.flaticon.com/512/3046/3046121.png",
     className:
-      "bottom-[4%] left-[20%] rotate-[-14deg] shadow-[0_20px_40px_rgba(0,0,0,0.25)]",
+      "bottom-[10%] left-[20%] rotate-[-14deg] shadow-[0_20px_40px_rgba(0,0,0,0.25)]",
     bg: "bg-black",
   },
   {
     image: "https://cdn-icons-png.flaticon.com/512/2111/2111463.png",
     className:
-      "bottom-[4%] right-[18%] rotate-[14deg] shadow-[0_20px_40px_rgba(255,0,120,0.25)]",
+      "bottom-[10%] right-[18%] rotate-[14deg] shadow-[0_20px_40px_rgba(255,0,120,0.25)]",
     bg: "bg-gradient-to-br from-yellow-400 via-pink-500 to-purple-600",
   },
 ];
@@ -533,5 +533,69 @@ export const SocialImages: BentoItem[] = [
     image:
       "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop",
     className: "col-span-2 row-span-1 md:col-span-2 md:row-span-1 ",
+  },
+];
+
+
+export const faqs = [
+  {
+    id: 1,
+    question: "What is Finchhive?",
+    answer:
+      "Finchhive is a creative growth agency focused on branding, content creation, social media marketing, performance marketing, websites, and digital growth solutions for modern businesses.",
+  },
+  {
+    id: 2,
+    question: "What services does Finchhive provide?",
+    answer:
+      "Brand Strategy & Positioning, Social Media Management, Content Creation, Meta & Google Ads, Website Development, Photography & Videography, Creative Campaigns, Marketing Consultation",
+  },
+  {
+    id: 3,
+    question: "Do you work with startups and small businesses?",
+    answer:
+      "Yes. We work with startups, local brands, creators, cafés, fashion labels, real estate businesses, and growing companies looking to build a strong digital presence.",
+  },
+  {
+    id: 4,
+    question: "Can Finchhive handle both content creation and marketing?",
+    answer:
+      "Absolutely. From shooting content to running ads and managing social media, we provide end-to-end creative and marketing solutions.",
+  },
+  {
+    id: 5,
+    question: "How long does it take to see results?",
+    answer:
+      "Results depend on the project and goals, but most brands start noticing better engagement, reach, and visibility within the first few weeks of consistent strategy and execution.",
+  },
+  {
+    id: 6,
+    question: "Do you provide customized marketing plans?",
+    answer:
+      "Yes. Every business is different, so we create customized strategies based on your brand goals, audience, and industry.",
+  },
+  {
+    id: 7,
+    question: "Can Finchhive manage my social media accounts completely?",
+    answer:
+      "Yes. We can handle planning, designing, posting, content shoots, reels, captions, ad campaigns, and audience engagement.",
+  },
+  {
+    id: 8,
+    question: "Do you offer website design and development?",
+    answer:
+      "Yes. We create modern, responsive, and conversion-focused websites tailored to your brand identity and business needs.",
+  },
+  {
+    id: 9,
+    question: "How can I start working with Finchhive?",
+    answer:
+      "Simply contact us through Instagram, WhatsApp, or email, and our team will guide you through the process.",
+  },
+  {
+    id: 10,
+    question: "Why choose Finchhive?",
+    answer:
+      "Because we combine creativity, strategy, and execution to help brands grow with impactful visuals, strong branding, and performance-driven marketing.",
   },
 ];

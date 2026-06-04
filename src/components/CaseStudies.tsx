@@ -143,7 +143,6 @@ const CaseStudies = () => {
               </div>
             )}
 
-            {/* Image */}
             <div className="card-image relative w-full">
               <div className="absolute inset-0 bg-gradient-to-br from-orange-500/30 via-transparent to-transparent blur-3xl opacity-40" />
               <div className="relative rounded-2xl overflow-hidden h-[380px] sm:h-[420px] md:h-[460px] lg:h-[550px] shadow-[0_10px_40px_rgba(0,0,0,0.6)]">
@@ -161,7 +160,6 @@ const CaseStudies = () => {
               <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-[75%] h-[14px] bg-white/10 rounded-xl blur-sm" />
             </div>
 
-            {/* Info Card */}
             <div className="card-info relative rounded-[20px] p-5 sm:p-6 md:p-8 overflow-hidden bg-gradient-to-br from-white via-[#f8fbff] to-[#eef5ff] border border-black/5 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] group transition-all duration-500 hover:scale-[1.02]">
               <div className="absolute inset-0 bg-gradient-to-br from-[#2E2C76]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-500" />
               <span className="card-badge inline-block text-[10px] sm:text-xs tracking-wide px-3 py-1 rounded-full bg-[#2E2C76]/50 text-[#FFFFFF] mb-3 sm:mb-4">
@@ -173,7 +171,7 @@ const CaseStudies = () => {
               <p className="card-desc text-gray-500 text-xs sm:text-sm md:text-base mb-5 sm:mb-6 subHeading">
                 {item.desc}
               </p>
-              <div className="flex items-center justify-between">
+              {/* <div className="flex items-center justify-between">
                 {item.stats.map((stat, j) => (
                   <div key={j} className="card-stat">
                     <h2 className="text-[#2E2C76] text-2xl sm:text-3xl md:text-4xl font-bold Heading">
@@ -184,7 +182,7 @@ const CaseStudies = () => {
                     </p>
                   </div>
                 ))}
-              </div>
+              </div> */}
             </div>
           </div>
         ))}
