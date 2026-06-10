@@ -146,8 +146,13 @@ html {
 body {
   overflow-x: hidden;
 }
+
+* {
+  cursor: none !important;
+}
+
 .grid-bg {
-  background-color: #ffffff;
+  background-color: #eeeef4;
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 0, 0, 0.06) 1px, transparent 1px);
@@ -165,9 +170,10 @@ body {
 .custom-container {
   max-width: screen;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 16px;
   height: calc();
 }
+
 
 .libre-caslon-text-regular {
   font-family: "Libre Caslon Text", serif;

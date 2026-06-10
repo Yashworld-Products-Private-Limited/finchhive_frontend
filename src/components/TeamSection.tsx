@@ -24,25 +24,66 @@ const teamMembers: TeamMember[] = [
     name: "Sarah Johnson",
     role: "Chief Executive Officer",
     image: "/imgs/team1.png",
-    tag: "Engaging",
-    tagt: "Marketing Genius",
+    tag: "STRATEGIC",
+    tagt: "Market Analyst",
   },
   {
     id: 2,
     name: "Michael Chen",
     role: "Chief Technology Officer",
     image: "/imgs/team2.png",
-    tag: "Strategic",
-    tagt: "SEO Mastermind",
+    tag: "CINEMATIC",
+    tagt: "Cinematographer",
   },
   {
     id: 3,
     name: "Emily Rodriguez",
     role: "Head of Design",
     image: "/imgs/team3.png",
-    tag: "Visionary",
-    tagt: "Designer and Developer",
+    tag: "DYNAMIC",
+    tagt: "Drone Expert",
   },
+  {
+    id: 4,
+    name: "Sarah Johnson",
+    role: "Chief Executive Officer",
+    image: "/imgs/team1.png",
+    tag: "VISIONARY",
+    tagt: "Photographer",
+  },
+  {
+    id: 5,
+    name: "Michael Chen",
+    role: "Chief Technology Officer",
+    image: "/imgs/team2.png",
+    tag: "ENGAGING",
+    tagt: "Social Media Expert",
+  },
+  {
+    id: 6,
+    name: "Emily Rodriguez",
+    role: "Head of Design",
+    image: "/imgs/team3.png",
+    tag: "IMPACTFUL",
+    tagt: "Graphic Designer",
+  },
+  {
+    id: 7,
+    name: "Sarah Johnson",
+    role: "Chief Executive Officer",
+    image: "/imgs/team1.png",
+    tag: "IMPACTFUL",
+    tagt: "Graphic Designer",
+  },
+  {
+    id: 8,
+    name: "Michael Chen",
+    role: "Chief Technology Officer",
+    image: "/imgs/team2.png",
+    tag: "ADAPTIVE",
+    tagt: "Digital Marketer",
+  },
+  
 ];
 function TeamCard({ member }: { member: TeamMember }) {
   const [isActive, setIsActive] = useState(false);
@@ -50,11 +91,11 @@ function TeamCard({ member }: { member: TeamMember }) {
   return (
     <div className="relative  w-full max-w-[500px] h-[620px] mx-auto">
       <div className="absolute top-3 left-3">
-        <h2 className=" text-[28px] md:text-[36px] xl:text-[48px] heading text-[#2E2C76] z-0 pointer-events-none">
+        <h2 className=" text-[28px] md:text-[36px] lg:text-[32px] xl:text-[42px] heading text-[#2E2C76] z-0 pointer-events-none">
           {member.tag}
         </h2>
       </div>
-      <span className="absolute top-[55px] lg:top-[65px] left-[48%]  tracking-tight subHeading text-medium leading- text-[20px] md:text-[20px] lg:text-[24px] z-0 pointer-events-none">
+      <span className="absolute top-[55px] lg:top-[65px] left-[48%]  tracking-tight subHeading text-medium leading- text-[20px] md:text-[20px] xl:text-[24px] z-0 pointer-events-none">
         {member.tagt}
       </span>
       <div className="relative rounded-[32px] group overflow-hidden backdrop-blur-[0.5px] bg-transparant border border-white/10 shadow-2xl ">
@@ -129,7 +170,7 @@ function TeamCard({ member }: { member: TeamMember }) {
 export function TeamSection() {
   return (
     <section className=" ">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-center justify-center gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-center justify-center gap-3 2xl:gap-6 ">
         {teamMembers.map((member) => (
           <TeamCard key={member.id} member={member} />
         ))}{" "}

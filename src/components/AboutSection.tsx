@@ -155,7 +155,7 @@ export default function AboutSection() {
                   variants={itemVariants}
                   className="rounded-2xl border  bg-white/5 backdrop-blur-md transition-all"
                 >
-                  <button
+                  <div
                     onClick={() => toggleAccordion(item.id)}
                     className="w-full flex items-center justify-between px-5 py-4 text-left  rounded-xl"
                   >
@@ -182,7 +182,7 @@ export default function AboutSection() {
                     >
                       {isOpen ? "×" : "+"}
                     </motion.span>
-                  </button>
+                  </div>
 
                   <AnimatePresence>
                     {isOpen && (

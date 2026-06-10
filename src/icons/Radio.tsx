@@ -1,8 +1,8 @@
 export default function RadioIcon({ className }: { className?: string }) {
   return (
     <svg
-      width="552"
-      height="552"
+      width="76"
+      height="76"
       viewBox="0 0 512 512"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

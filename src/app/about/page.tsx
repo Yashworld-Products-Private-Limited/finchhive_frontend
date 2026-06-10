@@ -304,124 +304,129 @@ const AboutPage = () => {
       <div className="mt-[100px] lg:mt-[180px] ">
         <ValuesSection />
       </div>
-      <div className="max-w-[1440px] mx-auto">
-        <div id="our-team" className="mt-[100px] lg:mt-[180px] overflow-hidden">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            className="flex flex-col items-center justify-center gap-2 xl:gap-2 w-full lg:w-[80%] mx-auto text-center"
+      <div className="custom-container">
+        <div className="max-w-[1440px] mx-auto">
+          <div
+            id="our-team"
+            className="mt-[60px] lg:mt-[120px] overflow-hidden"
           >
-            {/* Badge */}
             <motion.div
-              variants={fadeUp}
-              whileHover={{
-                scale: 1.05,
-              }}
-              transition={{
-                type: "spring",
-                stiffness: 300,
-              }}
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              className="flex flex-col items-center justify-center gap-2 xl:gap-2 w-full lg:w-[80%] mx-auto text-center"
             >
-              <SectionBadge label="Team Members" />
+              {/* Badge */}
+              <motion.div
+                variants={fadeUp}
+                whileHover={{
+                  scale: 1.05,
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 300,
+                }}
+              >
+                <SectionBadge label="Team Members" />
+              </motion.div>
+
+              {/* Title */}
+              <motion.div variants={scaleFade}>
+                <SectionTitle
+                  className="max-w-3xl mx-auto"
+                  title={
+                    <>
+                      Say Hello to <br /> Our Squad
+                    </>
+                  }
+                />
+              </motion.div>
+
+              {/* Description */}
+              <motion.p
+                variants={fadeUp}
+                className="text-sm md:text-xl xl:text-2xl subHeading leading-[20px] md:leading-[26px] xl:leading-[32px] text-gray-600"
+              >
+                Get ready to meet the faces behind the magic, the dreamers, the
+                doers, and the unstoppable force driving our success.
+              </motion.p>
             </motion.div>
 
-            {/* Title */}
-            <motion.div variants={scaleFade}>
+            {/* Team Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 80 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{
+                duration: 1,
+                delay: 0.3,
+                ease: [0.25, 0.1, 0.25, 1],
+              }}
+              className="my-16"
+            >
+              <TeamSection />
+            </motion.div>
+          </div>
+          <div className="mt-[100px] lg:mt-[180px] ">
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              className="flex flex-col lg:flex-row  items-center gap-6 md:gap-8 xl:gap-12"
+            >
+              <motion.div
+                variants={fadeUp}
+                whileHover={{
+                  scale: 1.05,
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 300,
+                }}
+              >
+                <SectionBadge label="Gallery" />
+              </motion.div>
+              <motion.div variants={scaleFade}>
+                <SectionTitle
+                  className="max-w-3xl "
+                  title={<> Our Agency Snaps</>}
+                />
+              </motion.div>
+            </motion.div>
+            <div className="flex items-center justify-center lg:items-end lg:justify-end  mt-6 lg:mt-10">
+              <motion.p
+                variants={fadeUp}
+                className="text-sm lg:text-xl subHeading leading-[24px] text-gray-400 text-center lg:text-left max-w-2xl lg:ml-auto"
+              >
+                From team outings and office shenanigans to special events and
+                celebrations, these photos capture the essence of our vibrant
+                culture and the bonds that unite us.
+              </motion.p>
+            </div>
+            <div className="mt-16">
+              <ExpandingGallery />
+            </div>
+          </div>
+          <div className="mt-[100px] lg:mt-[160px] ">
+            <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
+              <SectionBadge label="Frequently Asked Questions" />
+
               <SectionTitle
                 className="max-w-3xl mx-auto"
                 title={
                   <>
-                    Say Hello to <br /> Our Squad
+                    Got Questions? <br /> We&apos;ve Got Answers!
                   </>
                 }
               />
-            </motion.div>
-
-            {/* Description */}
-            <motion.p
-              variants={fadeUp}
-              className="text-sm md:text-xl xl:text-2xl subHeading leading-[20px] md:leading-[26px] xl:leading-[32px] text-gray-600"
-            >
-              Get ready to meet the faces behind the magic, the dreamers, the
-              doers, and the unstoppable force driving our success.
-            </motion.p>
-          </motion.div>
-
-          {/* Team Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 80 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
-            transition={{
-              duration: 1,
-              delay: 0.3,
-              ease: [0.25, 0.1, 0.25, 1],
-            }}
-            className="my-16"
-          >
-            <TeamSection />
-          </motion.div>
-        </div>
-        <div className="mt-[100px] lg:mt-[180px] ">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            className="flex flex-col lg:flex-row  items-center gap-6 md:gap-8 xl:gap-12"
-          >
-            <motion.div
-              variants={fadeUp}
-              whileHover={{
-                scale: 1.05,
-              }}
-              transition={{
-                type: "spring",
-                stiffness: 300,
-              }}
-            >
-              <SectionBadge label="Gallery" />
-            </motion.div>
-            <motion.div variants={scaleFade}>
-              <SectionTitle
-                className="max-w-3xl "
-                title={<> Our Agency Snaps</>}
-              />
-            </motion.div>
-          </motion.div>
-          <div className="flex items-center justify-center lg:items-end lg:justify-end  mt-6 lg:mt-10">
-            <motion.p
-              variants={fadeUp}
-              className="text-sm lg:text-xl subHeading leading-[24px] text-gray-400 text-center lg:text-left max-w-2xl lg:ml-auto"
-            >
-              From team outings and office shenanigans to special events and
-              celebrations, these photos capture the essence of our vibrant
-              culture and the bonds that unite us.
-            </motion.p>
+            </div>
+            <SEOAccordion />
           </div>
-          <div className="mt-16">
-            <ExpandingGallery />
+          <div className="mt-[100px] lg:mt-[160px] mb-[60px]">
+            <LetsTalkSection />
           </div>
-        </div>
-        <div className="mt-[100px] lg:mt-[160px] ">
-          <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
-            <SectionBadge label="Frequently Asked Questions" />
-
-            <SectionTitle
-              className="max-w-3xl mx-auto"
-              title={
-                <>
-                  Got Questions? <br /> We&apos;ve Got Answers!
-                </>
-              }
-            />
-          </div>
-          <SEOAccordion />
-        </div>
-        <div className="mt-[100px] lg:mt-[160px] mb-[60px]">
-          <LetsTalkSection />
         </div>
       </div>
     </div>

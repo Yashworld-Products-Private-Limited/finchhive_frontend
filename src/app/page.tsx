@@ -13,6 +13,7 @@ import ServicesSection from "@/components/ServicesSection";
 import StatsFeatureSection from "@/components/StatsFeatureSection";
 import { Marquee } from "@/components/ui/marquee";
 import { FeaturesServices, testimonials } from "@/constants";
+import FinIcon from "@/icons/finIcon";
 
 import RadioIcon from "@/icons/Radio";
 import { motion, Variants } from "framer-motion";
@@ -121,7 +122,7 @@ const Home = () => {
                   ease: [0.22, 1, 0.36, 1],
                 }}
                 viewport={{ once: true }}
-                className="relative inline-block px-1.5 lg:px-3 py-1 bg-[#2E2C76] text-white rotate-[-3deg] mx-2"
+                className="relative inline-block px-1.5 lg:px-3 py-1 bg-[#2E2C76] text-white rotate-[-3deg] mx-4"
               >
                 Digital
               </motion.span>
@@ -136,7 +137,7 @@ const Home = () => {
                 whileInView={{
                   opacity: 1,
                   scale: 1,
-                  rotate: 340,
+                  rotate: 0,
                 }}
                 transition={{
                   delay: 0.6,
@@ -144,9 +145,15 @@ const Home = () => {
                   type: "spring",
                 }}
                 viewport={{ once: true }}
-                className="relative  inline-flex items-center justify-center w-9 h-9 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full overflow-hidden flex-shrink-0 rotate-[340deg] bg-[#2E2C76] translate-y-3 p-2 translate-x-2.5"
+                className="group relative inline-flex items-center justify-center w-9 h-9 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full overflow-hidden flex-shrink-0 rotate-[340deg] bg-[#2E2C76] translate-y-3 p-2 translate-x-2.5 shadow-xl"
               >
-                <RadioIcon />
+                <span className="absolute transition-all duration-300 group-hover:opacity-0 group-hover:scale-0">
+                  <RadioIcon />
+                </span>
+
+                <span className="absolute opacity-0 scale-0 transition-all duration-300 group-hover:opacity-100 group-hover:scale-100">
+                  <FinIcon />
+                </span>
               </motion.span>{" "}
               Solution.
             </motion.h1>
@@ -318,7 +325,6 @@ const Home = () => {
             <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
               <SectionBadge label="How We Work" />
 
-              <h2 className="text-[32px] lg:text-[52px] heading font-bold text-center tracking-[1%] leading-[50px] uppercase text-[#2E2C76]"></h2>
               <SectionTitle
                 className="max-w-3xl mx-auto"
                 title=" Our 4 Stage Process"
@@ -358,7 +364,7 @@ const Home = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
-              className="grid grid-cols-1 md:grid-cols-3 items-stretch justify-between gap-4 mt-20"
+              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 items-stretch justify-between gap-4 mt-20"
             >
               {FeaturesServices.map((item: FeatureItem, i: number) => (
                 <motion.div key={i} variants={cardVariants}>

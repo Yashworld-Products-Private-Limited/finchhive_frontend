@@ -96,12 +96,12 @@ export default function ProcessSection() {
               className="relative flex items-start gap-"
             >
               <div className="relative z-10 flex flex-col items-center">
-                <div className=" rounded-full bg-white  flex items-center justify-center text-[#2E2C76] text-4xl md:text-6xl font-bold leading-none p-2 -translate-x-1/4">
+                <div className=" rounded-full bg-[#eeeef4]  flex items-center justify-center text-[#2E2C76] text-4xl md:text-6xl font-bold leading-none p-2 -translate-x-1/4">
                   {String(i + 1).padStart(2, "0")}
                 </div>
               </div>
 
-              <div className="flex-1 rounded-2xl bg-white border border-blue-100 p-4 md:p-6 shadow-md space-y-2 lg:space-y-4">
+              <div className="flex-1 rounded-2xl bg-[#eeeef4] border border-blue-100 p-4 md:p-6 shadow-md space-y-2 lg:space-y-4">
                 <h6 className="inline-flex items-center justify-center text-center bg-[#2E2C76] text-white subHeading text-xs px-3 py-1 rounded-full">
                   STEP {String(i + 1).padStart(2, "0")}
                 </h6>

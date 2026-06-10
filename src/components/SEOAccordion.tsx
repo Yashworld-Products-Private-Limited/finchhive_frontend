@@ -30,7 +30,7 @@ export default function SEOAccordion() {
               whileHover={{ scale: 1.01 }}
               className="rounded-2xl overflow-hidden bg-[#2E2C76]"
             >
-              <button
+              <div
                 onClick={() => toggle(faq.id)}
                 className="w-full flex items-center justify-between px-6 py-5 text-left group"
               >
@@ -76,7 +76,7 @@ export default function SEOAccordion() {
                     </svg>
                   )}
                 </motion.span>
-              </button>
+              </div>
 
               <AnimatePresence initial={false}>
                 {isOpen && (
