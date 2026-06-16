@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { CursorOptions } from "./cursor";
 import { useCustomCursor } from "./useCustomCursor";
 
@@ -51,7 +51,15 @@ export default function CustomCursor({
   logoHoverSize = 80,
   enabled = true,
 }: CustomCursorProps) {
-  const [mounted] = useState<boolean>(() => typeof window !== "undefined");
+  const [mounted, setMounted] = useState<boolean>(false);
+
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => {
+      setMounted(true);
+    });
+
+    return () => cancelAnimationFrame(frame);
+  }, []);
 
   const dotRef = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLDivElement>(null);
@@ -82,7 +90,7 @@ export default function CustomCursor({
           background: accentColor,
           borderRadius: "50%",
           transform: "translate(-50%, -50%)",
-          opacity: 0, // starts hidden — shown by hook when moving
+          opacity: 0, 
           transition: "opacity 0.2s ease, background 0.2s ease",
           mixBlendMode: "difference",
           willChange: "transform, left, top",

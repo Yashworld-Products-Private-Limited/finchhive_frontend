@@ -7,9 +7,9 @@ const accordionData = [
     id: 1,
     title: "What is Finchhive",
     content: [
-      "FINCHHIVE combines strategy, technology, creativity, and performance into one integrated business solution.",
+      "Finchhive combines strategy, technology, creativity, and performance into one integrated business solution.",
 
-      "Inspired by the Finch agile, adaptive, and intelligent and the Hive collaborative, structured, and scalable FINCHHIVE functions as a modern digital growth ecosystem for ambitious brands.",
+      "Inspired by the Finch agile, adaptive, and intelligent and the Hive collaborative, structured, and scalable Finchhive functions as a modern digital growth ecosystem for ambitious brands.",
 
       "Every solution is intentional.",
       " Every platform is connected.",
@@ -106,7 +106,7 @@ export default function AboutSection() {
             variants={fadeUpVariants}
             className="text-gray-700 text-lg md:text-xl lg:text-2xl subHeading leading-relaxed"
           >
-            FINCHHIVE is a premium digital platform solutions provider built for
+            Finchhive is a premium digital platform solutions provider built for
             brands and businesses that demand innovation, scalability,
             performance, and long term digital growth. <br />
             <span className="text-[#2E2C76] font-semibold text-center">
@@ -125,7 +125,7 @@ export default function AboutSection() {
             In today’s fast-moving digital world, businesses need more than
             marketing they need systems, technology, strategy, branding and
             digital infrastructure that work together seamlessly. That’s where
-            FINCHHIVE operates.
+            Finchhive operates.
           </motion.p>
 
           <motion.p

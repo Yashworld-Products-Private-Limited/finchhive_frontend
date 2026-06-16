@@ -3,7 +3,7 @@
 import { useEffect, useRef, useCallback } from "react";
 import { CursorOptions } from "./cursor";
 
-const DEFAULT_MAGNETIC_SELECTORS = ["button", "a", "[data-magnetic]"];
+const DEFAULT_HOVER_SELECTORS = ["button", "a", "[data-cursor-hover]"];
 const MAX_PARTICLES = 25;
 const PARTICLE_DURATION_MS = 650;
 const PARTICLE_THROTTLE_MS = 38;
@@ -20,7 +20,7 @@ export function useCustomCursor(
   const {
     accentColor = "#ffffff",
     idleDelay = 800,
-    magneticSelectors = DEFAULT_MAGNETIC_SELECTORS,
+    hoverSelectors = DEFAULT_HOVER_SELECTORS,
     particleColor = "rgba(255,255,255,0.55)",
     logoSize = 52,
     logoHoverSize = 80,
@@ -198,16 +198,16 @@ export function useCustomCursor(
     if (logo) logo.style.opacity = "1";
   }, [logoRef]);
 
-  // ─── Magnetic elements ────────────────────────────────────────────────────
-  const magneticCleanups = useRef<Array<() => void>>([]);
+  // ─── Interactive element hover state ──────────────────────────────────────
+  const hoverCleanups = useRef<Array<() => void>>([]);
 
-  const bindMagnetic = useCallback(() => {
-    magneticCleanups.current.forEach((fn) => fn());
-    magneticCleanups.current = [];
+  const bindHoverTargets = useCallback(() => {
+    hoverCleanups.current.forEach((fn) => fn());
+    hoverCleanups.current = [];
 
     if (typeof document === "undefined") return;
 
-    const selector = magneticSelectors.join(", ");
+    const selector = hoverSelectors.join(", ");
     const elements = document.querySelectorAll<HTMLElement>(selector);
 
     elements.forEach((el) => {
@@ -241,34 +241,18 @@ export function useCustomCursor(
           dot.style.transform = "translate(-50%,-50%)";
           dot.style.background = accentColor;
         }
-        el.style.transform = "";
-        el.style.transition = "transform 0.5s cubic-bezier(.23,1,.32,1)";
-      };
-
-      const onMove = (e: MouseEvent) => {
-        const rect = el.getBoundingClientRect();
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
-        const pullX = (e.clientX - centerX) * 0.3;
-        const pullY = (e.clientY - centerY) * 0.3;
-        el.style.transform = `translate(${pullX}px, ${pullY}px)`;
-        el.style.transition = "transform 0.15s ease";
       };
 
       el.addEventListener("mouseenter", onEnter);
       el.addEventListener("mouseleave", onLeave);
-      el.addEventListener("mousemove", onMove);
 
-      magneticCleanups.current.push(() => {
+      hoverCleanups.current.push(() => {
         el.removeEventListener("mouseenter", onEnter);
         el.removeEventListener("mouseleave", onLeave);
-        el.removeEventListener("mousemove", onMove);
-        el.style.transform = "";
-        el.style.transition = "";
       });
     });
   }, [
-    magneticSelectors,
+    hoverSelectors,
     logoSize,
     logoHoverSize,
     accentColor,
@@ -280,6 +264,7 @@ export function useCustomCursor(
   useEffect(() => {
     if (!enabled || typeof window === "undefined") return;
 
+    const cursorState = state.current;
     const styleTag = document.createElement("style");
     styleTag.id = "__custom-cursor-global";
     styleTag.textContent = `*, *::before, *::after { cursor: none !important; }`;
@@ -305,19 +290,19 @@ export function useCustomCursor(
 
     state.current.rafId = requestAnimationFrame(animateLogo);
 
-    bindMagnetic();
+    bindHoverTargets();
 
-    const observer = new MutationObserver(bindMagnetic);
+    const observer = new MutationObserver(bindHoverTargets);
     observer.observe(document.body, { childList: true, subtree: true });
 
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
       document.removeEventListener("mouseleave", handleMouseLeave);
       document.removeEventListener("mouseenter", handleMouseEnter);
-      cancelAnimationFrame(state.current.rafId);
-      clearTimeout(state.current.idleTimer);
-      magneticCleanups.current.forEach((fn) => fn());
-      magneticCleanups.current = [];
+      cancelAnimationFrame(cursorState.rafId);
+      clearTimeout(cursorState.idleTimer);
+      hoverCleanups.current.forEach((fn) => fn());
+      hoverCleanups.current = [];
       observer.disconnect();
       styleTag.remove();
       document.documentElement.style.cursor = "";
@@ -328,7 +313,7 @@ export function useCustomCursor(
     handleMouseLeave,
     handleMouseEnter,
     animateLogo,
-    bindMagnetic,
+    bindHoverTargets,
     logoRef,
   ]);
 }

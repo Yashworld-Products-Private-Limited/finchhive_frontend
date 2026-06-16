@@ -1,7 +1,8 @@
 import { FeatureCard, FeatureItem } from "@/components/FeatureCard";
+import { ReelCard } from "@/components/ReelsMarquee";
 import SectionBadge from "@/components/SectionBadge";
 import SectionTitle from "@/components/SectionTitle";
-import { FeaturesServices } from "@/constants";
+import { FeaturesServices, Interior, kalrasKitchen } from "@/constants";
 import { TrendingDown, TrendingUp } from "lucide-react";
 import Image from "next/image";
 
@@ -13,7 +14,7 @@ const reelData = [
     reach: "8,38,143",
     likes: "4,100+",
     comments: "10",
-    shares: "41",
+    shares: "484",
     saves: "470",
     follows: "165",
     watch: "15s",
@@ -25,7 +26,7 @@ const reelData = [
     reach: "9,882",
     likes: "234",
     comments: "30",
-    shares: "2",
+    shares: "605",
     saves: "600",
     follows: "20",
     watch: "10s",
@@ -38,7 +39,7 @@ const reelData = [
     reach: "19,344",
     likes: "325",
     comments: "8",
-    shares: "1",
+    shares: "622",
     saves: "618",
     follows: "87",
     watch: "11s",
@@ -50,7 +51,7 @@ const reelData = [
     reach: "12,233",
     likes: "183",
     comments: "7",
-    shares: "1",
+    shares: "353",
     saves: "332",
     follows: "36",
     watch: "8s",
@@ -63,7 +64,7 @@ const reelData = [
     reach: "19,448",
     likes: "317",
     comments: "6",
-    shares: "1",
+    shares: "730",
     saves: "703",
     follows: "76",
     watch: "10s",
@@ -210,7 +211,7 @@ export default function CaseStudyPage() {
             {[
               ["9.76L+", "Total Views"],
               ["8.99L+", "Accounts Reached"],
-              ["46", "Total Shares"],
+              ["6776", "Total Shares"],
               ["384", "New Followers"],
             ].map((item, i) => (
               <div
@@ -632,29 +633,35 @@ export default function CaseStudyPage() {
             </tbody>
           </table>
         </div>
+
+        <div className="flex flex-wrap items-center justify-center gap-4 mt-10">
+          {kalrasKitchen.map((item) => (
+            <ReelCard key={item.video} item={item} />
+          ))}
+        </div>
         <div className="max-w-[850px] mx-auto">
-            <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {reels.map((reel) => (
-                <a
-                  key={reel.id}
-                  href={reel.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group overflow-hidden rounded-[28px] border border-zinc-200 bg-white shadow-lg transition-all duration-500 hover:-translate-y-2"
-                >
-                  <div className="relative w-full bg-zinc-100">
-                    <Image
-                      src={reel.image}
-                      alt="Instagram Reel Screenshot"
-                      width={500}
-                      height={700}
-                      className="h-auto w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                  </div>
-                </a>
-              ))}
-            </div>
+          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {reels.map((reel) => (
+              <a
+                key={reel.id}
+                href={reel.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group overflow-hidden rounded-[28px] border border-zinc-200 bg-white shadow-lg transition-all duration-500 hover:-translate-y-2"
+              >
+                <div className="relative w-full bg-zinc-100">
+                  <Image
+                    src={reel.image}
+                    alt="Instagram Reel Screenshot"
+                    width={500}
+                    height={700}
+                    className="h-auto w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+              </a>
+            ))}
           </div>
+        </div>
       </section>
 
       <section className="px-6 md:px-14 py-28">
@@ -687,7 +694,6 @@ export default function CaseStudyPage() {
             the flat grey &quot;typical reel&quot; benchmark. This happened
             consistently not once, not by luck, but by design.
           </p>
-          
         </div>
       </section>
       <section className="mt-[50px] ">

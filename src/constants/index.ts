@@ -1,22 +1,17 @@
 import { BentoItem } from "@/components/BentoGrid";
-import { link } from "fs";
 import {
   BadgeDollarSign,
   Building2,
-  Camera,
   Clapperboard,
   FileText,
-  Globe,
   Heart,
-  Inspect,
   Layout,
   Link2,
   Megaphone,
   MessageCircleMore,
-  Mic2,
   Palette,
   PenTool,
-  Users,
+  Users
 } from "lucide-react";
 
 export const services = [
@@ -24,25 +19,25 @@ export const services = [
     title: "Social Media Marketing",
     desc: "Strategic social media management and growth systems for Instagram, Facebook, LinkedIn, and YouTube.",
     icon: Megaphone,
-    link: "/services/social-media-marketing",
+    link: "/social-media-marketing",
   },
   {
     title: "Reel Creation & Short-Form Content",
     desc: "High-impact cinematic reels, YouTube Shorts, and viral-ready content optimized for engagement and reach.",
     icon: Clapperboard,
-    link: "/services/social-media-marketing",
+    link: "/social-media-marketing",
   },
   {
     title: "Brand Storytelling",
     desc: "Emotion-driven visual storytelling that helps brands connect deeply with their audience and build long-term trust.",
     icon: FileText,
-    link: "/services/social-media-marketing",
+    link: "/social-media-marketing",
   },
   {
     title: "Influencer & Creator Collaborations",
     desc: "Strategic influencer partnerships and creator campaigns designed to amplify brand reach, build social proof, and drive authentic audience engagement across digital platforms.",
     icon: Users,
-    link: "/services/social-media-marketing",
+    link: "/social-media-marketing",
   },
 ];
 
@@ -51,73 +46,73 @@ export const servicesPage = [
     title: "Social Media Marketing",
     desc: "Strategic social media management and growth systems for Instagram, Facebook, LinkedIn, and YouTube.",
     icon: Megaphone,
-    link: "/services/social-media-marketing#social-media-marketing",
+    link: "/social-media-marketing#social-media-marketing",
   },
   {
     title: "Reel Creation & Short-Form Content",
     desc: "High-impact cinematic reels, YouTube Shorts, and viral-ready content optimized for engagement and reach.",
     icon: Clapperboard,
-    link: "/services/social-media-marketing#reel-creation",
+    link: "/social-media-marketing#reel-creation",
   },
   {
     title: "Brand Storytelling",
     desc: "Emotion-driven visual storytelling that helps brands connect deeply with their audience and build long-term trust.",
     icon: FileText,
-    link: "/services/social-media-marketing#brand-storytelling",
+    link: "/social-media-marketing#brand-storytelling",
   },
   {
     title: "Influencer & Creator Collaborations",
     desc: "Strategic influencer partnerships and creator campaigns designed to amplify brand reach, build social proof, and drive authentic audience engagement across digital platforms.",
     icon: Users,
-    link: "/services/social-media-marketing#influencer-collaborations",
+    link: "/social-media-marketing#influencer-collaborations",
   },
   {
     title: "Interior & Architectural Shoots",
     desc: "Luxury visual content for interior designers, architects, cafés, hospitality brands, and real estate projects.",
     icon: Building2,
-    link: "/services/social-media-marketing#interior-architectural-shoots",
+    link: "/social-media-marketing#interior-architectural-shoots",
   },
   // {
   //   title: "Performance Marketing",
   //   desc: "Meta Ads, Google Ads, lead generation campaigns, and ROI-driven advertising strategies built to scale businesses.",
   //   icon: Globe,
-  //   link: "/services/social-media-marketing",
+  //   link: "/social-media-marketing",
   // },
-  // {
-  //   title: "Website & Digital Platform Solutions",
-  //   desc: "Modern websites, landing pages, e-commerce platforms, and conversion-focused digital systems tailored for scalable growth.",
-  //   icon: Layout,
-  //   link: "/services/social-media-marketing",
-  // },
+  {
+    title: "Website & Digital Platform Solutions",
+    desc: "Modern websites, landing pages, e-commerce platforms, and conversion-focused digital systems tailored for scalable growth.",
+    icon: Layout,
+    link: "/social-media-marketing",
+  },
   // {
   //   title: "Brand Strategy & Positioning",
   //   desc: "Build a strong brand identity, market positioning, and digital presence designed for long-term authority, recall, and recognition.",
   //   icon: Inspect,
-  //   link: "/services/social-media-marketing",
+  //   link: "/social-media-marketing",
   // },
   // {
   //   title: "Event & Wedding Coverage",
   //   desc: "Cinematic event coverage, wedding films, brand activations, conferences, and social-media-first storytelling.",
   //   icon: Camera,
-  //   link: "/services/social-media-marketing",
+  //   link: "/social-media-marketing",
   // },
   {
     title: "Creative Design & Visual Identity",
     desc: "Premium graphic design, visual systems, ad creatives, brand aesthetics, and digital-first creative direction.",
     icon: Palette,
-    link: "/services/social-media-marketing#creative-design",
+    link: "/social-media-marketing#creative-design",
   },
   {
     title: "Logo Designing & Brand Marks",
     desc: "Crafting timeless, memorable logo identities and brand marks that define your visual identity across all platforms.",
     icon: PenTool,
-    link: "/services/social-media-marketing#logo-design",
+    link: "/social-media-marketing#logo-design",
   },
   // {
   //   title: "Podcast Production",
   //   desc: "Professional multi-camera podcast shoots, long-form editing, and short-form content repurposing for creators and brands.",
   //   icon: Mic2,
-  //   link: "/services/social-media-marketing",
+  //   link: "/social-media-marketing",
   // },
 ];
 
@@ -320,39 +315,674 @@ export const reels = [
     name: "Social Growth",
     profile:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels1.mp4",
+    video:
+      "/imgs/reels/reels1.mp4",
+    instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels2.mp4",
+    video:
+      "/imgs/reels/reels2.mp4",
+    instagram: "https://www.instagram.com/",
   },
   {
     name: "Creative Ads",
     profile:
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels3.mp4",
+    video:
+      "/imgs/reels/reels3.mp4",
+    instagram: "https://www.instagram.com/",
   },
   {
     name: "Luxury Branding",
     profile:
       "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels4.mp4",
+    video:
+      "/imgs/reels/reels4.mp4",
+    instagram: "https://www.instagram.com/",
   },
   {
     name: "Creative Ads",
     profile:
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels5.mp4",
+    video:
+      "/imgs/reels/reels5.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Social Growth",
+    profile:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels6.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels7.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Creative Ads",
+    profile:
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels8.mp4",
+    instagram: "https://www.instagram.com/",
   },
   {
     name: "Luxury Branding",
     profile:
       "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels6.mp4",
+    video:
+      "/imgs/reels/reels9.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Creative Ads",
+    profile:
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels10.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Social Growth",
+    profile:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels11.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels12.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Creative Ads",
+    profile:
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels13.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Luxury Branding",
+    profile:
+      "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels14.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Creative Ads",
+    profile:
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels15.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Social Growth",
+    profile:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels16.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels17.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Creative Ads",
+    profile:
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels18.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Luxury Branding",
+    profile:
+      "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels19.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Creative Ads",
+    profile:
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels20.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Social Growth",
+    profile:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels21.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels22.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Creative Ads",
+    profile:
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels23.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Luxury Branding",
+    profile:
+      "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels24.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Creative Ads",
+    profile:
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels25.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Social Growth",
+    profile:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels26.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels27.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Creative Ads",
+    profile:
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels28.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Luxury Branding",
+    profile:
+      "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels29.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Creative Ads",
+    profile:
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels30.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Social Growth",
+    profile:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels31.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels32.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Creative Ads",
+    profile:
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels33.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Luxury Branding",
+    profile:
+      "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels34.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Creative Ads",
+    profile:
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels35.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Social Growth",
+    profile:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels36.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels37.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Creative Ads",
+    profile:
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels38.mp4",
+    instagram: "https://www.instagram.com/",
   },
 ];
+
+export const brandStory = [
+  {
+    name: "Social Growth",
+    profile:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels12.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels24.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Social Growth",
+    profile:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels30.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels31.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Social Growth",
+    profile:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels32.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels36.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels37.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+];
+
+export const UGC = [
+  {
+    name: "Social Growth",
+    profile:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels12.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels24.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Social Growth",
+    profile:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels30.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels31.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Social Growth",
+    profile:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels32.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels36.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels37.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+];
+
+export const reelcreation = [
+  {
+    name: "Social Growth",
+    profile:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels6.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels7.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Social Growth",
+    profile:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels38.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels24.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Social Growth",
+    profile:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels9.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels36.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels29.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+   {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels33.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels13.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+];
+
+export const socialMedia = [
+  {
+    name: "Social Growth",
+    profile:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels10.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels35.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Social Growth",
+    profile:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels13.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels18.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Social Growth",
+    profile:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels22.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels34.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels25.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+   {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels23.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  
+];
+
+export const Interior = [
+  {
+    name: "Social Growth",
+    profile:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels26.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels27.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+];
+
+export const kalrasKitchen = [
+  {
+    name: "Social Growth",
+    profile:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels2.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels3.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Social Growth",
+    profile:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels4.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels16.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels28.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+];
+
+export const veidor = [
+  {
+    name: "Social Growth",
+    profile:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels1.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels5.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Social Growth",
+    profile:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels15.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels19.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video:
+      "/imgs/reels/reels21.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+];
+
 
 export const logos = [
   "/imgs/logo1.png",
@@ -367,33 +997,23 @@ export const logos = [
 
 export const platforms = [
   {
-    image: "https://cdn-icons-png.flaticon.com/512/5968/5968830.png",
-    className:
-      "top-[10%] left-[8%] rotate-[-12deg] shadow-[0_20px_40px_rgba(0,0,0,0.25)]",
+    image: "https://cdn-icons-png.flaticon.com/512/5968/5968830.png", // X
     bg: "bg-white",
   },
   {
-    image: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png",
-    className:
-      "top-[0%] left-1/2 -translate-x-1/2 shadow-[0_20px_40px_rgba(255,0,0,0.25)]",
+    image: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png", // YouTube
     bg: "bg-red-600",
   },
   {
-    image: "https://upload.wikimedia.org/wikipedia/en/c/c4/Snapchat_logo.svg",
-    className:
-      "top-[12%] right-[8%] rotate-[10deg] shadow-[0_20px_40px_rgba(255,255,0,0.25)]",
+    image: "https://upload.wikimedia.org/wikipedia/en/c/c4/Snapchat_logo.svg", // Snapchat
     bg: "bg-[#fffc00]",
   },
   {
-    image: "https://cdn-icons-png.flaticon.com/512/3046/3046121.png",
-    className:
-      "bottom-[10%] left-[20%] rotate-[-14deg] shadow-[0_20px_40px_rgba(0,0,0,0.25)]",
-    bg: "bg-black",
+    image: "https://cdn-icons-png.flaticon.com/512/174/174857.png", // LinkedIn
+    bg: "bg-[#FFFFFF]",
   },
   {
-    image: "https://cdn-icons-png.flaticon.com/512/2111/2111463.png",
-    className:
-      "bottom-[10%] right-[18%] rotate-[14deg] shadow-[0_20px_40px_rgba(255,0,120,0.25)]",
+    image: "https://cdn-icons-png.flaticon.com/512/2111/2111463.png", // Instagram
     bg: "bg-gradient-to-br from-yellow-400 via-pink-500 to-purple-600",
   },
 ];

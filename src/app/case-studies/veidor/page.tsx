@@ -1,18 +1,20 @@
 "use client";
 
+import { ReelCard } from "@/components/ReelsMarquee";
+import { veidor } from "@/constants";
 import {
   BarChart3,
+  Bookmark,
+  Clapperboard,
   Eye,
   Heart,
+  LayoutGrid,
   MessageCircle,
+  Scissors,
   Share2,
-  Bookmark,
   Sparkles,
-  Clapperboard,
   Target,
   TrendingUp,
-  LayoutGrid,
-  Scissors,
 } from "lucide-react";
 
 const reelData = [
@@ -21,7 +23,7 @@ const reelData = [
     views: "1,14,060",
     likes: 618,
     comments: 49,
-    shares: "2.5K",
+    shares: "3000+",
     saves: "1.1K",
     reach: "Instagram 1,14,003 + Facebook 57",
     watch: "6d 13h 18m 12s",
@@ -550,6 +552,12 @@ export default function CaseStudyPage() {
         </div>
       </section>
 
+      <div className="flex flex-wrap items-center justify-center gap-4 mt-10">
+        {veidor.map((item) => (
+          <ReelCard key={item.video} item={item} />
+        ))}
+      </div>
+
       {/* INSIGHTS */}
       <section className="px-6 md:px-10 py-24">
         <div className="max-w-[1440px] mx-auto">
@@ -606,7 +614,7 @@ export default function CaseStudyPage() {
                 "Saves indicate aspirational buying intent critical for fashion brands",
                 "Cross-platform spillover (IG → Facebook) happens naturally when content quality is high",
                 "Watch time accumulation (6d+ on hero reel) signals deep content engagement, not passive scrolling",
-                "Profile activity of 214 from one reel shows direct brand discovery funnel activation"
+                "Profile activity of 214 from one reel shows direct brand discovery funnel activation",
               ].map((item, index) => (
                 <div
                   key={index}

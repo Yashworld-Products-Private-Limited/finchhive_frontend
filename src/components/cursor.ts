@@ -14,9 +14,9 @@ export interface CursorOptions {
   /** Milliseconds of stillness before the logo fades in. Default: 800 */
   idleDelay?: number;
 
-  /** CSS selectors that trigger magnetic + logo-enlarge on hover.
-   *  Default: ['button', 'a', '[data-magnetic]'] */
-  magneticSelectors?: string[];
+  /** CSS selectors that trigger the cursor hover appearance.
+   *  Default: ['button', 'a', '[data-cursor-hover]'] */
+  hoverSelectors?: string[];
 
   /** CSS color for the particle trail. Default: 'rgba(255,255,255,0.55)' */
   particleColor?: string;
@@ -44,7 +44,7 @@ export interface CursorState {
   rotation: number;
   /** Whether the cursor has been idle long enough to show logo */
   isIdle: boolean;
-  /** Whether mouse is hovering a magnetic element */
+  /** Whether mouse is hovering an interactive element */
   isHovering: boolean;
   /** Whether cursor is inside the window */
   isVisible: boolean;

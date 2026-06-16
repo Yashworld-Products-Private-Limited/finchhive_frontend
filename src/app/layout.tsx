@@ -56,7 +56,7 @@ export default function RootLayout({
         />
         <Navbar />
         <main className="">
-          {/* <ScrollToTop /> */}
+          <ScrollToTop />
           {children}
         </main>
         <Footer />

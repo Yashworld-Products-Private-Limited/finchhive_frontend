@@ -3,10 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
-  { value: 15, suffix: "+", label: "Years of Experience" },
+  { value: 2.5, suffix: "+", label: "Years of Experience" },
   { value: 250, suffix: "+", label: "Successful Projects" },
-  { value: 1500, suffix: "+", label: "Happy Clients" },
-  { value: 120, suffix: "+", label: "5 Star Reviews" },
+  { value: 20, suffix: "+", label: "Happy Clients" },
 ];
 
 const features = [
@@ -177,7 +176,7 @@ function FeatureCard({
       }}
     >
       <div className="relative mb-6">
-        <div className="absolute inset-0 rounded-2xl bg-white/5 blur-md scale-110 group-hover:scale-125 transition-transform duration-500" />
+        <div className="absolute inset-0 rounded-2xl bg-white/15 blur-md scale-110 group-hover:scale-125 transition-transform duration-500" />
         <div className="relative w-[68px] h-[68px] rounded-[18px] border border-white/20  flex items-center justify-center text-white ">
           {icon}
         </div>
@@ -209,13 +208,13 @@ export default function StatsFeatureSection() {
         }}
       />
 
-      {/* <div
+      <div
         className="absolute inset-0"
         style={{
           background:
             "radial-gradient(circle at center, rgba(46, 44, 118, 0.83) 0%, rgba(46, 44, 118, 0.6) 35%, rgba(0, 0, 0.5, 1) 100%)",
         }}
-      /> */}
+      />
 
       <div className="relative z-10 flex flex-col items-center justify-between py-6 w-full gap-40 md:h-[100dvh] ">
         <div className="grid grid-cols-2 md:flex md:flex-wrap items-center justify-center -gap-4 ">

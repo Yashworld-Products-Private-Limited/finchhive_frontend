@@ -9,17 +9,13 @@ gsap.registerPlugin(ScrollTrigger);
 const CaseStudies = () => {
   const router = useRouter();
 
-
-
   return (
-    <div >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-[120px]">
+    <div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mt-[120px]">
         {caseStudies.map((item, i) => (
           <div
             key={i}
-            
             onClick={() => router.push(item.link)}
-            
             className={`relative space-y-5 cursor-none ${
               i === 0 || i === 2 ? "md:mt-[-80px]" : "md:mt-[0px]"
             }`}
@@ -41,29 +37,17 @@ const CaseStudies = () => {
               <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-[75%] h-[14px] bg-white/10 rounded-xl blur-sm" />
             </div>
 
-            <div className="card-info relative rounded-[20px] p-5 sm:p-6 md:p-8 overflow-hidden bg-gradient-to-br from-white via-[#f8fbff] to-[#eef5ff] border border-black/5 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] group transition-all duration-500 hover:scale-[1.02]">
+            <div className="card-info relative rounded-[20px] p-5 sm:p-6 md:p-8 overflow-hidden bg-gradient-to-br from-white via-[#f8fbff] to-[#eef5ff] border border-black/5 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] group transition-all duration-500 hover:scale-[1.02] space-y-2">
               <div className="absolute inset-0 bg-gradient-to-br from-[#2E2C76]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-500" />
-              <span className="card-badge inline-block text-[10px] sm:text-xs tracking-wide px-3 py-1 rounded-full bg-[#2E2C76]/50 text-[#FFFFFF] mb-3 sm:mb-4">
+              <span className="card-badge inline-block text-[10px] sm:text-xs tracking-wide px-3 py-1 rounded-full bg-[#2E2C76]/50 text-[#FFFFFF] ">
                 CASE STUDY
               </span>
-              <h3 className="card-title text-[#2E2C76] text-lg sm:text-xl md:text-2xl tracking-wide mb-2 heading">
+              <h3 className="card-title text-[#2E2C76] text-lg sm:text-xl md:text-2xl tracking-wide heading">
                 {item.title}
               </h3>
-              <p className="card-desc text-gray-500 text-xs sm:text-sm md:text-base mb-5 sm:mb-6 subHeading">
+              <p className="card-desc text-gray-500 text-xs sm:text-sm md:text-base  subHeading">
                 {item.desc}
               </p>
-              {/* <div className="flex items-center justify-between">
-                {item.stats.map((stat, j) => (
-                  <div key={j} className="card-stat">
-                    <h2 className="text-[#2E2C76] text-2xl sm:text-3xl md:text-4xl font-bold Heading">
-                      {stat.value}
-                    </h2>
-                    <p className="text-gray-500 text-xs sm:text-sm mt-1">
-                      {stat.label}
-                    </p>
-                  </div>
-                ))}
-              </div> */}
             </div>
           </div>
         ))}

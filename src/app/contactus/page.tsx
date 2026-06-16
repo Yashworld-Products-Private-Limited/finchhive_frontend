@@ -14,8 +14,6 @@ const PopupModal = dynamic(
   },
 );
 
-
-
 function Card({
   title,
   children,
@@ -184,22 +182,22 @@ const Contactus = () => {
           <section className="max-w-[1280px] mx-auto">
             <div className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <Card title="Hotline:">
+                <Card title="Phone Number:">
                   <p className="text-[#2E2C76] subHeading text-lg">
-                    (555) 123-4567
+                    +91 95375-87467
                   </p>
                 </Card>
 
                 <Card title="Address:">
                   <p className="text-[#2E2C76] subHeading text-lg leading-relaxed">
-                    123 MAIN STREET, CITYVILLE, <br />
-                    STATEBURG, 98765
+                    G6, Samarth Acquisiti, New City Light Road, near Mercedes
+                    Showroom, New Tirumala Bharthana Road, Surat Gujarat 395007.
                   </p>
                 </Card>
 
                 <Card title="Email:">
                   <p className="text-[#2E2C76] subHeading text-lg uppercase">
-                    AGENCEE@EMAIL.COM
+                    grow@finchhive.com
                   </p>
                 </Card>
               </div>
@@ -210,7 +208,7 @@ const Contactus = () => {
                     <div className="space-y-2 text-[#2E2C76] subHeading text-lg">
                       <p>MON TO FRI: 9.00AM - 8.30PM</p>
                       <p>SAT: 10.00AM - 6.30PM</p>
-                      <p>SUN: CLOSED</p>
+                      <p>SUN: On Calls</p>
                     </div>
                   </Card>
                 </div>
@@ -233,7 +231,7 @@ const Contactus = () => {
 
               <div className="rounded-3xl overflow-hidden border border-gray-400 shadow-xl group">
                 <iframe
-                  src="https://www.google.com/maps?q=amsterdam&output=embed"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.093337186442!2d72.79303749678957!3d21.148683500000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be053564b6be8af%3A0x348bbdb3760dd429!2sSixdots!5e0!3m2!1sen!2sin!4v1781523866486!5m2!1sen!2sin"
                   className="w-full h-[300px] md:h-[400px] grayscale group-hover:grayscale-0 transition-all duration-500"
                   loading="lazy"
                 />

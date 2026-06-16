@@ -78,17 +78,13 @@ export default function LogoMarquee() {
           {repeated.map((logo, i) => (
             <div
               key={i}
-              className="flex-shrink-0 w-48 h-24 rounded-2xl flex items-center justify-center px-5 transition-all duration-300 cursor-pointer group"
+              className="flex-shrink-0 w-48 h-36 rounded-2xl flex items-center justify-center px-5 transition-all duration-300 cursor-pointer group"
             >
               <img
                 src={logo.src}
                 alt={logo.alt}
                 loading="lazy"
-                className="h-40 w-auto object-contain  group-hover:opacity-80 transition-opacity duration-300"
-                // style={{
-                //   filter:
-                //     "brightness(0) saturate(100%) invert(3%) sepia(61%) saturate(1200%) hue-rotate(22deg) brightness(80%) contrast(10%)",
-                // }}
+                className="h-48 w-auto object-contain  group-hover:opacity-80 transition-opacity duration-300"
               />
             </div>
           ))}

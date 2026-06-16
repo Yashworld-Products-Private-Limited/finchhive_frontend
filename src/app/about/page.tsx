@@ -158,7 +158,7 @@ const AboutPage = () => {
               With over 15 years of experience in the teaching industry, Niraj
               Prasad brings a unique human-centered perspective to the digital
               world. <br />
-              Before building FINCHHIVE, Niraj spent years understanding how
+              Before building Finchhive, Niraj spent years understanding how
               people think, learn, engage, and make decisions especially
               teenagers and young digital audiences. His background as an
               educator helped him develop deep insights into audience
@@ -209,10 +209,10 @@ const AboutPage = () => {
               </motion.div>
 
               <motion.div variants={fadeRight} className="space-y-6">
-                <p className="text-gray-600 text-sm md:text-base lg:text-xl  leading-relaxed subHeading">
-                  That experience became the foundation of FINCHHIVE. While many
+                <p className="text-gray-600 text-sm md:text-xl xl:text-2xl subHeading leading-[20px] md:leading-[26px] xl:leading-[32px] subHeading">
+                  That experience became the foundation of Finchhive. While many
                   agencies focus only on trends and algorithms, Niraj built
-                  FINCHHIVE around one core belief: People connect with brands
+                  Finchhive around one core belief: People connect with brands
                   that understand them. His journey from education to digital
                   strategy created a rare combination of:
                 </p>
@@ -237,52 +237,25 @@ const AboutPage = () => {
                     </motion.span>
                   ))}
                 </div>
-                <p className="text-gray-600 text-sm md:text-base lg:text-xl  leading-relaxed subHeading">
+                <p className="text-gray-600 text-sm md:text-xl xl:text-2xl subHeading leading-[20px] md:leading-[26px] xl:leading-[32px] subHeading">
                   Through years of interacting with students and modern
                   consumers, Niraj recognized a major gap in the digital space
                   brands were creating content, but very few truly understood
                   what audiences actually wanted to see, feel, and connect with.
-                  That realization led to the creation of FINCHHIVE a digital
+                  That realization led to the creation of Finchhive a digital
                   platform solutions company focused on building meaningful
                   digital experiences, scalable brand systems, and
-                  performance-driven growth. Today, Niraj leads FINCHHIVE with a
+                  performance-driven growth. Today, Niraj leads Finchhive with a
                   vision to help businesses grow through strategy, creativity,
                   technology, and authentic audience connection.
                 </p>
-                <p className="text-gray-600 text-sm md:text-base lg:text-xl  leading-relaxed subHeading">
+                <p className="text-gray-600 text-sm md:text-xl xl:text-2xl subHeading leading-[20px] md:leading-[26px] xl:leading-[32px] subHeading">
                   “Digital growth starts with understanding people first.”{" "}
                   <br />
                   <span className="text-base font-semibold text-[#2E2C76]">
                     - Niraj Prasad
                   </span>
                 </p>
-
-                <div>
-                  <h4 className="text-gray-400 mb-4 subHeading">
-                    Featured In:
-                  </h4>
-
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                    {["Logo", "Logo", "Logo", "Logo", "Logo", "Logo"].map(
-                      (_, i) => (
-                        <motion.div
-                          whileHover={{
-                            scale: 1.05,
-                            y: -5,
-                          }}
-                          transition={{
-                            type: "spring",
-                            stiffness: 250,
-                          }}
-                          key={i}
-                          className="h-[60px] flex items-center justify-center rounded-xl bg-black/20 border border-black/10 backdrop-blur-md"
-                        >
-                          <span className="text-gray-400 text-sm">LOGO</span>
-                        </motion.div>
-                      ),
-                    )}
-                  </div>
-                </div>
               </motion.div>
             </div>
           </motion.div>
@@ -398,7 +371,7 @@ const AboutPage = () => {
             <div className="flex items-center justify-center lg:items-end lg:justify-end  mt-6 lg:mt-10">
               <motion.p
                 variants={fadeUp}
-                className="text-sm lg:text-xl subHeading leading-[24px] text-gray-400 text-center lg:text-left max-w-2xl lg:ml-auto"
+                className="text-sm md:text-xl xl:text-2xl subHeading leading-[20px] md:leading-[26px] xl:leading-[32px] text-gray-600 text-center lg:text-left max-w-2xl lg:ml-auto"
               >
                 From team outings and office shenanigans to special events and
                 celebrations, these photos capture the essence of our vibrant

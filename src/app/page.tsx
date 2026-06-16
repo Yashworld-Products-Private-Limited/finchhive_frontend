@@ -261,10 +261,10 @@ const Home = () => {
             className="hidden lg:flex relative cursor-pointer"
           >
             <div className="absolute -top-[106px] z-10 backdrop-blur-[0.8px] border-[1px] border-white  rounded-[48px] px-8 py-7 shadow-[0_4px_20px_rgba(0,0,0,0.4)] before:absolute before:inset-0 before:rounded-[48px] before:bg-linear-to-br before:from-white/10 before:to-transparent before:pointer-events-none">
-              <h1 className="font-light text-[#FFFFFF] lg:text-[22px] 2xl:text-3xl uppercase leading-tight tracking-wide mb-5 drop-shadow-md subHeading">
-                <span className="text-[#FFFFFD]">#1</span> Digital Marketing
+              <h1 className="font-light text-[#FFFFFF] lg:text-[20px] 2xl:text-[24px] uppercase leading-tight tracking-wide mb-5 drop-shadow-md subHeading">
+                <span className="text-[#FFFFFD]">#1</span> Human psychology
                 <br />
-                Agency in Asia
+                Based Degital Solution
               </h1>
 
               <div className="flex items-center gap-4">
