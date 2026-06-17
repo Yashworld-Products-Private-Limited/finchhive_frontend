@@ -31,13 +31,32 @@ const Home = () => {
   // const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const getElementForHash = (hashValue: string | null) => {
+      if (!hashValue) return null;
+
+      const id = hashValue.startsWith("#")
+        ? decodeURIComponent(hashValue.slice(1))
+        : decodeURIComponent(hashValue);
+
+      return (
+        document.getElementById(id) ??
+        (() => {
+          try {
+            return document.querySelector(hashValue);
+          } catch {
+            return null;
+          }
+        })()
+      );
+    };
+
     const scrollToHash = () => {
       const hash = window.location.hash;
 
       if (!hash) return;
 
       setTimeout(() => {
-        const el = document.querySelector(hash);
+        const el = getElementForHash(hash);
         el?.scrollIntoView({
           behavior: "smooth",
           block: "start",

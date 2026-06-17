@@ -9,15 +9,32 @@ export default function ScrollToTop() {
   useEffect(() => {
     const hash = window.location.hash;
 
-    if (hash) {
-      const element = document.querySelector(hash);
+    const getElementForHash = (hashValue: string | null) => {
+      if (!hashValue) return null;
 
-      if (element) {
-        element.scrollIntoView({
-          behavior: "smooth",
-        });
-        return;
-      }
+      const id = hashValue.startsWith("#")
+        ? decodeURIComponent(hashValue.slice(1))
+        : decodeURIComponent(hashValue);
+
+      return (
+        document.getElementById(id) ??
+        (() => {
+          try {
+            return document.querySelector(hashValue);
+          } catch {
+            return null;
+          }
+        })()
+      );
+    };
+
+    const element = getElementForHash(hash);
+
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+      });
+      return;
     }
 
     window.scrollTo({

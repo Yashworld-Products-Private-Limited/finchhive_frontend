@@ -27,8 +27,17 @@ export interface CursorOptions {
   /** Logo diameter on button hover in px. Default: 80 */
   logoHoverSize?: number;
 
+  /** How strongly the logo slips in the cursor's horizontal direction. Default: 0.55 */
+  logoSlipStrength?: number;
+
+  /** Maximum horizontal slip distance in px. Default: 18 */
+  logoMaxSlip?: number;
+
   /** Whether the cursor is enabled at all. Default: true */
   enabled?: boolean;
+
+  /** Whether to invert the direction of the SVG flip. Default: false */
+  invertFlip?: boolean;
 }
 
 export interface CursorState {

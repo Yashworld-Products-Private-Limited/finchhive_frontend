@@ -10,8 +10,11 @@ import ValuesSection from "@/components/SnowflakeIcon";
 import { TeamSection } from "@/components/TeamSection";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
+import { useState } from "react";
 
 const AboutPage = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
   const containerVariants: Variants = {
     hidden: {},
     visible: {
@@ -168,9 +171,12 @@ const AboutPage = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start mt-16">
               <motion.div
                 variants={fadeLeft}
-                className="lg:sticky lg:top-20 h-fit relative flex justify-center lg:justify-center w-full"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+                className="lg:sticky lg:top-20 h-fit relative flex justify-center lg:justify-center w-full overflow-hidden"
               >
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[340px] h-[340px] sm:w-[380px] sm:h-[380px] md:w-[440px] md:h-[440px]  lg:w-[460px] lg:h-[460px] xl:w-[490px] xl:h-[490px] bg-[#908eed] rounded-t-[100%] z-0" />
+                
+
 
                 <motion.div
                   animate={{
@@ -183,13 +189,20 @@ const AboutPage = () => {
                   }}
                   className="relative z-10 flex justify-center"
                 >
+                  <div
+                    className={`absolute top-25 rotate-180 w-[120%] h-[120%] rounded-full transition-all duration-500
+                bg-[radial-gradient(circle_at_center,_#2E2C76_0%,_#3f3ca0_40%,_transparent_70%)]
+                [clipPath:polygon(0_50%,100%_50%,100%_100%,0_100%)]
+                ${isHovered ? "opacity-100 scale-100" : "opacity-0 scale-95"}
+              `}
+                  />
                   <Image
                     src="/imgs/jems.png"
                     alt="leader"
                     width={400}
                     height={500}
                     loading="lazy"
-                    className="w-[300px] sm:w-[330px] md:w-[380px] lg:w-[400px] xl:w-[440px] h-auto object-contain grayscale"
+                    className="w-[300px] sm:w-[330px] md:w-[380px] lg:w-[400px] xl:w-[440px] h-auto object-contain 6grayscale z-20"
                   />
                 </motion.div>
 

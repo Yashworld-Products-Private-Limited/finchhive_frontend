@@ -8,6 +8,7 @@ const MAX_PARTICLES = 25;
 const PARTICLE_DURATION_MS = 650;
 const PARTICLE_THROTTLE_MS = 38;
 const LOGO_LAG_FACTOR = 0.1;
+const LOGO_SLIP_EASE = 0.18;
 const STRETCH_SPEED_THRESHOLD = 2;
 const PARTICLE_SPEED_THRESHOLD = 5;
 const STRETCH_MAX = 2.4;
@@ -24,7 +25,10 @@ export function useCustomCursor(
     particleColor = "rgba(255,255,255,0.55)",
     logoSize = 52,
     logoHoverSize = 80,
+    logoSlipStrength = 0.55,
+    logoMaxSlip = 18,
     enabled = true,
+    invertFlip = false,
   } = options;
 
   const state = useRef({
@@ -36,6 +40,8 @@ export function useCustomCursor(
     prevMy: 0,
     vx: 0,
     vy: 0,
+    slipX: 0,
+    targetSlipX: 0,
     isIdle: false,
     isHovering: false,
     isVisible: false,
@@ -97,10 +103,11 @@ export function useCustomCursor(
         const dy = s.my - s.ly;
         s.lx += dx * LOGO_LAG_FACTOR;
         s.ly += dy * LOGO_LAG_FACTOR;
+        s.slipX += (s.targetSlipX - s.slipX) * LOGO_SLIP_EASE;
 
         logo.style.left = `${s.lx}px`;
         logo.style.top = `${s.ly}px`;
-        logo.style.transform = `translate(-50%, -50%)`;
+        logo.style.transform = `translate(-50%, -50%) translateX(${s.slipX}px)`;
       }
 
       s.rafId = requestAnimationFrame(animateLogo);
@@ -115,17 +122,31 @@ export function useCustomCursor(
       const dot = dotRef.current;
       const logo = logoRef.current;
 
-      s.mx = e.clientX;
-      s.my = e.clientY;
+      const nextMx = e.clientX;
+      const nextMy = e.clientY;
+
+      if (!s.isVisible) {
+        s.prevMx = nextMx;
+        s.prevMy = nextMy;
+      }
+
+      s.mx = nextMx;
+      s.my = nextMy;
       s.vx = s.mx - s.prevMx;
       s.vy = s.my - s.prevMy;
       s.prevMx = s.mx;
       s.prevMy = s.my;
+      s.targetSlipX = Math.max(
+        -logoMaxSlip,
+        Math.min(logoMaxSlip, s.vx * logoSlipStrength),
+      );
 
       if (!s.isVisible) {
         s.isVisible = true;
         s.lx = s.mx;
         s.ly = s.my;
+        s.slipX = 0;
+        s.targetSlipX = 0;
       }
 
       // When moving: show dot, logo follows (always visible)
@@ -150,6 +171,13 @@ export function useCustomCursor(
       // Logo: always visible, opacity 1
       if (logo) {
         logo.style.opacity = "1";
+        if (s.vx > 0.1) {
+          const scaleXValue = invertFlip ? "-1" : "1";
+          logo.style.setProperty("--cursor-scale-x", scaleXValue);
+        } else if (s.vx < -0.1) {
+          const scaleXValue = invertFlip ? "1" : "-1";
+          logo.style.setProperty("--cursor-scale-x", scaleXValue);
+        }
       }
 
       // Idle detection
@@ -163,6 +191,7 @@ export function useCustomCursor(
       // Set idle after delay: hide dot, keep logo visible
       s.idleTimer = setTimeout(() => {
         s.isIdle = true;
+        s.targetSlipX = 0;
         const dot = dotRef.current;
         if (dot) dot.style.opacity = "0";
         // Logo stays visible (opacity stays 1)
@@ -179,7 +208,7 @@ export function useCustomCursor(
         s.lastParticleTime = now;
       }
     },
-    [dotRef, logoRef, idleDelay, spawnParticle],
+    [dotRef, logoRef, idleDelay, logoMaxSlip, logoSlipStrength, spawnParticle, invertFlip],
   );
 
   // ─── Mouse enter/leave window ─────────────────────────────────────────────
@@ -187,6 +216,7 @@ export function useCustomCursor(
     const dot = dotRef.current;
     const logo = logoRef.current;
     state.current.isVisible = false;
+    state.current.targetSlipX = 0;
     if (dot) dot.style.opacity = "0";
     if (logo) logo.style.opacity = "0";
   }, [dotRef, logoRef]);
@@ -282,6 +312,7 @@ export function useCustomCursor(
       logo.style.left = `${state.current.lx}px`;
       logo.style.top = `${state.current.ly}px`;
       logo.style.opacity = "1";
+      logo.style.setProperty("--cursor-scale-x", invertFlip ? "-1" : "1");
     }
 
     document.addEventListener("mousemove", handleMouseMove);
@@ -315,5 +346,6 @@ export function useCustomCursor(
     animateLogo,
     bindHoverTargets,
     logoRef,
+    invertFlip,
   ]);
 }

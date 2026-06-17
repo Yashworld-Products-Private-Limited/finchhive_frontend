@@ -49,7 +49,10 @@ export default function CustomCursor({
   particleColor = "rgba(255,255,255,0.55)",
   logoSize = 56,
   logoHoverSize = 80,
+  logoSlipStrength = 0.55,
+  logoMaxSlip = 18,
   enabled = true,
+  invertFlip = false,
 }: CustomCursorProps) {
   const [mounted, setMounted] = useState<boolean>(false);
 
@@ -70,7 +73,10 @@ export default function CustomCursor({
     particleColor,
     logoSize,
     logoHoverSize,
+    logoSlipStrength,
+    logoMaxSlip,
     enabled: enabled && mounted,
+    invertFlip,
   });
 
   if (!mounted || !enabled) return null;
@@ -130,6 +136,9 @@ export default function CustomCursor({
             alignItems: "center",
             justifyContent: "center",
             overflow: "hidden",
+            transform: "scaleX(var(--cursor-scale-x, 1))",
+            transition: "transform 0.3s cubic-bezier(0.25, 1, 0.5, 1)",
+            willChange: "transform",
           }}
         >
           <svg
