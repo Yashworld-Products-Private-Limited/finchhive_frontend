@@ -10,6 +10,7 @@ import SocialIcons from "@/components/SocialIcons";
 import { Marquee } from "@/components/ui/marquee";
 import {
   brandStory,
+  OsciiImages,
   Projects,
   reelcreation,
   SocialImages,
@@ -217,7 +218,7 @@ const Page = () => {
           </div>
           <div className="">
             <div className="max-w-[1440px] mx-auto sapce-y-10 ">
-              <BentoGrid items={SocialImages} />
+              <BentoGrid items={OsciiImages} />
             </div>
           </div>
         </div>
@@ -273,9 +274,9 @@ const Page = () => {
             </div>
           </div>
           <div className="">
-            <div className="max-w-[1440px] mx-auto sapce-y-10 ">
+            {/* <div className="max-w-[1440px] mx-auto sapce-y-10 ">
               <BentoGrid items={SocialImages} />
-            </div>
+            </div> */}
           </div>
         </div>
         <div id="interior-architectural-shoots" className="">
@@ -294,9 +295,9 @@ const Page = () => {
             </div>
           </div>
           <div className="">
-            <div className="max-w-[1440px] mx-auto sapce-y-10 ">
+            {/* <div className="max-w-[1440px] mx-auto sapce-y-10 ">
               <BentoGrid items={SocialImages} />
-            </div>
+            </div> */}
             <div className="mt-[60px] lg:mt-[100px]">
               {/* <Marquee
                 pauseOnHover

@@ -4,7 +4,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
-import SmoothScroll from "@/components/SmoothScroll";
 import ScrollToTop from "@/components/ScrollToTop.tsx";
 import CustomCursor from "@/components/CustomCursor";
 
@@ -26,7 +25,6 @@ export default function RootLayout({
       className={cn("h-full antialiased", "font-sans", geist.variable)}
     >
       <body suppressHydrationWarning={true} className="min-h-full grid-bg ">
-        <SmoothScroll />
         <CustomCursor
           accentColor="#ffffff"
           idleDelay={800}

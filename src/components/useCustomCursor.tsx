@@ -294,6 +294,13 @@ export function useCustomCursor(
   useEffect(() => {
     if (!enabled || typeof window === "undefined") return;
 
+    const isTouch =
+      window.matchMedia("(pointer: coarse)").matches ||
+      "ontouchstart" in window ||
+      navigator.maxTouchPoints > 0;
+
+    if (isTouch) return;
+
     const cursorState = state.current;
     const styleTag = document.createElement("style");
     styleTag.id = "__custom-cursor-global";

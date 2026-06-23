@@ -283,7 +283,7 @@ const Home = () => {
               <h1 className="font-light text-[#FFFFFF] lg:text-[20px] 2xl:text-[24px] uppercase leading-tight tracking-wide mb-5 drop-shadow-md subHeading">
                 <span className="text-[#FFFFFD]">#1</span> Human psychology
                 <br />
-                Based Degital Solution
+                Based Digital Solution
               </h1>
 
               <div className="flex items-center gap-4">
@@ -326,7 +326,7 @@ const Home = () => {
             </div>
           </motion.div>
 
-          <div className="mt-[100px] lg:mt-[180px] cursor-pointer">
+          <div className="mt-[80px] lg:mt-[150px] cursor-pointer">
             <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
               <SectionBadge label="Brands Collaborations" />
 
@@ -340,7 +340,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="mt-[100px] lg:mt-[180px] cursor-pointer">
+          <div className="mt-[80px] lg:mt-[100px] cursor-pointer">
             <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
               <SectionBadge label="How We Work" />
 
@@ -353,7 +353,7 @@ const Home = () => {
               <ProcessSection />
             </div>
           </div>
-          <div id="services" className="scroll-mt-24 mt-[100px] lg:mt-[180px] ">
+          <div id="services" className="scroll-mt-24 mt-[80px] lg:mt-[150px] ">
             <div className="flex flex-col lg:flex-row  items-center gap-6 md:gap-8 xl:gap-12">
               <SectionBadge label="SERVICES" />
 
@@ -366,7 +366,7 @@ const Home = () => {
               <ServicesSection />
             </div>
           </div>
-          <div className="mt-[100px] lg:mt-[180px]">
+          <div className="mt-[100px] lg:mt-[150px]">
             <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
               <SectionBadge label="Why Choose Us" />
               <SectionTitle
@@ -404,7 +404,7 @@ const Home = () => {
         <StatsFeatureSection />
       </div>
       <div className="max-w-[1440px] mx-auto">
-        <div className="custom-container">
+        <div className="">
           <div
             id="case-studies"
             className="mt-[80px] lg:mt-[140px] space-y-12 lg:space-y-20"
@@ -419,7 +419,7 @@ const Home = () => {
             </div>
             <CaseStudies />
           </div>
-          <div
+          {/* <div
             id="testimonials"
             className="scroll-mt-25 mt-[80px] lg:mt-[100px]"
           >
@@ -466,7 +466,7 @@ const Home = () => {
                 </Marquee>
               </div>
             </div>
-          </div>
+          </div> */}
           {/* <div className="mt-[80px] lg:mt-[100px] ">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
               {videos.map((item, i) => {
@@ -613,7 +613,7 @@ const Home = () => {
               </div>
             </section>
           </div> */}
-          <div className="mt-[100px] lg:mt-[160px] ">
+          <div className="mt-[100px] lg:mt-[140px] ">
             <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
               <SectionBadge label="Frequently Asked Questions" />
               <SectionTitle

@@ -1,12 +1,10 @@
 "use client";
 
 import { reels } from "@/constants";
-import { BadgeCheck } from "lucide-react";
-import Image from "next/image";
 import { useEffect, useRef, useState, type MouseEvent } from "react";
 
-import { Marquee } from "./ui/marquee";
 import Link from "next/link";
+import { Marquee } from "./ui/marquee";
 
 type Reel = (typeof reels)[number];
 
@@ -14,6 +12,33 @@ export const ReelCard = ({ item }: { item: Reel }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
   const [isActive, setIsActive] = useState(false);
+  const [isTouch, setIsTouch] = useState(false);
+  const [instanceId] = useState(() => Math.random().toString(36).substring(2, 9));
+
+  useEffect(() => {
+    const checkTouch = () => {
+      const hasTouch =
+        window.matchMedia("(pointer: coarse)").matches ||
+        "ontouchstart" in window ||
+        navigator.maxTouchPoints > 0;
+      setIsTouch(hasTouch);
+    };
+    checkTouch();
+  }, []);
+
+  useEffect(() => {
+    const handleOtherVideoPlay = (e: Event) => {
+      const customEvent = e as CustomEvent<{ instanceId: string }>;
+      if (customEvent.detail.instanceId !== instanceId) {
+        setIsActive(false);
+      }
+    };
+
+    window.addEventListener("reel-play", handleOtherVideoPlay);
+    return () => {
+      window.removeEventListener("reel-play", handleOtherVideoPlay);
+    };
+  }, [instanceId]);
 
   useEffect(() => {
     if (!shouldLoadVideo) return;
@@ -29,16 +54,23 @@ export const ReelCard = ({ item }: { item: Reel }) => {
   const startVideo = () => {
     setShouldLoadVideo(true);
     setIsActive(true);
+    window.dispatchEvent(
+      new CustomEvent("reel-play", { detail: { instanceId } })
+    );
   };
 
   const stopVideo = () => {
     setIsActive(false);
   };
 
-  const handlePlayButtonClick = (event: MouseEvent<HTMLButtonElement>) => {
+  const handleTogglePlay = (event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     event.stopPropagation();
-    startVideo();
+    if (isActive) {
+      stopVideo();
+    } else {
+      startVideo();
+    }
   };
 
   return (
@@ -47,17 +79,16 @@ export const ReelCard = ({ item }: { item: Reel }) => {
       target="_blank"
       rel="noreferrer"
       aria-label={`Watch ${item.name} on Instagram`}
-      onMouseEnter={startVideo}
-      onMouseLeave={stopVideo}
-      onFocus={startVideo}
-      onBlur={stopVideo}
+      onMouseEnter={isTouch ? undefined : startVideo}
+      onMouseLeave={isTouch ? undefined : stopVideo}
+      onFocus={isTouch ? undefined : startVideo}
+      onBlur={isTouch ? undefined : stopVideo}
       className="group relative mx-3 block h-[500px] w-[320px] overflow-hidden rounded-[24px] border-[6px] border-white bg-black shadow-xl"
     >
       {shouldLoadVideo && (
         <video
           ref={videoRef}
           src={item.video}
-          muted
           loop
           playsInline
           preload="metadata"
@@ -71,39 +102,44 @@ export const ReelCard = ({ item }: { item: Reel }) => {
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
         <button
           type="button"
-          onClick={handlePlayButtonClick}
+          onClick={handleTogglePlay}
           className={`pointer-events-auto rounded-full border border-white/40 bg-white px-4 py-3 text-black transition-opacity duration-200 ${
-            isActive ? "opacity-0 pointer-events-none" : "opacity-100 md:opacity-0 group-hover:opacity-100"
+            isTouch
+              ? "opacity-100"
+              : isActive
+              ? "opacity-0 pointer-events-none"
+              : "opacity-100 md:opacity-0 group-hover:opacity-100"
           }`}
-          aria-label={`Play ${item.name} reel`}
+          aria-label={isActive ? `Pause ${item.name} reel` : `Play ${item.name} reel`}
         >
           <span className="flex items-center gap-2 text-sm font-medium">
-            <svg
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="h-5 w-5"
-              aria-hidden="true"
-            >
-              <path d="M8 5v14l11-7z" />
-            </svg>
-            Play
+            {isActive ? (
+              <>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="h-5 w-5"
+                  aria-hidden="true"
+                >
+                  <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                </svg>
+                Pause
+              </>
+            ) : (
+              <>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="h-5 w-5"
+                  aria-hidden="true"
+                >
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+                Play
+              </>
+            )}
           </span>
         </button>
-      </div>
-
-      <div className="pointer-events-none absolute bottom-5 left-5 flex items-center gap-3">
-        <Image
-          src={item.profile}
-          alt=""
-          width={40}
-          height={40}
-          className="h-10 w-10 rounded-full border border-white object-cover"
-        />
-
-        <div className="flex items-center gap-1">
-          <span className="text-lg font-medium text-white">{item.name}</span>
-          <BadgeCheck className="h-4 w-4 fill-[#3B82F6] text-[#3B82F6]" />
-        </div>
       </div>
     </Link>
   );

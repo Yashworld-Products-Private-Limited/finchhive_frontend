@@ -179,7 +179,7 @@ export const Projects = [
       "Henie's Cakery is your go to online shop for custom cakes, pastries, and desserts, perfect for any occasion.",
     image: "/imgs/henes.jpg",
     route: "https://heniescakery.com",
-  }, 
+  },
 ];
 
 export const caseStudies = [
@@ -965,6 +965,13 @@ export const veidor = [
     video: "/imgs/reels/reels21.mp4",
     instagram: "https://www.instagram.com/",
   },
+  {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video: "/imgs/reels/reels20.mp4",
+    instagram: "https://www.instagram.com/",
+  },
 ];
 
 export const logos = [
@@ -1075,67 +1082,146 @@ export const cards = [
 export const SocialImages: BentoItem[] = [
   {
     id: 1,
-    title: "Creative Studio",
-    desc: "Modern digital branding",
-    image:
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop",
+    image: "/imgs/images/serv1.avif",
     className: "col-span-2 row-span-1 md:col-span-2 md:row-span-2",
   },
   {
     id: 2,
-    title: "Workspace",
-    desc: "Minimal setup",
-    image:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop",
+    image: "/imgs/images/serv2.avif",
     className: "md:col-span-2 md:row-span-1",
   },
   {
     id: 3,
-    title: "Architecture",
-    desc: "Luxury spaces",
-    image:
-      "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?q=80&w=1200&auto=format&fit=crop",
+    image: "/imgs/images/serv3.jpg",
     className: "col-span-1 row-span-2 md:col-span-1 md:row-span-2",
   },
   {
     id: 4,
-    title: "Innovation",
-    desc: "Future technology",
-    image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
+    image: "/imgs/images/serv4.avif",
     className: "md:col-span-1 md:row-span-2",
   },
   {
     id: 5,
-    title: "Fashion",
-    desc: "Bold visual identity",
-    image:
-      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop",
+    image: "/imgs/images/serv5.avif",
     className: "col-span-1 row-span-2 md:col-span-1 md:row-span-1",
   },
   {
     id: 6,
-    title: "Urban Design",
-    desc: "Creative architecture",
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop",
+    image: "/imgs/images/serv6.avif",
     className: "md:col-span-1 md:row-span-1",
   },
   {
     id: 7,
-    title: "Digital Agency",
-    desc: "Modern production",
-    image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop",
+    image: "/imgs/images/serv7.jpg",
     className: "md:col-span-2 md:row-span-1",
   },
   {
     id: 8,
-    title: "Interior Vision",
-    desc: "Elegant lifestyle",
-    image:
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop",
+    image: "/imgs/images/serv8.avif",
     className: "col-span-2 row-span-1 md:col-span-2 md:row-span-1 ",
+  },
+  {
+    id: 9,
+    image: "/imgs/images/serv9.avif",
+    className: "md:col-span-2 md:row-span-1",
+  },
+  {
+    id: 10,
+    image: "/imgs/images/serv10.avif",
+    className: "col-span-1 row-span-2 md:col-span-1 md:row-span-2",
+  },
+  {
+    id: 11,
+    image: "/imgs/images/serv11.avif",
+    className: "md:col-span-1 md:row-span-2",
+  },
+  {
+    id: 12,
+    image: "/imgs/images/serv12.avif",
+    className: "col-span-1 row-span-2 md:col-span-1 md:row-span-1",
+  },
+  {
+    id: 13,
+    image: "/imgs/images/serv13.jpg",
+    className: "md:col-span-1 md:row-span-1",
+  },
+  {
+    id: 14,
+    image: "/imgs/images/serv14.jpg",
+    className: "md:col-span-2 md:row-span-1",
+  },
+  {
+    id: 15,
+    image: "/imgs/images/serv15.jpg",
+    className: "col-span-2 row-span-1 md:col-span-2 md:row-span-1 ",
+  },
+  {
+    id: 16,
+    image: "/imgs/images/serv16.jpg",
+    className: "md:col-span-1 md:row-span-1",
+  },
+  {
+    id: 17,
+    image: "/imgs/images/serv17.avif",
+    className: "md:col-span-2 md:row-span-1",
+  },
+  {
+    id: 18,
+    image: "/imgs/images/serv18.jpg",
+    className: "col-span-2 row-span-1 md:col-span-1 md:row-span-1 ",
+  },
+];
+
+export const OsciiImages: BentoItem[] = [
+  {
+    id: 1,
+    image: "/imgs/images/oscii1.avif",
+    className: "col-span-2 row-span-1 md:col-span-2 md:row-span-2",
+  },
+  {
+    id: 2,
+    image: "/imgs/images/oscii2.avif",
+    className: "md:col-span-2 md:row-span-1",
+  },
+  {
+    id: 3,
+    image: "/imgs/images/oscii3.avif",
+    className: "col-span-1 row-span-2 md:col-span-1 md:row-span-2",
+  },
+  {
+    id: 4,
+    image: "/imgs/images/oscii4.avif",
+    className: "md:col-span-1 md:row-span-2",
+  },
+  {
+    id: 5,
+    image: "/imgs/images/oscii5.avif",
+    className: "col-span-1 row-span-2 md:col-span-1 md:row-span-1",
+  },
+  {
+    id: 6,
+    image: "/imgs/images/oscii6.avif",
+    className: "md:col-span-1 md:row-span-1",
+  },
+  {
+    id: 7,
+    image: "/imgs/images/oscii7.avif",
+    className: "md:col-span-1 md:row-span-2",
+  },
+  {
+    id: 8,
+    image: "/imgs/images/oscii8.avif",
+    className: "col-span-2 row-span-1 md:col-span-1 md:row-span-1 ",
+  },
+  {
+    id: 9,
+    image: "/imgs/images/oscii9.avif",
+    className: "md:col-span-2 md:row-span-2",
+  },
+  {
+    id: 10,
+    image: "/imgs/images/oscii10.avif",
+    className: "col-span-1 row-span-2 md:col-span-1 md:row-span-1",
   },
 ];
 

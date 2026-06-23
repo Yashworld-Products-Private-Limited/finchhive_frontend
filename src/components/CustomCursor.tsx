@@ -55,8 +55,18 @@ export default function CustomCursor({
   invertFlip = false,
 }: CustomCursorProps) {
   const [mounted, setMounted] = useState<boolean>(false);
+  const [isTouch, setIsTouch] = useState<boolean>(false);
 
   useEffect(() => {
+    const checkTouch = () => {
+      return (
+        window.matchMedia("(pointer: coarse)").matches ||
+        "ontouchstart" in window ||
+        navigator.maxTouchPoints > 0
+      );
+    };
+    setIsTouch(checkTouch());
+
     const frame = requestAnimationFrame(() => {
       setMounted(true);
     });
@@ -75,11 +85,11 @@ export default function CustomCursor({
     logoHoverSize,
     logoSlipStrength,
     logoMaxSlip,
-    enabled: enabled && mounted,
+    enabled: enabled && mounted && !isTouch,
     invertFlip,
   });
 
-  if (!mounted || !enabled) return null;
+  if (!mounted || !enabled || isTouch) return null;
 
   return (
     <>

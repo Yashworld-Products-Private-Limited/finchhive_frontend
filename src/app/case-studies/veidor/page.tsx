@@ -1,6 +1,7 @@
 "use client";
 
 import { ReelCard } from "@/components/ReelsMarquee";
+import { Marquee } from "@/components/ui/marquee";
 import { veidor } from "@/constants";
 import {
   BarChart3,
@@ -552,7 +553,7 @@ export default function CaseStudyPage() {
         </div>
       </section>
 
-      <div className="flex flex-wrap items-center justify-center gap-4 mt-10">
+      <div className="relative grid grid-flow-col auto-cols-[85%] sm:auto-cols-[45%] md:auto-cols-[32%] lg:auto-cols-[24%] xl:auto-cols-[19%] gap-6 xl:gap-4 overflow-x-auto scrollbar-gutter-stable scrollbar-thumb-[#2E2C76] mt-10 py-4">
         {veidor.map((item) => (
           <ReelCard key={item.video} item={item} />
         ))}
@@ -603,7 +604,7 @@ export default function CaseStudyPage() {
             ))}
           </div>
 
-          <div className="mt-20 rounded-[40px] bg-[#2E2C76] px-8 md:px-16 py-14 text-white">
+          <div className="mt-20 rounded-[40px] bg-[#2E2C76] px-4 md:px-16 py-14 text-white">
             <h3 className="text-3xl md:text-4xl ">Strategic Takeaways</h3>
 
             <div className="grid md:grid-cols-2 gap-6 mt-10">
@@ -618,7 +619,7 @@ export default function CaseStudyPage() {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="rounded-2xl border border-white/10 bg-white/10 p-5"
+                  className="rounded-2xl border border-white/10 bg-white/10 p-2 lg:p-5"
                 >
                   <p className="leading-7">{item}</p>
                 </div>

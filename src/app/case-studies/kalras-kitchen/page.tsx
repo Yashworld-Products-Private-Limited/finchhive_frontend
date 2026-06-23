@@ -634,33 +634,10 @@ export default function CaseStudyPage() {
           </table>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-4 mt-10">
+        <div className="relative grid grid-flow-col auto-cols-[85%] sm:auto-cols-[45%] md:auto-cols-[32%] lg:auto-cols-[24%] xl:auto-cols-[19%] gap-2 xl:gap-4 mt-10 overflow-x-auto scrollbar-hide">
           {kalrasKitchen.map((item) => (
             <ReelCard key={item.video} item={item} />
           ))}
-        </div>
-        <div className="max-w-[850px] mx-auto">
-          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {reels.map((reel) => (
-              <a
-                key={reel.id}
-                href={reel.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group overflow-hidden rounded-[28px] border border-zinc-200 bg-white shadow-lg transition-all duration-500 hover:-translate-y-2"
-              >
-                <div className="relative w-full bg-zinc-100">
-                  <Image
-                    src={reel.image}
-                    alt="Instagram Reel Screenshot"
-                    width={500}
-                    height={700}
-                    className="h-auto w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-              </a>
-            ))}
-          </div>
         </div>
       </section>
 
