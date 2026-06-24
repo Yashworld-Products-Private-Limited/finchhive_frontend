@@ -4,9 +4,6 @@ import { useEffect, useRef, useState } from "react";
 
 const socialLinks = [
   { label: "Instagram", href: "#" },
-  { label: "Dribbble", href: "#" },
-  { label: "Behance", href: "#" },
-  { label: "LinkedIn", href: "#" },
 ];
 
 function useInView(threshold = 0.1) {
@@ -61,10 +58,10 @@ export default function BaggyFooter() {
             </h2>
 
             <a
-              href="mailto:client@teststudio.com"
+              href="mailto:grow@finchhive.com"
               className={`inline-flex items-center gap-1 text-[#bcbae9] underline underline-offset-2 hover:opacity-80 transition-all duration-700 ease-out md:ml-3 text-base `}
             >
-              client@teststudio.com
+              grow@finchhive.com
               <ArrowIcon />
             </a>
           </div>

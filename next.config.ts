@@ -28,6 +28,10 @@ const nextConfig: NextConfig = {
         hostname: "drive.google.com",
         pathname: "/thumbnail",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.simpleicons.org",
+      },
     ],
   },
 };

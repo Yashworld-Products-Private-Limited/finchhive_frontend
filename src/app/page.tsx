@@ -217,7 +217,10 @@ const Home = () => {
               viewport={{ once: true }}
               className="flex justify-center"
             >
-              <PrimaryButton label="Let's Connect" />
+              <PrimaryButton
+                label="Let's Connect On Call"
+                href="tel:+919537587467"
+              />
             </motion.div>
           </motion.div>
         </div>

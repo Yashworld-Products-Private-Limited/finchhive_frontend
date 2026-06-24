@@ -11,6 +11,8 @@ import { TeamSection } from "@/components/TeamSection";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 import { useState } from "react";
+import Link from "next/link";
+import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 const AboutPage = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -175,9 +177,6 @@ const AboutPage = () => {
                 onMouseLeave={() => setIsHovered(false)}
                 className="lg:sticky lg:top-20 h-fit relative flex justify-center lg:justify-center w-full overflow-hidden"
               >
-                
-
-
                 <motion.div
                   animate={{
                     y: [0, -12, 0],
@@ -269,6 +268,29 @@ const AboutPage = () => {
                     - Niraj Prasad
                   </span>
                 </p>
+                <div className="flex items-center gap-4">
+                  <Link
+                    href="https://instagram.com/your_username"
+                    target="_blank"
+                    className="group"
+                  >
+                    <FaInstagram
+                      size={24}
+                      className="text-black transition-all duration-300 group-hover:text-[#E4405F] group-hover:scale-110"
+                    />
+                  </Link>
+
+                  <Link
+                    href="https://linkedin.com/in/your_username"
+                    target="_blank"
+                    className="group"
+                  >
+                    <FaLinkedinIn
+                      size={24}
+                      className="text-black transition-all duration-300 group-hover:text-[#0A66C2] group-hover:scale-110"
+                    />
+                  </Link>
+                </div>
               </motion.div>
             </div>
           </motion.div>
