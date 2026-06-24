@@ -270,7 +270,7 @@ const AboutPage = () => {
                 </p>
                 <div className="flex items-center gap-4">
                   <Link
-                    href="https://instagram.com/your_username"
+                    href="https://www.instagram.com/niraj.b.prasad/"
                     target="_blank"
                     className="group"
                   >
@@ -281,7 +281,7 @@ const AboutPage = () => {
                   </Link>
 
                   <Link
-                    href="https://linkedin.com/in/your_username"
+                    href="https://in.linkedin.com/in/niraj-prasad-b37ba0b9"
                     target="_blank"
                     className="group"
                   >

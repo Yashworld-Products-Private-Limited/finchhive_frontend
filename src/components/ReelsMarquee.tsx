@@ -3,7 +3,6 @@
 import { reels } from "@/constants";
 import { useEffect, useRef, useState, type MouseEvent } from "react";
 
-import Link from "next/link";
 import { Marquee } from "./ui/marquee";
 
 type Reel = (typeof reels)[number];
@@ -74,9 +73,7 @@ export const ReelCard = ({ item }: { item: Reel }) => {
   };
 
   return (
-    <Link
-      href={item.instagram}
-      target="_blank"
+    <div
       rel="noreferrer"
       aria-label={`Watch ${item.name} on Instagram`}
       onMouseEnter={isTouch ? undefined : startVideo}
@@ -141,7 +138,7 @@ export const ReelCard = ({ item }: { item: Reel }) => {
           </span>
         </button>
       </div>
-    </Link>
+    </div>
   );
 };
 

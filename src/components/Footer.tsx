@@ -3,7 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 
 const socialLinks = [
-  { label: "Instagram", href: "#" },
+  { label: "Instagram", href: " https://www.instagram.com/finchhive/" },
+  { label: "Threads", href: "https://www.threads.com/@finchhive" }
 ];
 
 function useInView(threshold = 0.1) {

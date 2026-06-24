@@ -51,7 +51,6 @@ export function useCustomCursor(
     idleTimer: undefined as ReturnType<typeof setTimeout> | undefined,
   });
 
-  // ─── Particle ──────────────────────────────────────────────────────────────
   const spawnParticle = useCallback(
     (x: number, y: number) => {
       if (state.current.activeParticles >= MAX_PARTICLES) return;
@@ -92,7 +91,6 @@ export function useCustomCursor(
     [particleColor],
   );
 
-  // ─── RAF loop: animate lagging logo ───────────────────────────────────────
   const animateLogo = useCallback(
     function animateLogo() {
       const s = state.current;
@@ -115,7 +113,6 @@ export function useCustomCursor(
     [logoRef],
   );
 
-  // ─── Mouse move ───────────────────────────────────────────────────────────
   const handleMouseMove = useCallback(
     (e: MouseEvent) => {
       const s = state.current;
@@ -149,7 +146,6 @@ export function useCustomCursor(
         s.targetSlipX = 0;
       }
 
-      // When moving: show dot, logo follows (always visible)
       if (dot) {
         dot.style.opacity = "1";
         dot.style.left = `${s.mx}px`;
@@ -168,7 +164,6 @@ export function useCustomCursor(
         }
       }
 
-      // Logo: always visible, opacity 1
       if (logo) {
         logo.style.opacity = "1";
         if (s.vx > 0.1) {
@@ -180,24 +175,19 @@ export function useCustomCursor(
         }
       }
 
-      // Idle detection
       clearTimeout(s.idleTimer);
 
-      // Coming back from idle
       if (s.isIdle) {
         s.isIdle = false;
       }
 
-      // Set idle after delay: hide dot, keep logo visible
       s.idleTimer = setTimeout(() => {
         s.isIdle = true;
         s.targetSlipX = 0;
         const dot = dotRef.current;
         if (dot) dot.style.opacity = "0";
-        // Logo stays visible (opacity stays 1)
       }, idleDelay);
 
-      // Particles
       const now = performance.now();
       const speed = Math.sqrt(s.vx * s.vx + s.vy * s.vy);
       if (
@@ -208,10 +198,17 @@ export function useCustomCursor(
         s.lastParticleTime = now;
       }
     },
-    [dotRef, logoRef, idleDelay, logoMaxSlip, logoSlipStrength, spawnParticle, invertFlip],
+    [
+      dotRef,
+      logoRef,
+      idleDelay,
+      logoMaxSlip,
+      logoSlipStrength,
+      spawnParticle,
+      invertFlip,
+    ],
   );
 
-  // ─── Mouse enter/leave window ─────────────────────────────────────────────
   const handleMouseLeave = useCallback(() => {
     const dot = dotRef.current;
     const logo = logoRef.current;
@@ -224,11 +221,10 @@ export function useCustomCursor(
   const handleMouseEnter = useCallback(() => {
     const logo = logoRef.current;
     state.current.isVisible = true;
-    // Logo becomes visible again when cursor re-enters
+
     if (logo) logo.style.opacity = "1";
   }, [logoRef]);
 
-  // ─── Interactive element hover state ──────────────────────────────────────
   const hoverCleanups = useRef<Array<() => void>>([]);
 
   const bindHoverTargets = useCallback(() => {
@@ -265,7 +261,7 @@ export function useCustomCursor(
         if (logo) {
           logo.style.width = `${logoSize}px`;
           logo.style.height = `${logoSize}px`;
-          logo.style.opacity = "1"; // always keep visible
+          logo.style.opacity = "1";
         }
         if (dot) {
           dot.style.transform = "translate(-50%,-50%)";
@@ -281,16 +277,8 @@ export function useCustomCursor(
         el.removeEventListener("mouseleave", onLeave);
       });
     });
-  }, [
-    hoverSelectors,
-    logoSize,
-    logoHoverSize,
-    accentColor,
-    dotRef,
-    logoRef,
-  ]);
+  }, [hoverSelectors, logoSize, logoHoverSize, accentColor, dotRef, logoRef]);
 
-  // ─── Main effect ──────────────────────────────────────────────────────────
   useEffect(() => {
     if (!enabled || typeof window === "undefined") return;
 
@@ -307,13 +295,11 @@ export function useCustomCursor(
     styleTag.textContent = `*, *::before, *::after { cursor: none !important; }`;
     document.head.appendChild(styleTag);
 
-    // Init logo position to center
     state.current.lx = window.innerWidth / 2;
     state.current.ly = window.innerHeight / 2;
     state.current.mx = window.innerWidth / 2;
     state.current.my = window.innerHeight / 2;
 
-    // Logo starts visible at center
     const logo = logoRef.current;
     if (logo) {
       logo.style.left = `${state.current.lx}px`;
