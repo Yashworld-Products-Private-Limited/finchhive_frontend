@@ -98,8 +98,8 @@ export default function CustomCursor({
           position: "fixed",
           pointerEvents: "none",
           zIndex: 2147483647,
-          width: 10,
-          height: 10,
+          width: 8,
+          height: 8,
           background: accentColor,
           borderRadius: "50%",
           transform: "translate3d(0, 0, 0) translate(-50%, -50%)",
@@ -136,8 +136,8 @@ export default function CustomCursor({
       >
         <div
           style={{
-            width: "100%",
-            height: "100%",
+            width: "80%",
+            height: "80%",
             borderRadius: "50%",
             display: "flex",
             alignItems: "center",
