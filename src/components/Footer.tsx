@@ -67,13 +67,27 @@ export default function BaggyFooter() {
             </a>
           </div>
 
-          <div className=" flex flex-col items-center md:items-end mt-14 md:mt-0 gap-6 md:gap-3">
+          <div className=" flex flex-col items-center md:items-end mt-14 md:mt-0 gap-6 md:gap-2">
 
             <span
               className={` text-[#6b6963] transition-all duration-700 ease-out text-xs lg:text-sm ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"} `}
               style={{ transitionDelay: "120ms" }}
             >
               © 2026 Finchhive all rights reserved
+            </span>
+            <span
+              className={` text-[#6b6963] transition-all duration-700 ease-out text-xs lg:text-sm ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"} `}
+              style={{ transitionDelay: "150ms" }}
+            >
+              Designed & Developed by{" "}
+              <a
+                href="https://yashworldproducts.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#bcbae9] hover:underline"
+              >
+                Yashworld Products Private Limited
+              </a>
             </span>
             <nav className="flex flex-wrap items-center justify-center md:justify-end gap-x-5 gap-y-3">
               {socialLinks.map(({ label, href }, idx) => (
@@ -125,10 +139,10 @@ function ArrowIcon() {
 
 function WatermarkText({ inView }: { inView: boolean }) {
   return (
-    <h1
+    <div
       className={` w-full text-center text-[#2e2c2a]  uppercase transition-all duration-1000 ease-out heading leading-none tracking-[1%] whitespace-nowrap text-[clamp(40px,14vw,140pc)] ${inView ? "opacity-100 -translate-y-1" : "opacity-0 translate-y-14"}`}
     >
       Finchhive
-    </h1>
+    </div>
   );
 }

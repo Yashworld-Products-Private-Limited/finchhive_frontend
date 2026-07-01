@@ -1,12 +1,8 @@
 "use client";
-import BentoGrid from "@/components/BentoGrid";
-import CaseStudies from "@/components/CaseStudies";
-import LogoMarquee from "@/components/LogoMarquee";
+import Loader from "@/components/Loader";
 import ProjectCard from "@/components/ProjectCard";
-import { ReelCard } from "@/components/ReelsMarquee";
 import SectionBadge from "@/components/SectionBadge";
 import SectionTitle from "@/components/SectionTitle";
-import SocialIcons from "@/components/SocialIcons";
 import { Marquee } from "@/components/ui/marquee";
 import {
   brandStory,
@@ -15,10 +11,23 @@ import {
   reelcreation,
   SocialImages,
   socialMedia,
+  UGC,
 } from "@/constants";
+import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
+import Link from "next/link";
 import { useEffect } from "react";
-import { motion} from "framer-motion";
 
+const BentoGrid = dynamic(() => import("@/components/BentoGrid"));
+const CaseStudies = dynamic(() => import("@/components/CaseStudies"));
+const LogoMarquee = dynamic(() => import("@/components/LogoMarquee"));
+const SocialIcons = dynamic(() => import("@/components/SocialIcons"));
+const ReelCard = dynamic(() => import("@/components/ReelsMarquee").then((mod) => mod.ReelCard), {
+  ssr: false,
+  loading: () => (
+    <div className="mx-2 sm:mx-2.5 md:mx-3 block h-[380px] w-[240px] sm:h-[440px] sm:w-[280px] md:h-[500px] md:w-[320px] rounded-[18px] sm:rounded-[22px] md:rounded-[24px] bg-neutral-900 animate-pulse" />
+  ),
+});
 
 const Page = () => {
   useEffect(() => {
@@ -60,10 +69,12 @@ const Page = () => {
 
   return (
     <div>
+      <Loader />
       <div id="social-media-marketing" className="max-w-[1440px] mx-auto">
         <div className="mt-[calc(15dvh-80px+110px)]">
           <div className="text-center space-y-4">
             <SectionTitle
+              tag="h1"
               title={
                 <>
                   We Help Brands
@@ -101,7 +112,6 @@ const Page = () => {
         </div>
       </div>
       <div className="custom-container">
-        <div className="max-w-[1440px] mx-auto">{/*  */}</div>
         <div id="reel-creation" className="max-w-[1440px] mx-auto">
           <div className="mt-[100px] lg:mt-[180px] sapce-y-10">
             <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
@@ -190,7 +200,7 @@ const Page = () => {
               pauseOnHover
               className="relative flex items-center justify-center gap-6"
             >
-              {brandStory.map((item) => (
+              {UGC.map((item) => (
                 <ReelCard key={item.video} item={item} />
               ))}
             </Marquee>
@@ -216,15 +226,13 @@ const Page = () => {
               </div>
             </div>
           </div>
-          <div className="">
-            <div className="max-w-[1440px] mx-auto sapce-y-10 ">
-              <BentoGrid items={OsciiImages} />
-            </div>
+          <div className="max-w-[1440px] mx-auto  ">
+            <BentoGrid items={OsciiImages} />
           </div>
         </div>
         <div id="websites-digital-platform-solutions" className="">
           <div className="max-w-[1440px] mx-auto">
-            <div className="mt-[100px] lg:mt-[180px] sapce-y-10">
+            <div className="mt-[60px] lg:mt-[100px] sapce-y-10">
               <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
                 <SectionTitle
                   className="max-w-3xl mx-auto"
@@ -240,9 +248,14 @@ const Page = () => {
           </div>
           <div className="">
             <div className="max-w-[1440px] mx-auto sapce-y-10 mt-8">
-              <h1 className="max-w-3xl mx-auto subHeading text-center tracking-[1%] text-[20px] md:text-[24px] lg:text-[28px] leading-[20px] lg:leading-[28px] will-change-transform">
-                It Partner Yashworld Product Privet Limited
-              </h1>
+              <h2 className="max-w-3xl mx-auto subHeading text-center tracking-[1%] text-[20px] md:text-[24px] lg:text-[28px] leading-[20px] lg:leading-[28px] will-change-transform">
+                It Partner
+                <span className="link hover:underline underline-offset-4">
+                  <Link href="https://yashworldproducts.com/" target="_blank">
+                    Yashworld Product Privet Limited
+                  </Link>
+                </span>
+              </h2>
               <div className="grid md:grid-cols-2  sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
                 {Projects.map((project, i) => (
                   <motion.div

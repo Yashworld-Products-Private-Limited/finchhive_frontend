@@ -147,9 +147,7 @@ body {
   overflow-x: hidden;
 }
 
-* {
-  cursor: none !important;
-}
+
 
 .grid-bg {
   background-color: #eeeef4;
@@ -190,12 +188,14 @@ body {
   font-family: "AlfaSlabOne";
   src: url("/font/AlfaSlabOne-Regular.ttf") format("truetype");
   font-weight: 500;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "AkzidenzGroteskBE";
   src: url("/font/AkzidenzGroteskBE-Regular.otf") format("truetype");
   font-weight: 400;
+  font-display: swap;
 }
 
 .heading {

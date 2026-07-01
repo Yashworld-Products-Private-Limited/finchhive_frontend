@@ -102,9 +102,9 @@ export default function ProcessSection() {
               </div>
 
               <div className="flex-1 rounded-2xl bg-[#eeeef4] border border-blue-100 p-4 md:p-6 shadow-md space-y-2 lg:space-y-4">
-                <h6 className="inline-flex items-center justify-center text-center bg-[#2E2C76] text-white subHeading text-xs px-3 py-1 rounded-full">
+                <div className="inline-flex items-center justify-center text-center bg-[#2E2C76] text-white subHeading text-xs px-3 py-1 rounded-full">
                   STEP {String(i + 1).padStart(2, "0")}
-                </h6>
+                </div>
 
                 <h3 className="text-lg md:text-2xl heading text-[#111827]">
                   {step.title}

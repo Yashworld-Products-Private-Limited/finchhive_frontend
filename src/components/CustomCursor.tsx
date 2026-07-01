@@ -59,11 +59,9 @@ export default function CustomCursor({
 
   useEffect(() => {
     const checkTouch = () => {
-      return (
-        window.matchMedia("(pointer: coarse)").matches ||
-        "ontouchstart" in window ||
-        navigator.maxTouchPoints > 0
-      );
+      const hasTouch = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+      const hasFinePointer = window.matchMedia("(pointer: fine)").matches;
+      return hasTouch && !hasFinePointer;
     };
     setIsTouch(checkTouch());
 
@@ -93,7 +91,6 @@ export default function CustomCursor({
 
   return (
     <>
-      {/* Dot: starts hidden, shown while moving, hidden again on idle */}
       <div
         ref={dotRef}
         aria-hidden="true"
@@ -105,13 +102,13 @@ export default function CustomCursor({
           height: 10,
           background: accentColor,
           borderRadius: "50%",
-          transform: "translate(-50%, -50%)",
-          opacity: 0, 
+          transform: "translate3d(0, 0, 0) translate(-50%, -50%)",
+          opacity: 0,
           transition: "opacity 0.2s ease, background 0.2s ease",
           mixBlendMode: "difference",
-          willChange: "transform, left, top",
-          left: "50%",
-          top: "50%",
+          willChange: "transform",
+          left: 0,
+          top: 0,
         }}
       />
 
@@ -125,16 +122,16 @@ export default function CustomCursor({
           zIndex: 2147483646,
           width: logoSize,
           height: logoSize,
-          transform: "translate(-50%, -50%)",
+          transform: "translate3d(0, 0, 0) translate(-50%, -50%)",
           opacity: 1, // always visible
           transition: `
             width 0.35s cubic-bezier(.23,1,.32,1),
             height 0.35s cubic-bezier(.23,1,.32,1),
             opacity 0.45s ease
           `,
-          willChange: "transform, left, top, opacity",
-          left: "50%",
-          top: "50%",
+          willChange: "transform, opacity",
+          left: 0,
+          top: 0,
         }}
       >
         <div
@@ -155,6 +152,9 @@ export default function CustomCursor({
             viewBox="0 0 40 40"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            style={{
+              transform: "rotate(-16deg)", // thoda left tilt
+            }}
           >
             {logoSVG ?? <DefaultLogo />}
           </svg>

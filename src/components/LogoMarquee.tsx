@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Marquee } from "./ui/marquee";
 
 export const logos = [
@@ -63,6 +64,11 @@ export const logos = [
     src: "/imgs/brands/trustbrands12.png",
     alt: "Company 12",
   },
+  {
+    id: 13,
+    src: "/imgs/brands/trustbrands13.png",
+    alt: "Company 13",
+  },
 ];
 
 export default function LogoMarquee() {
@@ -78,13 +84,15 @@ export default function LogoMarquee() {
           {repeated.map((logo, i) => (
             <div
               key={i}
-              className="flex-shrink-0 w-48 h-36 rounded-2xl flex items-center justify-center px-5 transition-all duration-300 cursor-pointer group"
+              className="flex-shrink-0 w-48 h-36 rounded-2xl flex items-center justify-center ml-2 lg:ml-5 transition-all duration-300 cursor-pointer group"
             >
-              <img
+              <Image
                 src={logo.src}
                 alt={logo.alt}
+                width={192}
+                height={144}
                 loading="lazy"
-                className="h-48 w-auto object-contain  group-hover:opacity-80 transition-opacity duration-300"
+                className="h-48 w-auto object-contain group-hover:opacity-80 transition-opacity duration-300"
               />
             </div>
           ))}

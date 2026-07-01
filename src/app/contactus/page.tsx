@@ -49,7 +49,7 @@ const Contactus = () => {
   const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
-    if (!formData.name || !formData.email || !formData.message) {
+    if (!formData.name || !formData.email) {
       alert("Please fill all required fields");
       return;
     }
@@ -77,31 +77,12 @@ const Contactus = () => {
                   Schedule Meeting
                 </p>
 
-                <h3 className="mt-5 heading text-[38px] leading-none lg:text-[72px]">
-                  Let’s Build
-                  <br />
-                  Something
-                  <br />
+                <h3 className="mt-5 heading text-[38px] leading-none lg:text-[62px]">
+                  Let’s Build Something
                   Amazing
                 </h3>
 
-                <p className="mt-6 max-w-lg text-white/70 leading-relaxed">
-                  Fill in your information and book a live strategy session
-                  directly from our availability calendar.
-                </p>
-
-                <div className="mt-10 grid gap-4 sm:grid-cols-3">
-                  {["30 Min Call", "Google Meet", "Instant Booking"].map(
-                    (item) => (
-                      <div
-                        key={item}
-                        className=" rounded-2xl border border-white/10 bg-white/5 px-4 py-5 backdrop-blur-xl"
-                      >
-                        <p className="text-sm text-white/80">{item}</p>
-                      </div>
-                    ),
-                  )}
-                </div>
+                
               </div>
             </div>
 

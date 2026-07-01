@@ -21,7 +21,7 @@ export default function PrimaryButton({
     <Link
       href={href}
       className={clsx(
-        "flex items-center gap-10 2xl:gap-20 bg-[#2E2C76] text-white text-sm 2xl:text-lg leading-3.5 tracking-[1%] uppercase px-6 py-3 rounded-full relative overflow-hidden group transition-all duration-300 ease-out flex-shrink-0 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(46,44,118,0.4)] active:translate-y-0 active:scale-95 heading",
+        "flex items-center gap-10 2xl:gap-20 bg-[#2E2C76] text-white text-sm 2xl:text-lg leading-3.5 uppercase px-6 py-3 rounded-full relative overflow-hidden group transition-all duration-300 ease-out flex-shrink-0 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(46,44,118,0.4)] active:translate-y-0 active:scale-95 heading tracking-wide",
         className
       )}
     >

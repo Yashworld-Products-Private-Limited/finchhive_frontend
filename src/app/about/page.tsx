@@ -1,21 +1,25 @@
 "use client";
-import AboutSection from "@/components/AboutSection";
-import ExpandingGallery from "@/components/ExpandingGallery";
-import LetsTalkSection from "@/components/LetsTalkSection";
-import LogoMarquee from "@/components/LogoMarquee";
 import SectionBadge from "@/components/SectionBadge";
 import SectionTitle from "@/components/SectionTitle";
-import SEOAccordion from "@/components/SEOAccordion";
-import ValuesSection from "@/components/SnowflakeIcon";
-import { TeamSection } from "@/components/TeamSection";
-import Image from "next/image";
 import { motion, Variants } from "framer-motion";
-import { useState } from "react";
+import dynamic from "next/dynamic";
+import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
+
+const AboutSection = dynamic(() => import("@/components/AboutSection"));
+const ExpandingGallery = dynamic(() => import("@/components/ExpandingGallery"), { ssr: false });
+const LetsTalkSection = dynamic(() => import("@/components/LetsTalkSection"));
+const LogoMarquee = dynamic(() => import("@/components/LogoMarquee"));
+const SEOAccordion = dynamic(() => import("@/components/SEOAccordion"));
+const ValuesSection = dynamic(() => import("@/components/SnowflakeIcon"));
+const TeamSection = dynamic(() => import("@/components/TeamSection").then((mod) => mod.TeamSection));
 
 const AboutPage = () => {
   const [isHovered, setIsHovered] = useState(false);
+
+
 
   const containerVariants: Variants = {
     hidden: {},
@@ -98,6 +102,7 @@ const AboutPage = () => {
 
           <div className="relative z-10 flex items-end justify-center h-full p-6 md:p-10">
             <SectionTitle
+              tag="h1"
               className=""
               title={
                 <>

@@ -13,6 +13,24 @@ const STRETCH_SPEED_THRESHOLD = 2;
 const PARTICLE_SPEED_THRESHOLD = 5;
 const STRETCH_MAX = 2.4;
 
+const hideDefaultCursor = () => {
+  if (typeof document === "undefined") return;
+  if (!document.getElementById("__custom-cursor-global")) {
+    const styleTag = document.createElement("style");
+    styleTag.id = "__custom-cursor-global";
+    styleTag.textContent = `*, *::before, *::after { cursor: none !important; }`;
+    document.head.appendChild(styleTag);
+  }
+};
+
+const showDefaultCursor = () => {
+  if (typeof document === "undefined") return;
+  const styleTag = document.getElementById("__custom-cursor-global");
+  if (styleTag) {
+    styleTag.remove();
+  }
+};
+
 export function useCustomCursor(
   dotRef: React.RefObject<HTMLDivElement | null>,
   logoRef: React.RefObject<HTMLDivElement | null>,
@@ -103,9 +121,7 @@ export function useCustomCursor(
         s.ly += dy * LOGO_LAG_FACTOR;
         s.slipX += (s.targetSlipX - s.slipX) * LOGO_SLIP_EASE;
 
-        logo.style.left = `${s.lx}px`;
-        logo.style.top = `${s.ly}px`;
-        logo.style.transform = `translate(-50%, -50%) translateX(${s.slipX}px)`;
+        logo.style.transform = `translate3d(${s.lx}px, ${s.ly}px, 0) translate(-50%, -50%) translateX(${s.slipX}px)`;
       }
 
       s.rafId = requestAnimationFrame(animateLogo);
@@ -113,11 +129,20 @@ export function useCustomCursor(
     [logoRef],
   );
 
-  const handleMouseMove = useCallback(
-    (e: MouseEvent) => {
+  const handlePointerMove = useCallback(
+    (e: PointerEvent) => {
       const s = state.current;
       const dot = dotRef.current;
       const logo = logoRef.current;
+
+      if (e.pointerType === "touch") {
+        if (dot) dot.style.opacity = "0";
+        if (logo) logo.style.opacity = "0";
+        showDefaultCursor();
+        return;
+      }
+
+      hideDefaultCursor();
 
       const nextMx = e.clientX;
       const nextMy = e.clientY;
@@ -148,8 +173,6 @@ export function useCustomCursor(
 
       if (dot) {
         dot.style.opacity = "1";
-        dot.style.left = `${s.mx}px`;
-        dot.style.top = `${s.my}px`;
 
         if (!s.isHovering) {
           const speed = Math.sqrt(s.vx * s.vx + s.vy * s.vy);
@@ -157,10 +180,12 @@ export function useCustomCursor(
             const angle = (Math.atan2(s.vy, s.vx) * 180) / Math.PI;
             const stretch = Math.min(1 + speed * 0.055, STRETCH_MAX);
             const squish = 1 / Math.sqrt(stretch);
-            dot.style.transform = `translate(-50%,-50%) rotate(${angle}deg) scaleX(${stretch}) scaleY(${squish})`;
+            dot.style.transform = `translate3d(${s.mx}px, ${s.my}px, 0) translate(-50%,-50%) rotate(${angle}deg) scaleX(${stretch}) scaleY(${squish})`;
           } else {
-            dot.style.transform = "translate(-50%,-50%)";
+            dot.style.transform = `translate3d(${s.mx}px, ${s.my}px, 0) translate(-50%,-50%)`;
           }
+        } else {
+          dot.style.transform = `translate3d(${s.mx}px, ${s.my}px, 0) translate(-50%,-50%) scale(0.45)`;
         }
       }
 
@@ -209,6 +234,22 @@ export function useCustomCursor(
     ],
   );
 
+  const handlePointerDown = useCallback(
+    (e: PointerEvent) => {
+      const dot = dotRef.current;
+      const logo = logoRef.current;
+
+      if (e.pointerType === "touch") {
+        if (dot) dot.style.opacity = "0";
+        if (logo) logo.style.opacity = "0";
+        showDefaultCursor();
+      } else {
+        hideDefaultCursor();
+      }
+    },
+    [dotRef, logoRef],
+  );
+
   const handleMouseLeave = useCallback(() => {
     const dot = dotRef.current;
     const logo = logoRef.current;
@@ -248,7 +289,7 @@ export function useCustomCursor(
           logo.style.opacity = "1";
         }
         if (dot) {
-          dot.style.transform = "translate(-50%,-50%) scale(0.45)";
+          dot.style.transform = `translate3d(${s.mx}px, ${s.my}px, 0) translate(-50%,-50%) scale(0.45)`;
           dot.style.background = "rgba(255,255,255,0.35)";
         }
       };
@@ -264,7 +305,7 @@ export function useCustomCursor(
           logo.style.opacity = "1";
         }
         if (dot) {
-          dot.style.transform = "translate(-50%,-50%)";
+          dot.style.transform = `translate3d(${s.mx}px, ${s.my}px, 0) translate(-50%,-50%)`;
           dot.style.background = accentColor;
         }
       };
@@ -282,18 +323,17 @@ export function useCustomCursor(
   useEffect(() => {
     if (!enabled || typeof window === "undefined") return;
 
-    const isTouch =
-      window.matchMedia("(pointer: coarse)").matches ||
-      "ontouchstart" in window ||
-      navigator.maxTouchPoints > 0;
+    // Detect if this is a pure mobile/tablet (touchscreen only, no fine pointer)
+    const hasTouch = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+    const hasFinePointer = window.matchMedia("(pointer: fine)").matches;
+    const isMobileTablet = hasTouch && !hasFinePointer;
 
-    if (isTouch) return;
+    if (isMobileTablet) return;
 
     const cursorState = state.current;
-    const styleTag = document.createElement("style");
-    styleTag.id = "__custom-cursor-global";
-    styleTag.textContent = `*, *::before, *::after { cursor: none !important; }`;
-    document.head.appendChild(styleTag);
+
+    // Initialize with default OS cursor hidden by default for desktops/laptops
+    hideDefaultCursor();
 
     state.current.lx = window.innerWidth / 2;
     state.current.ly = window.innerHeight / 2;
@@ -302,13 +342,13 @@ export function useCustomCursor(
 
     const logo = logoRef.current;
     if (logo) {
-      logo.style.left = `${state.current.lx}px`;
-      logo.style.top = `${state.current.ly}px`;
+      logo.style.transform = `translate3d(${state.current.lx}px, ${state.current.ly}px, 0) translate(-50%, -50%)`;
       logo.style.opacity = "1";
       logo.style.setProperty("--cursor-scale-x", invertFlip ? "-1" : "1");
     }
 
-    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("pointermove", handlePointerMove);
+    document.addEventListener("pointerdown", handlePointerDown);
     document.addEventListener("mouseleave", handleMouseLeave);
     document.addEventListener("mouseenter", handleMouseEnter);
 
@@ -320,7 +360,8 @@ export function useCustomCursor(
     observer.observe(document.body, { childList: true, subtree: true });
 
     return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("pointermove", handlePointerMove);
+      document.removeEventListener("pointerdown", handlePointerDown);
       document.removeEventListener("mouseleave", handleMouseLeave);
       document.removeEventListener("mouseenter", handleMouseEnter);
       cancelAnimationFrame(cursorState.rafId);
@@ -328,12 +369,13 @@ export function useCustomCursor(
       hoverCleanups.current.forEach((fn) => fn());
       hoverCleanups.current = [];
       observer.disconnect();
-      styleTag.remove();
+      showDefaultCursor();
       document.documentElement.style.cursor = "";
     };
   }, [
     enabled,
-    handleMouseMove,
+    handlePointerMove,
+    handlePointerDown,
     handleMouseLeave,
     handleMouseEnter,
     animateLogo,

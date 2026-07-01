@@ -1,7 +1,14 @@
 "use client";
 
-import { ReelCard } from "@/components/ReelsMarquee";
 import { Marquee } from "@/components/ui/marquee";
+import dynamic from "next/dynamic";
+
+const ReelCard = dynamic(() => import("@/components/ReelsMarquee").then((mod) => mod.ReelCard), {
+  ssr: false,
+  loading: () => (
+    <div className="mx-2 sm:mx-2.5 md:mx-3 block h-[380px] w-[240px] sm:h-[440px] sm:w-[280px] md:h-[500px] md:w-[320px] rounded-[18px] sm:rounded-[22px] md:rounded-[24px] bg-neutral-900 animate-pulse" />
+  ),
+});
 import { veidor } from "@/constants";
 import {
   BarChart3,
@@ -553,10 +560,15 @@ export default function CaseStudyPage() {
         </div>
       </section>
 
-      <div className="relative grid grid-flow-col auto-cols-[85%] sm:auto-cols-[45%] md:auto-cols-[32%] lg:auto-cols-[24%] xl:auto-cols-[19%] gap-6 xl:gap-4 overflow-x-auto scrollbar-gutter-stable scrollbar-thumb-[#2E2C76] mt-10 py-4">
-        {veidor.map((item) => (
-          <ReelCard key={item.video} item={item} />
-        ))}
+      <div className="mt-[60px] lg:mt-[100px]">
+        <Marquee
+          pauseOnHover
+          className="relative flex items-center justify-center gap-6"
+        >
+          {veidor.map((item) => (
+            <ReelCard key={item.video} item={item} />
+          ))}
+        </Marquee>
       </div>
 
       {/* INSIGHTS */}

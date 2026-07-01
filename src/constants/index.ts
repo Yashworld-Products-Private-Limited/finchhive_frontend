@@ -46,7 +46,7 @@ export const servicesPage = [
     title: "Social Media Marketing",
     desc: "Strategic social media management and growth systems for Instagram, Facebook, LinkedIn, and YouTube.",
     icon: Megaphone,
-    link: "/social-media-marketing#social-media-marketing",
+    link: "/social-media-marketing",
   },
   {
     title: "Reel Creation & Short-Form Content",
@@ -702,6 +702,20 @@ export const UGC = [
     name: "Social Growth",
     profile:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+    video: "/imgs/reels/reels6.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Brand Marketing",
+    profile:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+    video: "/imgs/reels/reels8.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Social Growth",
+    profile:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
     video: "/imgs/reels/reels12.mp4",
     instagram: "https://www.instagram.com/",
   },
@@ -709,42 +723,28 @@ export const UGC = [
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels24.mp4",
+    video: "/imgs/reels/reels14.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Social Growth",
     profile:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels30.mp4",
+    video: "/imgs/reels/reels17.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels31.mp4",
-    instagram: "https://www.instagram.com/",
-  },
-  {
-    name: "Social Growth",
-    profile:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels32.mp4",
+    video: "/imgs/reels/reels26.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels36.mp4",
-    instagram: "https://www.instagram.com/",
-  },
-  {
-    name: "Brand Marketing",
-    profile:
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels37.mp4",
+    video: "/imgs/reels/reels27.mp4",
     instagram: "https://www.instagram.com/",
   },
 ];
@@ -890,8 +890,25 @@ export const Interior = [
     instagram: "https://www.instagram.com/",
   },
 ];
+export const kalrasKitchen2 = [
+{
+    name: "Social Growth",
+    profile:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+    video: "/imgs/reels/reels00.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+  {
+    name: "Social Growth",
+    profile:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+    video: "/imgs/reels/reels01.mp4",
+    instagram: "https://www.instagram.com/",
+  },
+];
 
 export const kalrasKitchen = [
+  
   {
     name: "Social Growth",
     profile:
@@ -1082,92 +1099,92 @@ export const cards = [
 export const SocialImages: BentoItem[] = [
   {
     id: 1,
-    image: "/imgs/images/serv1.avif",
+    image: "/imgs/images/serv1.webp",
     className: "col-span-2 row-span-1 md:col-span-2 md:row-span-2",
   },
   {
     id: 2,
-    image: "/imgs/images/serv2.avif",
+    image: "/imgs/images/serv2.webp",
     className: "md:col-span-2 md:row-span-1",
   },
   {
     id: 3,
-    image: "/imgs/images/serv3.jpg",
+    image: "/imgs/images/serv3.webp",
     className: "col-span-1 row-span-2 md:col-span-1 md:row-span-2",
   },
   {
     id: 4,
-    image: "/imgs/images/serv4.avif",
+    image: "/imgs/images/serv4.webp",
     className: "md:col-span-1 md:row-span-2",
   },
   {
     id: 5,
-    image: "/imgs/images/serv5.avif",
+    image: "/imgs/images/serv5.webp",
     className: "col-span-1 row-span-2 md:col-span-1 md:row-span-1",
   },
   {
     id: 6,
-    image: "/imgs/images/serv6.avif",
+    image: "/imgs/images/serv6.webp",
     className: "md:col-span-1 md:row-span-1",
   },
   {
     id: 7,
-    image: "/imgs/images/serv7.jpg",
+    image: "/imgs/images/serv7.webp",
     className: "md:col-span-2 md:row-span-1",
   },
   {
     id: 8,
-    image: "/imgs/images/serv8.avif",
+    image: "/imgs/images/serv8.webp",
     className: "col-span-2 row-span-1 md:col-span-2 md:row-span-1 ",
   },
   {
     id: 9,
-    image: "/imgs/images/serv9.avif",
+    image: "/imgs/images/serv9.webp",
     className: "md:col-span-2 md:row-span-1",
   },
   {
     id: 10,
-    image: "/imgs/images/serv10.avif",
+    image: "/imgs/images/serv10.webp",
     className: "col-span-1 row-span-2 md:col-span-1 md:row-span-2",
   },
   {
     id: 11,
-    image: "/imgs/images/serv11.avif",
+    image: "/imgs/images/serv11.webp",
     className: "md:col-span-1 md:row-span-2",
   },
   {
     id: 12,
-    image: "/imgs/images/serv12.avif",
+    image: "/imgs/images/serv12.webp",
     className: "col-span-1 row-span-2 md:col-span-1 md:row-span-1",
   },
   {
     id: 13,
-    image: "/imgs/images/serv13.jpg",
+    image: "/imgs/images/serv13.webp",
     className: "md:col-span-1 md:row-span-1",
   },
   {
     id: 14,
-    image: "/imgs/images/serv14.jpg",
+    image: "/imgs/images/serv14.webp",
     className: "md:col-span-2 md:row-span-1",
   },
   {
     id: 15,
-    image: "/imgs/images/serv15.jpg",
+    image: "/imgs/images/serv15.webp",
     className: "col-span-2 row-span-1 md:col-span-2 md:row-span-1 ",
   },
   {
     id: 16,
-    image: "/imgs/images/serv16.jpg",
+    image: "/imgs/images/serv16.webp",
     className: "md:col-span-1 md:row-span-1",
   },
   {
     id: 17,
-    image: "/imgs/images/serv17.avif",
+    image: "/imgs/images/serv17.webp",
     className: "md:col-span-2 md:row-span-1",
   },
   {
     id: 18,
-    image: "/imgs/images/serv18.jpg",
+    image: "/imgs/images/serv18.webp",
     className: "col-span-2 row-span-1 md:col-span-1 md:row-span-1 ",
   },
 ];
@@ -1175,53 +1192,53 @@ export const SocialImages: BentoItem[] = [
 export const OsciiImages: BentoItem[] = [
   {
     id: 1,
-    image: "/imgs/images/oscii1.avif",
+    image: "/imgs/images/oscii1.webp",
     className: "col-span-2 row-span-1 md:col-span-2 md:row-span-2",
   },
   {
     id: 2,
-    image: "/imgs/images/oscii2.avif",
+    image: "/imgs/images/oscii2.webp",
     className: "md:col-span-2 md:row-span-1",
   },
   {
     id: 3,
-    image: "/imgs/images/oscii3.avif",
+    image: "/imgs/images/oscii3.webp",
     className: "col-span-1 row-span-2 md:col-span-1 md:row-span-2",
   },
   {
     id: 4,
-    image: "/imgs/images/oscii4.avif",
+    image: "/imgs/images/oscii4.webp",
     className: "md:col-span-1 md:row-span-2",
   },
   {
     id: 5,
-    image: "/imgs/images/oscii5.avif",
+    image: "/imgs/images/oscii5.webp",
     className: "col-span-1 row-span-2 md:col-span-1 md:row-span-1",
   },
   {
     id: 6,
-    image: "/imgs/images/oscii6.avif",
+    image: "/imgs/images/oscii6.webp",
     className: "md:col-span-1 md:row-span-1",
   },
   {
     id: 7,
-    image: "/imgs/images/oscii7.avif",
+    image: "/imgs/images/oscii7.webp",
     className: "md:col-span-1 md:row-span-2",
   },
   {
     id: 8,
-    image: "/imgs/images/oscii8.avif",
+    image: "/imgs/images/oscii8.webp",
     className: "col-span-2 row-span-1 md:col-span-1 md:row-span-1 ",
   },
   {
     id: 9,
-    image: "/imgs/images/oscii9.avif",
+    image: "/imgs/images/oscii9.webp",
     className: "md:col-span-2 md:row-span-2",
   },
   {
     id: 10,
-    image: "/imgs/images/oscii10.avif",
-    className: "col-span-1 row-span-2 md:col-span-1 md:row-span-1",
+    image: "/imgs/images/oscii10.webp",
+    className: "col-span-1 row-span-1 md:col-span-1 md:row-span-1",
   },
 ];
 

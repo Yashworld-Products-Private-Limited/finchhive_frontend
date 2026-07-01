@@ -5,6 +5,7 @@ export default function RadioIcon({ className }: { className?: string }) {
       height="76"
       viewBox="0 0 512 512"
       fill="none"
+      className="w-[48px] h-[48px] sm:w-[60px] sm:h-[40px] lg:w-[76px] lg:h-[76px]"
       xmlns="http://www.w3.org/2000/svg"
     >
       <g clipPath="url(#clip0_2183_652)">

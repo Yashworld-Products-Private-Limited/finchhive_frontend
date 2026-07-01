@@ -6,11 +6,13 @@ import React from "react";
 interface SectionTitleProps {
   title: React.ReactNode;
   className?: string;
+  tag?: "h1" | "h2" | "h3";
 }
 
-const SectionTitle = ({ title, className = "" }: SectionTitleProps) => {
+const SectionTitle = ({ title, className = "", tag = "h2" }: SectionTitleProps) => {
+  const Component = motion[tag] || motion.h2;
   return (
-    <motion.h2
+    <Component
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.4 }}
@@ -33,7 +35,7 @@ const SectionTitle = ({ title, className = "" }: SectionTitleProps) => {
       `}
     >
       {title}
-    </motion.h2>
+    </Component>
   );
 };
 

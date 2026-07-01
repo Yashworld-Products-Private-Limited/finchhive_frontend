@@ -9,7 +9,7 @@ interface SectionBadgeProps {
 
 const SectionBadge = ({ label, className = "" }: SectionBadgeProps) => {
   return (
-    <motion.h6
+    <motion.div
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.5 }}
@@ -36,7 +36,7 @@ const SectionBadge = ({ label, className = "" }: SectionBadgeProps) => {
       `}
     >
       {label}
-    </motion.h6>
+    </motion.div>
   );
 };
 

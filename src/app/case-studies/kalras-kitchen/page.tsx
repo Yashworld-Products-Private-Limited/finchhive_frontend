@@ -1,10 +1,35 @@
 import { FeatureCard, FeatureItem } from "@/components/FeatureCard";
-import { ReelCard } from "@/components/ReelsMarquee";
 import SectionBadge from "@/components/SectionBadge";
 import SectionTitle from "@/components/SectionTitle";
-import { FeaturesServices, Interior, kalrasKitchen } from "@/constants";
-import { TrendingDown, TrendingUp } from "lucide-react";
-import Image from "next/image";
+import { Marquee } from "@/components/ui/marquee";
+import { FeaturesServices, kalrasKitchen, kalrasKitchen2 } from "@/constants";
+import {
+  Bookmark,
+  Calendar,
+  Heart,
+  Music,
+  Repeat,
+  Sparkles,
+  TrendingDown,
+  TrendingUp
+} from "lucide-react";
+import { Metadata } from "next";
+import dynamic from "next/dynamic";
+
+const ReelCard = dynamic(() => import("@/components/ReelsMarquee").then((mod) => mod.ReelCard), {
+  loading: () => (
+    <div className="mx-2 sm:mx-2.5 md:mx-3 block h-[380px] w-[240px] sm:h-[440px] sm:w-[280px] md:h-[500px] md:w-[320px] rounded-[18px] sm:rounded-[22px] md:rounded-[24px] bg-neutral-900 animate-pulse" />
+  ),
+});
+
+export const metadata: Metadata = {
+  title: "Kalra Kitchen Case Study | Finchhive",
+  description:
+    "How Finchhive's audience-first content strategy took a food brand from zero digital strategy to viral dominance and real footfall growth.",
+  alternates: {
+    canonical: "/case-studies/kalras-kitchen",
+  },
+};
 
 const reelData = [
   {
@@ -136,54 +161,29 @@ const approach = [
   },
 ];
 
-const reels = [
-  {
-    id: 1,
-    image: "/imgs/responseImages2.jpeg",
-    views: "2.4M",
-    reach: "1.8M",
-    link: "https://www.instagram.com/reel/abc123/",
-  },
-  {
-    id: 2,
-    image: "/imgs/responseImages6.jpeg",
-    views: "980K",
-    reach: "740K",
-    link: "https://www.instagram.com/reel/xyz456/",
-  },
-  {
-    id: 3,
-    image: "/imgs/responseImages3.jpeg",
-    views: "3.1M",
-    reach: "2.2M",
-    link: "https://www.instagram.com/reel/demo789/",
-  },
-  {
-    id: 4,
-    image: "/imgs/responseImages4.jpeg",
-    views: "2.4M",
-    reach: "1.8M",
-    link: "https://www.instagram.com/reel/abc123/",
-  },
-  {
-    id: 5,
-    image: "/imgs/responseImages5.jpeg",
-    views: "980K",
-    reach: "740K",
-    link: "https://www.instagram.com/reel/xyz456/",
-  },
-  {
-    id: 6,
-    image: "/imgs/responseImages1.jpeg",
-    views: "3.1M",
-    reach: "2.2M",
-    link: "https://www.instagram.com/reel/demo789/",
-  },
-];
+
 
 export default function CaseStudyPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline:
+      "Kalra Kitchen Case Study - From Casual Shoots to Viral Dominance",
+    description:
+      "How Finchhive's audience-first content strategy took a food brand from zero digital strategy to viral dominance and real footfall growth.",
+    publisher: {
+      "@type": "Organization",
+      name: "Finchhive",
+      logo: "https://finchhive.com/finchhivlogo.png",
+    },
+  };
+
   return (
     <main className=" overflow-hidden py-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <section className="custom-container ">
         <div className="max-w-[1440px] mx-auto">
           <div className="flex items-center gap-3 text-sm text-zinc-400 mb-6">
@@ -209,7 +209,7 @@ export default function CaseStudyPage() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-16">
             {[
-              ["9.76L+", "Total Views"],
+              ["19.76L+", "Total Views"],
               ["8.99L+", "Accounts Reached"],
               ["6776", "Total Shares"],
               ["384", "New Followers"],
@@ -414,7 +414,18 @@ export default function CaseStudyPage() {
         </section>
       </div>
 
-      <section className="mt-[100px] lg:mt-[180px]">
+      <div className="mt-[60px] lg:mt-[100px]">
+        <Marquee
+          pauseOnHover
+          className="relative flex items-center justify-center gap-6"
+        >
+          {kalrasKitchen.map((item) => (
+            <ReelCard key={item.video} item={item} />
+          ))}
+        </Marquee>
+      </div>
+
+      <section className="mt-[60px] lg:mt-[100px]">
         <div className="max-w-[1440px] mx-auto">
           <div className="relative mt-8 overflow-hidden rounded-[40px] border border-[#E9E7FF] bg-white shadow-xl">
             <div className="absolute top-0 right-0 h-96 w-96 rounded-full bg-[#5B4DFF]/10 blur-3xl" />
@@ -428,7 +439,7 @@ export default function CaseStudyPage() {
                 </div>
 
                 <h2 className="text-6xl md:text-8xl leading-none tracking-tight text-[#111827] heading">
-                  9,00,319
+                  19,00,319
                   <br />
                   <span className="text-[#2E2C76]">Views</span>
                 </h2>
@@ -444,8 +455,8 @@ export default function CaseStudyPage() {
                   {[
                     ["8.38L+", "Accounts Reached"],
                     ["4,100+", "Likes"],
-                    ["41", "Shares"],
-                    ["15s", "Watch Time"],
+                    ["6776", "Shares"],
+                    ["15hrs", "Watch Time"],
                   ].map((item, i) => (
                     <div
                       key={i}
@@ -527,11 +538,10 @@ export default function CaseStudyPage() {
                             className={`
                         w-full rounded-t-[24px]
                         transition-all duration-500 hover:scale-105
-                        ${
-                          item.active
-                            ? "bg-gradient-to-t from-[#5B4DFF] via-[#7C70FF] to-[#B7AEFF]"
-                            : "bg-gradient-to-t from-[#D7D2FF] to-[#EEEAFE]"
-                        }
+                        ${item.active
+                                ? "bg-gradient-to-t from-[#5B4DFF] via-[#7C70FF] to-[#B7AEFF]"
+                                : "bg-gradient-to-t from-[#D7D2FF] to-[#EEEAFE]"
+                              }
                       `}
                           />
 
@@ -549,11 +559,10 @@ export default function CaseStudyPage() {
                             <span
                               className={`
                           mt-2 inline-block rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.15em]
-                          ${
-                            item.active
-                              ? "bg-[#EEEAFE] text-[#5B4DFF]"
-                              : "bg-zinc-100 text-zinc-600"
-                          }
+                          ${item.active
+                                  ? "bg-[#EEEAFE] text-[#5B4DFF]"
+                                  : "bg-zinc-100 text-zinc-600"
+                                }
                         `}
                             >
                               {item.label}
@@ -634,10 +643,238 @@ export default function CaseStudyPage() {
           </table>
         </div>
 
-        <div className="relative grid grid-flow-col auto-cols-[85%] sm:auto-cols-[45%] md:auto-cols-[32%] lg:auto-cols-[24%] xl:auto-cols-[19%] gap-2 xl:gap-4 mt-10 overflow-x-auto scrollbar-hide">
-          {kalrasKitchen.map((item) => (
-            <ReelCard key={item.video} item={item} />
-          ))}
+
+      </section>
+
+      <section className="mt-[60px] lg:mt-[100px]">
+        <div className="max-w-[1440px] mx-auto px-4">
+          <div className="flex flex-col items-start justify-start space-y-3 mb-10">
+            <SectionBadge label="Strategy & Outcomes" />
+            <SectionTitle
+              className="!text-left text-[#2E2C76]"
+              title={
+                <>
+                  Visual Strategy,
+                  <br />
+                  Compounding Outcomes.
+                </>
+              }
+            />
+            <p className="text-zinc-500 text-base md:text-lg leading-6 subHeading max-w-3xl">
+              Comparing content performance: our custom psychology-based voiceover strategy outperforming the baseline trending audio control for Kalra Kitchen.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 xl:gap-8">
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+
+              <div className="bg-white border border-zinc-200 rounded-[22px] overflow-hidden shadow-sm flex flex-col">
+                <div className="relative h-[115px] bg-gradient-to-b from-[#9A753C] to-[#5C3F1B] flex flex-col items-center justify-center p-4 text-center select-none">
+                  <div className="absolute top-3 bg-[#e6f0fa] text-[#2b72c4] px-2.5 py-0.5 rounded-full text-[8.5px] font-bold uppercase tracking-wider">
+                    control
+                  </div>
+                  <Music className="h-4.5 w-4.5 text-white/95 mt-3" />
+                  <span className="text-white/90 text-xs font-semibold tracking-wide mt-1.5 subHeading">
+                    trending song
+                  </span>
+                  <div className="absolute bottom-2 left-2.5 bg-black/35 text-white/90 text-[8.5px] px-2 py-0.5 rounded-full flex items-center gap-1 backdrop-blur-sm border border-white/10">
+                    <Music className="h-2.5 w-2.5" />
+                    <span className="font-medium">trending audio</span>
+                  </div>
+                </div>
+
+                {/* Body */}
+                <div className="p-4 flex flex-col flex-grow bg-white">
+                  {/* Upload Date */}
+                  <div className="flex items-center gap-1 text-zinc-400 text-[10px] mb-3.5">
+                    <Calendar className="h-3 w-3 flex-shrink-0" />
+                    <span className="subHeading">uploaded 23 apr</span>
+                  </div>
+
+                  {/* Reach */}
+                  <div>
+                    <h4 className="text-[8.5px] font-bold text-zinc-400 tracking-wider uppercase mb-2 subHeading">
+                      reach
+                    </h4>
+                    <div className="grid grid-cols-2 gap-2">
+                      {[
+                        { label: "views", value: "4,931" },
+                        { label: "accounts reached", value: "3,702" },
+                        { label: "avg watch time", value: "10s" },
+                        { label: "new follows", value: "9" },
+                      ].map(({ label, value }) => (
+                        <div key={label} className="bg-[#fcfcfc] border border-zinc-100 rounded-lg p-2.5">
+                          <span className="text-zinc-400 text-[8px] uppercase font-bold tracking-wider subHeading block leading-tight">
+                            {label}
+                          </span>
+                          <span className="text-zinc-800 text-[14px] font-bold mt-0.5 heading block">
+                            {value}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Engagement */}
+                  <div className="mt-4 flex-grow">
+                    <h4 className="text-[8.5px] font-bold text-zinc-400 tracking-wider uppercase mb-1.5 subHeading">
+                      engagement
+                    </h4>
+                    <div className="divide-y divide-zinc-100">
+                      {[
+                        { Icon: Heart, label: "likes", value: "73" },
+                        // { Icon: MessageCircle, label: "comments", value: "0" },
+                        // { Icon: Repeat, label: "shares", value: "1" },
+                        { Icon: Repeat, label: "shares", value: "74" },
+                        { Icon: Bookmark, label: "profile saves", value: "8" },
+                      ].map(({ Icon, label, value }) => (
+                        <div key={label} className="flex items-center justify-between py-2">
+                          <div className="flex items-center gap-1.5 min-w-0">
+                            <Icon className="h-3.5 w-3.5 text-zinc-400 flex-shrink-0" />
+                            <span className="subHeading text-zinc-500 text-[11px] truncate">{label}</span>
+                          </div>
+                          <span className="font-semibold text-zinc-800 heading text-[12px] ml-2 flex-shrink-0">
+                            {value}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white border border-zinc-200 rounded-[22px] overflow-hidden shadow-sm flex flex-col">
+                <div className="relative h-[115px] bg-gradient-to-b from-[#2E2866] to-[#171439] flex flex-col items-center justify-center p-4 text-center select-none">
+                  <div className="absolute top-3 bg-[#ede9fe] text-[#5b21b6] px-2.5 py-0.5 rounded-full text-[8.5px] font-bold uppercase tracking-wider flex items-center gap-0.5">
+                    <span>psychology</span>
+                    <Sparkles className="h-2 w-2 fill-current text-purple-700" />
+                  </div>
+                  {/* Waveform */}
+                  <div className="flex items-center gap-0.75 h-4 mt-3">
+                    {[2, 3.5, 2.5, 3.5, 2].map((h, i) => (
+                      <span
+                        key={i}
+                        className="w-[2.5px] rounded-full bg-white/90"
+                        style={{ height: `${h * 4}px` }}
+                      />
+                    ))}
+                  </div>
+                  <span className="text-white/90 text-xs font-semibold tracking-wide mt-1.5 subHeading">
+                    voiceover
+                  </span>
+                  <div className="absolute bottom-2 left-2.5 bg-[#3b2fc9]/40 text-white/90 text-[8.5px] px-2 py-0.5 rounded-full flex items-center gap-1 backdrop-blur-sm border border-white/10">
+                    <Sparkles className="h-2.5 w-2.5 fill-current text-purple-200" />
+                    <span className="font-medium">psych voiceover</span>
+                  </div>
+                </div>
+
+                <div className="p-4 flex flex-col flex-grow bg-white">
+                  <div className="flex items-center gap-1 text-zinc-400 text-[10px] mb-3.5">
+                    <Calendar className="h-3 w-3 flex-shrink-0" />
+                    <span className="subHeading">uploaded 17 jun</span>
+                  </div>
+
+                  <div>
+                    <h4 className="text-[8.5px] font-bold text-zinc-400 tracking-wider uppercase mb-2 subHeading">
+                      reach
+                    </h4>
+                    <div className="grid grid-cols-2 gap-2">
+                      {[
+                        { label: "views", value: "8,409", delta: "+70%" },
+                        { label: "accounts reached", value: "6,761", delta: "+83%" },
+                        { label: "avg watch time", value: "11s", delta: "+10%" },
+                        { label: "new follows", value: "13", delta: "+44%" },
+                      ].map(({ label, value, delta }) => (
+                        <div key={label} className="bg-[#fcfcfc] border border-zinc-100 rounded-lg p-2.5">
+                          <span className="text-zinc-400 text-[8px] uppercase font-bold tracking-wider subHeading block leading-tight">
+                            {label}
+                          </span>
+                          <div className="flex items-baseline gap-0.5 mt-0.5 flex-wrap">
+                            <span className="text-zinc-800 text-[14px] font-bold heading">{value}</span>
+                            <span className="text-emerald-500 text-[8px] font-bold tracking-wide">{delta}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Engagement */}
+                  <div className="mt-4 flex-grow">
+                    <h4 className="text-[8.5px] font-bold text-zinc-400 tracking-wider uppercase mb-1.5 subHeading">
+                      engagement
+                    </h4>
+                    <div className="divide-y divide-zinc-100">
+                      {/* Likes */}
+                      <div className="flex items-center justify-between py-2">
+                        <div className="flex items-center gap-1.5 min-w-0">
+                          <Heart className="h-3.5 w-3.5 text-zinc-400 flex-shrink-0" />
+                          <span className="subHeading text-zinc-500 text-[11px]">likes</span>
+                        </div>
+                        <div className="flex items-baseline gap-1 ml-2 flex-shrink-0">
+                          <span className="font-semibold text-zinc-800 heading text-[12px]">148</span>
+                          <span className="text-emerald-500 text-[8px] font-bold tracking-wide">+103%</span>
+                        </div>
+                      </div>
+                      {/* Comments */}
+                      {/* <div className="flex items-center justify-between py-2">
+                        <div className="flex items-center gap-1.5 min-w-0">
+                          <MessageCircle className="h-3.5 w-3.5 text-zinc-400 flex-shrink-0" />
+                          <span className="subHeading text-zinc-500 text-[11px]">comments</span>
+                        </div>
+                        <div className="flex items-center gap-1 ml-2 flex-shrink-0">
+                          <span className="font-semibold text-zinc-800 heading text-[12px]">3</span>
+                          <span className="bg-[#ede9fe] text-[#5b21b6] text-[7px] px-1 py-px rounded font-bold uppercase tracking-wider">
+                            new
+                          </span>
+                        </div>
+                      </div> */}
+                      {/* Shares */}
+                      {/* <div className="flex items-center justify-between py-2">
+                        <div className="flex items-center gap-1.5 min-w-0">
+                          <Repeat className="h-3.5 w-3.5 text-zinc-400 flex-shrink-0" />
+                          <span className="subHeading text-zinc-500 text-[11px]">shares</span>
+                        </div>
+                        <span className="font-semibold text-zinc-800 heading text-[12px] ml-2 flex-shrink-0">1</span>
+                      </div> */}
+                      {/* Saves — highlighted row */}
+                      <div className="flex items-center justify-between py-2">
+                        <div className="flex items-center gap-1.5 bg-zinc-100/70 px-1 py-0.5 rounded min-w-0">
+                          <Bookmark className="h-3.5 w-3.5 text-zinc-700 flex-shrink-0" />
+                          <span className="subHeading text-zinc-800 font-semibold text-[11px]">Shares</span>
+                        </div>
+                        <div className="flex items-baseline gap-1 ml-2 flex-shrink-0">
+                          <span className="font-semibold text-zinc-800 heading text-[12px]">349</span>
+                          <span className="text-emerald-500 text-[8px] font-bold tracking-wide">+372%</span>
+                        </div>
+                      </div>
+                      {/* Profile saves */}
+                      <div className="flex items-center justify-between py-2">
+                        <div className="flex items-center gap-1.5 min-w-0">
+                          <Bookmark className="h-3.5 w-3.5 text-zinc-400 flex-shrink-0" />
+                          <span className="subHeading text-zinc-500 text-[11px]">profile saves</span>
+                        </div>
+                        <div className="flex items-baseline gap-1 ml-2 flex-shrink-0">
+                          <span className="font-semibold text-zinc-800 heading text-[12px]">21</span>
+                          <span className="text-emerald-500 text-[8px] font-bold tracking-wide">+163%</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* ── RIGHT COLUMN: two reel cards ── */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+              {kalrasKitchen2.map((item, index) => (
+                <div key={index} className="w-full">
+                  <ReelCard item={item} />
+                </div>
+              ))}
+            </div>
+
+          </div>
         </div>
       </section>
 

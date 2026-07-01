@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 export interface BentoItem {
@@ -52,30 +51,23 @@ export default function BentoGrid({ items, className = "" }: BentoGridProps) {
 
   return (
     <section
-      className={`w-full py-20 overflow-hidden ${className} cursor-pointer`}
+      className={`w-full py-10 overflow-hidden ${className} cursor-pointer`}
     >
       <div className="">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 auto-rows-[250px] gap-2 md:gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 auto-rows-[250px] gap-2 md:gap-4">
           {items.map((item, index) => (
-            <motion.div
+            <div
               key={item.id}
               onClick={() => openImage(index)}
-              initial={{ opacity: 0, scale: 0.9, y: 80 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{
-                duration: 0.8,
-                delay: index * 0.08,
-                ease: [0.25, 1, 0.5, 1],
-              }}
-              viewport={{ once: true }}
-              className={`relative overflow-hidden group rounded-[24px] cursor-pointer ${
+              className={`relative overflow-hidden group rounded-[24px] cursor-pointer bg-white/5 border border-white/5 ${
                 item.className || "col-span-1 row-span-1"
               }`}
             >
               <Image
                 src={item.image}
-                alt={"abc"}
+                alt="Bento grid work sample"
                 fill
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 className="object-cover transition-all duration-700 group-hover:scale-110"
               />
 
@@ -86,7 +78,7 @@ export default function BentoGrid({ items, className = "" }: BentoGridProps) {
               </div>
 
               <div className="absolute inset-0 border border-white/10" />
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
@@ -124,7 +116,6 @@ export default function BentoGrid({ items, className = "" }: BentoGridProps) {
               alt={"abc"}
               fill
               className="object-contain"
-              priority
             />
           </div>
 

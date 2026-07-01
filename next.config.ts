@@ -8,12 +8,14 @@ const withBundleAnalyzer = bundleAnalyzer({
 
 const nextConfig: NextConfig = {
   distDir: "out",
+  output: "export",
   reactCompiler: true,
   reactStrictMode: true,
 
   allowedDevOrigins: ["*.trycloudflare.com", "192.168.2.18"],
 
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
