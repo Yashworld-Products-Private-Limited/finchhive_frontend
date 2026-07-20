@@ -7,17 +7,15 @@ import { FeaturesServices } from "@/constants";
 import FinIcon from "@/icons/finIcon";
 import RadioIcon from "@/icons/Radio";
 import { motion, Variants } from "framer-motion";
+import { Pause, Play, Volume2, VolumeOff } from "lucide-react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { Volume2, VolumeOff, Play, Pause } from "lucide-react";
-import dynamic from "next/dynamic";
 
 const CaseStudies = dynamic(() => import("@/components/CaseStudies"));
 const LetsTalkSection = dynamic(() => import("@/components/LetsTalkSection"));
 const LogoMarquee = dynamic(() => import("@/components/LogoMarquee"));
-const MagneticCursor = dynamic(() => import("@/components/MagneticCursor"), { ssr: false });
 const ProcessSection = dynamic(() => import("@/components/ProcessSection"));
-const ScrollVelocity = dynamic(() => import("@/components/ScrollVelocity"), { ssr: false });
 const SEOAccordion = dynamic(() => import("@/components/SEOAccordion"));
 const ServicesSection = dynamic(() => import("@/components/ServicesSection"));
 const StatsFeatureSection = dynamic(() => import("@/components/StatsFeatureSection"));
@@ -248,7 +246,7 @@ const Home = () => {
       >
         
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0%,rgba(46,44,118,0.3)_30%,rgba(46,44,118,0.7)_50%,#2E2C76_100%)]" />
-        <div className="absolute inset-0 flex items-center overflow-hidden pointer-events-none z-0">
+        {/* <div className="absolute inset-0 flex items-center overflow-hidden pointer-events-none z-0">
           <ScrollVelocity
             texts={["the best digital platform solution"]}
             velocity={100}
@@ -257,7 +255,7 @@ const Home = () => {
             damping={80}
             stiffness={400}
           />
-        </div>
+        </div> */}
 
         <motion.div
           initial={{
