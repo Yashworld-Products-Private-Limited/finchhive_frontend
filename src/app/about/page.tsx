@@ -210,7 +210,7 @@ const AboutPage = () => {
                     width={400}
                     height={500}
                     loading="lazy"
-                    className="w-[300px] sm:w-[330px] md:w-[380px] lg:w-[400px] xl:w-[440px] h-auto object-contain 6grayscale z-20"
+                    className="w-[301px] sm:w-[330px] md:w-[380px] lg:w-[400px] xl:w-[440px] h-auto object-contain 6grayscale z-20"
                   />
                 </motion.div>
 
