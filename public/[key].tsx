@@ -1,5 +1,3 @@
-import type { R2Bucket } from "@cloudflare/workers-types";
-
 interface Env {
   "finchhive-public": R2Bucket;
 }
@@ -7,6 +5,7 @@ interface Env {
 interface Params {
   key: string;
 }
+
 export async function onRequestGet(context: {
   params: Params;
   env: Env;
