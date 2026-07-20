@@ -7,6 +7,7 @@ interface Env {
 interface Params {
   key: string;
 }
+
 export async function onRequestGet(context: {
   params: Params;
   env: Env;
@@ -21,7 +22,7 @@ export async function onRequestGet(context: {
     });
   }
 
-  return new Response(object.body, {
+  return new Response(object.body as unknown as ReadableStream, {
     headers: {
       "content-type":
         object.httpMetadata?.contentType ?? "application/octet-stream",
