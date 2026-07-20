@@ -72,19 +72,17 @@ export const logos = [
 ];
 
 export default function LogoMarquee() {
-  const repeated = [...logos, ...logos, ...logos];
-
   return (
-    <section className="w-full py-2 overflow-hidden ">
+    <section className="w-full py-2 overflow-hidden">
       <div className="relative flex">
         <div className="absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-[#eeeef4] to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-[#eeeef4] to-transparent z-10 pointer-events-none" />
 
-        <Marquee pauseOnHover className="flex  gap-4 w-max ">
-          {repeated.map((logo, i) => (
+        <Marquee pauseOnHover repeat={3} className="flex gap-4 w-max">
+          {logos.map((logo) => (
             <div
-              key={i}
-              className="flex-shrink-0 w-48 h-36 rounded-2xl flex items-center justify-center ml-2 lg:ml-5 transition-all duration-300 cursor-pointer group"
+              key={logo.id}
+              className="flex-shrink-0 w-48 h-36 rounded-2xl flex items-center justify-center ml-2 lg:ml-5 transition-opacity duration-300 cursor-pointer group"
             >
               <Image
                 src={logo.src}
