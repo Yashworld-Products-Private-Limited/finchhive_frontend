@@ -9,17 +9,20 @@ import { useState } from "react";
 import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 const AboutSection = dynamic(() => import("@/components/AboutSection"));
-const ExpandingGallery = dynamic(() => import("@/components/ExpandingGallery"), { ssr: false });
+const ExpandingGallery = dynamic(
+  () => import("@/components/ExpandingGallery"),
+  { ssr: false },
+);
 const LetsTalkSection = dynamic(() => import("@/components/LetsTalkSection"));
 const LogoMarquee = dynamic(() => import("@/components/LogoMarquee"));
 const SEOAccordion = dynamic(() => import("@/components/SEOAccordion"));
 const ValuesSection = dynamic(() => import("@/components/SnowflakeIcon"));
-const TeamSection = dynamic(() => import("@/components/TeamSection").then((mod) => mod.TeamSection));
+const TeamSection = dynamic(() =>
+  import("@/components/TeamSection").then((mod) => mod.TeamSection),
+);
 
 const AboutPage = () => {
   const [isHovered, setIsHovered] = useState(false);
-
-
 
   const containerVariants: Variants = {
     hidden: {},
@@ -201,7 +204,8 @@ const AboutPage = () => {
               `}
                   />
                   <Image
-                    src="/imgs/jems.png"
+                    // src="/api/images/jems.png"
+                    src="/api/image/trustbrands3.png"
                     alt="leader"
                     width={400}
                     height={500}
