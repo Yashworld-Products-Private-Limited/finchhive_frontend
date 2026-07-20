@@ -1,6 +1,7 @@
 "use client";
 import PrimaryButton from "@/components/Button";
 import { FeatureCard, FeatureItem } from "@/components/FeatureCard";
+import ScrollVelocity from "@/components/ScrollVelocity";
 import SectionBadge from "@/components/SectionBadge";
 import SectionTitle from "@/components/SectionTitle";
 import { FeaturesServices } from "@/constants";
@@ -246,7 +247,7 @@ const Home = () => {
       >
         
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0%,rgba(46,44,118,0.3)_30%,rgba(46,44,118,0.7)_50%,#2E2C76_100%)]" />
-        {/* <div className="absolute inset-0 flex items-center overflow-hidden pointer-events-none z-0">
+        <div className="absolute inset-0 flex items-center overflow-hidden pointer-events-none z-0">
           <ScrollVelocity
             texts={["the best digital platform solution"]}
             velocity={100}
@@ -255,7 +256,7 @@ const Home = () => {
             damping={80}
             stiffness={400}
           />
-        </div> */}
+        </div>
 
         <motion.div
           initial={{
