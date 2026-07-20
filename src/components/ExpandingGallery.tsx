@@ -4,12 +4,12 @@ import { useState } from "react";
 import Image from "next/image";
 
 const images = [
-  "/imgs/exp1.png",
-  "/imgs/exp2.png",
-  "/imgs/exp3.png",
-  "/imgs/exp4.png",
-  "/imgs/exp5.png",
-  "/imgs/exp6.png",
+  "/api/imgs/exp1.png",
+  "/api/imgs/exp2.png",
+  "/api/imgs/exp3.png",
+  "/api/imgs/exp4.png",
+  "/api/imgs/exp5.png",
+  "/api/imgs/exp6.png",
 ];
 
 export default function ExpandingGallery() {

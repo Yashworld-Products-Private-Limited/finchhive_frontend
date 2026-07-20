@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     siteName: "Finchhive",
     images: [
       {
-        url: "/finchhivlogo.png",
+        url: "/api/finchhivlogo.png",
         width: 800,
         height: 600,
         alt: "Finchhive Logo",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Finchhive | Best Digital Platform Solutions Company",
     description: "We combine innovative digital solutions, human psychology-based strategy, and exceptional execution to scale your brand.",
-    images: ["/finchhivlogo.png"],
+    images: ["/api/finchhivlogo.png"],
   },
   robots: {
     index: true,

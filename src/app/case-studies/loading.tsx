@@ -49,7 +49,7 @@ export default function Loading() {
           {/* Central Pulsing Logo */}
           <div className="relative w-14 h-14 flex items-center justify-center animate-custom-pulse">
             <Image
-              src="/finchhivlogo.png"
+              src="/api/finchhivlogo.png"
               alt="Finchhive Logo"
               width={56}
               height={56}

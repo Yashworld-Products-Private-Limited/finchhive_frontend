@@ -278,7 +278,7 @@ const Home = () => {
           className="relative z-10 w-[90%] sm:w-[80%] lg:w-[65%] mx-auto"
         >
           <Image
-            src="/imgs/home_second.png"
+            src="/api/imgs/home_second.png"
             alt="Team"
             width={1200}
             height={430}
@@ -316,7 +316,7 @@ const Home = () => {
               >
                 <video
                   ref={videoRef}
-                  src="/imgs/main-vid.mp4"
+                  src="/api/imgs/main-vid.mp4"
                   loop
                   playsInline
                   preload="metadata"

@@ -6,67 +6,67 @@ import { Marquee } from "./ui/marquee";
 export const logos = [
   {
     id: 1,
-    src: "/imgs/brands/trustbrands1.png",
+    src: "/api/imgs/brands/trustbrands1.png",
     alt: "Company 1",
   },
   {
     id: 2,
-    src: "/imgs/brands/trustbrands2.png",
+    src: "/api/imgs/brands/trustbrands2.png",
     alt: "Company 2",
   },
   {
     id: 3,
-    src: "/imgs/brands/trustbrands3.png",
+    src: "/api/imgs/brands/trustbrands3.png",
     alt: "Company 3",
   },
   {
     id: 4,
-    src: "/imgs/brands/trustbrands4.png",
+    src: "/api/imgs/brands/trustbrands4.png",
     alt: "Company 4",
   },
   {
     id: 5,
-    src: "/imgs/brands/trustbrands5.png",
+    src: "/api/imgs/brands/trustbrands5.png",
     alt: "Company 5",
   },
   {
     id: 6,
-    src: "/imgs/brands/trustbrands6.png",
+    src: "/api/imgs/brands/trustbrands6.png",
     alt: "Company 6",
   },
   {
     id: 7,
-    src: "/imgs/brands/trustbrands7.png",
+    src: "/api/imgs/brands/trustbrands7.png",
     alt: "Company 7",
   },
   {
     id: 8,
-    src: "/imgs/brands/trustbrands8.png",
+    src: "/api/imgs/brands/trustbrands8.png",
     alt: "Company 8",
   },
   {
     id: 9,
-    src: "/imgs/brands/trustbrands9.png",
+    src: "/api/imgs/brands/trustbrands9.png",
     alt: "Company 9",
   },
   {
     id: 10,
-    src: "/imgs/brands/trustbrands10.png",
+    src: "/api/imgs/brands/trustbrands10.png",
     alt: "Company 10",
   },
   {
     id: 11,
-    src: "/imgs/brands/trustbrands11.png",
+    src: "/api/imgs/brands/trustbrands11.png",
     alt: "Company 11",
   },
   {
     id: 12,
-    src: "/imgs/brands/trustbrands12.png",
+    src: "/api/imgs/brands/trustbrands12.png",
     alt: "Company 12",
   },
   {
     id: 13,
-    src: "/imgs/brands/trustbrands13.png",
+    src: "/api/imgs/brands/trustbrands13.png",
     alt: "Company 13",
   },
 ];

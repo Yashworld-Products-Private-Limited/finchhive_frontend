@@ -197,7 +197,7 @@ export default function StatsFeatureSection() {
       ref={sectionRef}
       className="relative w-full min-h-screen flex flex-col overflow-hidden px-[16px] bg-cover bg-bottom bg-no-repeat bg-fixed"
       style={{
-        backgroundImage: "url('/imgs/ourwork.jpg')",
+        backgroundImage: "url('/api/imgs/ourwork.jpg')",
       }}
     >
       {/* <div

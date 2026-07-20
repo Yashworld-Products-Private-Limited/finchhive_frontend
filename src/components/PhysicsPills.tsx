@@ -186,7 +186,7 @@ export default function PhysicsPills() {
       <div
         className="absolute inset-0 bg-cover bg-center rounded-3xl"
         style={{
-          backgroundImage: "url('/imgs/bluebg.jpg')",
+          backgroundImage: "url('/api/imgs/bluebg.jpg')",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
         }}

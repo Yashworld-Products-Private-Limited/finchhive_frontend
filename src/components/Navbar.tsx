@@ -92,7 +92,7 @@ export default function Navbar() {
             >
               <div className="w-[140px] h-[50px] xl:w-[180px] xl:h-[65px] 2xl:w-[220px] 2xl:h-[75px] relative">
                 <Image
-                  src="/finchhivlogo.png"
+                  src="/api/finchhivlogo.png"
                   alt="Finchhive Logo"
                   fill
                   sizes="(max-width: 1024px) 140px, 220px"

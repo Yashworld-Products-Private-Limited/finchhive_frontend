@@ -67,7 +67,7 @@ export default function Loader() {
                 className="relative w-14 h-14 flex items-center justify-center"
               >
                 <Image
-                  src="/finchhivlogo.png"
+                  src="/api/finchhivlogo.png"
                   alt="Finchhive Logo"
                   width={56}
                   height={56}

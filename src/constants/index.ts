@@ -121,70 +121,70 @@ export const Projects = [
     title: "Laxmi Auto Bodybuilders",
     description:
       "Delivaring customized cpmmercial vehical bodies that halp business operate efficiently, safely and with confidance accross india ",
-    image: "/imgs/lax.png",
+    image: "/api/imgs/lax.png",
     route: "https://laxmiauto.com",
   },
   {
     title: "Cannacraft",
     description:
       "Cannacraft blends ancient knowledge with cutting edge innovation, crafting holistic wellness solutions.",
-    image: "/imgs/vijaya-01.png",
+    image: "/api/imgs/vijaya-01.png",
     route: "https://thecannacraft.com",
   },
   {
     title: "Suul",
     description:
       "Zero waste detergent, the smart way to wash. Powerful cleaning for your clothes with ingredients that don't harm the planet",
-    image: "/imgs/suul.png",
+    image: "/api/imgs/suul.png",
     route: "https://suul.mx",
   },
   {
     title: "nathabit",
     description:
       "Blending ancient Ayurveda with modern freshness, we create pure, natural, and effective beauty solutions. Every product is freshly crafted to awaken your skin’s vitality and let your natural beauty shine.",
-    image: "/imgs/nathabit.jpg",
+    image: "/api/imgs/nathabit.jpg",
     route: "https://nathabit.in",
   },
   {
     title: "parashute",
     description:
       "A lifestyle brand offering premium products and experiences that prioritize comfort, style, and high quality craftsmanship.",
-    image: "/imgs/parashute.jpg",
+    image: "/api/imgs/parashute.jpg",
     route: "https://easydocusigns.com/",
   },
   {
     title: "Estella",
     description:
       "Estella creates handcrafted, organic baby gifts made with love and care. Each piece blends premium quality, sustainable materials, and timeless design  perfect for celebrating life’s sweetest moments.",
-    image: "/imgs/estela.jpg",
+    image: "/api/imgs/estela.jpg",
     route: "https://estella-nyc.com/",
   },
   {
     title: "nativemilk",
     description:
       "A dairy brand promoting pure, organic milk and products, sourced from local farms for a natural and sustainable lifestyle.",
-    image: "/imgs/nativ.gif",
+    image: "/api/imgs/nativ.gif",
     route: "https://nativemilk.co.in",
   },
   {
     title: "roundlab",
     description:
       "A skincare brand offering high quality, science backed products that nurture skin health, focusing on gentle and effective formulations.",
-    image: "/imgs/roundlab.jpg",
+    image: "/api/imgs/roundlab.jpg",
     route: "https://roundlab.com",
   },
   {
     title: "Henies Cakery",
     description:
       "Henie's Cakery is your go to online shop for custom cakes, pastries, and desserts, perfect for any occasion.",
-    image: "/imgs/henes.jpg",
+    image: "/api/imgs/henes.jpg",
     route: "https://heniescakery.com",
   },
 ];
 
 export const caseStudies = [
   {
-    image: "/imgs/case11.svg",
+    image: "/api/imgs/case11.svg",
     title: "Sada Shive Music Festival",
     desc: "How Finchhive's 100% organic content strategy sold out every single ticket to Surat's most anticipated devotional music festival with zero paid ads, zero influencer spend, and zero boosting.",
     bgGlow: "from-[#c8b08a]/40 via-[#8b5e3c]/20 to-[#3b2416]/30",
@@ -197,7 +197,7 @@ export const caseStudies = [
     ],
   },
   {
-    image: "/imgs/case14.svg",
+    image: "/api/imgs/case14.svg",
     title: "Kalras Kitchen",
     desc: "How Finchhive's audience-first content strategy took a home kitchen brand from zero digital strategy to nearly 10 lakh views and real-world footfall growth.",
     stats: [
@@ -207,7 +207,7 @@ export const caseStudies = [
     link: "/case-studies/kalras-kitchen",
   },
   {
-    image: "/imgs/case13.svg",
+    image: "/api/imgs/case13.svg",
     title: "Veidor Social Media Brand",
     desc: "How Finchhive's performance marketing strategies drove significant revenue growth and conversion rates for Veidor.",
     stats: [
@@ -217,7 +217,7 @@ export const caseStudies = [
     link: "/case-studies/veidor",
   },
   {
-    image: "/imgs/case12.svg",
+    image: "/api/imgs/case12.svg",
     title: "Studio 9 India",
     desc: "How Finchhive's performance marketing strategies drove significant revenue growth and conversion rates for Studio 9 India.",
     stats: [
@@ -381,266 +381,266 @@ export const reels = [
     name: "Social Growth",
     profile:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels1.mp4",
+    video: "/api/imgs/reels/reels1.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels2.mp4",
+    video: "/api/imgs/reels/reels2.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Creative Ads",
     profile:
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels3.mp4",
+    video: "/api/imgs/reels/reels3.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Luxury Branding",
     profile:
       "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels4.mp4",
+    video: "/api/imgs/reels/reels4.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Creative Ads",
     profile:
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels5.mp4",
+    video: "/api/imgs/reels/reels5.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Social Growth",
     profile:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels6.mp4",
+    video: "/api/imgs/reels/reels6.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels7.mp4",
+    video: "/api/imgs/reels/reels7.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Creative Ads",
     profile:
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels8.mp4",
+    video: "/api/imgs/reels/reels8.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Luxury Branding",
     profile:
       "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels9.mp4",
+    video: "/api/imgs/reels/reels9.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Creative Ads",
     profile:
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels10.mp4",
+    video: "/api/imgs/reels/reels10.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Social Growth",
     profile:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels11.mp4",
+    video: "/api/imgs/reels/reels11.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels12.mp4",
+    video: "/api/imgs/reels/reels12.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Creative Ads",
     profile:
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels13.mp4",
+    video: "/api/imgs/reels/reels13.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Luxury Branding",
     profile:
       "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels14.mp4",
+    video: "/api/imgs/reels/reels14.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Creative Ads",
     profile:
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels15.mp4",
+    video: "/api/imgs/reels/reels15.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Social Growth",
     profile:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels16.mp4",
+    video: "/api/imgs/reels/reels16.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels17.mp4",
+    video: "/api/imgs/reels/reels17.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Creative Ads",
     profile:
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels18.mp4",
+    video: "/api/imgs/reels/reels18.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Luxury Branding",
     profile:
       "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels19.mp4",
+    video: "/api/imgs/reels/reels19.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Creative Ads",
     profile:
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels20.mp4",
+    video: "/api/imgs/reels/reels20.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Social Growth",
     profile:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels21.mp4",
+    video: "/api/imgs/reels/reels21.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels22.mp4",
+    video: "/api/imgs/reels/reels22.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Creative Ads",
     profile:
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels23.mp4",
+    video: "/api/imgs/reels/reels23.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Luxury Branding",
     profile:
       "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels24.mp4",
+    video: "/api/imgs/reels/reels24.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Creative Ads",
     profile:
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels25.mp4",
+    video: "/api/imgs/reels/reels25.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Social Growth",
     profile:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels26.mp4",
+    video: "/api/imgs/reels/reels26.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels27.mp4",
+    video: "/api/imgs/reels/reels27.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Creative Ads",
     profile:
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels28.mp4",
+    video: "/api/imgs/reels/reels28.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Luxury Branding",
     profile:
       "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels29.mp4",
+    video: "/api/imgs/reels/reels29.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Creative Ads",
     profile:
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels30.mp4",
+    video: "/api/imgs/reels/reels30.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Social Growth",
     profile:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels31.mp4",
+    video: "/api/imgs/reels/reels31.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels32.mp4",
+    video: "/api/imgs/reels/reels32.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Creative Ads",
     profile:
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels33.mp4",
+    video: "/api/imgs/reels/reels33.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Luxury Branding",
     profile:
       "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels34.mp4",
+    video: "/api/imgs/reels/reels34.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Creative Ads",
     profile:
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels35.mp4",
+    video: "/api/imgs/reels/reels35.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Social Growth",
     profile:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels36.mp4",
+    video: "/api/imgs/reels/reels36.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels37.mp4",
+    video: "/api/imgs/reels/reels37.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Creative Ads",
     profile:
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels38.mp4",
+    video: "/api/imgs/reels/reels38.mp4",
     instagram: "https://www.instagram.com/",
   },
 ];
@@ -650,49 +650,49 @@ export const brandStory = [
     name: "Social Growth",
     profile:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels12.mp4",
+    video: "/api/imgs/reels/reels12.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels24.mp4",
+    video: "/api/imgs/reels/reels24.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Social Growth",
     profile:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels30.mp4",
+    video: "/api/imgs/reels/reels30.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels31.mp4",
+    video: "/api/imgs/reels/reels31.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Social Growth",
     profile:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels32.mp4",
+    video: "/api/imgs/reels/reels32.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels36.mp4",
+    video: "/api/imgs/reels/reels36.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels37.mp4",
+    video: "/api/imgs/reels/reels37.mp4",
     instagram: "https://www.instagram.com/",
   },
 ];
@@ -702,49 +702,49 @@ export const UGC = [
     name: "Social Growth",
     profile:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels6.mp4",
+    video: "/api/imgs/reels/reels6.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels8.mp4",
+    video: "/api/imgs/reels/reels8.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Social Growth",
     profile:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels12.mp4",
+    video: "/api/imgs/reels/reels12.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels14.mp4",
+    video: "/api/imgs/reels/reels14.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Social Growth",
     profile:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels17.mp4",
+    video: "/api/imgs/reels/reels17.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels26.mp4",
+    video: "/api/imgs/reels/reels26.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels27.mp4",
+    video: "/api/imgs/reels/reels27.mp4",
     instagram: "https://www.instagram.com/",
   },
 ];
@@ -754,63 +754,63 @@ export const reelcreation = [
     name: "Social Growth",
     profile:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels6.mp4",
+    video: "/api/imgs/reels/reels6.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels7.mp4",
+    video: "/api/imgs/reels/reels7.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Social Growth",
     profile:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels38.mp4",
+    video: "/api/imgs/reels/reels38.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels24.mp4",
+    video: "/api/imgs/reels/reels24.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Social Growth",
     profile:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels9.mp4",
+    video: "/api/imgs/reels/reels9.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels36.mp4",
+    video: "/api/imgs/reels/reels36.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels29.mp4",
+    video: "/api/imgs/reels/reels29.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels33.mp4",
+    video: "/api/imgs/reels/reels33.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels13.mp4",
+    video: "/api/imgs/reels/reels13.mp4",
     instagram: "https://www.instagram.com/",
   },
 ];
@@ -820,56 +820,56 @@ export const socialMedia = [
     name: "Social Growth",
     profile:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels10.mp4",
+    video: "/api/imgs/reels/reels10.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels35.mp4",
+    video: "/api/imgs/reels/reels35.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Social Growth",
     profile:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels13.mp4",
+    video: "/api/imgs/reels/reels13.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels18.mp4",
+    video: "/api/imgs/reels/reels18.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Social Growth",
     profile:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels22.mp4",
+    video: "/api/imgs/reels/reels22.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels34.mp4",
+    video: "/api/imgs/reels/reels34.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels25.mp4",
+    video: "/api/imgs/reels/reels25.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels23.mp4",
+    video: "/api/imgs/reels/reels23.mp4",
     instagram: "https://www.instagram.com/",
   },
 ];
@@ -879,14 +879,14 @@ export const Interior = [
     name: "Social Growth",
     profile:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels26.mp4",
+    video: "/api/imgs/reels/reels26.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels27.mp4",
+    video: "/api/imgs/reels/reels27.mp4",
     instagram: "https://www.instagram.com/",
   },
 ];
@@ -895,14 +895,14 @@ export const kalrasKitchen2 = [
     name: "Social Growth",
     profile:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels00.mp4",
+    video: "/api/imgs/reels/reels00.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Social Growth",
     profile:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels01.mp4",
+    video: "/api/imgs/reels/reels01.mp4",
     instagram: "https://www.instagram.com/",
   },
 ];
@@ -913,35 +913,35 @@ export const kalrasKitchen = [
     name: "Social Growth",
     profile:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels2.mp4",
+    video: "/api/imgs/reels/reels2.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels3.mp4",
+    video: "/api/imgs/reels/reels3.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Social Growth",
     profile:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels4.mp4",
+    video: "/api/imgs/reels/reels4.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels16.mp4",
+    video: "/api/imgs/reels/reels16.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels28.mp4",
+    video: "/api/imgs/reels/reels28.mp4",
     instagram: "https://www.instagram.com/",
   },
 ];
@@ -951,76 +951,76 @@ export const veidor = [
     name: "Social Growth",
     profile:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels1.mp4",
+    video: "/api/imgs/reels/reels1.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels5.mp4",
+    video: "/api/imgs/reels/reels5.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Social Growth",
     profile:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels15.mp4",
+    video: "/api/imgs/reels/reels15.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels19.mp4",
+    video: "/api/imgs/reels/reels19.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels21.mp4",
+    video: "/api/imgs/reels/reels21.mp4",
     instagram: "https://www.instagram.com/",
   },
   {
     name: "Brand Marketing",
     profile:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
-    video: "/imgs/reels/reels20.mp4",
+    video: "/api/imgs/reels/reels20.mp4",
     instagram: "https://www.instagram.com/",
   },
 ];
 
 export const logos = [
-  "/imgs/logo1.png",
-  "/imgs/logo2.png",
-  "/imgs/logo3.png",
-  "/imgs/logo4.png",
-  "/imgs/logo5.png",
-  "/imgs/logo6.png",
-  "/imgs/logo7.png",
-  "/imgs/logo8.png",
+  "/api/imgs/logo1.png",
+  "/api/imgs/logo2.png",
+  "/api/imgs/logo3.png",
+  "/api/imgs/logo4.png",
+  "/api/imgs/logo5.png",
+  "/api/imgs/logo6.png",
+  "/api/imgs/logo7.png",
+  "/api/imgs/logo8.png",
 ];
 
 export const platforms = [
   {
-    image: "https://cdn-icons-png.flaticon.com/512/5968/5968830.png", // X
+    image: "/apihttps://cdn-icons-png.flaticon.com/512/5968/5968830.png", // X
     bg: "bg-white",
   },
   {
-    image: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png", // YouTube
+    image: "/apihttps://cdn-icons-png.flaticon.com/512/1384/1384060.png", // YouTube
     bg: "bg-red-600",
   },
   {
-    image: "https://upload.wikimedia.org/wikipedia/en/c/c4/Snapchat_logo.svg", // Snapchat
+    image: "/apihttps://upload.wikimedia.org/wikipedia/en/c/c4/Snapchat_logo.svg", // Snapchat
     bg: "bg-[#fffc00]",
   },
   {
-    image: "https://cdn-icons-png.flaticon.com/512/174/174857.png", // LinkedIn
+    image: "/apihttps://cdn-icons-png.flaticon.com/512/174/174857.png", // LinkedIn
     bg: "bg-[#FFFFFF]",
   },
   {
-    image: "https://cdn-icons-png.flaticon.com/512/2111/2111463.png", // Instagram
+    image: "/apihttps://cdn-icons-png.flaticon.com/512/2111/2111463.png", // Instagram
     bg: "bg-gradient-to-br from-yellow-400 via-pink-500 to-purple-600",
   },
 ];
@@ -1099,92 +1099,92 @@ export const cards = [
 export const SocialImages: BentoItem[] = [
   {
     id: 1,
-    image: "/imgs/images/serve1.png",
+    image: "/api/imgs/images/serve1.png",
     className: "col-span-2 row-span-1 md:col-span-2 md:row-span-2",
   },
   {
     id: 2,
-    image: "/imgs/images/serve2.png",
+    image: "/api/imgs/images/serve2.png",
     className: "md:col-span-2 md:row-span-1",
   },
   {
     id: 3,
-    image: "/imgs/images/serve3.png",
+    image: "/api/imgs/images/serve3.png",
     className: "col-span-1 row-span-2 md:col-span-1 md:row-span-2",
   },
   {
     id: 4,
-    image: "/imgs/images/serve4.png",
+    image: "/api/imgs/images/serve4.png",
     className: "md:col-span-1 md:row-span-2",
   },
   {
     id: 5,
-    image: "/imgs/images/serve5.png",
+    image: "/api/imgs/images/serve5.png",
     className: "col-span-1 row-span-2 md:col-span-1 md:row-span-1",
   },
   {
     id: 6,
-    image: "/imgs/images/serve6.png",
+    image: "/api/imgs/images/serve6.png",
     className: "md:col-span-1 md:row-span-1",
   },
   {
     id: 7,
-    image: "/imgs/images/serve7.png",
+    image: "/api/imgs/images/serve7.png",
     className: "md:col-span-2 md:row-span-1",
   },
   {
     id: 8,
-    image: "/imgs/images/serve8.png",
+    image: "/api/imgs/images/serve8.png",
     className: "col-span-2 row-span-1 md:col-span-2 md:row-span-1 ",
   },
   {
     id: 9,
-    image: "/imgs/images/serve9.png",
+    image: "/api/imgs/images/serve9.png",
     className: "md:col-span-2 md:row-span-1",
   },
   {
     id: 10,
-    image: "/imgs/images/serve10.png",
+    image: "/api/imgs/images/serve10.png",
     className: "col-span-1 row-span-2 md:col-span-1 md:row-span-2",
   },
   {
     id: 11,
-    image: "/imgs/images/serve11.png",
+    image: "/api/imgs/images/serve11.png",
     className: "md:col-span-1 md:row-span-2",
   },
   {
     id: 12,
-    image: "/imgs/images/serve12.png",
+    image: "/api/imgs/images/serve12.png",
     className: "col-span-1 row-span-2 md:col-span-1 md:row-span-1",
   },
   {
     id: 13,
-    image: "/imgs/images/serve13.png",
+    image: "/api/imgs/images/serve13.png",
     className: "md:col-span-1 md:row-span-1",
   },
   {
     id: 14,
-    image: "/imgs/images/serve14.png",
+    image: "/api/imgs/images/serve14.png",
     className: "md:col-span-2 md:row-span-1",
   },
   {
     id: 15,
-    image: "/imgs/images/serve15.png",
+    image: "/api/imgs/images/serve15.png",
     className: "col-span-2 row-span-1 md:col-span-2 md:row-span-1 ",
   },
   {
     id: 16,
-    image: "/imgs/images/serve16.png",
+    image: "/api/imgs/images/serve16.png",
     className: "md:col-span-1 md:row-span-1",
   },
   {
     id: 17,
-    image: "/imgs/images/serve17.png",
+    image: "/api/imgs/images/serve17.png",
     className: "md:col-span-2 md:row-span-1",
   },
   {
     id: 18,
-    image: "/imgs/images/serve18.png",
+    image: "/api/imgs/images/serve18.png",
     className: "col-span-2 row-span-1 md:col-span-1 md:row-span-1 ",
   },
 ];
@@ -1192,52 +1192,52 @@ export const SocialImages: BentoItem[] = [
 export const OsciiImages: BentoItem[] = [
   {
     id: 1,
-    image: "/imgs/images/oscii1.webp",
+    image: "/api/imgs/images/oscii1.webp",
     className: "col-span-2 row-span-1 md:col-span-2 md:row-span-2",
   },
   {
     id: 2,
-    image: "/imgs/images/oscii2.webp",
+    image: "/api/imgs/images/oscii2.webp",
     className: "md:col-span-2 md:row-span-1",
   },
   {
     id: 3,
-    image: "/imgs/images/oscii3.webp",
+    image: "/api/imgs/images/oscii3.webp",
     className: "col-span-1 row-span-2 md:col-span-1 md:row-span-2",
   },
   {
     id: 4,
-    image: "/imgs/images/oscii4.webp",
+    image: "/api/imgs/images/oscii4.webp",
     className: "md:col-span-1 md:row-span-2",
   },
   {
     id: 5,
-    image: "/imgs/images/oscii5.webp",
+    image: "/api/imgs/images/oscii5.webp",
     className: "col-span-1 row-span-2 md:col-span-1 md:row-span-1",
   },
   {
     id: 6,
-    image: "/imgs/images/oscii6.webp",
+    image: "/api/imgs/images/oscii6.webp",
     className: "md:col-span-1 md:row-span-1",
   },
   {
     id: 7,
-    image: "/imgs/images/oscii7.webp",
+    image: "/api/imgs/images/oscii7.webp",
     className: "md:col-span-1 md:row-span-2",
   },
   {
     id: 8,
-    image: "/imgs/images/oscii8.webp",
+    image: "/api/imgs/images/oscii8.webp",
     className: "col-span-2 row-span-1 md:col-span-1 md:row-span-1 ",
   },
   {
     id: 9,
-    image: "/imgs/images/oscii9.webp",
+    image: "/api/imgs/images/oscii9.webp",
     className: "md:col-span-2 md:row-span-2",
   },
   {
     id: 10,
-    image: "/imgs/images/oscii10.webp",
+    image: "/api/imgs/images/oscii10.webp",
     className: "col-span-1 row-span-1 md:col-span-1 md:row-span-1",
   },
 ];

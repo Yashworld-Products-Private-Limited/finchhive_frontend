@@ -205,7 +205,7 @@ const AboutPage = () => {
                   />
                   <Image
                     src="/api/imgs/jems.png"
-                    // src="/api/finchhivlogo.png"
+                    // src="/api/api/finchhivlogo.png"
                     alt="leader"
                     width={400}
                     height={500}
