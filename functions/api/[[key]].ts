@@ -21,6 +21,8 @@ interface Params {
   key?: string | string[];
 }
 
+
+
 // This project's tsconfig combines `"lib": ["dom", ...]` with
 // `"types": ["@cloudflare/workers-types"]`, which makes the ambient global
 // `Headers` type ambiguous between the two. At runtime, inside a Pages
