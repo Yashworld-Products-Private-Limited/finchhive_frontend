@@ -11,15 +11,20 @@
 name = "finchhive-frontend"
 pages_build_output_dir = "out"
 compatibility_date = "2026-07-20"
+# Pins every Wrangler command run in this repo to the right Cloudflare
+# account. Without this, anyone whose login has access to more than one
+# account (common once a few people share this project) gets
+# "More than one account available but unable to select one in
+# non-interactive mode" on any `--remote` command (confirmed).
+account_id = "3b858374d9a5c95a61d0ac0a5c4ca244"
 
 [[r2_buckets]]
 binding = "finchhive-public"
 bucket_name = "finchhive"
-# By default `wrangler pages dev` talks to a local, on-disk emulation of
-# this bucket (state lives in .wrangler/state) so you can test freely
-# without touching production data or spending R2 operations.
-#
-# To point local dev at the REAL bucket instead (useful for debugging an
-# asset that only exists in production), uncomment the line below and run
-# `wrangler login` first:
-# experimental_remote = true
+# `wrangler pages dev` always talks to a LOCAL, on-disk emulation of this
+# bucket (state lives in .wrangler/state, git-ignored) — as of Wrangler
+# 4.112.0, the `experimental_remote` remote-bindings option only works with
+# `wrangler dev` (plain Workers), NOT `wrangler pages dev` (confirmed: it
+# logs an "Unexpected fields found" warning and silently stays local if you
+# set it here). See README.md for how to seed the local bucket, or test
+# against the real bucket via `wrangler r2 object get/put ... --remote`.

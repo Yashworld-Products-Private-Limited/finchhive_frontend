@@ -47,6 +47,16 @@ The surviving function was also hardened:
 
 ## 2. Local development
 
+### Quick answer: what do I run, for what task?
+
+| You're doing this... | Run this | Why |
+|---|---|---|
+| Editing copy/layout/styling, no real images needed | `npm run dev` | Fastest HMR loop. `/api/...` images will 404 — fine for pure UI work. |
+| Adding/changing a component that shows real images or video | `npm run pages:dev` (in one terminal) + `npx next build` (re-run in a second terminal after each change) | Only this runs the actual R2-backed `/api/...` proxy. See "Live-reload behavior" below — no restarts needed either way. |
+| Changing `functions/api/[[key]].ts` itself | `npm run pages:dev`, then just edit — it hot-recompiles on save | Fastest loop for Function-only changes; no `next build` needed. |
+| Adding a brand-new asset to a page | 1) upload it to R2 (§3) 2) reference it in code as `/api/<path>` 3) test via `pages:dev` (seed local bucket first, or use `--remote` CLI checks) | The asset has to exist in R2 before the route can serve it, locally or in prod. |
+| About to open a PR / merge to `main` | Push a branch, review the Cloudflare Pages **preview deployment** | Closest thing to production — real dashboard-configured bindings, no local setup needed. |
+
 ### Just the Next.js app (no R2 access needed)
 
 For everyday UI work where you don't need real images:
@@ -61,33 +71,79 @@ Open http://localhost:3000. Any `/api/...` image request will 404 in plain `next
 
 This project uses [Wrangler](https://developers.cloudflare.com/workers/wrangler/) to run the actual Pages Function + R2 binding locally, via `wrangler.toml` (already set up in this repo).
 
-```bash
-npx next build          # produces the static export in ./out
-npm run pages:dev        # same as: wrangler pages dev
-# or, in one step:
-npm run pages:build-and-dev
-```
-
-Then open the URL Wrangler prints (e.g. http://127.0.0.1:8788) and click around — images/videos under `/api/...` will now actually resolve.
-
-**Important:** by default this talks to a **local, on-disk emulation** of the R2 bucket (state kept in `.wrangler/state`, already git-ignored), *not* the real production bucket. That's intentional — you can test freely without risk. The emulated bucket starts out empty, so you need to seed it with a few files to see anything:
+**The simplest way — one command, does everything:**
 
 ```bash
-# Upload one file into the LOCAL emulated bucket at the same key layout R2 uses (public/<path>):
-npx wrangler r2 object put finchhive/public/imgs/abt.jpg --file /path/to/local/abt.jpg --local
-
-# Then it will be served at:
-curl -I http://127.0.0.1:8788/api/imgs/abt.jpg
+npm start
 ```
 
-Repeat for whichever assets you need to test with. You can also point local dev at the **real** bucket for debugging a production-only issue:
+This runs `npm run pull` (fetches any new/changed real images from the bucket into local emulation — see below) and then builds + starts `wrangler pages dev`, in that order. This is deliberately what `npm start` means in this repo: get a fully working local environment, with real images, in one command. (The original create-next-app `"start": "next start"` script didn't actually work anyway once `output: "export"` was set — confirmed it errors with "Could not find a production build" — so nothing was lost by repurposing it.)
 
-1. Run `npx wrangler login` once (opens a browser to authorize your Cloudflare account).
-2. In `wrangler.toml`, uncomment `experimental_remote = true` under `[[r2_buckets]]`.
-3. Run `npm run pages:dev` again — now `env["finchhive-public"]` is proxied to the real `finchhive` bucket. Be careful: this can incur real R2 read operations and will show real production data.
-4. Re-comment that line when you're done so you don't accidentally leave it enabled.
+Then open the URL Wrangler prints (e.g. http://127.0.0.1:8788) and click around.
+
+**One-time setup before your very first `npm start` on a given machine:**
+
+```bash
+npx wrangler login          # authorize Wrangler against your Cloudflare account
+cp .env.example .env        # then fill in R2_ACCESS_KEY_ID / R2_SECRET_ACCESS_KEY
+```
+
+`.env.example` has a full, step-by-step walkthrough (exact dashboard clicks, which permission to pick, what each value on the "token created" screen means) right above each variable — open it and follow along. `.env` is git-ignored and never gets committed; `.env.example` has no real secrets and is meant to be read by every developer on the project. Don't want a `.env` file? `export R2_ACCESS_KEY_ID=...` / `export R2_SECRET_ACCESS_KEY=...` in your shell works too (see "Using `.env` for these credentials" below for how the two interact).
+
+**Why this is needed at all:** `wrangler pages dev` always talks to a LOCAL, on-disk emulation of the bucket (state lives in `.wrangler/state`, git-ignored) — confirmed against Wrangler 4.112.0, the `experimental_remote` remote-bindings feature currently only works with plain `wrangler dev`, not `wrangler pages dev`. That emulated bucket starts out **completely empty** on a fresh clone, so every `/api/...` request 404s until something seeds it — that's what `pull` is for, and why `npm start` runs it first automatically.
+
+#### `pull` / `push` — `scripts/r2-sync.mjs`
+
+One small tool, two directions, both as simple and symmetric as possible — each takes at most one optional argument, and both use the credentials from `.env`:
+
+```bash
+# Pull: real bucket -> local emulated bucket (what `npm start` runs automatically)
+npm run pull                       # everything (~161 objects / ~500MB)
+npm run pull -- imgs/brands         # just one subfolder, much faster
+
+# Push: ./r2-assets/ -> the real bucket (needs a token with Object Read & Write)
+npm run push                        # uploads everything currently sitting in ./r2-assets
+npm run push -- imgs/brands          # just ./r2-assets/imgs/brands
+```
+
+To add a new image/video: drop it into `./r2-assets/` using the **same folder layout as the bucket** (e.g. a new logo goes at `r2-assets/imgs/brands/newlogo.png` to land at `public/imgs/brands/newlogo.png`), run `npm run push`, then reference it in code as `/api/imgs/brands/newlogo.png`. `r2-assets/README.md` has the same instructions for anyone who hasn't read this file. `r2-assets/` is otherwise empty and git-ignored (except that README) — the bucket is the source of truth for media, not this repo, so nothing you drop in there gets committed.
+
+Both directions **skip files that are already identical** (`pull` tracks this via `.wrangler/r2-pull-manifest.json`, itself git-ignored; `push` compares each local file's MD5 against the remote object's ETag), so repeat runs of either command are fast and don't waste R2 operations. `push` only ever adds/updates — it never deletes a remote file just because it's missing locally, so it can't accidentally wipe out other assets in the bucket.
+
+Under the hood, `pull` lists real bucket contents via R2's S3-compatible API (the `wrangler r2 object` CLI can only get/put one known key at a time, it can't list — that's why plain Wrangler alone can't do a full mirror), then writes each object into the local emulated bucket via Wrangler's `getPlatformProxy()` — an in-process binding, not a separate CLI call per file. That matters: an earlier version of this script shelled out to `wrangler r2 object put ... --local` once per file, which was both slow (~1s of process-startup overhead each) *and*, when parallelized, caused multiple Wrangler processes to deadlock fighting over the same local state file (confirmed: reproducible "Network connection lost" errors and runaway CPU). `getPlatformProxy()` avoids both problems.
+
+#### Using `.env` for these credentials
+
+Yes, this works, and it's the recommended way — no extra dependency needed. `npm run pull` / `npm run push` already run `node --env-file-if-exists=.env scripts/r2-sync.mjs ...`, which uses Node's **built-in** `--env-file-if-exists` flag (Node ≥20.12 / this repo uses Node 24). A few things worth knowing:
+
+- `--env-file-if-exists` (note the `-if-exists`) means nothing breaks if you *don't* have a `.env` file — it just skips loading and you fall back to whatever's already exported in your shell.
+- **Verified precedence:** if a variable is set both in your shell (via `export`) and in `.env`, the shell value wins. So you can safely keep a `.env` with your everyday values and temporarily `export` a different one without editing the file.
+- If you're running the script directly instead of via the npm scripts, remember to add the flag yourself: `node --env-file-if-exists=.env scripts/r2-sync.mjs pull`. Plain `node scripts/r2-sync.mjs pull` will **not** pick up `.env` on its own.
+- This project intentionally does **not** depend on the third-party `dotenv` npm package for this — Node's native flag does the same job with zero extra dependency. (`dotenv` is still declared as a devDependency because `scripts/generate-sitemap.js` uses it directly via `require("dotenv")`; that's unrelated to `r2-sync.mjs`.)
+
+#### Why do R2_ACCESS_KEY_ID / NEXT_PUBLIC_SITE_URL show up in Wrangler's bindings table?
+
+When `wrangler pages dev` starts, it prints a table of everything the Function can access, and you'll see your `.env` variables listed there too (values hidden). That's just Wrangler auto-loading `.env` as a convenience for local dev, the same way `getPlatformProxy()` does above — `functions/api/[[key]].ts` never reads `R2_ACCESS_KEY_ID` or `NEXT_PUBLIC_SITE_URL`, and none of this applies in production (the deployed site never sees your local `.env` at all; production bindings/vars come entirely from the Cloudflare dashboard). Nothing to worry about, just don't be surprised to see them there.
+
+#### Multiple Cloudflare accounts on your login?
+
+If `npx wrangler login` is authorized against more than one Cloudflare account (common once a few people share access), any `wrangler ... --remote` command — and `npm run r2:info` — will fail with "More than one account available but unable to select one in non-interactive mode" (confirmed). Already handled: `wrangler.toml` pins `account_id` to this project's account, so this shouldn't happen for anyone using this repo's `wrangler.toml` as-is. If you ever see that error anyway, double check `wrangler.toml` still has the `account_id` line, or set `CLOUDFLARE_ACCOUNT_ID=3b858374d9a5c95a61d0ac0a5c4ca244` yourself.
+
+If you need to check something against the **real** bucket directly (bypassing local emulation entirely) for a single file, the CLI still works fine for that:
+
+```bash
+npx wrangler r2 object get finchhive/public/imgs/abt.jpg --file ./downloaded.jpg --remote
+```
 
 > `wrangler.toml` only affects **local** `wrangler pages dev`. It has no effect on the deployed site — the deployed Pages project's bindings/build settings are controlled entirely by the **Cloudflare dashboard** (Workers & Pages → `finchhive-frontend` → Settings → Functions/Bindings). If you ever need to add another binding (KV, another bucket, etc.), add it in *both* places: the dashboard (for production/preview) and `wrangler.toml` (for local dev).
+
+### Live-reload behavior (verified — read this once)
+
+- `wrangler pages dev` **automatically picks up a fresh `out/` directory without restarting.** Keep it running in one terminal; in a second terminal, re-run `npx next build` after each page/component change, then just refresh the browser. No need to stop/restart Wrangler.
+- Editing `functions/api/[[key]].ts` is picked up **even faster** — Wrangler watches Function source files directly and hot-recompiles them (you'll see `⎔ Reloading local server...` in its logs), no `next build` needed for Function-only changes.
+- Neither of these gives you Next.js's instant HMR — there's always at least a manual rebuild step for page/component changes with a static export. For pure UI/styling work where you don't need real `/api/...` images, plain `npm run dev` (§ above) is faster to iterate with.
+
+Practically: keep **one terminal** running `npm run pages:dev` for the whole session, and in a **second terminal** re-run `npx next build` whenever you want a `src/` change reflected — no restart of the first terminal needed either way.
 
 ### A quick manual test checklist
 
@@ -149,13 +205,26 @@ npm run r2:info
 
 `--remote` is required for all of the above — without it, Wrangler talks to the local emulated bucket instead (useful only for the local dev flow in §2).
 
-### Option C — Bulk sync with `rclone` (recommended once you're regularly refreshing many files, e.g. the quarterly content refresh)
+### Option C — `npm run push` (simplest — recommended default for adding/updating a batch of files)
 
-Wrangler has no native "sync a folder" command — for bulk uploads/updates, use `rclone` against R2's **S3-compatible API**. This only transfers files that actually changed, which matters once the bucket is a few GB and you're doing quarterly batch updates (keeps Class A operations — and time — down).
+The same tool used for local dev seeding (§2) pushes the other direction, using the same `.env` credentials — no separate setup needed if you've already done the one-time steps in §2:
+
+```bash
+# 1. drop your new/updated files into ./r2-assets/, mirroring the bucket's own layout,
+#    e.g. r2-assets/imgs/brands/newlogo.png
+# 2. then:
+npm run push
+```
+
+This uploads everything currently sitting in `./r2-assets/` to the matching path in the real bucket, preserving nested subfolders, guessing a sensible `Content-Type` per file extension, and **skipping any file that's already identical remotely** (compares content MD5 against the remote ETag) so re-running it after adding just a couple of new files doesn't re-upload everything. It only ever adds/updates — it will never delete a remote file just because it's missing locally, so it's safe to run without worrying about accidentally wiping out unrelated assets. Needs a token with **Object Read & Write** permission (see `.env.example`). See `r2-assets/README.md` for the same instructions inline.
+
+### Option D — Bulk sync with `rclone` (for very large one-off migrations, or if you want true bidirectional sync with deletion)
+
+For most day-to-day updates, `npm run push` (Option C above) is simpler and already set up — reach for `rclone` specifically when you want true two-way sync (including deleting remote files that no longer exist locally) or you're migrating a very large batch and want a battle-tested, resumable tool. `rclone` talks to R2's **S3-compatible API** and only transfers files that actually changed, which matters once the bucket is a few GB and you're doing quarterly batch updates (keeps Class A operations — and time — down).
 
 **One-time setup:**
 
-1. In the Cloudflare dashboard: **R2 → Manage API tokens** → create an API token scoped to *just* the `finchhive` bucket, with Object Read & Write permissions. Save the Access Key ID + Secret Access Key it gives you (shown once).
+1. In the Cloudflare dashboard: **R2 → Manage API tokens** → create an API token scoped to *just* the `finchhive` bucket, with Object Read & Write permissions. Save the Access Key ID + Secret Access Key it gives you (shown once). This is the **same token** you can reuse as `R2_ACCESS_KEY_ID` / `R2_SECRET_ACCESS_KEY` in `.env` for `pull`/`push` in §2 — no need to keep multiple tokens around.
 2. Configure an `rclone` remote (run `rclone config` and choose `s3` → provider `Cloudflare`), or drop this into `~/.config/rclone/rclone.conf`:
 
    ```ini
@@ -198,7 +267,7 @@ A few concrete things worth setting up now, before the bucket grows:
 
 1. **Keep Storage Class = Standard.** Don't switch to Infrequent Access — these are website assets read constantly by every visitor; IA pricing adds a per-GB retrieval fee that would work against you here.
 2. **Compress/convert before uploading, not after.** `next.config.ts` has `images.unoptimized: true` (required for static export), meaning **Next.js does zero image optimization** — whatever you upload is exactly what every visitor downloads. Convert large PNGs/JPEGs to WebP/AVIF and keep individual images well under ~1-2MB where possible. See the flag on `serve6.png` below — that one file alone is bigger than most entire websites.
-3. **Use `rclone sync` (see §3, Option C) for the quarterly refresh**, not a full re-upload of everything — it only transfers changed files, saving time and R2 Class A operations.
+3. **Use `npm run push` or `rclone sync` (see §3, Options C/D) for the quarterly refresh**, not a full re-upload of everything — both only transfer changed files, saving time and R2 Class A operations.
 4. **Watch Class A/B operations and storage in R2 → Metrics** as traffic grows. At the time of writing, usage is effectively free-tier (R2's free tier is 10GB storage + 1M Class A + 10M Class B ops/month), but it's worth a quick monthly glance once real traffic starts.
 5. **Consider a Cloudflare Cache Rule for `/api/*`** (Rules → Cache Rules in the dashboard) once traffic is real: match `Hostname equals finchhive-frontend.pages.dev` (and any custom domain) `AND` `URI Path starts with /api/`, set "Eligible for Cache" with an Edge TTL (e.g. 1 day). This caches responses at Cloudflare's edge, cutting down repeat R2 reads (and Class B ops) dramatically for a media-heavy site. If you add this, remember to **Purge Cache** (or bump filenames) after your quarterly asset refresh so visitors don't see stale images for up to a day.
 6. **Object Lifecycle Rules**: the current "abort incomplete multipart uploads after 7 days" default is fine as-is — no action needed unless you start doing manual multipart uploads for very large files.
@@ -208,10 +277,9 @@ A few concrete things worth setting up now, before the bucket grows:
 
 ## 5. Known follow-ups (not fixed as part of this cleanup — flagging for visibility)
 
-- **`serve6.png` is 70.76MB.** That's almost certainly not intentional for a web image — worth re-exporting as compressed WebP/AVIF (should easily get under 1-2MB) and re-uploading under the same key.
-- **A few images referenced in code don't currently exist in the bucket listing**, so they'll 404 in production until uploaded:
-  - `src/components/TeamSection.tsx` references `/api/imgs/team1.png`, `/api/imgs/team2.png`, `/api/imgs/team3.png`
-  - `src/components/PhysicsPills.tsx` references `/api/imgs/bluebg.jpg`
+- **`serve6.png` is still 70.76MB.** That's almost certainly not intentional for a web image — worth re-exporting as compressed WebP/AVIF (should easily get under 1-2MB) and dropping it into `r2-assets/imgs/images/serve6.png` + `npm run push` to replace it.
+- **`src/components/PhysicsPills.tsx` references `/api/imgs/bluebg.jpg`, which still doesn't exist in the bucket** (confirmed via `npm run pull` — it's genuinely absent, not just a stale listing) — will 404 in production until uploaded.
+- Update, since the earlier version of this doc: `team1.png` / `team2.png` / `team3.png` (referenced by `src/components/TeamSection.tsx`) **have since been uploaded** and are confirmed present now — no longer an issue.
 - **The R2 bucket has `font/` and `lottie/` folders that appear unused.** The app actually serves fonts and Lottie JSON from the local `public/font/` and `public/lottie/` folders (bundled into the static export, not proxied through R2) — see `src/app/globals.css` and `src/components/StickyCardsSection.tsx`. If `public/font/` and `public/lottie/` inside the R2 bucket are leftover duplicates from an earlier "upload everything" attempt, they can safely be deleted from R2 to reduce clutter.
 - **Preview deployments are public by default.** If that becomes a concern, add a Cloudflare Access policy scoped to `*.finchhive-frontend.pages.dev` previews (Zero Trust → Access → Applications).
 
@@ -220,6 +288,8 @@ A few concrete things worth setting up now, before the bucket grows:
 ## 6. Other scripts in this repo
 
 - `scripts/generate-sitemap.js` — regenerates `public/sitemap.xml` and `public/robots.txt` from `NEXT_PUBLIC_SITE_URL` + the page list at the top of the file. Runs automatically as part of `npm run build`. Update the `pages` array there whenever a new route is added.
+- `scripts/r2-sync.mjs` — pulls real assets from R2 into the local emulated bucket used by `wrangler pages dev` (`npm run pull`, and automatically as part of `npm start`), and pushes whatever's in `r2-assets/` up to the real bucket (`npm run push`). See §2 and §3 (Option C).
+- `r2-assets/` — a local-only staging folder for `npm run push` (git-ignored except its own `README.md`). Drop new/updated files in here, mirroring the bucket's layout, then run `npm run push`.
 - `pyscript/` — a standalone Python CLI (`thumbnailer.py`) for batch-generating `.jpg` thumbnails next to video files using `ffmpeg`/`ffprobe`. Handy for producing the `reelNN.jpg` thumbnails that pair with `reelNN.mp4` clips before uploading a new batch of reels to R2. See `pyscript/readme.md` for usage.
 
 ---

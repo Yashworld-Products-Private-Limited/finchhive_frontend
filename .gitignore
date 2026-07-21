@@ -32,12 +32,19 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # vercel
 .vercel
 
 # wrangler local dev state (local R2/KV emulation, logs)
 .wrangler
+
+# r2-assets/ is a local-only staging folder for `npm run push` (see
+# r2-assets/README.md) — the R2 bucket is the source of truth for media,
+# not this repo, so never commit real files dropped in there.
+r2-assets/*
+!r2-assets/README.md
 
 # typescript
 *.tsbuildinfo
