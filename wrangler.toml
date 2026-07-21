@@ -1,0 +1,25 @@
+# Local-development config for Cloudflare Pages.
+#
+# IMPORTANT: this file only affects `wrangler pages dev` (local testing).
+# The deployed site (finchhive-frontend.pages.dev) is a Git-connected Pages
+# project and its bindings/build settings are controlled entirely by the
+# Cloudflare Dashboard (Workers & Pages > finchhive-frontend > Settings).
+# Changing this file does NOT change production or preview deployments.
+#
+# See README.md ("Testing & local development") for how to use this.
+
+name = "finchhive-frontend"
+pages_build_output_dir = "out"
+compatibility_date = "2026-07-20"
+
+[[r2_buckets]]
+binding = "finchhive-public"
+bucket_name = "finchhive"
+# By default `wrangler pages dev` talks to a local, on-disk emulation of
+# this bucket (state lives in .wrangler/state) so you can test freely
+# without touching production data or spending R2 operations.
+#
+# To point local dev at the REAL bucket instead (useful for debugging an
+# asset that only exists in production), uncomment the line below and run
+# `wrangler login` first:
+# experimental_remote = true
