@@ -16,7 +16,7 @@ compatibility_date = "2026-07-20"
 # account (common once a few people share this project) gets
 # "More than one account available but unable to select one in
 # non-interactive mode" on any `--remote` command (confirmed).
-account_id = "3b858374d9a5c95a61d0ac0a5c4ca244"
+# account_id = "3b858374d9a5c95a61d0ac0a5c4ca244"
 
 [[r2_buckets]]
 binding = "finchhive-public"
