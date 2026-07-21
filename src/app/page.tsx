@@ -245,7 +245,7 @@ const Home = () => {
         ref={sectionRef}
         className="relative w-full overflow-hidden flex items-center justify-center pt-24 pb- md:pt-32 md:pb-0 lg:py-0"
       >
-        
+
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0%,rgba(46,44,118,0.3)_30%,rgba(46,44,118,0.7)_50%,#2E2C76_100%)]" />
         <div className="absolute inset-0 flex items-center overflow-hidden pointer-events-none z-0">
           <ScrollVelocity
@@ -288,105 +288,105 @@ const Home = () => {
         </motion.div>
       </section>
       <section className="custom-container">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{
-              duration: 0.45,
-            }}
-            className="flex relative justify-center lg:justify-start w-full lg:w-auto pt-24 lg:pt-0 ml-0 lg:ml-8 xl:ml-12"
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{
+            duration: 0.45,
+          }}
+          className="flex relative justify-center lg:justify-start w-full lg:w-auto pt-24 lg:pt-0 ml-0 lg:ml-8 xl:ml-12"
+        >
+          <div
+            className="relative lg:absolute top-0 lg:-top-[280px] mx-auto lg:mx-0 lg:left-0 z-20 w-[90vw] max-w-[340px] sm:max-w-[420px] lg:min-w-[520px] flex flex-col gap-4"
           >
-            <div
-              className="relative lg:absolute top-0 lg:-top-[280px] mx-auto lg:mx-0 lg:left-0 z-20 w-[90vw] max-w-[340px] sm:max-w-[420px] lg:min-w-[520px] flex flex-col gap-4"
-            >
-              {/* Title above video */}
-              <div className="text-center lg:text-left z-30 pointer-events-none px-2">
-                <div className="font-light text-black/85 lg:text-white text-[13px] sm:text-[14px] md:text-[16px] xl:text-[18px] uppercase leading-tight tracking-wider subHeading">
-                  <span className="text-[#2E2C76] lg:text-[#FFFFFD] font-semibold">#1</span> Human psychology
-                  <br />
-                  Based Digital Solution
-                </div>
+            {/* Title above video */}
+            <div className="text-center lg:text-left z-30 pointer-events-none px-2">
+              <div className="font-light text-black/85 lg:text-white text-[13px] sm:text-[14px] md:text-[16px] xl:text-[18px] uppercase leading-tight tracking-wider subHeading">
+                <span className="text-[#2E2C76] lg:text-[#FFFFFD] font-semibold">#1</span> Human psychology
+                <br />
+                Based Digital Solution
               </div>
+            </div>
 
-              {/* Video container */}
+            {/* Video container */}
+            <div
+              onClick={() => setIsVideoPlaying(!isVideoPlaying)}
+              className="relative w-full aspect-video rounded-[32px] overflow-hidden border border-white/20 shadow-2xl bg-black cursor-pointer group/video"
+            >
+              <video
+                ref={videoRef}
+                src="/api/imgs/main-vid.mp4"
+                loop
+                playsInline
+                preload="metadata"
+                muted={isMuted}
+                onTimeUpdate={handleTimeUpdate}
+                onLoadedMetadata={handleLoadedMetadata}
+                className="w-full h-full object-cover"
+              />
+
+              {/* Custom Controls Bar */}
               <div
-                onClick={() => setIsVideoPlaying(!isVideoPlaying)}
-                className="relative w-full aspect-video rounded-[32px] overflow-hidden border border-white/20 shadow-2xl bg-black cursor-pointer group/video"
+                onClick={(e) => e.stopPropagation()}
+                className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-4 md:p-5 z-30 flex flex-col gap-2.5 opacity-100 lg:opacity-0 lg:group-hover/video:opacity-100 transition-opacity duration-300 pointer-events-auto"
               >
-                <video
-                  ref={videoRef}
-                  src="/api/imgs/main-vid.mp4"
-                  loop
-                  playsInline
-                  preload="metadata"
-                  muted={isMuted}
-                  onTimeUpdate={handleTimeUpdate}
-                  onLoadedMetadata={handleLoadedMetadata}
-                  className="w-full h-full object-cover"
-                />
-
-                {/* Custom Controls Bar */}
+                {/* Progress Bar */}
                 <div
-                  onClick={(e) => e.stopPropagation()}
-                  className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-4 md:p-5 z-30 flex flex-col gap-2.5 opacity-100 lg:opacity-0 lg:group-hover/video:opacity-100 transition-opacity duration-300 pointer-events-auto"
+                  onClick={handleProgressBarClick}
+                  className="w-full h-1.5 bg-white/25 rounded-full cursor-pointer relative group/progress overflow-hidden"
                 >
-                  {/* Progress Bar */}
                   <div
-                    onClick={handleProgressBarClick}
-                    className="w-full h-1.5 bg-white/25 rounded-full cursor-pointer relative group/progress overflow-hidden"
-                  >
-                    <div
-                      style={{ width: `${duration ? (currentTime / duration) * 100 : 0}%` }}
-                      className="h-full bg-white rounded-full group-hover/progress:bg-indigo-400 transition-all duration-75"
-                    />
+                    style={{ width: `${duration ? (currentTime / duration) * 100 : 0}%` }}
+                    className="h-full bg-white rounded-full group-hover/progress:bg-indigo-400 transition-all duration-75"
+                  />
+                </div>
+
+                {/* Bottom Row */}
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    {/* Play/Pause */}
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setIsVideoPlaying(!isVideoPlaying);
+                      }}
+                      className="text-white hover:text-indigo-400 transition-all duration-200"
+                      title={isVideoPlaying ? "Pause" : "Play"}
+                    >
+                      {isVideoPlaying ? (
+                        <Pause className="w-5 h-5 fill-white" />
+                      ) : (
+                        <Play className="w-5 h-5 fill-white" />
+                      )}
+                    </button>
+
+                    {/* Mute/Unmute */}
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setIsMuted(!isMuted);
+                      }}
+                      className="text-white hover:text-indigo-400 transition-all duration-200"
+                      title={isMuted ? "Unmute Sound" : "Mute Sound"}
+                    >
+                      {isMuted ? (
+                        <VolumeOff className="w-5 h-5" />
+                      ) : (
+                        <Volume2 className="w-5 h-5" />
+                      )}
+                    </button>
                   </div>
 
-                  {/* Bottom Row */}
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      {/* Play/Pause */}
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setIsVideoPlaying(!isVideoPlaying);
-                        }}
-                        className="text-white hover:text-indigo-400 transition-all duration-200"
-                        title={isVideoPlaying ? "Pause" : "Play"}
-                      >
-                        {isVideoPlaying ? (
-                          <Pause className="w-5 h-5 fill-white" />
-                        ) : (
-                          <Play className="w-5 h-5 fill-white" />
-                        )}
-                      </button>
-
-                      {/* Mute/Unmute */}
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setIsMuted(!isMuted);
-                        }}
-                        className="text-white hover:text-indigo-400 transition-all duration-200"
-                        title={isMuted ? "Unmute Sound" : "Mute Sound"}
-                      >
-                        {isMuted ? (
-                          <VolumeOff className="w-5 h-5" />
-                        ) : (
-                          <Volume2 className="w-5 h-5" />
-                        )}
-                      </button>
-                    </div>
-
-                    {/* Time Indicator */}
-                    <span className="text-white/90 text-xs md:text-sm font-medium select-none">
-                      {formatTime(currentTime)} / {formatTime(duration)}
-                    </span>
-                  </div>
+                  {/* Time Indicator */}
+                  <span className="text-white/90 text-xs md:text-sm font-medium select-none">
+                    {formatTime(currentTime)} / {formatTime(duration)}
+                  </span>
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
+        </motion.div>
         <div className="max-w-[1440px] mx-auto">
 
           <div className="mt-[80px] lg:mt-[150px] cursor-pointer">
@@ -496,7 +496,7 @@ const Home = () => {
           <LetsTalkSection />
         </div>
       </div>
-      
+
     </div>
   );
 };

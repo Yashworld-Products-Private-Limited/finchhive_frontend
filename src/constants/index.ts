@@ -383,6 +383,8 @@ export const reels = [
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels1.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels1.jpg"
+    
   },
   {
     name: "Brand Marketing",
@@ -390,6 +392,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels2.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels2.jpg"
   },
   {
     name: "Creative Ads",
@@ -397,6 +400,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels3.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels3.jpg"
   },
   {
     name: "Luxury Branding",
@@ -404,6 +408,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels4.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels4.jpg"
   },
   {
     name: "Creative Ads",
@@ -411,6 +416,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels5.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels5.jpg"
   },
   {
     name: "Social Growth",
@@ -418,6 +424,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels6.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels6.jpg"
   },
   {
     name: "Brand Marketing",
@@ -425,6 +432,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels7.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels7.jpg"
   },
   {
     name: "Creative Ads",
@@ -432,6 +440,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels8.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels8.jpg"
   },
   {
     name: "Luxury Branding",
@@ -439,6 +448,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels9.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels9.jpg"
   },
   {
     name: "Creative Ads",
@@ -446,6 +456,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels10.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels10.jpg"
   },
   {
     name: "Social Growth",
@@ -453,6 +464,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels11.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels11.jpg"
   },
   {
     name: "Brand Marketing",
@@ -460,6 +472,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels12.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels12.jpg"
   },
   {
     name: "Creative Ads",
@@ -467,6 +480,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels13.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels13.jpg"
   },
   {
     name: "Luxury Branding",
@@ -474,6 +488,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels14.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels14.jpg"
   },
   {
     name: "Creative Ads",
@@ -481,6 +496,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels15.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels15.jpg"
   },
   {
     name: "Social Growth",
@@ -488,6 +504,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels16.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels16.jpg"
   },
   {
     name: "Brand Marketing",
@@ -495,6 +512,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels17.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels17.jpg"
   },
   {
     name: "Creative Ads",
@@ -502,6 +520,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels18.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels18.jpg"
   },
   {
     name: "Luxury Branding",
@@ -509,6 +528,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels19.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels19.jpg"
   },
   {
     name: "Creative Ads",
@@ -516,6 +536,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels20.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels20.jpg"
   },
   {
     name: "Social Growth",
@@ -523,6 +544,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels21.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels21.jpg"
   },
   {
     name: "Brand Marketing",
@@ -530,6 +552,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels22.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels22.jpg"
   },
   {
     name: "Creative Ads",
@@ -537,6 +560,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels23.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels23.jpg"
   },
   {
     name: "Luxury Branding",
@@ -544,6 +568,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels24.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels24.jpg"
   },
   {
     name: "Creative Ads",
@@ -551,6 +576,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels25.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels25.jpg"
   },
   {
     name: "Social Growth",
@@ -558,6 +584,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels26.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels26.jpg"
   },
   {
     name: "Brand Marketing",
@@ -565,6 +592,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels27.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels27.jpg"
   },
   {
     name: "Creative Ads",
@@ -572,6 +600,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels28.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels28.jpg"
   },
   {
     name: "Luxury Branding",
@@ -579,6 +608,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels29.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels29.jpg"
   },
   {
     name: "Creative Ads",
@@ -586,6 +616,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels30.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels30.jpg"
   },
   {
     name: "Social Growth",
@@ -593,6 +624,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels31.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels31.jpg"
   },
   {
     name: "Brand Marketing",
@@ -600,6 +632,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels32.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels32.jpg"
   },
   {
     name: "Creative Ads",
@@ -607,6 +640,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels33.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels33.jpg"
   },
   {
     name: "Luxury Branding",
@@ -614,6 +648,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels34.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels34.jpg"
   },
   {
     name: "Creative Ads",
@@ -621,6 +656,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels35.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels35.jpg"
   },
   {
     name: "Social Growth",
@@ -628,6 +664,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels36.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels36.jpg"
   },
   {
     name: "Brand Marketing",
@@ -635,6 +672,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels37.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels37.jpg"
   },
   {
     name: "Creative Ads",
@@ -642,6 +680,7 @@ export const reels = [
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels38.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels38.jpg"
   },
 ];
 
@@ -897,6 +936,7 @@ export const kalrasKitchen2 = [
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels00.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels00.jpg"
   },
   {
     name: "Social Growth",
@@ -904,6 +944,7 @@ export const kalrasKitchen2 = [
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels01.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels01.jpg"
   },
 ];
 
@@ -915,6 +956,7 @@ export const kalrasKitchen = [
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels2.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels2.jpg"
   },
   {
     name: "Brand Marketing",
@@ -922,6 +964,7 @@ export const kalrasKitchen = [
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels3.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels3.jpg"
   },
   {
     name: "Social Growth",
@@ -929,6 +972,7 @@ export const kalrasKitchen = [
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels4.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels4.jpg"
   },
   {
     name: "Brand Marketing",
@@ -936,6 +980,7 @@ export const kalrasKitchen = [
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels16.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels16.jpg"
   },
   {
     name: "Brand Marketing",
@@ -943,6 +988,7 @@ export const kalrasKitchen = [
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels28.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels28.jpg"
   },
 ];
 
@@ -953,6 +999,7 @@ export const veidor = [
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels1.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels01.jpg"
   },
   {
     name: "Brand Marketing",
@@ -960,6 +1007,7 @@ export const veidor = [
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels5.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels5.jpg"
   },
   {
     name: "Social Growth",
@@ -967,6 +1015,7 @@ export const veidor = [
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels15.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels15.jpg"
   },
   {
     name: "Brand Marketing",
@@ -974,6 +1023,7 @@ export const veidor = [
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels19.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels19.jpg"
   },
   {
     name: "Brand Marketing",
@@ -981,6 +1031,7 @@ export const veidor = [
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels21.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels21.jpg"
   },
   {
     name: "Brand Marketing",
@@ -988,6 +1039,7 @@ export const veidor = [
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
     video: "/api/imgs/reels/reels20.mp4",
     instagram: "https://www.instagram.com/",
+    thumbnail: "/api/imgs/reels/reels20.jpg"
   },
 ];
 
@@ -1004,23 +1056,23 @@ export const logos = [
 
 export const platforms = [
   {
-    image: "/apihttps://cdn-icons-png.flaticon.com/512/5968/5968830.png", // X
+    image: "https://cdn-icons-png.flaticon.com/512/5968/5968830.png", // X
     bg: "bg-white",
   },
   {
-    image: "/apihttps://cdn-icons-png.flaticon.com/512/1384/1384060.png", // YouTube
+    image: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png", // YouTube
     bg: "bg-red-600",
   },
   {
-    image: "/apihttps://upload.wikimedia.org/wikipedia/en/c/c4/Snapchat_logo.svg", // Snapchat
+    image: "https://upload.wikimedia.org/wikipedia/en/c/c4/Snapchat_logo.svg", // Snapchat
     bg: "bg-[#fffc00]",
   },
   {
-    image: "/apihttps://cdn-icons-png.flaticon.com/512/174/174857.png", // LinkedIn
+    image: "https://cdn-icons-png.flaticon.com/512/174/174857.png", // LinkedIn
     bg: "bg-[#FFFFFF]",
   },
   {
-    image: "/apihttps://cdn-icons-png.flaticon.com/512/2111/2111463.png", // Instagram
+    image: "https://cdn-icons-png.flaticon.com/512/2111/2111463.png", // Instagram
     bg: "bg-gradient-to-br from-yellow-400 via-pink-500 to-purple-600",
   },
 ];

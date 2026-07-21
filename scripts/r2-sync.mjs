@@ -11,21 +11,24 @@
 //     runs automatically before starting dev.
 //
 //   npm run push [prefix]     (node scripts/r2-sync.mjs push [prefix])
-//     Uploads everything under ./r2-assets/<prefix> (default: everything in
-//     ./r2-assets) up to public/<prefix> in the REAL bucket, mirroring the
+//     Uploads everything under ./public/api/<prefix> (default: everything in
+//     ./public/api) up to public/<prefix> in the REAL bucket, mirroring the
 //     same relative paths. Skips files already identical remotely. Never
 //     deletes anything remotely — only adds/updates. Requires an R2 API
 //     token with Object Read & Write permission.
 //
-//     To add new images: drop them into ./r2-assets following the same
-//     folder layout as the bucket (see r2-assets/README.md), then run
+//     To add new images: place them in ./public/api following the same
+//     folder layout as the bucket, then run
 //     `npm run push`.
 //
 // Both need R2_ACCESS_KEY_ID / R2_SECRET_ACCESS_KEY — see .env.example.
 //   npm run pull                  # everything
 //   npm run pull -- imgs/brands   # just one subfolder
-//   npm run push                  # everything currently in ./r2-assets
-//   npm run push -- imgs/brands   # just ./r2-assets/imgs/brands
+//   npm run push                  # everything currently in ./public/api
+//   npm run push -- imgs/brands   # just ./public/api/imgs/brands
+//   npm run download -- china.png  # real R2 -> ./china.png as a normal file
+//   npm run download -- imgs ./media-backup
+//                                  # real R2 prefix -> normal files in a folder
 // (the `--` is only needed when passing an argument through npm)
 
 import {
@@ -43,7 +46,7 @@ import crypto from "node:crypto";
 const ACCOUNT_ID = "3b858374d9a5c95a61d0ac0a5c4ca244";
 const BUCKET = "finchhive";
 const MANIFEST_PATH = path.join(".wrangler", "r2-pull-manifest.json");
-const LOCAL_ASSETS_DIR = "r2-assets";
+const LOCAL_ASSETS_DIR = "public/api";
 
 // Same fallback table as functions/api/[[key]].ts, kept in sync manually —
 // used when uploading via `push` so new files get a sane Content-Type.
@@ -229,9 +232,7 @@ async function push(prefixArg) {
 
   let localFiles = [];
   try {
-    // Skip README.md — that's this folder's own usage docs, not an asset
-    // to upload (confirmed the hard way: an early version of this script
-    // uploaded r2-assets/README.md itself to the bucket).
+    // README files are documentation rather than media assets.
     for await (const f of walkLocalFiles(localDir)) {
       if (path.basename(f).toLowerCase() !== "readme.md") localFiles.push(f);
     }
@@ -239,8 +240,8 @@ async function push(prefixArg) {
     if (err.code === "ENOENT") {
       console.log(
         `${localDir}/ doesn't exist — nothing to push.\n` +
-          `To upload new assets: drop files into ./${LOCAL_ASSETS_DIR}/ (following the same\n` +
-          `folder layout as the bucket — see ${LOCAL_ASSETS_DIR}/README.md), then run \`npm run push\` again.`,
+          `To upload new assets: place files into ./${LOCAL_ASSETS_DIR}/ (following the same\n` +
+          `folder layout as the bucket), then run \`npm run push\` again.`,
       );
       return;
     }
@@ -283,17 +284,57 @@ async function push(prefixArg) {
   console.log('Nothing was deleted remotely — "push" only adds/updates, on purpose.');
 }
 
-const [, , command, prefixArg] = process.argv;
+async function download(prefixArg, outputDirArg) {
+  if (prefixArg === undefined) {
+    console.error("Usage: node scripts/r2-sync.mjs download <key-or-prefix> [output-directory]");
+    process.exit(1);
+  }
+
+  const client = makeClient();
+  const prefix = `public/${prefixArg}`.replace(/\/+$/, "");
+  const outputDir = path.resolve(outputDirArg ?? ".");
+  const remoteObjects = [];
+  for await (const obj of listAllObjects(client, prefix)) remoteObjects.push(obj);
+
+  if (remoteObjects.length === 0) {
+    console.log(`No objects found under "${prefix}" — nothing to download.`);
+    return;
+  }
+
+  let done = 0;
+  for (const obj of remoteObjects) {
+    // Keep the R2 path below public/ but never let an object key escape the
+    // selected output directory.
+    const relativePath = path.posix.relative("public", obj.Key);
+    const destination = path.resolve(outputDir, ...relativePath.split("/"));
+    if (destination !== outputDir && !destination.startsWith(`${outputDir}${path.sep}`)) {
+      throw new Error(`Unsafe R2 object key: ${obj.Key}`);
+    }
+
+    const buffer = await downloadObjectBuffer(client, obj.Key);
+    await mkdir(path.dirname(destination), { recursive: true });
+    await writeFile(destination, buffer);
+    done += 1;
+    console.log(`  [${done}/${remoteObjects.length}] ${destination}`);
+  }
+
+  console.log(`Done. Downloaded ${done} normal file(s) to ${outputDir}.`);
+}
+
+const [, , command, prefixArg, outputDirArg] = process.argv;
 
 if (command === "pull") {
   await pull(prefixArg);
 } else if (command === "push") {
   await push(prefixArg);
+} else if (command === "download") {
+  await download(prefixArg, outputDirArg);
 } else {
   console.error(
     "Usage:\n" +
       "  node scripts/r2-sync.mjs pull [prefix]\n" +
       "  node scripts/r2-sync.mjs push [prefix]\n" +
+      "  node scripts/r2-sync.mjs download <key-or-prefix> [output-directory]\n" +
       "See the comment block at the top of this file, or README.md §2/§3, for details.",
   );
   process.exit(1);

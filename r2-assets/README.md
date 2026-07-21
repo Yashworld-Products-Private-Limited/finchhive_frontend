@@ -31,3 +31,11 @@ npm run push -- imgs/brands
 
 See the main `README.md` §2/§3 for the full picture (including `npm run
 pull` for the other direction — getting real assets into local dev).
+
+Need a normal file instead of the local R2 emulator? Download it directly
+from the real bucket:
+```bash
+npm run download -- china.png              # writes ./china.png
+npm run download -- imgs/brands ./media    # writes ./media/imgs/brands/...
+npm run download:all                       # writes all R2 media to public/api/
+```

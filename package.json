@@ -11,7 +11,9 @@
     "pages:build-and-dev": "npx next build && wrangler pages dev",
     "r2:info": "wrangler r2 bucket info finchhive",
     "pull": "node --env-file-if-exists=.env scripts/r2-sync.mjs pull",
-    "push": "node --env-file-if-exists=.env scripts/r2-sync.mjs push"
+    "push": "node --env-file-if-exists=.env scripts/r2-sync.mjs push",
+    "download": "node --env-file-if-exists=.env scripts/r2-sync.mjs download",
+    "download:all": "node --env-file-if-exists=.env scripts/r2-sync.mjs download \"\" public/api"
   },
   "dependencies": {
     "@next/bundle-analyzer": "^16.2.6",

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://finchhive.com/</loc>
+    <lastmod>2026-07-20</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://finchhive.com/about</loc>
+    <lastmod>2026-07-20</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://finchhive.com/contactus</loc>
+    <lastmod>2026-07-20</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://finchhive.com/social-media-marketing</loc>
+    <lastmod>2026-07-20</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://finchhive.com/case-studies/kalras-kitchen</loc>
+    <lastmod>2026-07-20</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://finchhive.com/case-studies/veidor</loc>
+    <lastmod>2026-07-20</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://finchhive.com/case-studies/studio-nine</loc>
+    <lastmod>2026-07-20</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://finchhive.com/case-studies/sadashiv</loc>
+    <lastmod>2026-07-20</lastmod>
+    <priority>0.8</priority>
+  </url>
+</urlset>

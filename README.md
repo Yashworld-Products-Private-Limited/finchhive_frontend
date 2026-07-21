@@ -101,12 +101,12 @@ One small tool, two directions, both as simple and symmetric as possible — eac
 npm run pull                       # everything (~161 objects / ~500MB)
 npm run pull -- imgs/brands         # just one subfolder, much faster
 
-# Push: ./r2-assets/ -> the real bucket (needs a token with Object Read & Write)
-npm run push                        # uploads everything currently sitting in ./r2-assets
-npm run push -- imgs/brands          # just ./r2-assets/imgs/brands
+# Push: ./public/api/ -> the real bucket (needs a token with Object Read & Write)
+npm run push                        # uploads everything currently sitting in ./public/api
+npm run push -- imgs/brands          # just ./public/api/imgs/brands
 ```
 
-To add a new image/video: drop it into `./r2-assets/` using the **same folder layout as the bucket** (e.g. a new logo goes at `r2-assets/imgs/brands/newlogo.png` to land at `public/imgs/brands/newlogo.png`), run `npm run push`, then reference it in code as `/api/imgs/brands/newlogo.png`. `r2-assets/README.md` has the same instructions for anyone who hasn't read this file. `r2-assets/` is otherwise empty and git-ignored (except that README) — the bucket is the source of truth for media, not this repo, so nothing you drop in there gets committed.
+To add a new image/video: place it in `./public/api/` using the **same folder layout as the bucket** (e.g. a new logo goes at `public/api/imgs/brands/newlogo.png` to land at `public/imgs/brands/newlogo.png`), run `npm run push`, then reference it in code as `/api/imgs/brands/newlogo.png`.
 
 Both directions **skip files that are already identical** (`pull` tracks this via `.wrangler/r2-pull-manifest.json`, itself git-ignored; `push` compares each local file's MD5 against the remote object's ETag), so repeat runs of either command are fast and don't waste R2 operations. `push` only ever adds/updates — it never deletes a remote file just because it's missing locally, so it can't accidentally wipe out other assets in the bucket.
 
@@ -210,13 +210,13 @@ npm run r2:info
 The same tool used for local dev seeding (§2) pushes the other direction, using the same `.env` credentials — no separate setup needed if you've already done the one-time steps in §2:
 
 ```bash
-# 1. drop your new/updated files into ./r2-assets/, mirroring the bucket's own layout,
-#    e.g. r2-assets/imgs/brands/newlogo.png
+# 1. place your new/updated files in ./public/api/, mirroring the bucket's own layout,
+#    e.g. public/api/imgs/brands/newlogo.png
 # 2. then:
 npm run push
 ```
 
-This uploads everything currently sitting in `./r2-assets/` to the matching path in the real bucket, preserving nested subfolders, guessing a sensible `Content-Type` per file extension, and **skipping any file that's already identical remotely** (compares content MD5 against the remote ETag) so re-running it after adding just a couple of new files doesn't re-upload everything. It only ever adds/updates — it will never delete a remote file just because it's missing locally, so it's safe to run without worrying about accidentally wiping out unrelated assets. Needs a token with **Object Read & Write** permission (see `.env.example`). See `r2-assets/README.md` for the same instructions inline.
+This uploads everything currently sitting in `./public/api/` to the matching path in the real bucket, preserving nested subfolders, guessing a sensible `Content-Type` per file extension, and **skipping any file that's already identical remotely** (compares content MD5 against the remote ETag) so re-running it after adding just a couple of new files doesn't re-upload everything. It only ever adds/updates — it will never delete a remote file just because it's missing locally, so it's safe to run without worrying about accidentally wiping out unrelated assets. Needs a token with **Object Read & Write** permission (see `.env.example`).
 
 ### Option D — Bulk sync with `rclone` (for very large one-off migrations, or if you want true bidirectional sync with deletion)
 
@@ -277,7 +277,7 @@ A few concrete things worth setting up now, before the bucket grows:
 
 ## 5. Known follow-ups (not fixed as part of this cleanup — flagging for visibility)
 
-- **`serve6.png` is still 70.76MB.** That's almost certainly not intentional for a web image — worth re-exporting as compressed WebP/AVIF (should easily get under 1-2MB) and dropping it into `r2-assets/imgs/images/serve6.png` + `npm run push` to replace it.
+- **`serve6.png` is still 70.76MB.** That's almost certainly not intentional for a web image — worth re-exporting as compressed WebP/AVIF (should easily get under 1-2MB) and placing it in `public/api/imgs/images/serve6.png` + `npm run push` to replace it.
 - **`src/components/PhysicsPills.tsx` references `/api/imgs/bluebg.jpg`, which still doesn't exist in the bucket** (confirmed via `npm run pull` — it's genuinely absent, not just a stale listing) — will 404 in production until uploaded.
 - Update, since the earlier version of this doc: `team1.png` / `team2.png` / `team3.png` (referenced by `src/components/TeamSection.tsx`) **have since been uploaded** and are confirmed present now — no longer an issue.
 - **The R2 bucket has `font/` and `lottie/` folders that appear unused.** The app actually serves fonts and Lottie JSON from the local `public/font/` and `public/lottie/` folders (bundled into the static export, not proxied through R2) — see `src/app/globals.css` and `src/components/StickyCardsSection.tsx`. If `public/font/` and `public/lottie/` inside the R2 bucket are leftover duplicates from an earlier "upload everything" attempt, they can safely be deleted from R2 to reduce clutter.
@@ -288,8 +288,7 @@ A few concrete things worth setting up now, before the bucket grows:
 ## 6. Other scripts in this repo
 
 - `scripts/generate-sitemap.js` — regenerates `public/sitemap.xml` and `public/robots.txt` from `NEXT_PUBLIC_SITE_URL` + the page list at the top of the file. Runs automatically as part of `npm run build`. Update the `pages` array there whenever a new route is added.
-- `scripts/r2-sync.mjs` — pulls real assets from R2 into the local emulated bucket used by `wrangler pages dev` (`npm run pull`, and automatically as part of `npm start`), and pushes whatever's in `r2-assets/` up to the real bucket (`npm run push`). See §2 and §3 (Option C).
-- `r2-assets/` — a local-only staging folder for `npm run push` (git-ignored except its own `README.md`). Drop new/updated files in here, mirroring the bucket's layout, then run `npm run push`.
+- `scripts/r2-sync.mjs` — pulls real assets from R2 into the local emulated bucket used by `wrangler pages dev` (`npm run pull`, and automatically as part of `npm start`), and pushes files from `public/api/` up to the real bucket (`npm run push`). See §2 and §3 (Option C).
 - `pyscript/` — a standalone Python CLI (`thumbnailer.py`) for batch-generating `.jpg` thumbnails next to video files using `ffmpeg`/`ffprobe`. Handy for producing the `reelNN.jpg` thumbnails that pair with `reelNN.mp4` clips before uploading a new batch of reels to R2. See `pyscript/readme.md` for usage.
 
 ---

@@ -1,0 +1,17 @@
+# Finchhive
+
+> Digital Platform Solutions Company offering human psychology-based growth solutions.
+
+Finchhive combines innovative digital solutions, audience psychology, and performance-driven execution to build meaningful brand systems, scalable platforms, and authentic marketing growth. Led by founder Niraj Prasad, we focus on what audiences actually crave to deliver tangible business outcomes.
+
+## Pages
+- [Home Page](https://finchhive.com/): Core platforms, offerings, 4-stage process, and services.
+- [About Us](https://finchhive.com/about): Our story, team members, founders' background in human psychology, and agency snaps.
+- [Contact Us](https://finchhive.com/contactus): Connect with Finchhive to discuss custom platforms, design, and branding strategy.
+- [Social Media Marketing](https://finchhive.com/social-media-marketing): Learn about performance marketing and structured reel engineering.
+
+## Case Studies
+- [Kalra Kitchen Case Study](https://finchhive.com/case-studies/kalras-kitchen): Food & Hospitality case study. Took casual content to viral dominance with organic reach (9.76L+ total views, 6700+ shares, and local footfall growth).
+- [Sadashiv Case Study](https://finchhive.com/case-studies/sadashiv): Dynamic platform engineering and digital scaling for Sadashiv.
+- [Studio Nine Case Study](https://finchhive.com/case-studies/studio-nine): High-end branding identity and creative systems developed for Studio Nine.
+- [Veidor Case Study](https://finchhive.com/case-studies/veidor): Bespoke platform experiences and interactive designs for Veidor.
