@@ -49,3 +49,4 @@ r2-assets/*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+

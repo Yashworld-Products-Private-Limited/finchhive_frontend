@@ -29,13 +29,6 @@ const formatTime = (time: number) => {
   return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
 };
 
-const avatars = [
-  "https://i.pravatar.cc/150?img=47",
-  "https://i.pravatar.cc/150?img=32",
-  "https://i.pravatar.cc/150?img=44",
-  "https://i.pravatar.cc/150?img=15",
-];
-
 const Home = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
