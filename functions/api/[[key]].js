@@ -1,11 +1,18 @@
 export async function onRequestGet(context) {
-  const { request, params, env } = context;
+  const { request, env } = context;
   const pathName = new URL(request.url).pathname;
   const key = pathName.replace(/^\/api\/?/, "");
 
   if (!key) {
     return new Response("Not found", {
       status: 404,
+      headers: { "cache-control": "no-store" },
+    });
+  }
+
+  if (!env["finchhive-public"]) {
+    return new Response("R2 binding missing", {
+      status: 500,
       headers: { "cache-control": "no-store" },
     });
   }
@@ -21,7 +28,8 @@ export async function onRequestGet(context) {
 
   return new Response(object.body, {
     headers: {
-      "content-type": object.httpMetadata?.contentType ?? "application/octet-stream",
+      "content-type":
+        object.httpMetadata?.contentType ?? "application/octet-stream",
       "cache-control": "public, max-age=3600",
     },
   });
