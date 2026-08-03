@@ -16,6 +16,9 @@ export const logos = [
   { id: 11, src: "/api/imgs/brands/trustbrands11.png", alt: "Company 11" },
   { id: 12, src: "/api/imgs/brands/trustbrands12.png", alt: "Company 12" },
   { id: 13, src: "/api/imgs/brands/trustbrands13.png", alt: "Company 13" },
+  { id: 14, src: "/api/imgs/brands/trustbrands14.png", alt: "Company 14" },
+  { id: 16, src: "/api/imgs/brands/trustbrands16.svg", alt: "Company 16" },
+  { id: 15, src: "/api/imgs/brands/trustbrands15.png", alt: "Company 15" },
 ];
 
 export default function LogoMarquee() {
@@ -38,7 +41,7 @@ export default function LogoMarquee() {
                 height={112}
                 loading="eager"
                 decoding="async"
-                className="h-48 w-auto object-contain group-hover:opacity-80 transition-opacity duration-300"
+                className={`${logo.id === 15 ? "h-28" : "h-48"} w-auto object-contain group-hover:opacity-80 transition-opacity duration-300`}
               />
             </div>
           ))}
