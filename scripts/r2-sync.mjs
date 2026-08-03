@@ -42,8 +42,8 @@ import { getPlatformProxy } from "wrangler";
 import { mkdir, writeFile, readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 import crypto from "node:crypto";
+import { pathToFileURL } from "node:url";
 
-const ACCOUNT_ID = "3b858374d9a5c95a61d0ac0a5c4ca244";
 const BUCKET = "finchhive";
 const MANIFEST_PATH = path.join(".wrangler", "r2-pull-manifest.json");
 const LOCAL_ASSETS_DIR = "public/api";
@@ -90,11 +90,23 @@ function requireCredentials() {
   return { accessKeyId, secretAccessKey };
 }
 
+export function resolveAccountId(env = process.env) {
+  const accountId = env.CLOUDFLARE_ACCOUNT_ID?.trim();
+  if (!accountId) {
+    throw new Error(
+      "Missing CLOUDFLARE_ACCOUNT_ID in your environment. Set it to your Cloudflare account ID in .env and re-run.",
+    );
+  }
+  return accountId;
+}
+
 function makeClient() {
   const { accessKeyId, secretAccessKey } = requireCredentials();
+  const accountId = resolveAccountId();
   return new S3Client({
     region: "auto",
-    endpoint: `https://${ACCOUNT_ID}.r2.cloudflarestorage.com`,
+    endpoint: `https://${accountId}.r2.cloudflarestorage.com`,
+    forcePathStyle: true,
     credentials: { accessKeyId, secretAccessKey },
   });
 }
@@ -323,19 +335,21 @@ async function download(prefixArg, outputDirArg) {
 
 const [, , command, prefixArg, outputDirArg] = process.argv;
 
-if (command === "pull") {
-  await pull(prefixArg);
-} else if (command === "push") {
-  await push(prefixArg);
-} else if (command === "download") {
-  await download(prefixArg, outputDirArg);
-} else {
-  console.error(
-    "Usage:\n" +
-      "  node scripts/r2-sync.mjs pull [prefix]\n" +
-      "  node scripts/r2-sync.mjs push [prefix]\n" +
-      "  node scripts/r2-sync.mjs download <key-or-prefix> [output-directory]\n" +
-      "See the comment block at the top of this file, or README.md §2/§3, for details.",
-  );
-  process.exit(1);
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  if (command === "pull") {
+    await pull(prefixArg);
+  } else if (command === "push") {
+    await push(prefixArg);
+  } else if (command === "download") {
+    await download(prefixArg, outputDirArg);
+  } else {
+    console.error(
+      "Usage:\n" +
+        "  node scripts/r2-sync.mjs pull [prefix]\n" +
+        "  node scripts/r2-sync.mjs push [prefix]\n" +
+        "  node scripts/r2-sync.mjs download <key-or-prefix> [output-directory]\n" +
+        "See the comment block at the top of this file, or README.md §2/§3, for details.",
+    );
+    process.exit(1);
+  }
 }
