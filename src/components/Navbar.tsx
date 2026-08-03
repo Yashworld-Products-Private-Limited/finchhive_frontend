@@ -84,9 +84,10 @@ export default function Navbar() {
       >
         <div className="custom-container flex items-center">
           <div className="w-full flex items-center justify-between gap-2 xl:gap-4">
-            {/* Logo Left - click opens/closes the menu dropdown */}
+            {/* Logo Left - hover opens the menu dropdown */}
             <button
-              onClick={() => setMenuOpen((prev) => !prev)}
+              onMouseEnter={() => setMenuOpen(true)}
+              onMouseLeave={() => setMenuOpen(false)}
               className="focus:outline-none cursor-pointer relative z-[1022]"
               aria-label="Toggle menu"
             >
