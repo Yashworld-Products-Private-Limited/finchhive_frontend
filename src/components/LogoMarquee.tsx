@@ -21,6 +21,7 @@ export const logos = [
   { id: 15, src: "/api/imgs/brands/trustbrands15.png", alt: "Company 15" },
   { id: 17, src: "/api/imgs/brands/trustbrands17.png", alt: "Company 17" },
   { id: 18, src: "/api/imgs/brands/trustbrands18.png", alt: "Company 18" },
+  { id: 19, src: "/api/imgs/brands/trustbrands19.png", alt: "Company 19" },
 ];
 
 export default function LogoMarquee() {

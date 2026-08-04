@@ -6,6 +6,7 @@ import SectionTitle from "@/components/SectionTitle";
 import { Marquee } from "@/components/ui/marquee";
 import {
   brandStory,
+  Interior,
   OsciiImages,
   Projects,
   reelcreation,
@@ -22,12 +23,15 @@ const BentoGrid = dynamic(() => import("@/components/BentoGrid"));
 const CaseStudies = dynamic(() => import("@/components/CaseStudies"));
 const LogoMarquee = dynamic(() => import("@/components/LogoMarquee"));
 const SocialIcons = dynamic(() => import("@/components/SocialIcons"));
-const ReelCard = dynamic(() => import("@/components/ReelsMarquee").then((mod) => mod.ReelCard), {
-  ssr: false,
-  loading: () => (
-    <div className="mx-2 sm:mx-2.5 md:mx-3 block h-[380px] w-[240px] sm:h-[440px] sm:w-[280px] md:h-[500px] md:w-[320px] rounded-[18px] sm:rounded-[22px] md:rounded-[24px] bg-neutral-900 animate-pulse" />
-  ),
-});
+const ReelCard = dynamic(
+  () => import("@/components/ReelsMarquee").then((mod) => mod.ReelCard),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="mx-2 sm:mx-2.5 md:mx-3 block h-[380px] w-[240px] sm:h-[440px] sm:w-[280px] md:h-[500px] md:w-[320px] rounded-[18px] sm:rounded-[22px] md:rounded-[24px] bg-neutral-900 animate-pulse" />
+    ),
+  },
+);
 
 const Page = () => {
   useEffect(() => {
@@ -271,7 +275,7 @@ const Page = () => {
             </div>
           </div>
         </div>
-        <div id="logo-design" className="">
+        {/* <div id="logo-design" className="">
           <div className="max-w-[1440px] mx-auto">
             <div className="mt-[100px] lg:mt-[180px] sapce-y-10">
               <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
@@ -287,12 +291,12 @@ const Page = () => {
             </div>
           </div>
           <div className="">
-            {/* <div className="max-w-[1440px] mx-auto sapce-y-10 ">
+            <div className="max-w-[1440px] mx-auto sapce-y-10 ">
               <BentoGrid items={SocialImages} />
-            </div> */}
+            </div>
           </div>
-        </div>
-        <div id="interior-architectural-shoots" className="">
+        </div> */}
+        {/* <div id="interior-architectural-shoots" className="">
           <div className="max-w-[1440px] mx-auto">
             <div className="mt-[100px] lg:mt-[180px] sapce-y-10">
               <div className="flex flex-col  items-center justify-center gap-4 md:gap-6 xl:gap-8">
@@ -308,21 +312,18 @@ const Page = () => {
             </div>
           </div>
           <div className="">
-            {/* <div className="max-w-[1440px] mx-auto sapce-y-10 ">
-              <BentoGrid items={SocialImages} />
-            </div> */}
             <div className="mt-[60px] lg:mt-[100px]">
-              {/* <Marquee
+              <Marquee
                 pauseOnHover
                 className="relative flex items-center justify-center gap-6"
               >
                 {Interior.map((item) => (
                   <ReelCard key={item.video} item={item} />
                 ))}
-              </Marquee> */}
+              </Marquee>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
